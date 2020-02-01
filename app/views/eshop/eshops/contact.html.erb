@@ -1,0 +1,31 @@
+
+
+	<%= content_for(:head)  do %>
+	    <%= stylesheet_link_tag "shophome/ashop/content/contact", :media => "all" %>
+	    <%= javascript_include_tag "city" %>
+
+	    <title><%= page_title %></title>
+	<% end %>
+
+
+	<% @page_title = "コンタクト" %>
+
+	<%= render 'form', bshop: $bshop %>
+
+
+<%= content_for(:main)  do %>
+
+    <div id="feature-wrapper">
+
+	      <div id="box1">	
+		    　 <li id="a1">:TEL1</li><br>
+		      <li id="b1"><%= $bshop.phone1 %></li><br>
+	      </div>
+
+	      <div id="box2">	
+		    　 <li id="a2">:Email</li><br>
+		      <li id="b2"><%= $bshop.email1 %></li><br>
+	      </div>
+    </div>
+
+<% end %>

@@ -1,0 +1,70 @@
+
+<%= content_for(:head)  do %>
+    <%= stylesheet_link_tag "shophome/ashop/each", :media => "all" %>
+    <%= javascript_include_tag "city" %>
+    <title><%= page_title %></title>
+
+<% end %>
+
+<% @page_title = $ashop.shopname %> 
+<% @title1 = $ashop.shopname %> 
+<% @title2 = "投稿フォーラム" %>
+
+<% @back1  = asearch_asshop_path(id:$ashop) %>
+<% @city  = asearch_asshops_path %>
+<% @back2 = pub_asearch_asshop_path(id:$ashop) %>
+
+
+
+<%= content_for(:main)  do %>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+  <% if user_signed_in? %>
+    <%= link_to new_asearch_asshop_pubmenu_path do%><div id="new">＋写真を追加する</div><% end %>
+  <% else %>
+    <div id="ex1" class="modal">
+      <p>ログインして下さい。</p>
+      <a href="#" rel="modal:close">閉じる</a>
+    </div>
+    <div id="new"><a href="#ex1" rel="modal:open">＋写真を追加する</a></div>
+  <% end %>
+　　
+  <% $pubmenus.each do |pubmenu| %>
+
+        <div id="food">
+          
+                <div id="top_pic">
+
+                    <% if pubmenu.img1.present? %>
+                      <%= link_to image_tag(pubmenu.img1_url, {:size =>'300x300'}), asearch_asshop_pubmenu_path(asshop_id:$ashop, id:pubmenu) %> 
+                    <% else %>
+                      <%= link_to image_tag("template/logo3", {:size =>'300x300'}), asearch_asshop_pubmenu_path(asshop_id:$ashop, id:pubmenu) %> 
+                    <% end %>
+    
+                </div>
+
+                <P id="food_name1">
+                    <% if pubmenu.name.present? %>
+                        <%= pubmenu.name %>
+                    <% else %>
+                        未入力（メニュー表名）
+                    <% end %>
+                </P>
+
+                <P id="price"><%= pubmenu.user.username %>さんの投稿</p>
+
+                <% if user_signed_in? && pubmenu.user_id == current_user.id %>
+                <p id="edit"><%= link_to '✐編集', edit_asearch_asshop_pubmenu_path(id:pubmenu) %></p>/
+                <%#= link_to '🚮削除', pubmenu, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <% end %>   
+
+          </div>
+
+
+  <% end %>
+
+
+<% end %>
+

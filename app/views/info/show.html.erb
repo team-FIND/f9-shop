@@ -1,0 +1,32 @@
+
+
+	<p id="notice"><%= notice %></p>
+
+	<%= content_for(:head)  do %>
+		    <title><%= page_title %></title>
+	<% end %>
+
+
+	<% @page_title = $ashop.shopname %> 
+	<% @title = @page_title %>
+	<% @edit = edit_prefec_ashop_ashop_path(prefec_id:$prefec, id:$ashop) %>  
+
+	<% @back = prefec_ashop_ashops_path(prefec_id:$prefec) %>
+	<% @city = @back %>
+	<% @phone = $ashop.phone1 %>
+
+
+	<% @image1  =  image_tag $ashop.shopimage1_url if $ashop.shopimage1.present? %> 
+	<% @image2  =  image_tag $ashop.shopimage2_url if $ashop.shopimage2.present? %> 
+	<% @image3  =  image_tag $ashop.shopimage3_url if $ashop.shopimage3.present? %>
+
+
+	<% @navi4 = contact_prefec_ashop_ashop_path %>
+	<% @navi5 = access_prefec_ashop_ashop_path %>
+	<% @navi6 = info_prefec_ashop_ashop_path %>
+    
+
+	<% @subnavi1 =  time_prefec_ashop_ashop_path %>
+	<% @subnavi2 =  time_prefec_ashop_ashop_path %>
+	<% @subnavi3 =  contact_prefec_ashop_ashop_path %>
+	<% @subnavi4 =  time_prefec_ashop_ashop_path %>

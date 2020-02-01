@@ -1,0 +1,123 @@
+
+
+<%= stylesheet_link_tag "creater/ashop/info", :media => "all" %>
+
+
+<%= form_for($eshop, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+
+    <% if eshop.errors.any? %>
+
+          <div id="error_explanation">
+              <h2><%= pluralize(eshop.errors.count, "error") %> prohibited this eshop from being saved:</h2>
+                  <ul>
+                    <% eshop.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                  </ul>
+          </div>
+      
+     <% end %>
+
+          <div class="section" id="page">
+
+              <h1>店舗情報を編集する</h1>
+
+                  <div id="field">
+                    <%= form.label :history do %><label for="labelx">：創業西暦</label><% end %><br>
+                    <%= form.text_field :history, placeholder: '2010' %>
+                  </div>
+
+                  <div id="field">
+                    <%= form.label :career1 do %><label for="labelx">：店長経歴1</label><% end %><br>
+                    <%= form.text_field :career1, placeholder: '料理学校卒業' %>
+                  </div>
+
+                  <div id="field">
+                    <%= form.label :career2 do %><label for="labelx">：店長経歴2</label><% end %><br>
+                    <%= form.text_field :career2, placeholder: '調理師資格取得' %>
+                  </div>
+
+                  <div id="field">
+                    <%= form.label :career3 do %><label for="labelx">：店長経歴３</label><% end %><br>
+                    <%= form.text_field :career4, placeholder: '資格等' %>
+                  </div>
+
+                  <div id="field">
+                    <%= form.label :career4 do %><label for="labelx">：店長経歴4</label><% end %><br>
+                    <%= form.text_field :career4, placeholder: '資格等' %>
+                  </div>
+
+                  <div id="field">
+                    <%= form.label :career5 do %><label for="labelx">：店長経歴5</label><% end %><br>
+                    <%= form.text_field :career5, placeholder: '資格等' %>
+                  </div>
+
+                  <div id="field">
+                    <%= form.label :recom1 do %><label for="labelx">：おすすめ料理1</label><% end %><br>
+                    <%= form.text_field :recom1, placeholder: '唐揚げランチ' %>
+                  </div>
+
+                  <div id="field">
+                    <%= form.label :recom2 do %><label for="labelx">：おすすめ料理2</label><% end %><br>
+                    <%= form.text_field :recom2, placeholder: '豚キムチ丼' %>
+                  </div>
+
+                  <div id="field">
+                    <%= form.label :recom3 do %><label for="labelx">：おすすめ料理3</label><% end %><br>
+                    <%= form.text_field :recom3, placeholder: 'ホルモン定食' %>
+                  </div>
+
+                  <div id="field">
+                    <%= form.label :recom4 do %><label for="labelx">：おすすめ料理4</label><% end %><br>
+                    <%= form.text_field :recom4, placeholder: 'チキンカツ定食' %>
+                  </div>
+
+                  <div id="field">
+                    <%= form.label :recom5 do %><label for="labelx">：おすすめ料理5</label><% end %><br>
+                    <%= form.text_field :recom5, placeholder: 'ナポリタン' %>
+                  </div>
+
+                  <div id="field">
+                    <%= form.label :iititle1 do %><label for="labelx">：題名1</label><% end %><br>
+                    <%= form.text_field :iititle1, placeholder: 'お店のこだわり' %>
+                  </div>
+
+                  <div id="field">
+                    <%= form.label :info1 do %><label for="labelx">：紹介文1</label><% end %><br>
+                    <%= form.text_area :info1 %>
+                  </div>
+
+                  <div id="field">
+                    <%= form.label :iititle2 do %><label for="labelx">：題名2</label><% end %><br>
+                    <%= form.text_field :iititle2, placeholder: 'お店の特徴' %>
+                  </div>
+
+                  <div id="fieldy">
+                    <%= form.label :info2 do %><label for="labelx">：紹介文2</label><% end %><br>
+                    <%= form.text_area :info2 %>
+                  </div>
+
+                  <div id="field">
+                    <%= form.label :iititle3 do %><label for="labelx">：題名3</label><% end %><br>
+                    <%= form.text_field :ititle3, placeholder: 'お店のこだわり' %>
+                  </div>
+
+                  <div id="field">
+                    <%= form.label :iinfo3 do %><label for="labelx">：紹介文3</label><% end %><br>
+                    <%= form.text_area :info3 %>
+                  </div>
+
+                    <%= form.hidden_field :topimage_cache %>
+                    <%= form.hidden_field :shopimage1_cache %>
+                    <%= form.hidden_field :shopimage2_cache %>
+                    <%= form.hidden_field :shopimage3_cache %>
+
+                <div id="actions"><%= form.submit(:決定) %></div>
+
+                <%= link_to myeshop_myeshop_path(id:$eshop) do %>
+                    <div id="eback">編集を中止する</div>
+                <% end %>
+
+          </div>
+
+<% end %>

@@ -1,0 +1,78 @@
+
+#third-feature {
+	clear: both;
+	padding: 0px 60px 100px 60px;
+}
+
+#ad{
+	margin: 0px auto;
+	height: 580px;
+	clear: both;
+    border: 3px solid #006837;
+    border-radius: 25px;
+}
+
+#ada{
+	color: white;
+	font-size: 40px;
+	border: 3px solid white;
+	border-radius: 15px; 
+	margin: 30px 350px 0px 350px;
+	text-align: center;
+	padding: 0px 0px 0px 0px;
+	background: #006837;
+}
+
+#ad .child1 {
+    width: 350px;
+    margin: 10px 0px 0px 40px;
+    float: left;
+    display: inline;   
+}
+
+#ad .child2 {
+    width: 350px;
+    margin: 10px 45px 0px 0px;
+    float: right;
+    display: inline;   
+}
+
+#ad .child1 .img {
+    width: 350px;
+    height: 350px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    border-radius: 265px;
+    border: 5px solid #006837;
+}
+
+#ad .child2 .img {
+    width: 350px;
+    height: 350px;
+    overflow: hidden;
+    margin-bottom: 25px;
+    border-radius: 265px;
+    border: 5px solid #006837;
+}
+
+#ad .child1 .title {    
+	font-size: 35px;
+    color: white;
+    text-align: center;
+    border: 3px solid white;
+    border-radius: 15px;
+    padding: 8px 0px 8px 0px;
+    margin: 0px 40px 0px 40px;
+    background: #006837;
+}
+
+#ad .child2 .title {    
+	font-size: 35px;
+    color: white;
+    text-align: center;
+    border: 3px solid white;
+    border-radius: 15px;
+    padding: 8px 0px 8px 0px;
+    margin: 0px 40px 0px 40px;
+    background: #006837;
+}

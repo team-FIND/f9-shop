@@ -1,0 +1,43 @@
+
+<%= form_for($atmenu, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+
+  <% if atmenu.errors.any? %>
+      <div id="error_explanation">
+          <h2><%= pluralize(atmenu.errors.count, "error") %> prohibited this amenu from being saved:</h2>
+
+          <ul>
+              <% atmenu.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+          </ul>
+      </div>
+  <% end %>
+
+  <div class="section" id="page">
+
+    <h1>(:テイクアウトメニュー項目を編集する</h1>
+      
+      <%= form.hidden_field :atmenuc_id %>
+
+      <div id="fieldx">
+          <%= form.label :name do %><label for="labelx">メニュー項目名</label><% end %><br>
+          <%= form.text_field :name, placeholder: '定食' %>
+      </div>
+
+      <div id="fieldy">
+          <%= form.label :time do %><label for="labelx">提供時間</label><% end %><br>
+          <%= form.text_field :time1, :size =>"1" %>:<%= form.text_field :time2, :size =>"1" %>~<%= form.text_field :time3, :size =>"1" %>:<%= form.text_field :time4, :size =>"1" %>
+          <p id="ex">＊指定がない場合は入力する必要がありません。</p>
+      </div>
+
+      <div id="actions">
+          <li><%= form.submit(:決定) %></li>
+      </div>
+
+      <%= link_to myashop_myatmenuc_myatmenus_path do %>
+            <div id="eback">編集を中止する</div>
+      <% end %>
+
+  </div>
+
+<% end %>

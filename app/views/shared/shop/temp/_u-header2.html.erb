@@ -1,0 +1,25 @@
+
+
+	<div id="s-uheader">
+
+		<%= link_to do %>
+			<div id="mypage"><p>マイページ</p></div>
+		<% end %>
+
+	</div>
+
+
+	<div id="t1">
+	  <p id="ta"><%= @title1 %></p>
+	</div>
+
+    <%= link_to @back1 do %><p id="back"><%= image_tag 'template/home.gif', :size => "80x80" %></p><% end %>
+    <%= link_to @city do %><p id="town"><%= image_tag 'template/city.png', :size => "80x80" %></p><% end %>
+
+	<div id='t2'>
+	  <p id="tb"><%= @title2 %></p>
+	</div>
+
+	<%= link_to @back2 do %><p id="back2"><%= image_tag 'template/back/1.gif', :size => "90x90" %></p><% end %>
+
+    <!-- <%= link_to @back2 do %><div id="back3"><%= image_tag 'template/logo.gif', :size => "130x130" %></div><% end %> -->

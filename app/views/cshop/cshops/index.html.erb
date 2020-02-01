@@ -1,0 +1,85 @@
+
+
+  <% @page_title = "美容室・理髪店一覧" %> 
+  <% @title = @page_title %>
+  <% @back = area_prefec_path(id:$prefec, area_id:$area) %>
+
+
+<%= content_for(:uheader)  do %><%= render 'shared/uheader2' %><% end %>
+
+
+<%= content_for(:main)  do %>
+    <%= stylesheet_link_tag "shop/shop", :media => "all" %>
+    <%= stylesheet_link_tag "search/asearch", :media => "all" %>
+
+  
+   <div id="search-form">
+
+      <%= search_form_for $search, url: csearch_csshops_path do |form| %>
+
+              <div id="stitle">美容室・理髪店検索</div>
+                          
+                <div id="slinex">
+                    <div class="sline1">
+                      <label for="labelx">カテゴリー</label><br>
+                    </div>
+                </div>
+
+                <div id="sliney">
+                    <div class="sline2">
+                      <label for="labelx">店名</label><br>
+                      <%= form.search_field :shopname_cont %>
+                    </div>
+
+                    <div class="sline2">
+                      <%= form.submit %>
+                    </div>
+                </div>
+
+            <% end %>
+
+         
+    </div>
+
+<div id="main-feature">
+  <% $cshops.each do |cshop| %>
+
+
+      <%= link_to prefec_cshop_cshop_path(prefec_id:$prefec, id:cshop) do%> 
+         <div id="shopx">
+
+                <div id="top_pic">
+
+                  <% if cshop.topimage.present? %>
+                    <%= image_tag(cshop.topimage_url, {:size =>'400x400'}) %> 
+                  <% else %>
+                    <%= image_tag("template/logo3", {:size =>'400x400'}) %> 
+                  <% end %>
+
+                </div>
+
+                <div id="explains">
+                     
+                        <P id="shop_name">🏠：<%= cshop.shopname %></P>
+
+                        <P id="account_name">👤:<%= cshop.user.username %></P><br>
+                        
+                        <li id="ptag">
+                          <p><%= cshop.top.name %></p>
+                          <p>><%= cshop.area.name %></p>
+                          <p>><%= cshop.prefec.name %></p>
+                        </li><br>
+
+                        <li id="tag"><p>#<%= cshop.ccategory.name %></p></li>
+
+                </div>
+
+          </div>
+        <% end %>
+
+  <% end %>
+  
+</div>
+
+<% end %>
+

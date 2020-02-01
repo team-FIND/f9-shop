@@ -1,0 +1,113 @@
+
+<%= form_for($asmenu, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+
+  <% if asmenu.errors.any? %>
+      <div id="error_explanation">
+          <h2><%= pluralize(asmenu.errors.count, "error") %> prohibited this asmenu from being saved:</h2>
+
+          <ul>
+              <% asmenu.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+          </ul>
+      </div>
+  <% end %>
+
+  <div class="section" id="page">
+
+    <h1>メニュー項目を編集する</h1>
+      
+      <%= form.hidden_field :asmenuc_id %>
+
+      <div id="field">
+          <%= form.label :name do %><label for="labelx">料金</label><% end %><br>
+          <%= form.text_field :name, placeholder: 'ウィンターコース' %>
+      </div>
+
+      <div id="field"><%= form.text_field :menu1, placeholder: 'メニュー１' %></div>
+
+      <div id="field">⊕</div>
+
+      <div id="field"><%= form.text_field :menu2, placeholder: 'メニュー２' %></div>
+
+      <div id="field">⊕</div>
+
+      <div id="field"><%= form.text_field :menu3, placeholder: 'メニュー３' %></div>
+
+      <div id="field">⊕</div>
+
+      <div id="field"><%= form.text_field :menu4, placeholder: 'メニュー４' %></div>
+
+      <div id="field">⊕</div>
+
+      <div id="field"><%= form.text_field :menu5, placeholder: 'メニュー５' %></div>
+
+      <div id="field">⊕</div>
+
+      <div id="field"><%= form.text_field :menu6, placeholder: 'メニュー６' %></div>
+
+      <div id="field">⊕</div>
+
+      <div id="field"><%= form.text_field :menu7, placeholder: 'メニュー７' %></div>
+
+      <div id="field">⊕</div>
+
+      <div id="field"><%= form.text_field :menu8, placeholder: 'メニュー８' %></div>
+
+      <div id="field">⊕</div>
+
+      <div id="field"><%= form.text_field :menu9, placeholder: 'メニュー９' %></div>
+
+      <div id="field">⊕</div>
+
+      <div id="field"><%= form.text_field :menu10, placeholder: 'メニュー１０' %></div>
+
+      <div id="field">⊕</div>
+
+      <div id="field"><%= form.text_field :menu11, placeholder: 'メニュー１１' %></div>
+
+      <div id="field">⊕</div>
+
+      <div id="field"><%= form.text_field :menu12, placeholder: 'メニュー１２' %></div>
+
+      <div id="field">⊕</div>
+
+      <div id="field"><%= form.text_field :menu13, placeholder: 'メニュー１３' %></div>
+
+      <div id="field">⊕</div>
+
+      <div id="field"><%= form.text_field :menu14, placeholder: 'メニュー１４' %></div>
+
+      <div id="field">⊕</div>
+
+      <div id="field"><%= form.text_field :menu15, placeholder: 'メニュー１５' %></div>
+
+      <div id="field">⊕</div>
+
+      <div id="field"><%= form.text_field :menu16, placeholder: 'メニュー１６' %></div>
+
+      <div id="field">⊕</div>
+
+      <div id="field"><%= form.text_field :menu17, placeholder: 'メニュー１７' %></div>
+
+      <div id="field">⊕</div>
+
+      <div id="field"><%= form.text_field :menu18, placeholder: 'メニュー１８' %></div>
+
+      <div id="field">⊕</div>
+
+      <div id="field"><%= form.text_field :menu19, placeholder: 'メニュー１９' %></div>
+
+      <div id="field">⊕</div>
+
+      <div id="field"><%= form.text_field :menu20, placeholder: 'メニュー２０' %></div>
+
+      <div id="actions"><li><%= form.submit(:決定) %></li></div>
+
+      <%= link_to myashop_myasmenuc_myasmenus_path do %>
+            <div id="eback">編集を中止する</div>
+      <% end %>
+
+  </div>
+
+<% end %>

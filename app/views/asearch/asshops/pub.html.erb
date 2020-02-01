@@ -1,0 +1,45 @@
+
+
+	<%= content_for(:head)  do %>
+	    <%= stylesheet_link_tag "shophome/ashop/content/access", :media => "all" %>
+	    <%= javascript_include_tag "city" %>
+
+	    <title><%= page_title %></title>
+	<% end %>
+
+    
+	<% @page_title = "投稿フォーラム" %>
+
+	<%= render 'form', ashop: $ashop %>
+
+
+<%= content_for(:main)  do %>
+      
+    <div id="feature-wrapper">
+
+	      <div id="pbox1">	
+		    　 <li id="a1">インスタに投稿する</li><br>
+		    　　<li id="bp">
+		    	<%= link_to image_tag("shopnavi/insta.jpg", {:size =>'300x300'})  %>
+		    　　</li><br>
+	      </div>
+
+	      <div id="pbox2">	
+		    　 <li id="a1">メニューを投稿する</li><br>
+		    　　<li id="bp">
+		    	<%= link_to image_tag("shopnavi/menu", {:size =>'300x300'}), asearch_asshop_pubmenus_path(asshop_id:$ashop) %>
+		    　　</li><br>
+	      </div>
+
+	      <div id="pbox2">
+              <li id="a1">料理の写真を投稿する</li></a><br>
+              <li id="bp">
+		    	<%= link_to image_tag("shopnavi/pubimg", {:size =>'300x300'}), asearch_asshop_pubimgs_path(asshop_id:$ashop) %>
+		    　　</li><br>
+	      </div>
+
+    </div>
+
+<% end %>
+
+

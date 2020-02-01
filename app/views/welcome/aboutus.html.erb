@@ -1,0 +1,26 @@
+
+<% @page_title = "F9とは" %>
+<% @title = @page_title %> 
+<% @back = "javascript:history.go(-1)"%>
+
+<%= content_for(:main)  do %>
+	<%= stylesheet_link_tag "footers/pp", :media => "all" %>
+
+	<div id="main-feature">
+
+		<div id="code">
+			<h2>f9-shop.jp(F9)とは</h2><br>
+			<p>無料のお店情報共有サイト。</p>
+		</div>
+
+		<div id="code">
+			<h2>出来ること</h2><br>
+			<p>・紹介したいお店の作成。</p>
+			<p>・メニュー表の作成。</p>
+			<p>・お店の情報閲覧。</p>
+		</div>
+
+
+	</div>
+
+<% end %>

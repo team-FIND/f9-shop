@@ -1,0 +1,26 @@
+<%= stylesheet_link_tag "temp/footer", :media => "all" %>
+
+ <div id="footer">
+
+	<ul>
+		<%= link_to usage_welcome_index_path, target:"_blank" do %><li id="fbox1">ご利用上の注意</li><% end %>  
+		<%= link_to sitemap_welcome_index_path, target:"_blank" do %><li id="fbox2">広告について</li><% end %> 
+	</ul>
+
+	<ul>
+		<%= link_to index_path, target:"_blank" do %><li id="fbox1">ご意見・ご要望</li><% end %>
+		<%= link_to aboutus_welcome_index_path, target:"_blank" do %><li id="fbox2">F9とは</li><% end %>
+	</ul>
+
+	<ul>
+		<%= link_to code_welcome_index_path, target:"_blank" do %><li id="fbox1">利用規約</li><% end %>
+		<%= link_to respon_welcome_index_path, target:"_blank" do %><li id="fbox2">免責事項</li><% end %>
+	</ul>
+
+	<ul>
+		<%= link_to pp_welcome_index_path, target:"_blank" do %><li id="fbox3">プライバシーポリシー</li><% end %>
+	</ul>
+
+	<div id="copyright">©　2018　f9-shop.jp</div>
+
+ </div>

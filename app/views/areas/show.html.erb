@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Top:</strong>
+  <%= $area.top %>
+</p>
+
+<p>
+  <strong>Pname:</strong>
+  <%= $area.name %>
+</p>
+
+<%= link_to 'Edit', edit_area_path($area) %> |
+<%= link_to 'Back', areas_path %>

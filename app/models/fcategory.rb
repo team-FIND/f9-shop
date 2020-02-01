@@ -1,0 +1,2 @@
+class Fcategory < ApplicationRecord
+end

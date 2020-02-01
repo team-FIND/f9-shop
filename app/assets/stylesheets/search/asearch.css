@@ -1,0 +1,83 @@
+
+#search-form {
+	text-align: center;
+	clear: both;
+	width: 950px;
+	margin: 0px auto;
+	padding: 20px 0px 50px 0px;
+	overflow: hidden;
+}
+
+
+input[type="text"] {
+        width: 250px;
+        height: 50px;
+        font-size: 25px;
+        margin: 0px 0px 0px 0px;
+        border: 3px solid #006837;
+        border-radius: 20px;
+    }
+
+input[type="search"] {
+        width: 250px;
+        height: 50px;
+        font-size: 25px;
+        border: 3px solid #006837;
+        border-radius: 20px;
+        text-align: center;
+    }
+
+select {
+ 	    clear: both;
+ 	    width: 150px;
+        font-size: 25px;
+        color: black;
+        text-align: center;
+        margin-top: 0px;
+        height: 35px;
+        border: 2px solid #006837;
+    }
+
+input[type="submit"] {
+        font-size: 30px;
+        width: 200px;
+        hyphens: 50px;
+        border-radius: 15px;
+        margin: 50px 0px 0px 0px;
+        color: black;
+    }
+
+#stitle {
+	font-size: 40px;
+	margin: 0px auto;
+	width: 400px;
+	color: #006837;
+}
+
+#slinex{
+	margin: 0px auto;
+	width: 800px;
+	justify-content: center;
+	justify-content: space-between;
+    display: flex;
+	text-align: center;
+	align-items: center;
+}
+
+#sliney{
+	margin: 0px auto;
+	width: 500px;
+	justify-content: center;
+	justify-content: space-between;
+    display: flex;
+	text-align: center;
+	align-items: center;
+}
+
+.sline1 {
+	margin: 10px 0px 0px 0px;
+}
+
+.sline2 {
+	margin: 40px 0px 0px 0px;
+}

@@ -1,0 +1,15 @@
+current directory: /var/www/find-999.com/public/blog/vendor/bundle/gems/websocket-driver-0.7.0/ext/websocket-driver
+/usr/local/rbenv/versions/2.4.4/bin/ruby -r ./siteconf20190724-31401-qpq578.rb extconf.rb
+creating Makefile
+
+current directory: /var/www/find-999.com/public/blog/vendor/bundle/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /var/www/find-999.com/public/blog/vendor/bundle/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /var/www/find-999.com/public/blog/vendor/bundle/gems/websocket-driver-0.7.0/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20190724-31401-7u0z32

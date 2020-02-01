@@ -1,0 +1,57 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  top: one
+  area: one
+  prefec: one
+  acategory: one
+  category2: MyString
+  category3: MyString
+  topimage: MyString
+  shopimage1: MyString
+  shopimage2: MyString
+  shopimage3: MyString
+  shopname: MyString
+  username: MyString
+  phone1: MyString
+  phone2: MyString
+  email1: MyString
+  email2: MyString
+  postnumb: MyString
+  address: MyString
+  bus: MyString
+  train: MyString
+  ititle1: MyString
+  info1: MyText
+  ititle2: MyString
+  info2: MyText
+  ititle3: MyString
+  info3: MyText
+
+two:
+  top: two
+  area: two
+  prefec: two
+  acategory: two
+  category2: MyString
+  category3: MyString
+  topimage: MyString
+  shopimage1: MyString
+  shopimage2: MyString
+  shopimage3: MyString
+  shopname: MyString
+  username: MyString
+  phone1: MyString
+  phone2: MyString
+  email1: MyString
+  email2: MyString
+  postnumb: MyString
+  address: MyString
+  bus: MyString
+  train: MyString
+  ititle1: MyString
+  info1: MyText
+  ititle2: MyString
+  info2: MyText
+  ititle3: MyString
+  info3: MyText

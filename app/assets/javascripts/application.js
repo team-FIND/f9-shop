@@ -1,0 +1,60 @@
+// This is a manifest file that'll be compiled into application.js, which will include all the files
+// listed below.
+//
+// Any JavaScript/Coffee file within this directory, lib/assets/javascripts, or any plugin's
+// vendor/assets/javascripts directory can be referenced here using a relative path.
+//
+// It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
+// compiled file. JavaScript code in this file should be added after the last require_* statement.
+//
+// Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
+// about supported directives.
+//
+//= require jquery
+//= require rails-ujs
+//= require activestorage
+//= require turbolinks
+//= require jquery_ujs
+
+
+   $(function() {
+
+       $('.search .stabs li').on('click', function() {
+
+           //figure out which panel to show
+           var panelToShow = $(this).attr('rel');
+
+           //hide current panel
+           $('.search .spanel.active').slideUp(300, function() {
+               $(this).removeClass('active');
+
+               $('#'+panelToShow).slideDown(300, function(){
+                    $(this).addClass('active');
+               });          
+           });
+        
+        });
+
+    }); 
+   
+   $(function() {
+
+       $('.main-navi .tabs li').on('click', function() {
+
+           //figure out which panel to show
+           var panelToShow = $(this).attr('rel');
+
+           //hide current panel
+           $('.main-navi .panel.active').slideUp(300, function() {
+               $(this).removeClass('active');
+
+               $('#'+panelToShow).slideDown(300, function(){
+                    $(this).addClass('active');
+               });          
+           });
+        
+        });
+
+
+    });   
+

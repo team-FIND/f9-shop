@@ -1,0 +1,85 @@
+
+
+  <% @page_title = "ファッション一覧" %> 
+  <% @title = @page_title %>
+  <% @back = area_prefec_path(id:$prefec, area_id:$area) %>
+
+
+<%= content_for(:uheader)  do %><%= render 'shared/uheader2' %><% end %>
+
+
+<%= content_for(:main)  do %>
+    <%= stylesheet_link_tag "shop/shop", :media => "all" %>
+    <%= stylesheet_link_tag "search/asearch", :media => "all" %>
+
+  
+   <div id="search-form">
+
+      <%= search_form_for $search, url: esearch_esshops_path do |form| %>
+
+              <div id="stitle">病院検索</div>
+                          
+                <div id="slinex">
+                    <div class="sline1">
+                      <label for="labelx">カテゴリー</label><br>
+                    </div>
+                </div>
+
+                <div id="sliney">
+                    <div class="sline2">
+                      <label for="labelx">店名</label><br>
+                      <%= form.search_field :shopname_cont %>
+                    </div>
+
+                    <div class="sline2">
+                      <%= form.submit %>
+                    </div>
+                </div>
+
+            <% end %>
+
+         
+    </div>
+
+<div id="main-feature">
+  <% $eshops.each do |eshop| %>
+
+
+      <%= link_to prefec_eshop_eshop_path(prefec_id:$prefec, id:eshop) do%> 
+         <div id="shopx">
+
+                <div id="top_pic">
+
+                  <% if eshop.topimage.present? %>
+                    <%= image_tag(eshop.topimage_url, {:size =>'400x400'}) %> 
+                  <% else %>
+                    <%= image_tag("template/logo3", {:size =>'400x400'}) %> 
+                  <% end %>
+
+                </div>
+
+                <div id="explains">
+                     
+                        <P id="shop_name">🏠：<%= eshop.shopname %></P>
+
+                        <P id="account_name">👤:<%= eshop.user.username %></P><br>
+                        
+                        <li id="ptag">
+                          <p><%= eshop.top.name %></p>
+                          <p>><%= eshop.area.name %></p>
+                          <p>><%= eshop.prefec.name %></p>
+                        </li><br>
+
+                        <li id="tag"><p>#<%= eshop.ecategory.name %></p></li>
+
+                </div>
+
+          </div>
+        <% end %>
+
+  <% end %>
+  
+</div>
+
+<% end %>
+

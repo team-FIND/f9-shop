@@ -1,0 +1,31 @@
+
+<% @page_title = $atakeout.foodname1 %> 
+<% @title1 = $ashop.shopname %>
+<% @title2 = $atakeout.foodname1 %> 
+
+<% @back1  = asearch_asshop_path(id:$ashop) %>
+<% @city  = asearch_asshops_path %>
+<% @back2 = asearch_atsmenu_astakeouts_path %>
+
+
+<% $atakeouts.each do |atakeout| %>
+
+	<% if $atakeout.foodimg1.present? %>
+		<% @image1 = image_tag $atakeout.foodimg1_url %>
+	<% else %>
+		<% @image1 = image_tag "template/logo3" %>
+	<% end %>
+
+	<% if $atakeout.foodimg2.present? %>
+		<% @image2 = image_tag $atakeout.foodimg2_url %>
+	<% else %>
+		<% @image2 = image_tag "template/logo3" %>
+	<% end %>
+
+	<% if $atakeout.foodimg3.present? %>
+		<% @image3 = image_tag $atakeout.foodimg3_url %>
+	<% else %>
+		<% @image3 = image_tag "template/logo3" %>
+	<% end %>
+
+<% end %>

@@ -1,0 +1,19 @@
+
+<%= stylesheet_link_tag "selecter", :media => "all" %>
+
+<%= form_for($top, :url => {:action => "update"}, :html => {:multipart => true}) do |form| %>
+
+	<div id="main-feature">
+
+		<h1>Editing Top</h1>
+
+		<%= render 'form', top: $top %>
+
+		<div id="prev">
+			<%= link_to 'Show', $top %><br />
+			<%= link_to 'Back', tops_path %>
+		</div>
+
+	</div>
+
+<% end %>

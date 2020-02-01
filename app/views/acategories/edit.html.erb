@@ -1,0 +1,17 @@
+
+<%= stylesheet_link_tag "selecter", :media => "all" %>
+
+<%= form_for($acategory, :url => {:action => "update"}, :html => {:multipart => true}) do |form| %>
+
+	<div id="main-feature">
+
+		<h1>カテゴリーの編集</h1>
+
+		<%= render 'form', acategory: $acategory %>
+
+		<div id="prev"><%= link_to 'Show', acategories_path($acategory) %><br />
+		<%= link_to '戻る', acategories_path %></div>
+
+	</div>
+
+<% end %>

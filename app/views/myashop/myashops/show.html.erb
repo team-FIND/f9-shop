@@ -1,0 +1,120 @@
+
+
+	<p id="notice"><%= notice %></p>
+
+	<%= content_for(:head)  do %>
+	    <title><%= page_title %></title>
+	<% end %>
+  
+  <%= content_for(:uheader2)  do %>
+        <%if user_signed_in? && $ashop.user_id == current_user.id %>
+                    <%= link_to img_edit_myashop_myashop_path, target:"_blank" do%><div id="edit">✐編集する</div><% end %>
+        <% end %>
+  <% end %>
+
+	<%= content_for(:idc1)  do %>
+	        <%if user_signed_in? && $ashop.user_id == current_user.id %>
+                  <div id="ltop">
+                      <%= link_to new_myashop_myashop_myamenuc_path(myashop_id:$ashop) do%>
+                          <p>⊕カテゴリーを追加する</p>
+                      <% end %>
+                  </div>
+            <%end%>
+
+            <% $amenucs.each do |amenuc| %>
+                    <div class="line">
+                          <%= link_to myashop_myashop_myamenuc_path(myashop_id:$ashop, id:amenuc) do %>
+                              <li id="mc"><%= amenuc.name %></li><br>
+                          <%end%>
+                          <%= link_to edit_myashop_myashop_myamenuc_path(myashop_id:$ashop, id:amenuc) do %>
+                               <p id="mcedit">✐編集する</p>
+                          <% end %>
+                    </div>
+            <% end %>
+	<% end %>
+
+	<%= content_for(:idc2)  do %>
+	        <%if user_signed_in? && $ashop.user_id == current_user.id %>
+                  <div id="ltop">
+                      <%= link_to new_myashop_myashop_myasmenuc_path(myashop_id:$ashop) do%>
+                          <p>⊕カテゴリーを追加する</p>
+                      <% end %>
+                  </div>
+            <% end %>
+
+            <% $asmenucs.each do |asmenuc| %>
+                    <div class="line">
+                          <%= link_to myashop_myashop_myasmenuc_path(myashop_id:$ashop, id:asmenuc) do %>
+                              <li id="mc"><%= asmenuc.name %></li><br>
+                          <%end%>
+                          <%= link_to edit_myashop_myashop_myasmenuc_path(myashop_id:$ashop, id:asmenuc) do %>
+                               <p id="mcedit">✐編集する</p>
+                          <% end %>
+                    </div>
+            <% end %>
+	<% end %>
+
+	<%= content_for(:idc3)  do %>
+			<%if user_signed_in? && $ashop.user_id == current_user.id %>
+                  <div id="ltop">
+                      <%= link_to new_myashop_myashop_myadmenuc_path(myashop_id:$ashop) do%>
+                          <p>⊕カテゴリーを追加する</p>
+                      <% end %>
+                  </div>
+            <% end %>
+
+              <% $admenucs.each do |admenuc| %>
+                    <div class="line">
+                          <%= link_to myashop_myashop_myadmenuc_path(myashop_id:$ashop, id:admenuc) do %>
+                              <li id="mc"><%= admenuc.name %></li><br>
+                          <%end%>
+                          <%= link_to edit_myashop_myashop_myadmenuc_path(myashop_id:$ashop, id:admenuc) do %>
+                               <p id="mcedit">✐編集する</p>
+                          <% end %>
+                    </div>
+            <% end %>
+	<% end %>
+
+	<%= content_for(:idc4)  do %>
+	        <%if user_signed_in? && $ashop.user_id == current_user.id %>
+                  <div id="ltop">
+                      <%= link_to new_myashop_myashop_myatmenuc_path(myashop_id:$ashop) do%>
+                          <p>⊕カテゴリーを追加する</p>
+                      <% end %>
+                  </div>
+            <% end %>
+
+            <% $atmenucs.each do |atmenuc| %>
+                    <div class="line">
+                          <%= link_to myashop_myashop_myatmenuc_path(myashop_id:$ashop, id:atmenuc) do %>
+                              <li id="mc"><%= atmenuc.name %></li><br>
+                          <%end%>
+                          <%= link_to edit_myashop_myashop_myatmenuc_path(myashop_id:$ashop, id:atmenuc) do %>
+                               <p id="mcedit">✐編集する</p>
+                          <% end %>
+                    </div>
+            <% end %>
+	<% end %>
+
+
+	<% @page_title = $ashop.shopname %> 
+	<% @title = @page_title %>
+	<% @edit = img_edit_myashop_myashop_path %>  
+
+	<% @back =  myashop_myashops_path %>
+	<% @city = @back %>
+
+	<% @image1  =  image_tag $ashop.shopimage1_url if $ashop.shopimage1.present? %> 
+	<% @image2  =  image_tag $ashop.shopimage2_url if $ashop.shopimage2.present? %> 
+	<% @image3  =  image_tag $ashop.shopimage3_url if $ashop.shopimage3.present? %>
+   
+    <% @navi4 = contact_myashop_myashop_path %>
+	<% @navi5 = access_myashop_myashop_path %>
+	<% @navi6 = info_myashop_myashop_path %>
+	<% @navi7 = contact_myashop_myashop_path %>
+	<% @navi8 = time_myashop_myashop_path %>
+    
+
+	<% @subnavi1 =  %>
+	<% @subnavi2 =  %>
+

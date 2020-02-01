@@ -1,0 +1,40 @@
+
+
+  <%= content_for(:head)  do %>
+      <%= stylesheet_link_tag "shophome/ashop/content/menu", :media => "all" %>
+      <%= javascript_include_tag "city" %>
+
+      <title><%= page_title %></title>
+  <% end %>
+
+
+  <% @page_title = $amenuc.name %> 
+  <% @title1 = $ashop.shopname %> 
+  <% @title2 = @page_title %> 
+
+  <% @back1 = myashop_myashop_path(id:$ashop) %>
+  <% @city  = myashop_myashops_path %>
+  <% @back2 = @back1 %>
+  
+
+  <%= content_for(:main)  do %>
+
+    <div id="new"><%= link_to '＋メニューを追加する', new_myashop_myamenuc_myamenu_path %></div>
+        <div id="feature-wrapper">
+
+              <% $amenus.each do |amenu| %>
+                  <%= link_to myashop_myamenuc_myamenu_path(myamenuc_id:$amenuc, id:amenu) do %>
+                   　<div id="box"><li id="list"><%= amenu.name %></li></div>
+                  <% end %>
+
+                  <div id="stime"><%= amenu.time1 %>:<%= amenu.time2 %>~<%= amenu.time3 %>:<%= amenu.time4 %></div>
+
+                  <div id="edit">
+                    <%= link_to '✐編集する', edit_myashop_myamenuc_myamenu_path(myamenuc_id:$amenuc, id:amenu) %>
+                  </div>
+              <% end %>
+
+        </div>
+    <% end %>
+
+

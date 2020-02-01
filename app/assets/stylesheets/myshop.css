@@ -1,0 +1,64 @@
+
+#guide {
+   text-align: center;
+   font-size: 30px;
+}
+
+#uname2 {
+	clear: both;
+	height: 60px;
+	margin: 0px auto;
+	margin-top: 150px;
+	margin-bottom: 150px;
+	text-align: center;
+}
+
+#mybox {
+	margin: 0px auto;
+	font-size: 30px;
+	clear: both;
+	width: 950px;
+	height: 220px;
+	background: white;
+	border-bottom: 4px solid #006837;
+}
+
+#myboxx {
+	margin: 0px auto;
+	font-size: 30px;
+	clear: both;
+	width: 950px;
+	height: 220px;
+	background: #ccc;
+	border-bottom: 4px solid #006837;
+}
+
+#mypic {
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	float: left;
+	list-style: none;
+	border: 3px solid grey;
+	border-radius: 30px;
+	margin: 0px auto;
+	margin-left: 10px;
+	width: 200px;
+	height: 200px;
+	display: flex;
+}
+
+
+#mytext {
+	width: 600px;
+	height: 270px;
+	float: right;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+
+#mytext p {
+	font-size: 60px;
+}

@@ -1,0 +1,62 @@
+
+<%= favicon_link_tag() %>
+<%= favicon_link_tag('apple-touch-icon-180x180.gif', {:rel => 'apple-touch-icon', :sizes => '180x180', :type => 'image/gif'}) %>          
+
+        <%= stylesheet_link_tag "shophome/home", :media => "all" %>
+        <%= stylesheet_link_tag "temp/header", :media => "all" %>
+        <%= stylesheet_link_tag "temp/sheader", :media => "all" %>
+        <%= stylesheet_link_tag "temp/uheader", :media => "all" %>
+        <%= stylesheet_link_tag "temp/shop/sfeature", :media => "all" %>
+        <%= stylesheet_link_tag "temp/footer", :media => "all" %>
+
+        <%= stylesheet_link_tag "slick/slick.css", :media => "screen" %>
+        <%= stylesheet_link_tag "slick/slick-theme.css", :media => "screen" %>  
+
+        <%= javascript_include_tag "shop" %>
+        <%= javascript_include_tag "slick.min" %> 
+
+  <head>
+    <title><%= page_title %></title>
+    <script data-ad-client="pub-4561413520529434" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  </head>
+
+  <body>
+
+      <div id="wrapper">
+
+            <%= render 'shared/header' %>
+            <div id="fmessage"><p class="notice"><%= notice %></p><p class="alert"><%= alert %></p></div>
+            <%= render 'shared/sheader' %>
+            <div id="main"><%= yield(:uheader) %></div>
+            <%= render 'shared/shop/uheader' %>
+            <%= yield(:uheader2) %>
+
+            <div id="main-feature">
+                <div id="feature-wrapper">
+                      <ul class="slider">
+                            <% if $fshop.shopimage1.present? %>
+                                <li><%= @image1 %></li>
+                            <% else %>
+                                <%= image_tag("template/homepics", {:size =>'300x300'}) %> 
+                            <% end %>
+                            <% if $fshop.shopimage2.present? %>
+                                <li><%= @image2 %></li>
+                           <% else %>
+                               <%= image_tag("template/homepics", {:size =>'300x300'}) %> 
+                           <% end %>
+                           <% if $fshop.shopimage3.present? %>
+                               <li><%= @image3 %></li>
+                           <% else %>
+                               <%= image_tag("template/homepics", {:size =>'300x300'}) %> 
+                           <% end %>
+                      </ul>
+                  </div>
+            </div>
+
+            <%= render 'shared/shop/fshop/main-navi' %>
+            <%= render 'shared/shop/secondf' %>
+            <%= render 'shared/footer' %>
+
+      </div>
+
+  </body>

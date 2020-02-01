@@ -1,0 +1,2 @@
+class Dcategory < ApplicationRecord
+end

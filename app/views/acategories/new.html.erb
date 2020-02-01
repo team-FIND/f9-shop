@@ -1,0 +1,16 @@
+
+<%= content_for(:main)  do %>
+
+	<%= stylesheet_link_tag "selecter", :media => "all" %>
+
+	<div id="main-feature">
+
+		<h1>新しいグルメカテゴリー</h1>
+
+		<%= render 'form', acategory: $acategory %>
+
+		<div id="prev"><%= link_to '戻る', acategories_path %></div>
+
+	</div>
+
+<% end %>

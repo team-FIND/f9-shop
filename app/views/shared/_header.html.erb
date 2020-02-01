@@ -1,0 +1,82 @@
+
+    <%= stylesheet_link_tag "drawer.css", :media => "screen" %>
+    <%= javascript_include_tag "drawer" %>
+    
+<header>
+    <div class="header-contents">
+      <div id="menu_btn"><%= image_tag "menu", { :alt =>'FIND　F9　f9 shop'} %></div>
+      <div id="logo"><%= link_to image_tag("template/logo6", { :alt =>'FIND　F9　f9 shop'}), welcome_index_path %></div>
+    </div><!-- /.header-contents -->
+</header>
+
+<div id="menu">
+    <% if user_signed_in? %>
+        <ul>
+            <li>こんにちは、<%= current_user.username %>様</li>
+        </ul>
+        <ul>
+            <%= link_to destroy_admin_user_session_path, target:"_blank" do%><li>ログアウト</li><% end %>
+            <%= link_to user_path(id: current_user.id), target:"_blank" do%><li>マイページ</li><% end %>
+            <%= link_to myshop_users_path, target:"_blank" do%><li>マイショップ</li><% end %>
+        </ul>
+        <ul>
+            <li>言語設定</li>
+            <li>お問い合せ</li>
+            <li>F9とは</li>
+        </ul>
+            <li>find-manga.com</li>
+            <li>find-fourum.com</li>
+            <li>find-tv.com</li>
+        <ul>
+            
+        </ul>
+    <% else %>
+        <ul id="sidemenu">
+          <%= link_to new_user_session_path, target:"_blank" do%><li>ログインする</li><% end %>
+          <%= link_to new_user_registration_path, target:"_blank" do%><li>無料会員登録</li><% end %>
+        </ul>
+        <ul id="sidemenu">
+          <li>言語設定</li>
+          <li>お問い合せ</li>
+          <li>F9とは</li>
+        </ul>
+        <ul id="sidemenu">
+          <li>find-manga.com</li>
+          <li>find-fourum.com</li>
+          <li>find-tv.com</li>
+        </ul>
+    <% end %>
+  </div>
+
+<div class="menu-background"></div>
+
+<script type="text/javascript">
+
+var headerHeight = $('header').outerHeight();
+$('#menu').css('margin-top', headerHeight + 'px');
+
+// MENUボタンがクリックされたときの処理
+$('#menu_btn').on('click', function(){
+  if($(this).hasClass('active')) {
+    $(this).removeClass('active');
+    $(this).attr('src', 'menu');
+    $('#menu').removeClass('open');
+    $('.menu-background').removeClass('open');
+  } else {
+    $(this).addClass('active');
+    $(this).attr('src', 'menu');
+    $('#menu').addClass('open');
+    $('.menu-background').addClass('open');
+  }
+});
+
+// メニューの背景がクリックされたときの処理
+$('.menu-background').on('click', function(){
+  if($(this).hasClass('open')) {
+    $(this).removeClass('open');
+    $('#menu_btn').removeClass('active').text('MENU');
+    $('#menu').removeClass('open');
+  }
+});
+
+</script>

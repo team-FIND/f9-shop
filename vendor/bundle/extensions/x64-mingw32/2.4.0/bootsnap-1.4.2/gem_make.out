@@ -1,0 +1,30 @@
+current directory: C:/Users/ninjin/Desktop/beta/blog/vendor/bundle/gems/bootsnap-1.4.2/ext/bootsnap
+C:/Ruby24-x64/bin/ruby.exe -r ./siteconf20190328-49304-1lweavs.rb extconf.rb
+creating Makefile
+
+current directory: C:/Users/ninjin/Desktop/beta/blog/vendor/bundle/gems/bootsnap-1.4.2/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: C:/Users/ninjin/Desktop/beta/blog/vendor/bundle/gems/bootsnap-1.4.2/ext/bootsnap
+make "DESTDIR="
+generating bootsnap-x64-mingw32.def
+compiling bootsnap.c
+In file included from C:/Ruby24-x64/include/ruby-2.4.0/ruby.h:33,
+                 from bootsnap.c:15:
+C:/Ruby24-x64/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: 'const' attribute on function returning 'void' [-Wattributes]
+ CONSTFUNC(void rb_secure_update(VALUE));
+ ^~~~~~~~~
+In file included from C:/Ruby24-x64/include/ruby-2.4.0/ruby/ruby.h:2012,
+                 from C:/Ruby24-x64/include/ruby-2.4.0/ruby.h:33,
+                 from bootsnap.c:15:
+C:/Ruby24-x64/include/ruby-2.4.0/ruby/intern.h:257:1: warning: 'const' attribute on function returning 'void' [-Wattributes]
+ CONSTFUNC(void rb_error_untrusted(VALUE));
+ ^~~~~~~~~
+C:/Ruby24-x64/include/ruby-2.4.0/ruby/intern.h:259:1: warning: 'const' attribute on function returning 'void' [-Wattributes]
+ CONSTFUNC(void rb_check_trusted(VALUE));
+ ^~~~~~~~~
+linking shared-object bootsnap/bootsnap.so
+
+current directory: C:/Users/ninjin/Desktop/beta/blog/vendor/bundle/gems/bootsnap-1.4.2/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20190328-49304-yx8qjx/bootsnap

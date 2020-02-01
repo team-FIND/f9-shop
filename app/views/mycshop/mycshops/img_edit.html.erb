@@ -1,0 +1,11 @@
+	
+
+<%= content_for(:main)  do %>
+
+	<%= form_for($cshop, :url => {:action => "update"}, :html => {:multipart => true}) do |form| %>
+		<%= render 'shared/editer/cshop/img', cshop: $cshop %>
+		<%= render 'edit2', cshop: $cshop %>
+	<% end %>
+
+<% end %>
+

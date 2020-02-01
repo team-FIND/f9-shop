@@ -1,0 +1,9 @@
+
+
+<%= content_for(:main)  do %>
+
+	<%= form_for($bmenuc, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+			<%= render 'form', bmenuc: $bmenuc %>
+	<% end %>
+
+<% end %>

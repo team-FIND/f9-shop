@@ -1,0 +1,163 @@
+
+
+<%= stylesheet_link_tag "creater/ashop/home", :media => "all" %>
+
+
+<%= form_for($ashop, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+
+  <% if ashop.errors.any? %>
+
+    <div id="error_explanation">
+      <h2><%= pluralize(ashop.errors.count, "error") %> prohibited this gshop from being saved:</h2>
+
+      <ul>
+        <% ashop.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+
+    </div>
+    
+  <% end %>       
+
+        <div class="section" id="page">
+
+            <h1>画像を編集する</h1>
+
+                <div id="picup">
+
+                       <div id="field-pic">
+                          <%= form.label :shopimage1 do %><label for="labelx">お店の画像１</label><% end %><br>
+                          <%= form.file_field :shopimage1, id: :ashop_shopimage1, id: "file1"  %>
+
+                          <p><%= form.check_box :remove_shopimage1, seize: 50 %>画像を削除する</p>
+                          <%= form.hidden_field :shopimage1_cache %>
+                          <div id="thumb1" onClick="$('#file1').click()">
+                            <% if ashop.shopimage1.present? %>
+                              <div id="updimg"><%= image_tag ashop.shopimage1.thumb.url if $ashop.shopimage1? %></div> 
+                            <% else %>
+                              <div id="upimg"><%= image_tag("template/img") %></div>
+                            <% end %>
+                          </div>
+                        </div>  
+
+                        <div id="field-pic">
+                          <%= form.label :shopimage2 do %><label for="labelx">お店の画像２</label><% end %><br>
+                          <%= form.file_field :shopimage2, id: :ashop_shopimage2, id: "file2"  %>
+
+                          <p><%= form.check_box :remove_shopimage2, seize: 30 %>画像を削除する</p>
+                          <%= form.hidden_field :shopimage2_cache %>
+                          <div id="thumb2" onClick="$('#file2').click()">
+                            <% if ashop.shopimage2.present? %>
+                              <div id="updimg"><%= image_tag ashop.shopimage2.thumb.url if $ashop.shopimage2? %></div> 
+                            <% else %>
+                              <div id="upimg"><%= image_tag("template/img") %></div>
+                            <% end %>
+                          </div>
+                        </div> 
+
+                        <div id="field-pic">
+                          <%= form.label :shopimage3 do %><label for="labelx">お店の画像３</label><% end %><br>
+                          <%= form.file_field :shopimage3, id: :ashop_shopimage3, id: "file3"  %>
+
+                          <p><%= form.check_box :remove_shopimage3, seize: 30 %>画像を削除する</p>
+
+                          <%= form.hidden_field :shopimage3_cache %>
+
+                          <div id="thumb3" onClick="$('#file3').click()">
+
+                            <% if ashop.shopimage3.present? %>
+                              <div id="updimg"><%= image_tag ashop.shopimage3.thumb.url if $ashop.shopimage3? %></div> 
+                            <% else %>
+                              <div id="upimg"><%= image_tag("template/img") %></div>
+                            <% end %>
+                          </div>
+                        </div> 
+                  </div>  
+
+                <%= form.hidden_field :topimage_cache %>
+
+                <div id="actions"><li><%= form.submit(:決定) %></li></div>
+                
+          </div>
+
+<% end %>
+
+<script>
+
+$(function(){
+  $fileField = $('#file1')
+ 
+  // 選択された画像を取得し表示
+  $($fileField).on('change', $fileField, function(e) {
+    file = e.target.files[0]
+    reader = new FileReader(),
+    $preview = $("#thumb1");
+ 
+    reader.onload = (function(file) {
+      return function(e) {
+        $preview.empty();
+        $preview.append($('<img>').attr({
+          src: e.target.result,
+          width: "100%",
+          class: "preview",
+          title: file.name
+        }));
+      };
+    })(file);
+    reader.readAsDataURL(file);
+  });
+});
+
+$(function(){
+  $fileField = $('#file2')
+ 
+  // 選択された画像を取得し表示
+  $($fileField).on('change', $fileField, function(e) {
+    file = e.target.files[0]
+    reader = new FileReader(),
+    $preview = $("#thumb2");
+ 
+    reader.onload = (function(file) {
+      return function(e) {
+        $preview.empty();
+        $preview.append($('<img>').attr({
+          src: e.target.result,
+          width: "100%",
+          class: "preview",
+          title: file.name
+        }));
+      };
+    })(file);
+    reader.readAsDataURL(file);
+  });
+});
+
+$(function(){
+  $fileField = $('#file3')
+ 
+  // 選択された画像を取得し表示
+  $($fileField).on('change', $fileField, function(e) {
+    file = e.target.files[0]
+    reader = new FileReader(),
+    $preview = $("#thumb3");
+ 
+    reader.onload = (function(file) {
+      return function(e) {
+        $preview.empty();
+        $preview.append($('<img>').attr({
+          src: e.target.result,
+          width: "100%",
+          class: "preview",
+          title: file.name
+        }));
+      };
+    })(file);
+    reader.readAsDataURL(file);
+  });
+});
+
+</script>
+
+
+

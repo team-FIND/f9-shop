@@ -1,0 +1,45 @@
+
+
+	<p id="notice"><%= notice %></p>
+
+	<%= content_for(:head)  do %>
+	    <meta name="f9-shop.jp" content="FIND　F9　f9 f9-shop.jp">
+	    <title><%= page_title %></title>
+	<% end %>
+
+	<%= content_for(:idc1)  do %>
+	<% end %>
+
+	<%= content_for(:idc2)  do %>
+	<% end %>
+
+	<%= content_for(:idc3)  do %>
+	<% end %>
+
+	<%= content_for(:idc4)  do %>
+	<% end %>
+
+	<% @page_title = $gshop.shopname %> 
+	<% @title = @page_title %>
+
+	<% @back = gsearch_gsshops_path %>
+	<% @city = @back %>
+
+	<% @image1  =  image_tag $gshop.shopimage1_url %> 
+	<% @image2  =  image_tag $gshop.shopimage2_url %> 
+	<% @image3  =  image_tag $gshop.shopimage3_url %>
+
+	<% @add1 = %>
+	<% @add2 = %>
+	<% @add3 = %>
+	<% @add4 = %>
+
+	<% @navi4 = contact_gsearch_gsshop_path %>
+	<% @navi5 = access_gsearch_gsshop_path %>
+	<% @navi6 = info_gsearch_gsshop_path %>
+	<% @navi7 =  contact_gsearch_gsshop_path %>
+	<% @navi8 =  time_gsearch_gsshop_path %>
+
+	<% @subnavi1 =  %>
+	<% @subnavi2 =  %>
+

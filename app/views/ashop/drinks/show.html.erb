@@ -1,0 +1,22 @@
+
+<% @page_title = $drink.drinkname %> 
+<% @title1 = $ashop.shopname %>
+<% @title2 = $drink.drinkname %> 
+
+<% @back1 = prefec_ashop_ashop_path(id:$ashop, prefec_id:$prefec) %>
+<% @city = prefec_ashop_ashops_path(prefec_id:$prefec) %>
+<% @back2 = ashop_admenu_drinks_path %>
+
+
+<% $drinks.each do |drink| %>
+
+	<% if $drink.drinkimg.present? %>
+		<% @image1 = image_tag $drink.drinkimg_url %>
+	<% else %>
+		<% @image1 = image_tag "template/logo3" %>
+	<% end %>
+
+<% end %>
+
+
+<% end %>

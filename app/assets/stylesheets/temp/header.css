@@ -1,0 +1,15 @@
+
+body {
+	margin: 0px;
+	background: #ccc;
+	font-size: 12px; 
+	list-style: none;
+ 	padding-top: 180px;
+}
+
+#wrapper {
+	background: white;
+	width: 960px;
+	margin: 0px auto;
+	overflow: hidden;
+}

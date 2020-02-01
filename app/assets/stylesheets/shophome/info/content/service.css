@@ -1,0 +1,30 @@
+#main-feature {
+	background: #CDFF94;
+	margin: 0px auto;
+	padding-top: 50px;
+	overflow: hidden;
+	clear: both;
+	width: 960px;
+    height: 1000px; 
+}
+
+#box {
+	width: 850px;
+	height: 100px;
+	margin: 0px auto;
+	margin-top: 60px;
+	border: 3px solid #006837;
+	border-radius: 10px;
+	background: white;
+}
+
+#a { 
+	font-size: 40px;
+	width: 800px;
+	margin: 20px 0px 0px 8px;
+	float: left;
+}
+
+a{
+	text-decoration: none;
+}

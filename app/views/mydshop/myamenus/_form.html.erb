@@ -1,0 +1,37 @@
+
+<%= form_for($amenu, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+
+  <% if amenu.errors.any? %>
+      <div id="error_explanation">
+          <h2><%= pluralize(amenu.errors.count, "error") %> prohibited this amenu from being saved:</h2>
+
+          <ul>
+              <% amenu.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+          </ul>
+      </div>
+  <% end %>
+
+  <div class="section" id="page">
+
+    <h1>メニュー項目を編集する</h1>
+      
+      <%= form.hidden_field :amenuc_id %>
+
+      <div id="field">
+          <%= form.label :name do %><label for="labelx">メニュー項目名</label><% end %><br>
+          <%= form.text_field :name, placeholder: '定食' %>
+      </div>
+
+      <div id="actions">
+          <li><%= form.submit(:決定) %></li>
+      </div>
+
+      <%= link_to myashop_myamenuc_myamenus_path do %>
+            <div id="eback">編集を中止する</div>
+      <% end %>
+
+  </div>
+  
+<% end %>

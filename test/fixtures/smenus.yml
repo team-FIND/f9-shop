@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  menu: one
+  topimage: MyString
+  foodname1: MyString
+  foodname2: MyString
+  price: MyString
+  ingred: MyString
+  foodpic: MyString
+  foodpic2: MyString
+  foodpic3: MyString
+
+two:
+  menu: two
+  topimage: MyString
+  foodname1: MyString
+  foodname2: MyString
+  price: MyString
+  ingred: MyString
+  foodpic: MyString
+  foodpic2: MyString
+  foodpic3: MyString

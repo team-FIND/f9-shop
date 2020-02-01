@@ -1,0 +1,35 @@
+
+<%= favicon_link_tag() %>
+<%= favicon_link_tag('apple-touch-icon-180x180.gif', {:rel => 'apple-touch-icon', :sizes => '180x180', :type => 'image/gif'}) %>          
+
+
+    <%= csrf_meta_tag %>
+     
+    <%= stylesheet_link_tag "temp/header", :media => "all" %>
+    <%= stylesheet_link_tag "temp/sheader", :media => "all" %>
+    <%= stylesheet_link_tag "temp/uheader", :media => "all" %>
+    <%= stylesheet_link_tag "temp/top/secondf", :media => "all" %>
+    <%= stylesheet_link_tag "temp/footer", :media => "all" %>
+
+    
+  <head>
+      <title><%= page_title %></title>
+      <%= display_meta_tags(default_meta_tags) %>
+      <meta name="google-site-verification" content="Tae4lGIffULapygf8Qbv4YmQvCmoMtTFbt6ld_M5Kqw" />
+      <script data-ad-client="pub-4561413520529434" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  </head>
+
+<body>
+  
+    <div id="wrapper">
+            <%= render 'shared/header' %>
+            <div id="fmessage"><p class="notice"><%= notice %></p><p class="alert"><%= alert %></p></div>
+            <%= render 'shared/sheader' %>
+            <%= yield(:uheader) %>
+            <%= yield(:main) %>
+            <%= render 'shared/footer' %>
+    </div>
+
+</body>
+
+</html>

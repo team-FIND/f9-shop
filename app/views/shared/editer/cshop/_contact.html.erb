@@ -1,0 +1,48 @@
+
+
+<%= stylesheet_link_tag "creater/ashop/home", :media => "all" %>
+
+
+<%= form_for($cshop, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+
+    <% if cshop.errors.any? %>
+
+          <div id="error_explanation">
+              <h2><%= pluralize(cshop.errors.count, "error") %> prohibited this cshop from being saved:</h2>
+                  <ul>
+                    <% cshop.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                  </ul>
+          </div>
+      
+     <% end %>
+
+          <div class="section" id="page">
+
+              <h1>コンタクトを編集する</h1>
+
+                  <div id="field">
+                    <%= form.label :phone1 do %><label for="labelx">電話番号</label><% end %><br>
+                    <%= form.text_field :phone1, placeholder: '000-000-0000' %>
+                  </div>
+
+                  <div id="field">
+                    <%= form.label :email1 do %><label for="labelx">Eメール</label><% end %><br>
+                    <%= form.text_field :email1, placeholder: 'find.999@find.com' %>
+                  </div>
+
+                    <%= form.hidden_field :topimage_cache %>
+                    <%= form.hidden_field :shopimage1_cache %>
+                    <%= form.hidden_field :shopimage2_cache %>
+                    <%= form.hidden_field :shopimage3_cache %>
+
+                <div id="actions"><%= form.submit(:決定) %></div>
+
+                <%= link_to mycshop_mycshop_path(id:$cshop) do %>
+                    <div id="eback">編集を中止する</div>
+                <% end %>
+
+          </div>
+
+<% end %>

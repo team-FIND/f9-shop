@@ -1,0 +1,9 @@
+<%= content_for(:main)  do %>
+
+	<%= form_for($asmenu, :url => {:action => "update"}, :html => {:multipart => true}) do |form| %>
+
+	<%= render 'form2', asmenu: $asmenu %>
+
+	<% end %>
+
+<% end %>

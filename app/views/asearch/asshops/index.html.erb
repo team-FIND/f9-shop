@@ -1,0 +1,146 @@
+
+<%= javascript_include_tag "search" %> 
+
+  <% @page_title = "グルメ" %> 
+  <% @title = @page_title %>
+
+
+<%= content_for(:uheader)  do %><%= render 'shared/uheader2' %><% end %>
+
+
+<%= content_for(:main)  do %>
+    <%= stylesheet_link_tag "shop/shop", :media => "all" %>
+    <%= stylesheet_link_tag "search/asearch", :media => "all" %>
+
+    <div id="search-form">
+
+      <%= search_form_for $search, url: asearch_asshops_path do |form| %>
+
+              <div id="stitle">グルメ検索</div>
+                          
+                <div id="slinex">
+                    <div class="sline1">
+                      <label for="labelx">地域</label><br>
+                      <%= form.collection_select :top_id_eq, Top.order(:name), :id, :name, include_blank: true %>
+                    </div>
+                    <div class="sline1">
+                      <label for="labelx">県</label><br>
+                      <%= form.grouped_collection_select :area_id_eq, Top.order(:name), :areas, :name, :id, :name, include_blank: true %>
+                    </div>
+                    <div class="sline1">
+                      <label for="labelx">市町村</label><br>
+                      <%= form.grouped_collection_select :prefec_id_eq, Area.order(:name), :prefecs, :name, :id, :name, include_blank: true %>
+                    </div>
+                    <div class="sline1">
+                      <label for="labelx">カテゴリー</label><br>
+                      <%= form.collection_select :acategory_id_eq, Acategory.order(:name), :id, :name, include_blank: true %>
+                    </div>
+                </div>
+
+                <div id="sliney">
+                    <div class="sline2">
+                      <label for="labelx">店名</label><br>
+                      <%= form.search_field :shopname_cont %>
+                    </div>
+
+                    <div class="sline2">
+                      <%= form.submit %>
+                    </div>
+                </div>
+
+            <% end %>
+
+         
+    </div>
+
+    <div id="main-feature">
+
+      <% $ashops.each do |ashop| %>
+
+
+         
+          <%= link_to asearch_asshop_path(id:ashop) do%> 
+              <div id="shopx">
+
+                    <div id="top_pic">
+
+                      <% if ashop.topimage.present? %>
+                        <%= image_tag(ashop.topimage_url, {:size =>'400x400'}) %> 
+                      <% else %>
+                        <%= image_tag("template/logo3", {:size =>'400x400'}) %>
+                      <% end %>
+
+                    </div>
+
+                    <div id="explains">
+                         
+                            <P id="shop_name">🏠：<%= ashop.shopname %></P>
+
+                            <P id="account_name">👤:<%= ashop.user.username %></P><br>
+                            
+                            <li id="ptag">
+                              <p><%= ashop.top.name %></p>
+                              <p>><%= ashop.area.name %></p>
+                              <p>><%= ashop.prefec.name %></p>
+                            </li><br>
+
+                            <li id="tag"><p>#<%= ashop.acategory.name %></p></li>
+                            <li id="tag"><p>#<%= ashop.category2 %></p></li>
+                            <li id="tag"><p>#<%= ashop.category3 %></p></li>
+
+                    </div>
+
+              </div>
+          <% end %>
+
+      <% end %>
+
+    </div>
+
+<% end %>
+
+<script>
+    (function() {
+  jQuery((function(_this) {
+    return function() {
+      var area;
+      area = $('#ashop_area_id').html();
+      console.log(area);
+      return $('#ashop_top_id').change(function() {
+        var options, top;
+        top = $('#ashop_top_id :selected').text();
+        options = $(area).filter("optgroup[label=" + top + "]").html();
+        console.log(options);
+        if (options) {
+          return $('#ashop_area_id').html(options);
+        } else {
+          return $('#ashop_area_id').empty();
+        }
+      });
+    };
+  })(this));
+
+}).call(this);
+
+    (function() {
+  jQuery((function(_this) {
+    return function() {
+      var prefec;
+      prefec = $('#ashop_prefec_id').html();
+      console.log(prefec);
+      return $('#ashop_area_id').change(function() {
+        var options, area;
+        area = $('#ashop_area_id :selected').text();
+        options = $(prefec).filter("optgroup[label=" + area + "]").html();
+        console.log(options);
+        if (options) {
+          return $('#ashop_prefec_id').html(options);
+        } else {
+          return $('#ashop_prefec_id').empty();
+        }
+      });
+    };
+  })(this));
+
+}).call(this);
+</script>

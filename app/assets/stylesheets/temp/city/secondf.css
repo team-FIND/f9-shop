@@ -1,0 +1,38 @@
+#second-feature {
+     clear: both;
+     padding: 100px 0px 100px 0px;
+     overflow: hidden; 
+}
+
+#mainBox {
+    width: 900px;
+    margin: 0 auto;
+}
+
+#mainBox img{
+     height: 500px;
+     height: 500px;
+}
+
+#mainBox .child {
+    width: 500px;
+    margin: 0 auto;
+    padding-top: 100px;    
+}
+
+#mainBox .child .img {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    border-radius: 1000px;
+    overflow: hidden;
+}
+
+
+#mainBox .child .title {    
+    font-size: 50px;
+    color: #006837;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom : 3px solid #006837; 
+}

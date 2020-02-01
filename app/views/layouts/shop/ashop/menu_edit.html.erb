@@ -1,0 +1,33 @@
+
+<%= favicon_link_tag() %>
+<%= favicon_link_tag('apple-touch-icon-180x180.gif', {:rel => 'apple-touch-icon', :sizes => '180x180', :type => 'image/gif'}) %>         
+
+
+		<%= stylesheet_link_tag "creater/ashop/menu", :media => "all" %>
+        <%= stylesheet_link_tag "temp/header", :media => "all" %>
+        <%= stylesheet_link_tag "temp/footer", :media => "all" %>
+
+	<head>
+		<%= @meta2 %>
+		<title></title>
+	</head>
+
+	<body>
+
+		<div id="wrapper">
+			
+				<%= render 'shared/header' %>
+
+				<div id="main-feature">
+				 	<div id="feature-wrapper">
+				      <div id="main">
+				          <%= yield(:main) %>
+				      </div>
+					</div>
+				</div>
+
+				<%= render 'shared/footer' %>
+
+		</div>
+
+	</body>

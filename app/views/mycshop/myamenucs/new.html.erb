@@ -1,0 +1,9 @@
+
+
+<%= content_for(:main)  do %>
+
+	<%= form_for($amenuc, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+			<%= render 'form', amenuc: $amenuc %>
+	<% end %>
+
+<% end %>

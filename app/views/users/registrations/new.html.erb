@@ -1,0 +1,50 @@
+
+<%= content_for(:main)  do %>
+    <%= stylesheet_link_tag "user/login", :media => "all" %>
+
+      <div id="mfeature">
+
+          <h2>無料会員登録</h2>
+
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
+
+            <div class="field">
+              <%= f.label :email do %><label for="labelx">:Gmailアドレス</label><% end %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            </div>
+
+            <div class="field">
+              <%= f.label :username do %><label for="labelx">:ユーザーネーム <em>半角英数（8文字以上、20文字以内)</em></label><% end %><br />
+              <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
+            </div>
+
+            <div class="field">
+              <%= f.label :password do %><label for="labelx">:パスワード <% if @minimum_password_length %>
+                  <em>半角英数(<%= @minimum_password_length %> 文字以上、20文字以内)</em>
+              <% end %><br /></label><% end %><br />
+              <%= f.password_field :password, autocomplete: "new-password" %>
+            </div>
+
+            <div class="field">
+              <%= f.label :password_confirmation do %><label for="labelx">:パスワードの確認</label><% end %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+            </div>
+
+            <div class="field">
+              <label for="labelx"><%= link_to '利用規約、及び、個人情報の取扱',code_welcome_index_path, target:"_blank" %>を読んだ上で同意する </label><br>
+            </div>
+
+            <div class="field">
+              <%= f.check_box :accepted ,{},checked_value = "true",unchecked_value = "false" %>
+            </div>
+
+            <div class="actions">
+              <%= f.submit "新規登録" %>
+            </div>
+          <% end %>
+
+          <%= render "users/shared/links" %>
+
+      </div>
+<% end %>

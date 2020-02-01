@@ -1,0 +1,43 @@
+
+<%= form_for($admenu, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+
+  <% if admenu.errors.any? %>
+      <div id="error_explanation">
+          <h2><%= pluralize(admenu.errors.count, "error") %> prohibited this admenu from being saved:</h2>
+
+          <ul>
+              <% admenu.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+          </ul>
+      </div>
+  <% end %>
+
+  <div class="section" id="page">
+
+    <h1>ドリンクメニュー項目を編集する</h1>
+      
+      <%= form.hidden_field :admenuc_id %>
+
+      <div id="field">
+          <%= form.label :name do %><label for="labelx">メニュー項目名</label><% end %><br>
+          <%= form.text_field :name, placeholder: '定食' %>
+      </div>
+
+      <div id="field">
+          <%= form.label :time do %><label for="labelx">提供時間</label><% end %><br>
+          <%= form.text_field :time1, :size =>"1" %>:<%= form.text_field :time2, :size =>"1" %>~<%= form.text_field :time3, :size =>"1" %>:<%= form.text_field :time4, :size =>"1" %>
+          <p id="ex">＊指定がない場合は入力する必要がありません。</p>
+      </div>
+
+      <div id="actions">
+          <li><%= form.submit(:決定) %></li>
+      </div>
+
+      <%= link_to myashop_myadmenuc_myadmenus_path do %>
+            <div id="eback">編集を中止する</div>
+      <% end %>
+
+  </div>
+
+<% end %>

@@ -1,0 +1,157 @@
+
+#main-feature {
+	width: 960px;
+	overflow: hidden;
+    padding: 0px 0px 0px 0px;
+}
+
+#main-feature p{
+	color: #006837;
+	font-size: 70px;
+	margin-top: 50px;
+}
+
+a{
+	text-decoration: none;
+}
+
+.main-navi {
+	clear: both;
+	width: 910px;
+	padding-top: 3px;
+	margin: 0px auto;
+	border-top: 3px solid #006837;
+}
+
+#mnavih {
+	clear: both;
+	font-size: 40px;
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	color: #006837;
+}
+
+#tab {
+	clear: both;
+	width: 910px;
+	margin: 0px auto;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+.tabs{
+	display: flex;
+	margin: 0px auto;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	justify-content: space-between;
+}
+
+.tabs li{
+	color: white;
+	width: 185px;
+	height: 210px;
+	display: flex;
+	align-items: center;
+	border-radius: 25px;
+	justify-content: center;
+	border: 8px solid #006837;
+}
+
+.tabs img{
+	width: 180px;
+	overflow: hidden;
+}
+
+.main-navi .panel{
+	width: 960px;
+	display: none;
+	clear: both;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	border-bottom: 3px solid #006837;
+	margin: 0px auto;
+}
+
+.main-navi ul li.active{
+}
+
+#panel1 {
+	display: none;
+	text-align: center;
+}
+
+#panel1 li, #panel2 li, #panel3 li, #panel4 li, #panel5 li, #panel6 li{
+	clear: both;
+	height: 130px;
+	width: 800px;
+	font-size: 70px;
+	color: #006837;
+    display: flex;
+	text-align: center;
+	align-items: center;
+	border-radius: 15px;
+	justify-content: center;
+	margin: 0px auto;
+	border: 3px solid #006837;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.main-navi .panel.active {
+	display: block;
+}
+
+.line {
+	clear: both;
+	margin-top: 100px;
+	text-align: center;
+	margin: 0px auto;
+}
+
+#edit {
+	clear: both;
+	width: 250px;
+	height: 60px;
+	display: flex;
+	color: #8CC63F;
+	font-size: 35px;
+	margin: 0px auto;
+	text-align: center;
+	border-radius: 20px;
+	align-items: center;
+	justify-content: center;
+	border: 3px solid #8CC63F;
+}
+
+#ltop {
+	width: 960px;
+	margin: 0px auto;
+	margin-top: 30px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+#ltop p {
+	width: 500px;
+	color: #8CC63F;
+	font-size: 35px;
+	margin: 0px auto;
+	margin-bottom: 30px;
+	text-align: center;
+    border-radius: 20px;
+    border: 3px solid #8CC63F;
+}
+
+#mcedit {
+	color: #8CC63F;
+	font-size: 30px;
+	text-align: center;
+	margin: 5px 0px 30px 0px;
+}
+
+a {
+	text-decoration: none;
+}

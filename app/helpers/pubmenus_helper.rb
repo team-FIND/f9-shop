@@ -1,0 +1,2 @@
+module PubmenusHelper
+end

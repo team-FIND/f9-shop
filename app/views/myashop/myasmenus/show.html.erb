@@ -1,0 +1,136 @@
+
+
+  <%= content_for(:head)  do %>
+      <%= stylesheet_link_tag "shophome/ashop/content/menu", :media => "all" %>
+      <%= javascript_include_tag "city" %>
+
+      <title><%= page_title %></title>
+  <% end %>
+
+
+  <% @page_title = $asmenu.name  %> 
+  <% @title1 = $ashop.shopname %> 
+  <% @title2 = @page_title %> 
+
+  <% @back1  = myashop_myashop_path(id:$ashop) %>
+  <% @city  = myashop_myashops_path %>
+  <% @back2 = myashop_myasmenuc_myasmenus_path(myasmenuc_id:$asmenuc) %>
+
+  <%= content_for(:edit) do %>
+      <div id="edit2">
+          <%= link_to '✐編集', menuline_myashop_myasmenuc_myasmenu_path(myasmenuc_id:$asmenuc, id:$asmenu) %>
+      </div>    
+  <% end %>
+
+
+  <%= content_for(:main)  do %>
+
+        <% $asmenus.each do |asmenu| %>
+
+                <div id="price">税込：<%= asmenu.price %>円</div>
+
+                <% if $asmenu.menu1.present? %>
+                    <div id="menuline"><%= asmenu.menu1 %></div>
+                <% else %>
+                <% end %>
+
+                <% if $asmenu.menu2.present? %>
+                    <div id="plus">⊕</div><br><div id="menuline"><%= asmenu.menu2 %></div>
+                <% else %>
+                <% end %>
+
+                <% if $asmenu.menu3.present? %>
+                    <div id="plus">⊕</div><br><div id="menuline"><%= asmenu.menu3 %></div>
+                <% else %>
+                <% end %>
+
+                <% if $asmenu.menu4.present? %>
+                    <div id="plus">⊕</div><br><div id="menuline"><%= asmenu.menu4 %></div>
+                <% else %>
+                <% end %>
+
+                <% if $asmenu.menu5.present? %>
+                    <div id="plus">⊕</div><br><div id="menuline"><%= asmenu.menu5 %></div>
+                <% else %>
+                <% end %>
+
+                <% if $asmenu.menu6.present? %>
+                    <div id="plus">⊕</div><br><div id="menuline"><%= asmenu.menu6 %></div>
+                <% else %>
+                <% end %>
+
+                <% if $asmenu.menu7.present? %>
+                    <div id="plus">⊕</div><br><div id="menuline"><%= asmenu.menu7 %></div>
+                <% else %>
+                <% end %>
+
+                <% if $asmenu.menu8.present? %>
+                    <div id="plus">⊕</div><br><div id="menuline"><%= asmenu.menu8 %></div>
+                <% else %>
+                <% end %>
+
+                <% if $asmenu.menu9.present? %>
+                    <div id="plus">⊕</div><br><div id="menuline"><%= asmenu.menu9 %></div>
+                <% else %>
+                <% end %>
+
+                <% if $asmenu.menu10.present? %>
+                    <div id="plus">⊕</div><br><div id="menuline"><%= asmenu.menu10 %></div>
+                <% else %>
+                <% end %>
+
+                <% if $asmenu.menu11.present? %>
+                    <div id="plus">⊕</div><br><div id="menuline"><%= asmenu.menu11 %></div>
+                <% else %>
+                <% end %>
+
+                <% if $asmenu.menu12.present? %>
+                    <div id="plus">⊕</div><br><div id="menuline"><%= asmenu.menu12 %></div>
+                <% else %>
+                <% end %>
+
+                <% if $asmenu.menu13.present? %>
+                    <div id="plus">⊕</div><br><div id="menuline"><%= asmenu.menu13 %></div>
+                <% else %>
+                <% end %>
+
+                <% if $asmenu.menu14.present? %>
+                    <div id="plus">⊕</div><br><div id="menuline"><%= asmenu.menu14 %></div>
+                <% else %>
+                <% end %>
+
+                <% if $asmenu.menu15.present? %>
+                    <div id="plus">⊕</div><br><div id="menuline"><%= asmenu.menu15 %></div>
+                <% else %>
+                <% end %>
+
+                <% if $asmenu.menu16.present? %>
+                    <div id="plus">⊕</div><br><div id="menuline"><%= asmenu.menu16 %></div>
+                <% else %>
+                <% end %>
+
+                <% if $asmenu.menu17.present? %>
+                    <div id="plus">⊕</div><br><div id="menuline"><%= asmenu.menu17 %></div>
+                <% else %>
+                <% end %>
+
+                <% if $asmenu.menu18.present? %>
+                    <div id="plus">⊕</div><br><div id="menuline"><%= asmenu.menu18 %></div>
+                <% else %>
+                <% end %>
+
+                <% if $asmenu.menu19.present? %>
+                    <div id="plus">⊕</div><br><div id="menuline"><%= asmenu.menu19 %></div>
+                <% else %>
+                <% end %>
+
+                <% if $asmenu.menu20.present? %>
+                    <div id="plus">⊕</div><br><div id="menuline"><%= asmenu.menu20 %></div>
+                <% else %>
+                <% end %>
+
+                
+                
+        <% end %>
+
+  <% end %>

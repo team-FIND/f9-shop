@@ -1,0 +1,59 @@
+
+
+	<%= content_for(:head)  do %>
+	    <%= stylesheet_link_tag "shophome/ashop/content/access", :media => "all" %>
+	    <%= javascript_include_tag "city" %>
+
+	    <title><%= page_title %></title>
+	<% end %>
+
+    
+	<% @page_title = "医院情報" %>
+
+	<%= render 'form', bshop: $bshop %>
+
+
+<%= content_for(:main)  do %>
+      
+    <div id="feature-wrapper">
+	      <div id="box1">	
+		    　 <li id="a1">開業</li><br>
+		      <li id="b1"><%= $bshop.history %>年</li><br>
+	      </div>
+
+	      <div id="box2">	
+		    　 <li id="a1">院長経歴1</li><br>
+		      <li id="b2">・<%= $bshop.career1 %></li><br>
+		      <li id="b2">・<%= $bshop.career2 %></li><br>
+		      <li id="b2">・<%= $bshop.career3 %></li><br>
+		      <li id="b2">・<%= $bshop.career4 %></li><br>
+		      <li id="b2">・<%= $bshop.career5 %></li><br>
+	      </div>
+
+	      <div id="box2">	
+		    　 <li id="a1">院長経歴2</li><br>
+		      <li id="b2">①<%= $bshop.recom1 %></li><br>
+		      <li id="b2">②<%= $bshop.recom2 %></li><br>
+		      <li id="b2">③<%= $bshop.recom3 %></li><br>
+		      <li id="b2">④<%= $bshop.recom4 %></li><br>
+		      <li id="b2">⑤<%= $bshop.recom5 %></li><br>
+	      </div>
+
+	      <div id="box3">	
+		    　 <li id="a1">紹介文1：<%= $bshop.iititle1 %></li><br>
+		      <li id="b3"><p><%= $bshop.info1 %></p></li>
+	      </div>
+
+	      <div id="box3">	
+		    　 <li id="a1">紹介文2：<%= $bshop.iititle2 %></li><br>
+		      <li id="b3"><p><%= $bshop.info2 %></p></li><br>
+	      </div>
+
+	      <div id="box3">	
+		    　 <li id="a1">紹介文3：<%= $bshop.iititle3 %></li><br>
+		      <li id="b3"><p><%= $bshop.info3 %></p></li><br>
+	      </div>
+
+    </div>
+
+<% end %>

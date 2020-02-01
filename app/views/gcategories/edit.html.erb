@@ -1,0 +1,17 @@
+
+<%= stylesheet_link_tag "selecter", :media => "all" %>
+
+<%= form_for($gcategory, :url => {:action => "update"}, :html => {:multipart => true}) do |form| %>
+
+	<div id="main-feature">
+
+		<h1>カテゴリーの編集</h1>
+
+		<%= render 'form', gcategory: $gcategory %>
+
+		<div id="prev"><%= link_to 'Show', gcategories_path($gcategory) %><br />
+		<%= link_to '戻る', gcategories_path %></div>
+
+	</div>
+
+<% end %>

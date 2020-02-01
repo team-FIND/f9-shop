@@ -1,0 +1,92 @@
+#main-feature {
+	margin: -20px 0px 0px 0px;
+	padding: 0px 200px 200px 0px;
+	clear: both;
+	overflow: hidden;
+	width: 960px;
+}
+
+#new {
+	text-align: center;
+	font-size: 30px;
+	width: 250px;
+	height: 50px;
+	margin: 0px auto;
+	color: #8CC63F;
+	clear: both;
+	border: 3px solid #8CC63F;
+	border-radius: 20px;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	margin-bottom: 50px;
+}
+
+#drink{
+	float: left;
+	margin: 20px 0px 0px 10px;
+	list-style: none;
+	width: 300px;
+    border: 3px solid #006837;
+    border-radius: 20px;
+    color: #006837;
+}
+
+#drinka{
+	float: left;
+	margin: 20px 0px 10px 10px;
+	list-style: none;
+	width: 300px;
+    border: 3px solid #006837;
+    border-radius: 20px;
+    color: #006837;
+    clear: both;
+}
+
+#edit {
+	text-align: center;
+	font-size: 25px;
+	padding-top: 20px;
+	clear: both;
+}
+
+#top_pic {
+	overflow: hidden;
+    width: 300px;
+    height: 300px;
+}
+
+#food_name1{
+	font-size: 25px;
+	text-align: center;
+	margin: 5px 0px 0px 0px;
+	padding-bottom: 3px;
+	clear: both;
+}
+
+#food_name2{
+	font-size: 25px;
+	text-align: center;
+	margin: -5px 0px 0px 0px;
+	padding-bottom: 3px;
+	clear: both;
+}
+
+#price{
+	font-size: 20px;
+	text-align: center;
+	margin: 0px 0px 5px 0px;
+	padding-bottom: 3px;
+	clear: both;
+}
+
+#dset {
+	float: left;
+	text-align: center;
+	width: 300px;
+	margin: 10px 0px 0px 10px;
+}
+
+a {
+	text-decoration: none;
+}

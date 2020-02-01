@@ -1,0 +1,42 @@
+
+
+	<%= content_for(:head)  do %>
+	    <%= stylesheet_link_tag "shophome/ashop/content/access", :media => "all" %>
+	    <%= javascript_include_tag "city" %>
+
+	    <title><%= page_title %></title>
+	<% end %>
+
+    
+	<% @page_title = "アクセス" %>
+
+	<%= render 'form', bshop: $bshop %>
+
+
+<%= content_for(:main)  do %>
+
+	<%= link_to access_edit_mybshop_mybshop_path(id:$bshop), target:"_blank" do%><div id="edit">✐編集する</div><% end %>
+      
+    <div id="feature-wrapper">
+
+	      <div id="box1">	
+		    　 <li id="a1">住所</li><br>
+		      <li id="b1">〒:<%= $bshop.postnumb %></li><br>
+		      <li id="b1"><%= $bshop.address %></li><br>
+	      </div>
+
+	      <div id="box2">	
+		    　 <li id="a1">最寄り駅</li><br>
+		      <li id="b2">バス：<%= $bshop.bus %></li><br>
+		      <li id="b2">電車：<%= $bshop.train %></li><br>
+	      </div>
+
+	      <div id="box2">
+              <li id="a1">google map</li></a><br>
+	      </div>
+
+    </div>
+
+<% end %>
+
+

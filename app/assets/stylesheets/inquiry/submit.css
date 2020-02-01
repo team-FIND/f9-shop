@@ -1,0 +1,65 @@
+
+textarea{
+	color: #006837;
+	width: 600px;
+	height: 500px;
+	font-size: 25px;
+	border: 3px solid #006837;
+}
+
+label {
+	clear: both;
+	color: #006837;
+	font-size: 35px;
+	margin: 60px 0px 0px 0px;
+}
+
+#paper {
+	clear: both;
+	display: block;
+	margin: 0px auto;
+	background: white;
+	text-align: center;
+	padding: 100px 0px 30px 0px;
+}
+
+input[type="text"] {
+        width: 500px;
+        height: 80px;
+        font-size: 35px;
+        border-radius: 20px;
+        border: 3px solid #006837;
+}
+
+input[type="file"] {
+        height: 200px;
+        padding-top: 60px;
+        border: 3px solid #006837;
+        background: #006837;
+        display: none;
+}
+
+input[type="submit"] {
+        font-size: 40px;
+        color: black;
+        text-align: center;
+}
+
+h2{
+	color: #006837;
+	font-size: 40px;
+}
+
+strong {
+	color: #006837;
+	clear: both;
+	font-size: 40px;
+	margin-top: 80px;
+}
+
+#fieldx {
+	clear: both;
+	text-align: center;
+	font-size: 40px;
+	margin: 50px 0px 0px 0px;
+}

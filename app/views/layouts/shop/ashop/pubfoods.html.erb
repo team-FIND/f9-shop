@@ -1,0 +1,47 @@
+
+<%= favicon_link_tag() %>
+<%= favicon_link_tag('apple-touch-icon-180x180.gif', {:rel => 'apple-touch-icon', :sizes => '180x180', :type => 'image/gif'}) %>
+
+
+        <%= stylesheet_link_tag "shophome/ashop/foods", :media => "all" %>
+        <%= stylesheet_link_tag "temp/ad", :media => "all" %>
+        <%= stylesheet_link_tag "temp/header", :media => "all" %>
+        <%= stylesheet_link_tag "temp/sheader", :media => "all" %>
+        <%= stylesheet_link_tag "temp/uheader", :media => "all" %>
+        <%= stylesheet_link_tag "temp/footer", :media => "all" %>
+
+        <%= javascript_include_tag "food" %>
+
+    <head>
+        <title><%= page_title %></title>
+        <script data-ad-client="pub-4561413520529434" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    </head>
+
+    <body>
+
+        <div id="wrapper">
+          
+                <%= render 'shared/header' %>
+                <div id="fmessage"><p class="notice"><%= notice %></p><p class="alert"><%= alert %></p></div>
+                <%= render 'shared/sheader' %>
+                <%= render 'shared/shop/uheader2' %>
+
+                <%= yield(:edit) %>
+
+                <div id="main-feature">
+                    <div class="mainImage">
+                        <%= @image1 %>
+                    </div>
+                    <div class="mainImage">
+                        <%= @image2 %>
+                    </div>
+                    <div class="mainImage">
+                        <%= @image3 %>
+                    </div>
+                </div>
+
+                <%= render 'shared/footer' %>
+
+        </div>
+
+    </body>

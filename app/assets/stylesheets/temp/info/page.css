@@ -1,0 +1,44 @@
+
+#nextp{
+	float: right;
+	clear: both;
+	width: 300px;
+	height: 60px;
+	margin: -60px 50px 0px 0px;
+	padding-top: 8px;
+	border: solid 3px;  
+	border-radius: 15px;
+	border-color: #FF931E;
+	background: #FF931E;
+}
+
+#nextp p{
+	font-size: 35px;
+	margin: 0 auto;
+	color: white;
+	text-align: center;
+}
+
+#prevp{
+	float: left;
+	clear: both;
+	width: 300px;
+	height: 60px;
+	margin: -60px 0px 0px 50px;
+	padding-top: 8px;
+	border: solid 3px;  
+	border-radius: 15px;
+	border-color: #FF931E;
+	background: #FF931E;
+}
+
+#prevp p{
+	font-size: 35px;
+	margin: 0 auto;
+	color: white;
+	text-align: center;
+}
+
+a {
+	text-decoration: none;
+}

@@ -1,0 +1,64 @@
+
+<%= content_for(:head)  do %>
+    <%= stylesheet_link_tag "shophome/ashop/each", :media => "all" %>
+    <%= javascript_include_tag "city" %>
+    <title><%= page_title %></title>
+
+<% end %>
+
+<% @page_title = $mybstaffc.name %> 
+<% @title1 = $bshop.shopname %> 
+<% @title2 = $mybstaffc.name %>
+
+<% @back1  = mybshop_mybshop_path(id:$bshop) %>
+<% @city  = mybshop_mybshops_path %>
+<% @back2 = @back1 %>
+
+
+
+<%= content_for(:main)  do %>
+
+  <%= link_to new_mybshop_mybstaffc_mybstaff_path do%><div id="new">＋料理を追加する</div><% end %>
+
+  <% $foods.each do |food| %>
+
+        <div id="fooda">
+          
+                <div id="top_pic"> 
+
+                    <% if food.topimg.present? %>
+                      <%= link_to image_tag(food.topimg_url, {:size =>'300x300'}), myashop_myamenu_myfood_path(id:food) %> 
+                    <% else %>
+                      <%= link_to image_tag("template/logo3", {:size =>'300x300'}), myashop_myamenu_myfood_path(id:food) %> 
+                    <% end %>
+    
+                </div>
+
+                <P id="food_name1">
+                    <% if food.foodname1.present? %>
+                        名前：<%= food.foodname1 %>
+                    <% else %>
+                        名前：（未入力）
+                    <% end %>
+                </P>
+
+                <P id="food_name2">
+                    <% if food.foodname2.present? %>
+                        役職：<%= food.foodname2 %>
+                    <% else %>
+                        役職：（未入力）
+                    <% end %>
+                </P>
+
+                <p id="edit">
+                    <%= link_to '✐編集', edit_mybshop_mybstaffc_mybstaff_path(id:bstaff) %>
+                </p>    
+
+         </div>
+
+
+  <% end %>
+
+
+<% end %>
+

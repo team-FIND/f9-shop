@@ -1,0 +1,40 @@
+
+<%= content_for(:main)  do %>
+  
+  <div id="paper">
+
+    <%= form_for(@message, url: { action: :confirm }) do |f| %>
+        <div>
+            <h2>お問い合わせ</h2>
+         
+              <% if @message.errors.present? %>
+                <div>
+                  <strong>入力内容にエラーがあります</strong>
+                  <ul>
+                    <% @message.errors.each do |attr, error| %>
+                      <li><%= error %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              <% end %>
+            
+            <div id="fieldx">
+              <strong>お名前</strong>
+              <p><%= f.text_field :name, placeholder: '20文字以内' %></p>
+            </div>
+            <div id="fieldx">
+              <strong>メールアドレス</strong>
+              <p><%= f.text_field :email, placeholder: '30文字以内' %></p>
+            </div>
+            <div id="fieldx">
+              <strong>内容</strong>
+              <p><%= f.text_area :content, placeholder: '200文字以内' %></p>
+            </div>
+
+              <%= f.submit '確認画面へ' %>
+        </div>
+  
+<% end %>
+  </div>
+
+<% end %>

@@ -1,0 +1,29 @@
+
+<%= form_for($acategory, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+
+  <% if acategory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(acategory.errors.count, "error") %> prohibited this scategory from being saved:</h2>
+
+      <ul>
+      <% acategory.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+   <div class="field">
+      <p id="st3">
+        <%= form.label :name %><br>
+        <%= form.text_field :name %>
+      </p>
+    </div>
+
+    <div class="actions">
+      <div id="new">
+      <%= form.submit %>
+      </div>
+    </div>
+
+<% end %>

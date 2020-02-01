@@ -1,0 +1,174 @@
+#main-feature {
+	overflow: hidden;
+	width: 960px;
+    padding: 50px 0px 100px 0px;
+    clear: both;
+}
+
+a{
+	text-decoration: none;
+}
+
+.main-navi {
+	padding-top: 3px;
+	width: 960px;
+	border-top: 3px solid #006837;
+	clear: both;
+}
+
+.main-navi li {
+	float: left;
+	overflow: hidden;
+}
+
+.main-navi ul{
+	margin: 0px;
+	padding: 0px;
+}
+
+.main-navi ul li{
+	display: inline-block;
+	margin: 0px;
+	cursor: pointer; 
+}
+
+.main-navi ul li.active{
+}
+
+#tab {
+	clear: both;
+	width: 945px;
+	margin: 0px auto;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.tabs{
+	display: flex;
+	margin: 0px auto;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	justify-content: space-between;
+}
+
+.tabs li{
+	color: white;
+	width: 225px;
+	height: 150px;
+	display: flex;
+	font-size: 60px;
+	background: #8CC63F;
+	align-items: center;
+	justify-content: center;
+	border-radius: 20px;
+	border-right: 3px solid #006837;
+	border-bottom: 3px solid #006837;
+}
+
+.main-navi .panel{
+	width: 960px;
+	display: none;
+	clear: both;
+	font-size: 40px;
+	float: left;
+	border-bottom: 3px solid #006837;
+	margin-top: 30px;
+}
+
+#panel1 {
+	text-align: center;
+	display: none;
+}
+
+#panel1 li,#panel2 li,#panel3 li{
+	float: left;
+	clear: both;
+	width: 400px;
+	height: 150px;
+    display: flex;
+    color: #006837;
+	text-align: center;
+	align-items: center;
+	border-radius: 15px;
+	justify-content: center;
+	margin: 0px 0px 30px 0px;
+	border: 3px solid #006837;
+}
+
+.main-navi .panel.active {
+	display: block;
+}
+
+.line {
+	    float: left;
+		width: 450px;
+		margin: 10px 0px 0px 25px;
+}
+
+.linex {
+	    float: right;
+		width: 450px;
+		margin: 10px 0px 0px 0px;
+}
+
+
+#second-feature {
+	height: 750px;
+	padding: 100px 0px 0px 0px; 
+	overflow: hidden;
+	clear: both;
+}
+
+#letter{
+	text-align: center;
+}
+
+#o1 {
+	float: left;
+	margin: 150px 0px 0px 10px;
+	width: 270px;
+	height: 270px;
+	border-radius: 265px;
+	background: #006837;
+}
+
+#o1 p{
+	text-align: center;
+	font-size: 50px;
+	margin: 0px auto;
+	padding: 100px 0px 0px 0px;
+	color: white;
+	text-decoration: none;
+}
+
+#o2 {
+	float: right;
+	margin: -360px 10px 0px 0px;
+	width: 270px;
+	height: 270px;
+	border-radius: 265px;
+	background: #006837;
+}
+
+#o2 p{
+	text-align: center;
+	font-size: 50px;
+	padding: 50px 0px 0px 0px;
+	color: white;
+	text-decoration: none;
+}
+
+#notice{
+	border: 3px solid #006837;
+	border-radius: 5px;
+    width: 370px;
+    height: 410px;
+    margin: 100px 0px 0px 295px;
+}
+
+#letter{
+	margin: -50px 0px 5px 0px;
+	font-size: 30px;
+	font-weight: bold;
+}

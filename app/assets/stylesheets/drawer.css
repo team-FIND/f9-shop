@@ -1,0 +1,103 @@
+/*!
+ * jquery-drawer v3.2.2
+ * Flexible drawer menu using jQuery, iScroll and CSS.
+ * http://git.blivesta.com/drawer
+ * License : MIT
+ * Author : blivesta <design@blivesta.com> (http://blivesta.com/)
+ */
+
+header {
+  width: 960px;
+  background: white;
+  position: fixed;
+  top: 0;
+  margin: auto;
+  z-index: 10;
+  border-bottom: 3px solid #ccc;
+  height: 180px;
+}
+
+#logo img {
+  width: 380px;
+}
+
+.header-contents {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  padding: 10px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/*---------- #menu ----------*/
+#menu {
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
+  background: #fff;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  transform: translate(800px);
+  transition: all .5s;
+}
+
+#menu.open {
+  transform: translate(0);
+}
+
+#menu ul {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 30px;
+  border-bottom: 3px solid #ccc;
+  list-style-type: none;
+}
+
+#menu li {
+  color: #006837;
+  width: 100%;
+  margin: 60px 0px 0px 150px;
+  font-size: 60px;
+}
+
+#menu p{
+  font-size: 60px;
+}
+
+#menu_btn {
+  position: absolute;
+  top: 50px;
+  right: 25px;
+  border-radius: 5px;
+  padding: 6px 20px;
+  background: transparent;
+  cursor: pointer;
+}
+
+#menu_btn img {
+  width: 80px;
+}
+
+/* --- .menu-background --- */
+.menu-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.menu-background.open {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+}

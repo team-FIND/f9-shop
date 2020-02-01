@@ -1,0 +1,79 @@
+current directory: C:/Users/ninjin/Desktop/beta/blog/vendor/bundle/gems/puma-3.12.1/ext/puma_http11
+C:/Ruby24-x64/bin/ruby.exe -r ./siteconf20190328-49304-8qrhgh.rb extconf.rb
+checking for BIO_read() in -lcrypto... no
+checking for BIO_read() in -llibeay32... no
+creating Makefile
+
+current directory: C:/Users/ninjin/Desktop/beta/blog/vendor/bundle/gems/puma-3.12.1/ext/puma_http11
+make "DESTDIR=" clean
+
+current directory: C:/Users/ninjin/Desktop/beta/blog/vendor/bundle/gems/puma-3.12.1/ext/puma_http11
+make "DESTDIR="
+generating puma_http11-x64-mingw32.def
+compiling http11_parser.c
+In file included from C:/Ruby24-x64/include/ruby-2.4.0/ruby.h:33,
+                 from http11_parser.h:11,
+                 from ext/puma_http11/http11_parser.rl:6:
+C:/Ruby24-x64/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: 'const' attribute on function returning 'void' [-Wattributes]
+ CONSTFUNC(void rb_secure_update(VALUE));
+ ^~~~~~~~~
+In file included from C:/Ruby24-x64/include/ruby-2.4.0/ruby/ruby.h:2012,
+                 from C:/Ruby24-x64/include/ruby-2.4.0/ruby.h:33,
+                 from http11_parser.h:11,
+                 from ext/puma_http11/http11_parser.rl:6:
+C:/Ruby24-x64/include/ruby-2.4.0/ruby/intern.h:257:1: warning: 'const' attribute on function returning 'void' [-Wattributes]
+ CONSTFUNC(void rb_error_untrusted(VALUE));
+ ^~~~~~~~~
+C:/Ruby24-x64/include/ruby-2.4.0/ruby/intern.h:259:1: warning: 'const' attribute on function returning 'void' [-Wattributes]
+ CONSTFUNC(void rb_check_trusted(VALUE));
+ ^~~~~~~~~
+compiling io_buffer.c
+In file included from C:/Ruby24-x64/include/ruby-2.4.0/ruby.h:33,
+                 from io_buffer.c:2:
+C:/Ruby24-x64/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: 'const' attribute on function returning 'void' [-Wattributes]
+ CONSTFUNC(void rb_secure_update(VALUE));
+ ^~~~~~~~~
+In file included from C:/Ruby24-x64/include/ruby-2.4.0/ruby/ruby.h:2012,
+                 from C:/Ruby24-x64/include/ruby-2.4.0/ruby.h:33,
+                 from io_buffer.c:2:
+C:/Ruby24-x64/include/ruby-2.4.0/ruby/intern.h:257:1: warning: 'const' attribute on function returning 'void' [-Wattributes]
+ CONSTFUNC(void rb_error_untrusted(VALUE));
+ ^~~~~~~~~
+C:/Ruby24-x64/include/ruby-2.4.0/ruby/intern.h:259:1: warning: 'const' attribute on function returning 'void' [-Wattributes]
+ CONSTFUNC(void rb_check_trusted(VALUE));
+ ^~~~~~~~~
+compiling mini_ssl.c
+In file included from C:/Ruby24-x64/include/ruby-2.4.0/ruby.h:33,
+                 from mini_ssl.c:3:
+C:/Ruby24-x64/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: 'const' attribute on function returning 'void' [-Wattributes]
+ CONSTFUNC(void rb_secure_update(VALUE));
+ ^~~~~~~~~
+In file included from C:/Ruby24-x64/include/ruby-2.4.0/ruby/ruby.h:2012,
+                 from C:/Ruby24-x64/include/ruby-2.4.0/ruby.h:33,
+                 from mini_ssl.c:3:
+C:/Ruby24-x64/include/ruby-2.4.0/ruby/intern.h:257:1: warning: 'const' attribute on function returning 'void' [-Wattributes]
+ CONSTFUNC(void rb_error_untrusted(VALUE));
+ ^~~~~~~~~
+C:/Ruby24-x64/include/ruby-2.4.0/ruby/intern.h:259:1: warning: 'const' attribute on function returning 'void' [-Wattributes]
+ CONSTFUNC(void rb_check_trusted(VALUE));
+ ^~~~~~~~~
+compiling puma_http11.c
+In file included from C:/Ruby24-x64/include/ruby-2.4.0/ruby.h:33,
+                 from puma_http11.c:9:
+C:/Ruby24-x64/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: 'const' attribute on function returning 'void' [-Wattributes]
+ CONSTFUNC(void rb_secure_update(VALUE));
+ ^~~~~~~~~
+In file included from C:/Ruby24-x64/include/ruby-2.4.0/ruby/ruby.h:2012,
+                 from C:/Ruby24-x64/include/ruby-2.4.0/ruby.h:33,
+                 from puma_http11.c:9:
+C:/Ruby24-x64/include/ruby-2.4.0/ruby/intern.h:257:1: warning: 'const' attribute on function returning 'void' [-Wattributes]
+ CONSTFUNC(void rb_error_untrusted(VALUE));
+ ^~~~~~~~~
+C:/Ruby24-x64/include/ruby-2.4.0/ruby/intern.h:259:1: warning: 'const' attribute on function returning 'void' [-Wattributes]
+ CONSTFUNC(void rb_check_trusted(VALUE));
+ ^~~~~~~~~
+linking shared-object puma/puma_http11.so
+
+current directory: C:/Users/ninjin/Desktop/beta/blog/vendor/bundle/gems/puma-3.12.1/ext/puma_http11
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 puma_http11.so ./.gem.20190328-49304-1pp0fib/puma

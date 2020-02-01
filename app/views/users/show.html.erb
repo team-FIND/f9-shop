@@ -1,0 +1,66 @@
+
+<% @page_title = "My Page" %>
+<% @title2 = @page_title %> 
+
+<%= content_for(:main)  do %>
+    <%= stylesheet_link_tag "mypage", :media => "all" %>
+	<%= stylesheet_link_tag "footers/pp", :media => "all" %>
+
+	<div id="main-feature">
+
+		<div id="uname2"><P>ようこそ<%= current_user.username %>様！</p></div>
+        
+        <%= link_to profile_users_path do %>
+			<div id="mybox">
+			    <div id="mypic"><img><%= image_tag("template/profile", {:size =>'180x200'})%></img></div>
+				<div id="mytext"><p>アカウント詳細</p></div>
+			</div>
+	    <% end %>
+
+	    <%= link_to myshop_users_path do %>
+			<div id="mybox">
+			    <div id="mypic"><img><%= image_tag("template/shop", {:size =>'180x200'}) %></img></div>
+				<div id="mytext"><p>マイショップ</p></div>
+			</div>
+		<% end %>
+
+		<%= link_to do %>
+			<div id="myboxx">
+			    <div id="mypic"><img><%= image_tag("template/list", {:size =>'180x200'}) %></img></div>
+				<div id="mytext"><p>購入履歴</p></div>
+			</div>
+		<% end %>
+
+		<%= link_to do %>
+			<div id="myboxx">
+			    <div id="mypic"><img><%= image_tag("template/card", {:size =>'180x200'}) %></img></div>
+				<div id="mytext"><p>アカウントクレジット</p></div>
+			</div>
+		<% end %>
+
+		<%= link_to do %>
+			<div id="mybox">
+			    <div id="mypic"><img><%= image_tag("template/email", {:size =>'180x200'}) %></img></div>
+				<div id="mytext"><p>Eメール設定</p></div>
+			</div>
+		<% end %>
+
+		<%= link_to do %>
+			<div id="myboxx">
+			    <div id="mypic"><img><%= image_tag("template/pay", {:size =>'180x200'}) %></img></div>
+				<div id="mytext"><p>お支払いカード</p></div>
+			</div>
+		<% end %>
+
+		<%= link_to do %>
+			<div id="mybox">
+			    <div id="mypic"><img><%= image_tag("template/social", {:size =>'180x200'}) %></img></div>
+				<div id="mytext"><p>ソーシャルリンク</p></div>
+			</div>
+		<% end %>
+
+
+
+	</div>
+
+<% end %>

@@ -1,0 +1,54 @@
+
+
+	<p id="notice"><%= notice %></p>
+
+	<%= content_for(:head)  do %>
+	    <meta name="f9-shop.jp" content="FIND　F9　f9 f9-shop.jp">
+	    <title><%= page_title %></title>
+	<% end %>
+
+	<%= content_for(:idc1)  do %>
+		<% $bmenucs.each do |bmenuc| %>
+                    <div class="line">
+                          <%= link_to bsearch_bsshop_bsmenuc_path(bsshop_id:$bshop, id:bmenuc) do %>
+                              <li id="mc"><%= bmenuc.name %></li><br>
+                          <%end%>
+                    </div>
+        <% end %>
+	<% end %>
+
+	<%= content_for(:idc2)  do %>
+		<% $bsmenucs.each do |bsmenuc| %>
+                    <div class="line">
+                          <%= link_to bsearch_bsshop_bssmenuc_path(bsshop_id:$bshop, id:bsmenuc) do %>
+                              <li id="mc"><%= bsmenuc.name %></li><br>
+                          <%end%>
+                    </div>
+        <% end %>
+	<% end %>
+
+	<%= content_for(:idc3)  do %>
+	<% end %>
+
+	<%= content_for(:idc4)  do %>
+	<% end %>
+
+	<% @page_title = $bshop.shopname %> 
+	<% @title = @page_title %>
+
+	<% @back = bsearch_bsshops_path %>
+	<% @city = @back %>
+
+	<% @image1  =  image_tag $bshop.shopimage1_url %> 
+	<% @image2  =  image_tag $bshop.shopimage2_url %> 
+	<% @image3  =  image_tag $bshop.shopimage3_url %>
+
+	<% @navi4 = contact_bsearch_bsshop_path %>
+	<% @navi5 = access_bsearch_bsshop_path %>
+	<% @navi6 = info_bsearch_bsshop_path %>
+	<% @navi7 =  contact_bsearch_bsshop_path %>
+	<% @navi8 =  time_bsearch_bsshop_path %>
+
+	<% @subnavi1 =  %>
+	<% @subnavi2 =  %>
+

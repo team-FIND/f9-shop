@@ -1,0 +1,132 @@
+
+body{
+	background: #ccc;
+}
+
+h2 {
+	font-size: 60px;
+	color: #006837;
+}
+
+input[type="email"] {
+        width: 870px;
+        height: 100px;
+        font-size: 40px;
+        border: 3px solid #006837;
+        border-radius: 20px;
+    }
+
+input[type="text"] {
+        width: 870px;
+        height: 100px;
+        font-size: 40px;
+        border: 3px solid #006837;
+        border-radius: 20px;
+    }
+
+input[type="password"] {
+        width: 870px;
+        height: 100px;
+        margin: 0px 0px 10px 0px;
+        font-size: 40px;
+        border: 3px solid #006837;
+        border-radius: 20px;
+    }
+
+input[type="checkbox"] {
+	    -ms-transform: scale(2.5, 2.5);
+        -webkit-transform: scale(2.5, 2.5);
+  		transform: scale(2.5, 2.5);
+    }
+
+input[type="submit"] {
+        font-size: 60px;
+        width: 870px;
+    	height: 100px;
+        color: #006837;
+        margin: 100px 0px 100px 0px;
+        color: black;
+    }
+
+#mfeature {
+	font-size: 20px;
+	margin: 0px auto;
+	margin-top: 100px;
+	margin-bottom: 100px; 
+	border-radius: 80px;
+	padding: 30px 0px 100px 0px; 
+	width: 940px;
+	text-align: center;
+}
+
+.field {
+	clear: both;
+	font-size: 40px;
+	margin: 60px 0px 0px 0px; 
+}
+
+.fieldy {
+	clear: both;
+	text-align: center;
+	font-size: 30px;
+	margin: 10px 0px 0px 0px; 
+}
+
+#signup{
+	font-size: 40px;
+	width: 870px;
+    height: 100px;
+	border: 3px solid;
+	border-radius: 20px;
+	margin: 0px auto;
+    color: #006837;
+    background: white;
+    text-align: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+
+
+#login{
+	font-size: 40px;
+	width: 870px;
+    height: 100px;
+	border: 3px solid;
+	border-radius: 20px;
+	margin: 0px auto;
+    color: #006837;
+    background: white;
+    text-align: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+
+#forget{
+	font-size: 40px;
+	width: 870px;
+    height: 100px;
+	border: 3px solid;
+	border-radius: 20px;
+	margin: 0px auto;
+    color: #006837;
+    background: white;
+    text-align: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+
+em{
+	font-size: 20px;
+	margin: 0px 0px 0px 0px;
+}
+
+label{
+	float: left;
+	clear: both;
+	font-size: 35px;
+	margin-bottom: -50px;
+	margin: 0px 0px 0px 30px;
+}

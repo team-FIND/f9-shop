@@ -1,0 +1,51 @@
+#main-feature {
+	margin: 0px auto;
+	padding: 0px 0px 100px 0px;
+	overflow: hidden;
+	width: 960px;
+}
+
+#edit {
+	text-align: center;
+	font-size: 35px;
+	width: 250px;
+	height: 60px;
+	margin: 0px auto;
+	margin-bottom: 100px;
+	color: #8CC63F;
+	clear: both;
+	border: 3px solid #8CC63F;
+	border-radius: 20px;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+#box1 {
+	width: 800px;
+	margin: 0px auto;
+    padding: 0px 0px 80px 0px;
+	border-radius: 10px;
+	background: white;
+}
+
+#a1 { 
+	color: #006837;
+	font-size: 40px;
+	margin: 0px auto;
+	text-align: center;
+	margin-bottom: 60px; 
+}
+
+#b1 {
+	width: 600px;
+	font-size: 40px;
+	margin: 0px auto;
+	text-align: center;
+	border-radius: 10px;
+	padding: 0px 0px 10px 0px;
+}
+
+a{
+	text-decoration: none;
+}

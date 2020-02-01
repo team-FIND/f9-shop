@@ -1,0 +1,39 @@
+
+
+	<%= content_for(:head)  do %>
+	    <%= stylesheet_link_tag "shophome/ashop/content/time", :media => "all" %>
+	    <%= javascript_include_tag "city" %>
+
+	    <title><%= page_title %></title>
+	<% end %>
+
+
+	<% @page_title = "営業時間" %> 
+
+	<%= render 'form', fshop: $fshop %>
+
+
+<%= content_for(:main)  do %>
+
+    <div id="feature-wrapper">
+
+	      <div id="box1">	
+		      <li id="b1">日曜日（午前）<%= $fshop.sunam1 %>:<%= $fshop.sunam2 %>~<%= $fshop.sunam3 %>:<%= $fshop.sunam4 %></li>
+		      <li id="b1">日曜日（午後）<%= $fshop.sunpm1 %>:<%= $fshop.sunpm2 %>~<%= $fshop.sunpm3 %>:<%= $fshop.sunpm4 %></li><br/>
+		      <li id="b1">月曜日（午前）<%= $fshop.monam1 %>:<%= $fshop.monam2 %>~<%= $fshop.monam3 %>:<%= $fshop.monam4 %></li>
+		      <li id="b1">月曜日（午後）<%= $fshop.monpm1 %>:<%= $fshop.monpm2 %>~<%= $fshop.monpm3 %>:<%= $fshop.monam4 %></li><br/>
+		      <li id="b1">火曜日（午前）<%= $fshop.tueam1 %>:<%= $fshop.tueam2 %>~<%= $fshop.tueam3 %>:<%= $fshop.tueam4 %></li>
+		      <li id="b1">火曜日（午後）<%= $fshop.tuepm1 %>:<%= $fshop.tuepm2 %>~<%= $fshop.tuepm3 %>:<%= $fshop.tuepm4 %></li><br/>
+		      <li id="b1">水曜日（午前）<%= $fshop.wedam1 %>:<%= $fshop.wedam2 %>~<%= $fshop.wedam3 %>:<%= $fshop.wedam4 %></li>
+		      <li id="b1">水曜日（午後）<%= $fshop.wedpm1 %>:<%= $fshop.wedpm2 %>~<%= $fshop.wedpm3 %>:<%= $fshop.wedpm4 %></li><br/>
+		      <li id="b1">木曜日（午前）<%= $fshop.thuam1 %>:<%= $fshop.thuam2 %>~<%= $fshop.thuam3 %>:<%= $fshop.thuam4 %></li>
+		      <li id="b1">木曜日（午後）<%= $fshop.thupm1 %>:<%= $fshop.thupm2 %>~<%= $fshop.thupm3 %>:<%= $fshop.thupm4 %></li><br/>
+		      <li id="b1">金曜日（午前）<%= $fshop.friam1 %>:<%= $fshop.friam2 %>~<%= $fshop.friam3 %>:<%= $fshop.friam4 %></li>
+		      <li id="b1">金曜日（午後）<%= $fshop.fripm1 %>:<%= $fshop.fripm2 %>~<%= $fshop.fripm3 %>:<%= $fshop.fripm4 %></li><br/>
+		      <li id="b1">土曜日（午前）<%= $fshop.satam1 %>:<%= $fshop.satam2 %>~<%= $fshop.satam3 %>:<%= $fshop.satam4 %></li>
+		      <li id="b1">土曜日（午後）<%= $fshop.satpm1 %>:<%= $fshop.satpm2 %>~<%= $fshop.satpm3 %>:<%= $fshop.satpm4 %></li>
+	      </div>
+
+    </div>
+
+<% end %>

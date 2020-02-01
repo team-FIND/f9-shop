@@ -1,0 +1,29 @@
+<%= favicon_link_tag() %>
+<%= favicon_link_tag('apple-touch-icon-180x180.gif', {:rel => 'apple-touch-icon', :sizes => '180x180', :type => 'image/gif'}) %>          
+
+<%= stylesheet_link_tag "inquiry/submit", :media => "all" %>
+
+    <%= csrf_meta_tag %>             
+
+    
+  <head>
+
+      <%= display_meta_tags(default_meta_tags) %>
+
+  </head>
+
+<body>
+  
+    <div id="wrapper">
+            
+            <div id="fmessage"><p class="notice"><%= notice %></p><p class="alert"><%= alert %></p></div>
+
+            <div id="main">
+               <%= yield(:main) %>
+            </div>
+
+    </div>
+
+</body>
+
+</html>

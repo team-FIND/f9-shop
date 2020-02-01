@@ -1,0 +1,68 @@
+
+
+  <% @page_title = "病院" %> 
+  <% @title = @page_title %>
+  <% @back = myshop_users_path %>
+
+
+<%= content_for(:uheader)  do %>
+<%= render 'shared/uheader2' %>
+<div id="guide">マイページ＞ショップカテゴリー><%= @page_title %></div>
+<div id="uname2"><P><%= current_user.username %>様</p></div>
+<% end %>
+
+
+<%= content_for(:main)  do %>
+    <%= stylesheet_link_tag "shop/shop", :media => "all" %>
+    <%= stylesheet_link_tag "search/asearch", :media => "all" %>
+
+   <%= link_to home_new_mybshop_mybshops_path do%>
+        <div id="new"><p>+店舗を追加する</p></div>
+    <% end %>
+
+<div id="main-feature">
+  <% $bshops.each do |bshop| %>
+
+
+      <%= link_to mybshop_mybshop_path(id:bshop)  do%> 
+         <div id="shopx">
+
+                <div id="top_pic">
+
+                  <% if bshop.topimage.present? %>
+                    <%= image_tag(bshop.topimage_url, {:size =>'400x400'}) %> 
+                  <% else %>
+                    <%= image_tag("template/logo3", {:size =>'400x400'}) %> 
+                  <% end %>
+
+                </div>
+
+                <div id="explains">
+                     
+                        <P id="shop_name">🏠：<%= bshop.shopname %></P>
+
+                        <P id="account_name">👤:<%= bshop.user.username %></P><br>
+                        
+                        <li id="ptag">
+                          <p><%= bshop.top.name %></p>
+                          <p>><%= bshop.area.name %></p>
+                          <p>><%= bshop.prefec.name %></p>
+                        </li><br>
+
+                        <li id="tag"><p>#<%= bshop.bcategory.name %></p></li>
+                </div>
+
+          </div>
+
+                <%= link_to home_edit_mybshop_mybshop_path(id:bshop) do%><br>
+                  <div id="edittop"><p>✐編集する</p></div>
+                <% end %>
+                
+        <% end %>
+
+  <% end %>
+  
+</div>
+
+<% end %>
+

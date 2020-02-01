@@ -1,0 +1,52 @@
+
+#t1 {
+	clear: both;
+	overflow: hidden;
+	text-align: center;
+	margin: 0px auto;
+	padding: 0px 0px 10px 0px;
+	border-top: 3px solid #FF931E;
+	background: #EDED9D;
+	height: 90px;
+}
+
+#ta{
+	color: white;
+	height: 60px;
+	font-size: 35px;
+	background: #FF931E;
+	margin: 13px 0px 0px 0px;
+	padding: 8px 5px 0px 5px;
+	border: 3px solid;
+    border-color: #FF931E;
+    border-radius: 20px;
+    display:inline-block;
+}
+
+#back{
+	color: white;
+	width: 70px;
+	height: 70px;
+	text-align: center;
+	transform: rotate(180deg);
+	font-size: 50px;
+	float: left;
+	overflow: hidden;
+	clear: both;
+	margin: -80px 0px 0px 25px;
+	background: #FF931E;
+	border-radius: 20px;
+}
+
+#town{
+	font-size: 40px;
+	color: white;
+	float: right;
+	clear: both;
+	height: 60px;
+	margin: -80px 20px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	border: 3px solid #FF931E;
+	border-radius: 15px;
+	background: #FF931E;
+}

@@ -1,0 +1,46 @@
+
+<%= content_for(:head)  do %>
+    <%= stylesheet_link_tag "shophome/ashop/drink", :media => "all" %>
+    <%= javascript_include_tag "city" %>
+    <title><%= page_title %></title>
+
+<% end %>
+
+<% @page_title = $admenu.name %> 
+<% @title1 = $ashop.shopname %> 
+<% @title2 = $admenu.name %>
+
+<% @back1  = prefec_ashop_ashop_path(id:$ashop, prefec_id:$prefec) %>
+<% @city  = prefec_ashop_ashops_path(prefec_id:$prefec) %>
+<% @back2 = ashop_admenuc_admenus_path(admenuc_id:$admenuc) %>
+
+
+
+<%= content_for(:main)  do %>
+
+  <% $drinks.each do |drink| %>
+
+        <%= link_to ashop_admenu_drink_path(id:drink) do%>
+        <div id="drink">
+
+                <P id="food_name1"><%= drink.drinkname %></P>
+
+                <P id="drink_name2">
+                    <% if drink.drinkprice.present? %>
+                        :(税込)<%= drink.drinkprice %>
+                    <% else %>
+                        ー
+                    <% end %>
+                </P>
+
+                <P id="price">税込：<%= drink.drinkprice %>円</P>
+
+         </div>
+         <% end %>
+
+
+  <% end %>
+
+
+<% end %>
+

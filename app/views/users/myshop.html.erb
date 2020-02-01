@@ -1,0 +1,77 @@
+
+<% @page_title = "ショップカテゴリー" %>
+<% @title = @page_title %> 
+<div id="mytext"><p>マイページ＞ショップカテゴリー</p></div>
+<% @back = user_path(id: current_user.id) %>
+
+<%= content_for(:main)  do %>
+    <%= stylesheet_link_tag "myshop", :media => "all" %>
+	<%= stylesheet_link_tag "footers/pp", :media => "all" %>
+
+	<div id="main-feature">
+		<div id="guide">マイページ＞ショップカテゴリー</div>
+
+		<div id="uname2"><P><%= current_user.username %>様</p></div>
+        
+        <%= link_to myashop_myashops_path do %>
+			<div id="mybox">
+			    <div id="mypic"><img><%= image_tag("category/a", {:size =>'130x150'})%></img></div>
+				<div id="mytext"><p>グルメ</p></div>
+			</div>
+	    <% end %>
+
+	    <%= link_to mybshop_mybshops_path do %>
+			<div id="mybox">
+			    <div id="mypic"><img><%= image_tag("category/b", {:size =>'130x150'}) %></img></div>
+				<div id="mytext"><p>病院</p></div>
+			</div>
+		<% end %>
+
+		<%= link_to mycshop_mycshops_path do %>
+			<div id="mybox">
+			    <div id="mypic"><img><%= image_tag("category/c", {:size =>'130x150'}) %></img></div>
+				<div id="mytext"><p>美容室・理髪店</p></div>
+			</div>
+		<% end %>
+
+		<%= link_to mydshop_mydshops_path do %>
+			<div id="mybox">
+			    <div id="mypic"><img><%= image_tag("category/d", {:size =>'130x150'}) %></img></div>
+				<div id="mytext"><p>車・バイク・自転車</p></div>
+			</div>
+		<% end %>
+
+		<%= link_to myeshop_myeshops_path do %>
+			<div id="mybox">
+			    <div id="mypic"><img><%= image_tag("category/e", {:size =>'130x150'}) %></img></div>
+				<div id="mytext"><p>ファッション</p></div>
+			</div>
+		<% end %>
+
+		<%= link_to myfshop_myfshops_path do %>
+			<div id="mybox">
+			    <div id="mypic"><img><%= image_tag("category/f", {:size =>'130x150'}) %></img></div>
+				<div id="mytext"><p>教育</p></div>
+			</div>
+		<% end %>
+
+		<%= link_to mygshop_mygshops_path do %>
+			<div id="mybox">
+			    <div id="mypic"><img><%= image_tag("category/g", {:size =>'130x150'}) %></img></div>
+				<div id="mytext"><p>趣味</p></div>
+			</div>
+		<% end %>
+
+		<%= link_to myhshop_myhshops_path do %>
+			<div id="mybox">
+			    <div id="mypic"><img><%= image_tag("category/h", {:size =>'130x150'}) %></img></div>
+				<div id="mytext"><p>その他</p></div>
+			</div>
+		<% end %>
+
+
+
+	</div>
+
+<% end %>
+

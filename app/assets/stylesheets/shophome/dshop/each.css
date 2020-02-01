@@ -1,0 +1,81 @@
+#main-feature {
+	margin: -20px 0px 0px 0px;
+	padding: 0px 200px 200px 0px;
+	clear: both;
+	overflow: hidden;
+	width: 960px;
+}
+
+#new {
+	text-align: center;
+	font-size: 30px;
+	width: 250px;
+	height: 50px;
+	margin: 0px auto;
+	color: #8CC63F;
+	clear: both;
+	border: 3px solid #8CC63F;
+	border-radius: 20px;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+}
+
+#edit{
+	font-size: 25px;
+	clear: both;
+	text-align: center;
+	color: #006837;
+}
+
+#food{
+	float: left;
+	margin: 30px 0px 70px 10px;
+	list-style: none;
+	width: 300px;
+    height: 300px;
+    border: 2px solid #006837;
+}
+
+#fooda{
+	float: left;
+	margin: 30px 0px 150px 10px;
+	list-style: none;
+	width: 300px;
+    height: 300px;
+    border: 2px solid #006837;
+}
+
+#top_pic {
+	overflow: hidden;
+    width: 300px;
+    height: 300px;
+}
+
+#food_name1{
+	font-size: 20px;
+	text-align: center;
+	margin: 5px 0px 0px 0px;
+	padding-bottom: 3px;
+	clear: both;
+}
+
+#food_name2{
+	font-size: 20px;
+	text-align: center;
+	margin: -5px 0px 0px 0px;
+	padding-bottom: 3px;
+	clear: both;
+}
+
+#price{
+	font-size: 20px;
+	text-align: center;
+	margin: 0px 0px 5px 0px;
+	padding-bottom: 3px;
+	clear: both;
+}
+
+a {
+	text-decoration: none;
+}

@@ -1,0 +1,2 @@
+class Hcategory < ApplicationRecord
+end

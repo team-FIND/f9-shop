@@ -1,0 +1,72 @@
+
+<%= content_for(:head)  do %>
+    <%= stylesheet_link_tag "shophome/ashop/each", :media => "all" %>
+    <%= javascript_include_tag "city" %>
+    <title><%= page_title %></title>
+
+<% end %>
+
+<% @page_title = $amenu.name %> 
+<% @title1 = $ashop.shopname %> 
+<% @title2 = $amenu.name %>
+
+<% @back1  = myashop_myashop_path(id:$ashop) %>
+<% @city  = myashop_myashops_path %>
+<% @back2 = myashop_myamenuc_myamenus_path(myamenuc_id:$amenuc) %>
+
+
+
+<%= content_for(:main)  do %>
+
+  <%= link_to new_myashop_myamenu_myfood_path do%><div id="new">＋料理を追加する</div><% end %>
+
+  <% $foods.each do |food| %>
+
+        <div id="fooda">
+          
+                <div id="top_pic"> 
+
+                    <% if food.topimg.present? %>
+                      <%= link_to image_tag(food.topimg_url, {:size =>'300x300'}), myashop_myamenu_myfood_path(id:food) %> 
+                    <% else %>
+                      <%= link_to image_tag("template/logo3", {:size =>'300x300'}), myashop_myamenu_myfood_path(id:food) %> 
+                    <% end %>
+    
+                </div>
+
+                <P id="food_name1">
+                    <% if food.foodname1.present? %>
+                        <%= food.foodname1 %>
+                    <% else %>
+                        未入力（料理名１）
+                    <% end %>
+                </P>
+
+                <P id="food_name2">
+                    <% if food.foodname2.present? %>
+                        <%= food.foodname2 %>
+                    <% else %>
+                        未入力（料理名２）
+                    <% end %>
+                </P>
+
+                <P id="price">
+                    <% if food.price.present? %>
+                        <%= food.price %>
+                    <% else %>
+                        未入力（値段）
+                    <% end %>
+                </P>
+
+                <p id="edit">
+                    <%= link_to '✐編集', edit_myashop_myamenu_myfood_path(id:food) %>
+                </p>    
+
+         </div>
+
+
+  <% end %>
+
+
+<% end %>
+

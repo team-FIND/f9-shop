@@ -1,0 +1,86 @@
+
+
+    <% @page_title = $area.name %> 
+    <% @title = $area.name %> 
+    <% @back = welcome_index_path %>
+
+<%= content_for(:main)  do %>
+    <%= render 'shared/uheader2' %>
+<% end %>
+
+
+<%= content_for(:main)  do %>
+    <%= stylesheet_link_tag "areas", :media => "all" %>
+    <%= stylesheet_link_tag "temp/mnavi", :media => "all" %>
+    <%= javascript_include_tag "welcome" %>
+
+
+      <div id="main-feature">
+
+            <% $prefecs.find_each(batch_size: 18) do |prefec| %>
+                <div id="citys">
+                      <%= link_to area_prefec_path(id:prefec) do%><p><%= prefec.name %></p><%end%> 
+                </div>
+            <% end %>
+
+      </div>
+
+
+<% end %>
+
+<%= content_for(:mnavi)  do %>
+    <%= render 'shared/top/mnavi' %>
+<% end %>
+
+
+<% @adimg1 = link_to image_tag("template/logo0", 
+                            { :alt =>'FIND　F9　find999'}),
+                              %>
+
+<% @adimg2 = link_to image_tag("template/logo0", 
+                            { :alt =>'FIND　F9　find999'}),
+                              %>
+
+<% @adimg3 = link_to image_tag("template/logo0", 
+                            { :alt =>'FIND　F9　find999　info'}),
+                              %>
+
+<% @adimg4 = link_to image_tag("template/logo0", 
+                            { :alt =>'FIND　F9　find999　info'}),
+                              %>
+
+<% @adimg5 = link_to image_tag("template/logo0", 
+                            { :alt =>'FIND　F9　find999　info'}),
+                              %>
+
+<% @adimg6 = link_to image_tag("template/logo0", 
+                            { :alt =>'FIND　F9　find999　info'}),
+                              %>
+
+<% @adimg7 = link_to image_tag("template/logo0", 
+                            { :alt =>'FIND　F9　find999　info'}),
+                              %>
+
+<% @adimg8 = link_to image_tag("template/logo0", 
+                            { :alt =>'FIND　F9　find999　info'}),
+                              %>
+
+<% @adimg9 = link_to image_tag("template/logo0", 
+                            { :alt =>'FIND　F9　find999　info'}),
+                              %>
+
+<% @adimg10 = link_to image_tag("template/logo0", 
+                            { :alt =>'FIND　F9　find999　info'}),
+                              %>
+
+
+<% @adname1 = "広告１" %>
+<% @adname2 = "広告２" %>
+<% @adname3 = "広告３" %>
+<% @adname4 = "広告４" %>
+<% @adname5 = "広告５" %>
+<% @adname6 = "広告６" %>
+<% @adname7 = "広告７" %>
+<% @adname8 = "広告８" %>
+<% @adname9 = "広告９" %>
+<% @adname10 = "広告１０" %>

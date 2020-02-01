@@ -1,0 +1,100 @@
+current directory: C:/Users/ninjin/Desktop/beta/blog/vendor/bundle/gems/byebug-11.0.1/ext/byebug
+C:/Ruby24-x64/bin/ruby.exe -r ./siteconf20190328-49304-1d985ka.rb extconf.rb
+creating Makefile
+
+current directory: C:/Users/ninjin/Desktop/beta/blog/vendor/bundle/gems/byebug-11.0.1/ext/byebug
+make "DESTDIR=" clean
+
+current directory: C:/Users/ninjin/Desktop/beta/blog/vendor/bundle/gems/byebug-11.0.1/ext/byebug
+make "DESTDIR="
+generating byebug-x64-mingw32.def
+compiling breakpoint.c
+In file included from C:/Ruby24-x64/include/ruby-2.4.0/ruby.h:33,
+                 from byebug.h:4,
+                 from breakpoint.c:1:
+C:/Ruby24-x64/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: 'const' attribute on function returning 'void' [-Wattributes]
+ CONSTFUNC(void rb_secure_update(VALUE));
+ ^~~~~~~~~
+In file included from C:/Ruby24-x64/include/ruby-2.4.0/ruby/ruby.h:2012,
+                 from C:/Ruby24-x64/include/ruby-2.4.0/ruby.h:33,
+                 from byebug.h:4,
+                 from breakpoint.c:1:
+C:/Ruby24-x64/include/ruby-2.4.0/ruby/intern.h:257:1: warning: 'const' attribute on function returning 'void' [-Wattributes]
+ CONSTFUNC(void rb_error_untrusted(VALUE));
+ ^~~~~~~~~
+C:/Ruby24-x64/include/ruby-2.4.0/ruby/intern.h:259:1: warning: 'const' attribute on function returning 'void' [-Wattributes]
+ CONSTFUNC(void rb_check_trusted(VALUE));
+ ^~~~~~~~~
+compiling byebug.c
+In file included from C:/Ruby24-x64/include/ruby-2.4.0/ruby.h:33,
+                 from byebug.h:4,
+                 from byebug.c:1:
+C:/Ruby24-x64/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: 'const' attribute on function returning 'void' [-Wattributes]
+ CONSTFUNC(void rb_secure_update(VALUE));
+ ^~~~~~~~~
+In file included from C:/Ruby24-x64/include/ruby-2.4.0/ruby/ruby.h:2012,
+                 from C:/Ruby24-x64/include/ruby-2.4.0/ruby.h:33,
+                 from byebug.h:4,
+                 from byebug.c:1:
+C:/Ruby24-x64/include/ruby-2.4.0/ruby/intern.h:257:1: warning: 'const' attribute on function returning 'void' [-Wattributes]
+ CONSTFUNC(void rb_error_untrusted(VALUE));
+ ^~~~~~~~~
+C:/Ruby24-x64/include/ruby-2.4.0/ruby/intern.h:259:1: warning: 'const' attribute on function returning 'void' [-Wattributes]
+ CONSTFUNC(void rb_check_trusted(VALUE));
+ ^~~~~~~~~
+compiling context.c
+In file included from C:/Ruby24-x64/include/ruby-2.4.0/ruby.h:33,
+                 from byebug.h:4,
+                 from context.c:1:
+C:/Ruby24-x64/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: 'const' attribute on function returning 'void' [-Wattributes]
+ CONSTFUNC(void rb_secure_update(VALUE));
+ ^~~~~~~~~
+In file included from C:/Ruby24-x64/include/ruby-2.4.0/ruby/ruby.h:2012,
+                 from C:/Ruby24-x64/include/ruby-2.4.0/ruby.h:33,
+                 from byebug.h:4,
+                 from context.c:1:
+C:/Ruby24-x64/include/ruby-2.4.0/ruby/intern.h:257:1: warning: 'const' attribute on function returning 'void' [-Wattributes]
+ CONSTFUNC(void rb_error_untrusted(VALUE));
+ ^~~~~~~~~
+C:/Ruby24-x64/include/ruby-2.4.0/ruby/intern.h:259:1: warning: 'const' attribute on function returning 'void' [-Wattributes]
+ CONSTFUNC(void rb_check_trusted(VALUE));
+ ^~~~~~~~~
+compiling locker.c
+In file included from C:/Ruby24-x64/include/ruby-2.4.0/ruby.h:33,
+                 from byebug.h:4,
+                 from locker.c:1:
+C:/Ruby24-x64/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: 'const' attribute on function returning 'void' [-Wattributes]
+ CONSTFUNC(void rb_secure_update(VALUE));
+ ^~~~~~~~~
+In file included from C:/Ruby24-x64/include/ruby-2.4.0/ruby/ruby.h:2012,
+                 from C:/Ruby24-x64/include/ruby-2.4.0/ruby.h:33,
+                 from byebug.h:4,
+                 from locker.c:1:
+C:/Ruby24-x64/include/ruby-2.4.0/ruby/intern.h:257:1: warning: 'const' attribute on function returning 'void' [-Wattributes]
+ CONSTFUNC(void rb_error_untrusted(VALUE));
+ ^~~~~~~~~
+C:/Ruby24-x64/include/ruby-2.4.0/ruby/intern.h:259:1: warning: 'const' attribute on function returning 'void' [-Wattributes]
+ CONSTFUNC(void rb_check_trusted(VALUE));
+ ^~~~~~~~~
+compiling threads.c
+In file included from C:/Ruby24-x64/include/ruby-2.4.0/ruby.h:33,
+                 from byebug.h:4,
+                 from threads.c:1:
+C:/Ruby24-x64/include/ruby-2.4.0/ruby/ruby.h:631:1: warning: 'const' attribute on function returning 'void' [-Wattributes]
+ CONSTFUNC(void rb_secure_update(VALUE));
+ ^~~~~~~~~
+In file included from C:/Ruby24-x64/include/ruby-2.4.0/ruby/ruby.h:2012,
+                 from C:/Ruby24-x64/include/ruby-2.4.0/ruby.h:33,
+                 from byebug.h:4,
+                 from threads.c:1:
+C:/Ruby24-x64/include/ruby-2.4.0/ruby/intern.h:257:1: warning: 'const' attribute on function returning 'void' [-Wattributes]
+ CONSTFUNC(void rb_error_untrusted(VALUE));
+ ^~~~~~~~~
+C:/Ruby24-x64/include/ruby-2.4.0/ruby/intern.h:259:1: warning: 'const' attribute on function returning 'void' [-Wattributes]
+ CONSTFUNC(void rb_check_trusted(VALUE));
+ ^~~~~~~~~
+linking shared-object byebug/byebug.so
+
+current directory: C:/Users/ninjin/Desktop/beta/blog/vendor/bundle/gems/byebug-11.0.1/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.so ./.gem.20190328-49304-9hc338/byebug

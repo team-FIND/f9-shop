@@ -1,0 +1,191 @@
+
+
+<%= stylesheet_link_tag "creater/ashop/home", :media => "all" %>
+<%= stylesheet_link_tag "modal", :media => "all" %>
+<%= javascript_include_tag "ashops" %>
+<%= javascript_include_tag "modal" %>
+
+<%= form_for($eshop, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+
+  <% if eshop.errors.any? %>
+
+    <div id="error_explanation">
+
+      <h2><%= pluralize(eshop.errors.count, "error") %> prohibited this eshop from being saved:</h2>
+
+          <ul>
+            <% eshop.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+          
+    </div>
+    
+  <% end %>
+
+        <div class="section" id="page">
+
+            <h1>ホーム画面を編集する</h1>
+
+                <div id="field">
+                    <%= form.label :shopname do %><label for="labelx">:*店名 (必入力)</label><% end %><br>
+                    <%= form.text_field :shopname, placeholder: '洋服のエフナイン' %>
+                </div>
+
+                <div id="field">
+                    <%= form.label :top_id do %><label for="labelx">:*エリア (必入力)</label><% end %><br>
+                    <%= form.collection_select :top_id, Top.order(:name), :id, :name, include_blank: true, :prompt => "選択してください" %>
+                </div>
+
+                <div id="field">
+                    <%= form.label :area_id do %><label for="labelx">:*県 (必入力)</label><% end %><br>
+                    <%= form.grouped_collection_select :area_id, Top.order(:name), :areas, :name, :id, :name, include_blank: true, :prompt => "選択してください" %>
+                </div>
+
+                <div id="field">
+                    <%= form.label :prefec_id do %><label for="labelx">:*市町村 (必入力)</label><% end %><br>
+                    <%= form.grouped_collection_select :prefec_id, Area.order(:name), :prefecs, :name, :id, :name, include_blank: true, :prompt => "選択してください" %>
+                </div>
+
+                <div id="field">
+                    <%= form.label :ecategory_id do %><label for="labelx">:ファッションカテゴリー (必入力)</label><% end %><br>
+                    <%= form.collection_select :ecategory_id, Ecategory.order(:name), :id, :name, include_blank: true, :prompt => "選択してください" %>
+                </div>
+
+                <div id="field">
+                    <%= form.collection_select :category2, Ecategory.order(:name), :id, :name, include_blank: true, :prompt => "選択してください" %>
+                </div>
+                
+                <div id="field">
+                    <%= form.collection_select :category3, Ecategory.order(:name), :id, :name, include_blank: true, :prompt => "選択してください" %>
+                </div>
+
+                <div id="field-pic">
+
+                          <%= form.label :topimage do %><label for="labelx">:トップ画像</label><% end %><br>
+
+                          <label for="labely"><%= form.file_field :topimage, id: :shop_topimage , id: "file" %></label>
+
+                          <p id="imgdelete">*画像を削除する  <%= form.check_box :remove_topimage %></p>
+                          <%= form.hidden_field :topimage_cache %><br>
+
+                          <div id="thumb" onClick="$('#file').click()">
+                            <% if eshop.topimage.present? %>
+                              <div id="updimg"><%= image_tag eshop.topimage.thumb.url if $eshop.topimage? %></div> 
+                            <% else %>
+                              <div id="upimg"><%= image_tag("template/img") %></div>
+                            <% end %>
+                          </div>
+
+                </div>
+
+                  <%= link_to myeshop_myeshops_path do %>
+                    <div id="eback">編集を中止する</div>
+                  <% end %>
+                  
+                    <%= form.hidden_field :topimage_cache %>
+                    <%= form.hidden_field :shopimage1_cache %>
+                    <%= form.hidden_field :shopimage2_cache %>
+                    <%= form.hidden_field :shopimage3_cache %>
+                    
+                <div id="actions">
+                  <% if user_signed_in? %>
+                    <li><%= form.submit(:決定) %></li>
+                  <% else %>
+                    <a class="js-modal-open" href=""><li><%= form.submit(:決定) %></li></a>
+
+                    <div class="modal js-modal">
+                        <div class="modal__bg js-modal-close"></div>
+                        <div class="modal__content">
+
+                            <p id="c0">この作業を続けるにはログインして下さい。</p>
+
+                            <%= link_to new_user_session_path do %>
+                              <li id="c1">ログイン（無料会員登録)</li>
+                            <% end %></br>
+
+                            <a class="js-modal-close" id="c2">閉じる</a>
+                        </div><!--modal__inner-->
+                    
+                    </div><!--modal-->
+                  <% end %>
+                </div>
+
+        </div>
+
+<% end %>
+
+<script>
+    (function() {
+  jQuery((function(_this) {
+    return function() {
+      var area;
+      area = $('#eshop_area_id').html();
+      console.log(area);
+      return $('#eshop_top_id').change(function() {
+        var options, top;
+        top = $('#eshop_top_id :selected').text();
+        options = $(area).filter("optgroup[label=" + top + "]").html();
+        console.log(options);
+        if (options) {
+          return $('#eshop_area_id').html(options);
+        } else {
+          return $('#eshop_area_id').empty();
+        }
+      });
+    };
+  })(this));
+
+}).call(this);
+
+    (function() {
+  jQuery((function(_this) {
+    return function() {
+      var prefec;
+      prefec = $('#eshop_prefec_id').html();
+      console.log(prefec);
+      return $('#eshop_area_id').change(function() {
+        var options, area;
+        area = $('#eshop_area_id :selected').text();
+        options = $(prefec).filter("optgroup[label=" + area + "]").html();
+        console.log(options);
+        if (options) {
+          return $('#eshop_prefec_id').html(options);
+        } else {
+          return $('#eshop_prefec_id').empty();
+        }
+      });
+    };
+  })(this));
+
+}).call(this);
+
+</script>
+
+<script>
+
+$(function(){
+  $fileField = $('#file')
+ 
+  // 選択された画像を取得し表示
+  $($fileField).on('change', $fileField, function(e) {
+    file = e.target.files[0]
+    reader = new FileReader(),
+    $preview = $("#thumb");
+ 
+    reader.onload = (function(file) {
+      return function(e) {
+        $preview.empty();
+        $preview.append($('<img>').attr({
+          src: e.target.result,
+          width: "100%",
+          class: "preview",
+          title: file.name
+        }));
+      };
+    })(file);
+    reader.readAsDataURL(file);
+  });
+});
+
+</script>

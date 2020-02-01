@@ -1,0 +1,21 @@
+
+<% @page_title = $drink.foodname1 %> 
+<% @title1 = $ashop.shopname %>
+<% @title2 = $drink.foodname1 %> 
+
+<% @back1  = asearch_asshop_path(id:$ashop) %>
+<% @city  = asearch_asshops_path %>
+<% @back2 = asearch_adsmenu_sdrinks_path %>
+
+
+<% $drinks.each do |drink| %>
+
+	<% if $drink.foodimg1.present? %>
+		<% @image1 = image_tag $drink.foodimg1_url %>
+	<% else %>
+		<% @image1 = image_tag "template/logo3" %>
+	<% end %>
+
+<% end %>
+
+

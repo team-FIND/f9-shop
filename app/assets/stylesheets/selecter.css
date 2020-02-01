@@ -1,0 +1,71 @@
+
+input[type="submit"] {
+        font-size: 40px;
+        width: 300px;
+        color: black;
+    }
+
+h1{
+	text-align: center;
+	font-size: 60px;
+	color: #006837;
+}
+
+#notice {
+	font-size: 30px;
+	text-align: center;
+	clear: both;
+	width: 960px;
+	height: 80px;
+	background: white;
+	border: 3px solid #006837;
+}
+
+#main-feature {
+	clear: both;
+	overflow: hidden;
+	width: 960px;
+    padding: 50px 0px 100px 0px;
+    background: white;
+}
+
+
+#t1{
+	font-size: 30px;
+	margin: 0px 0px 0px 80px;
+}
+
+#pile{
+	margin: 10px 0px 0px 0px;
+}
+
+#pile p{
+}
+
+#st1{
+	font-size: 25px;
+	margin: 0px 0px 0px 100px;
+}
+
+#st2{
+	font-size: 20px;
+	margin: 0px 0px 0px 30px;
+}
+
+#st3{
+	font-size: 25px;
+	text-align: center;
+}
+
+#new{
+	clear: both;
+	text-align: center;
+	font-size: 30px;
+	margin: 90px 0px 0px 0px;
+}
+
+#prev{
+	font-size: 25px;
+	text-align: center;
+	margin: 60px 0px 0px 0px;
+}

@@ -1,0 +1,48 @@
+current directory: /var/www/find-999.com/public/blog/vendor/bundle/gems/duktape-2.0.1.0/ext/duktape
+/usr/local/rbenv/versions/2.4.4/bin/ruby -r ./siteconf20190724-31401-16i0g5c.rb extconf.rb
+checking for rb_sym2str()... yes
+creating Makefile
+
+current directory: /var/www/find-999.com/public/blog/vendor/bundle/gems/duktape-2.0.1.0/ext/duktape
+make "DESTDIR=" clean
+
+current directory: /var/www/find-999.com/public/blog/vendor/bundle/gems/duktape-2.0.1.0/ext/duktape
+make "DESTDIR="
+compiling duktape.c
+compiling duktape_ext.c
+duktape_ext.c: In function ‘encode_cesu8’:
+duktape_ext.c:111: warning: ISO C90 forbids mixed declarations and code
+duktape_ext.c: In function ‘decode_cesu8’:
+duktape_ext.c:135: warning: ISO C90 forbids mixed declarations and code
+duktape_ext.c:141: warning: ISO C90 forbids mixed declarations and code
+duktape_ext.c: In function ‘ctx_stack_to_value’:
+duktape_ext.c:172: warning: ISO C90 forbids mixed declarations and code
+duktape_ext.c: In function ‘raise_ctx_error’:
+duktape_ext.c:299: warning: ISO C90 forbids mixed declarations and code
+duktape_ext.c:302: warning: ISO C90 forbids mixed declarations and code
+duktape_ext.c: In function ‘ctx_eval_string’:
+duktape_ext.c:325: warning: ISO C90 forbids mixed declarations and code
+duktape_ext.c:348: warning: ISO C90 forbids mixed declarations and code
+duktape_ext.c: In function ‘ctx_exec_string’:
+duktape_ext.c:370: warning: ISO C90 forbids mixed declarations and code
+duktape_ext.c: In function ‘ctx_get_one_prop’:
+duktape_ext.c:407: warning: ISO C90 forbids mixed declarations and code
+duktape_ext.c: In function ‘ctx_get_nested_prop’:
+duktape_ext.c:428: warning: ISO C90 forbids mixed declarations and code
+duktape_ext.c: In function ‘ctx_get_prop’:
+duktape_ext.c:466: warning: ISO C90 forbids mixed declarations and code
+duktape_ext.c: In function ‘ctx_call_prop’:
+duktape_ext.c:490: warning: ISO C90 forbids mixed declarations and code
+duktape_ext.c:507: warning: ISO C90 forbids mixed declarations and code
+duktape_ext.c: In function ‘ctx_initialize’:
+duktape_ext.c:656: warning: ISO C90 forbids mixed declarations and code
+At top level:
+cc1: warning: unrecognized command line option "-Wno-self-assign"
+cc1: warning: unrecognized command line option "-Wno-constant-logical-operand"
+cc1: warning: unrecognized command line option "-Wno-parentheses-equality"
+cc1: warning: unrecognized command line option "-Wno-tautological-compare"
+linking shared-object duktape_ext.so
+
+current directory: /var/www/find-999.com/public/blog/vendor/bundle/gems/duktape-2.0.1.0/ext/duktape
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 duktape_ext.so ./.gem.20190724-31401-qgl68b

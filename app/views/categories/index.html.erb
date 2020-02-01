@@ -1,0 +1,33 @@
+
+<%= stylesheet_link_tag "selecter", :media => "all" %>
+
+  <p id="notice"><%= notice %></p>
+
+<div id="main-feature">
+
+  <h1>カテゴリー編集</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th><p id="t1">カテゴリー</p></th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% $categories.each do |category| %>
+        <tr>
+          <td><div id="st1"><%= category.name %></div></td>
+          <td><div id="st2"><%= link_to 'Show', category_path(id:category) %></div></td>
+          <td><div id="st2"><%= link_to '編集', edit_category_path(id:category) %></div></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <div id="new"><%= link_to '新しいカテゴリー', new_category_path %></div>
+
+</div>

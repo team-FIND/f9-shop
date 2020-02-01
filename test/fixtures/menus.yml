@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mcategory: one
+  name: MyString
+  time1: MyString
+  time2: MyString
+  time3: MyString
+  time4: MyString
+
+two:
+  mcategory: two
+  name: MyString
+  time1: MyString
+  time2: MyString
+  time3: MyString
+  time4: MyString

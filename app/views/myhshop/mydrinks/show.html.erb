@@ -1,0 +1,26 @@
+
+<% @page_title = $drink.foodname1 %> 
+<% @title1 = $ashop.shopname %>
+<% @title2 = $drink.foodname1 %> 
+
+<% @back1  = myashop_myashop_path(id:$ashop) %>
+<% @city  = myashop_myashops_path %>
+<% @back2 = myashop_myadmenu_mydrinks_path %>
+
+
+<% $drinks.each do |drink| %>
+
+	<% if $drink.foodimg1.present? %>
+		<% @image1 = image_tag $drink.foodimg1_url %>
+	<% else %>
+		<% @image1 = image_tag "template/logo3" %>
+	<% end %>
+
+<% end %>
+
+<%= content_for(:edit) do %>
+  <%= link_to edit_myashop_myadmenu_mydrink_path(id:$drink), target:"_blank" do%>
+      <div id="edit">✐編集する</div>
+  <% end %>
+
+<% end %>

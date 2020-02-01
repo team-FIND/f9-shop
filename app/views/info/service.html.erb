@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+
+<%= content_for(:head)  do %>
+    <title><%= page_title %></title>
+<% end %>
+
+
+
+<% @page_title = "info サービス" %> 
+<% @title1 = "FiND" %>
+<% @title2 = "サービス" %> 
+
+
+<% @back1  = link_to image_tag('template/home.gif', {:size => "80x70"}), info_index_path %>
+<% @back2 = info_index_path %>
+
+
+
+<%= content_for(:main)  do %>
+      
+    <div id="feature-wrapper">
+	      
+	      <div id="box">	
+		    　 <li id="a"> ①：無料でホームページを作成！</li><br>
+	      </div>
+	      <div id="box">	
+		    　 <li id="a"> ②：無料でメニュー表を作成！</li><br>
+	      </div>
+
+	      <div id="box">	
+		    　 <li id="a"> ③：無料でお店のチラシを作成！</li><br>
+	      </div>
+	      <div id="box">	
+		    　 <li id="a"> ④：①、②、③の英語版も作成！</li><br>
+	      </div>
+	      <div id="box">	
+		    　 <li id="a"> ⑤：自身のページを簡単作成！（開発中）</li><br>
+	      </div>
+
+    </div>
+
+<% end %>

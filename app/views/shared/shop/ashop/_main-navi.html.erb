@@ -1,0 +1,45 @@
+
+
+<div class="main-navi">
+
+    <div id="tab">
+
+            <div class="tabs">
+                 <li rel="panel1" class="active"><%= image_tag("shopnavi/menu")%></li>
+                 <li rel="panel2" class="active"><%= image_tag("shopnavi/menu2")%></li>
+                 <li rel="panel3" class="active"><%= image_tag("shopnavi/drink")%></li>
+                 <li rel="panel4" class="active"><%= image_tag("shopnavi/takeout")%></li>
+            </div> 
+       
+            <div id="panel1" class="panel active">
+                  <div id="mnavih">メインメニュー</div>
+                  <%= yield(:idc1) %>
+            </div>
+
+            <div id="panel2" class="panel">
+                  <div id="mnavih">サブメニュー</div>
+                  <%= yield(:idc2) %>
+            </div>
+
+            <div id="panel3" class="panel">
+                  <div id="mnavih">ドリンクメニュー</div>
+                  <%= yield(:idc3) %>
+            </div>
+
+            <div id="panel4" class="panel">
+                  <div id="mnavih">テイクアウトメニュー</div>
+                  <%= yield(:idc4) %>
+            </div>
+
+    </div>
+
+    <div id="tab">
+           <div class="tabs">
+               <%= link_to @navi5 do %><li rel="panel5"><%= image_tag("shopnavi/map")%></li><% end %>
+               <%= link_to @navi6 do %><li rel="panel6"><%= image_tag("shopnavi/info")%></li><% end %>
+               <%= link_to @navi7 do %><li rel="panel7"><%= image_tag("shopnavi/contact")%></li><% end %>
+               <%= link_to @navi8 do %><li rel="panel8"><%= image_tag("shopnavi/time")%></li><% end %>
+           </div> 
+    </div>
+
+</div>

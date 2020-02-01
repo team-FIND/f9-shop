@@ -1,0 +1,38 @@
+
+<% @page_title = $atakeout.foodname1 %> 
+<% @title1 = $ashop.shopname %>
+<% @title2 = $atakeout.foodname1 %> 
+
+<% @back1 = prefec_ashop_ashop_path(id:$ashop, prefec_id:$prefec) %>
+<% @city = prefec_ashop_ashops_path(prefec_id:$prefec) %>
+<% @back2 = ashop_atmenu_atakeouts_path %>
+
+
+<% $atakeouts.each do |atakeout| %>
+
+	<% if $atakeout.foodimg1.present? %>
+		<% @image1 = image_tag $atakeout.foodimg1_url %>
+	<% else %>
+		<% @image1 = image_tag "template/logo3" %>
+	<% end %>
+
+	<% if $atakeout.foodimg2.present? %>
+		<% @image2 = image_tag $atakeout.foodimg2_url %>
+	<% else %>
+		<% @image2 = image_tag "template/logo3" %>
+	<% end %>
+
+	<% if $atakeout.foodimg3.present? %>
+		<% @image3 = image_tag $atakeout.foodimg3_url %>
+	<% else %>
+		<% @image3 = image_tag "template/logo3" %>
+	<% end %>
+
+<% end %>
+
+<%= content_for(:edit) do %>
+  <%= link_to edit_ashop_atmenu_atakeout_path(id:$atakeout), target:"_blank" do%>
+      <div id="edit">✐編集する</div>
+  <% end %>
+
+<% end %>

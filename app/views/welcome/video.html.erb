@@ -1,0 +1,36 @@
+
+<% @page_title = "使い方" %>
+<% @title = @page_title %> 
+<% @back = "javascript:history.go(-1)"%>
+
+<%= content_for(:main)  do %>
+	<%= stylesheet_link_tag "footers/video", :media => "all" %>
+
+	<div id="main-feature">
+
+		<div id="video">
+			<h1>利用方法</h1>
+		</div>
+
+		<div id="video">
+			<h1>無料会員登録</h1>
+		</div>
+
+		<div id="video">
+			<h1>お店の追加</h1>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/SoMm3nD3yUs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		
+		<div id="video">
+			<h1>メニューの追加1</h1>
+		</div>
+		
+		<div id="video">
+			<h1>メニューの追加2</h1>
+		</div>
+
+	</div>
+
+<% end %>
+
+	

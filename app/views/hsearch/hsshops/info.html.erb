@@ -1,0 +1,59 @@
+
+
+	<%= content_for(:head)  do %>
+	    <%= stylesheet_link_tag "shophome/ashop/content/access", :media => "all" %>
+	    <%= javascript_include_tag "city" %>
+
+	    <title><%= page_title %></title>
+	<% end %>
+
+    
+	<% @page_title = "店舗情報" %>
+
+	<%= render 'form', hshop: $hshop %>
+
+
+<%= content_for(:main)  do %>
+      
+    <div id="feature-wrapper">
+	      <div id="box1">	
+		    　 <li id="a1">創業</li><br>
+		      <li id="b1"><%= $hshop.history %>年</li><br>
+	      </div>
+
+	      <div id="box2">	
+		    　 <li id="a1">店長経歴</li><br>
+		      <li id="b2">・<%= $hshop.career1 %></li><br>
+		      <li id="b2">・<%= $hshop.career2 %></li><br>
+		      <li id="b2">・<%= $hshop.career3 %></li><br>
+		      <li id="b2">・<%= $hshop.career4 %></li><br>
+		      <li id="b2">・<%= $hshop.career5 %></li><br>
+	      </div>
+
+	      <div id="box2">	
+		    　 <li id="a1">おすすめ料理ランキング</li><br>
+		      <li id="b2">①<%= $hshop.recom1 %></li><br>
+		      <li id="b2">②<%= $hshop.recom2 %></li><br>
+		      <li id="b2">③<%= $hshop.recom3 %></li><br>
+		      <li id="b2">④<%= $hshop.recom4 %></li><br>
+		      <li id="b2">⑤<%= $hshop.recom5 %></li><br>
+	      </div>
+
+	      <div id="box3">	
+		    　 <li id="a1">紹介文1：<%= $hshop.iititle1 %></li><br>
+		      <li id="b3"><p><%= $hshop.info1 %></p></li>
+	      </div>
+
+	      <div id="box3">	
+		    　 <li id="a1">紹介文2：<%= $hshop.iititle2 %></li><br>
+		      <li id="b3"><p><%= $hshop.info2 %></p></li><br>
+	      </div>
+
+	      <div id="box3">	
+		    　 <li id="a1">紹介文3：<%= $hshop.iititle3 %></li><br>
+		      <li id="b3"><p><%= $hshop.info3 %></p></li><br>
+	      </div>
+
+    </div>
+
+<% end %>

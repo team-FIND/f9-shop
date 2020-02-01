@@ -1,0 +1,87 @@
+#guide {
+   text-align: center;
+   font-size: 30px;
+}
+
+#uname2 {
+	clear: both;
+	height: 60px;
+	margin: 0px auto;
+	margin-top: 150px;
+	margin-bottom: 150px;
+	text-align: center;
+	font-size: 60px;
+	color: #006837;
+}
+
+#tuheader {
+	clear: both;
+	margin: 0px auto;
+	margin-top: 80px; 
+	width: 900px;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	justify-content: space-between;
+}
+
+#uheader p {
+	clear: both;
+	color: #006837;
+    margin: 0px auto;
+    font-size: 85px;
+    text-align: center;
+}
+
+
+#tuheader img {
+}
+
+#uheader {
+	clear: both;
+	margin-top: 80px; 
+	text-align: center;
+}
+
+#title {
+	clear: both;
+	color: #006837;
+    margin: 0px auto;
+    font-size: 85px;
+    text-align: center;
+    padding-top: 100px;
+    padding-bottom: 30px;
+}
+
+#t1 {
+	clear: both;
+	margin: 0px auto;
+	color: #006837;
+    margin: 0 auto;
+    font-size: 85px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#back1{
+	float: left;
+	margin: 0px 0px 0px 20px;
+}
+
+#back2{
+	float: right;
+	margin: 0px 20px 0px 0px;
+}
+
+#uheader2 {
+	clear: both;
+	padding-top: 20px; 
+	text-align: center;
+	border-top: 3px solid #006837;
+}
+
+
+a {
+	text-decoration: none;
+}

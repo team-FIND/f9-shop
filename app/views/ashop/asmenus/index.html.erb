@@ -1,0 +1,38 @@
+
+
+  <%= content_for(:head)  do %>
+      <%= stylesheet_link_tag "shophome/ashop/content/menu", :media => "all" %>
+      <%= javascript_include_tag "city" %>
+
+      <title><%= page_title %></title>
+  <% end %>
+
+
+  <% @page_title = $asmenuc.name %>
+  <% @title1 = $ashop.shopname %> 
+  <% @title2 = @page_title %> 
+
+  <% @back1 = prefec_ashop_ashop_path(prefec_id:$prefec, id:$ashop) %>
+  <% @city  =  %>
+  <% @back2 = @back1 %>
+
+  <% @phone = $ashop.phone1 %>
+
+
+  <%= content_for(:main)  do %>
+
+        <div id="feature-wrapper">
+
+              <% $asmenus.each do |asmenu| %>
+                  <%= link_to ashop_asmenuc_asmenu_path(asmenuc_id:$asmenuc, id:asmenu) do %>
+                   　<div id="box"><li id="list"><%= asmenu.menuname %></li></div>
+                  <% end %>
+
+                  <div id="detail"><%= asmenu.menudetail %></div>
+
+              <% end %>
+
+        </div>
+    <% end %>
+
+

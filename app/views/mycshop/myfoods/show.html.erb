@@ -1,0 +1,37 @@
+
+<% @page_title = $food.foodname1 %> 
+<% @title1 = $ashop.shopname %>
+<% @title2 = $food.foodname1 %> 
+
+<% @back1 = myashop_myashop_path(id:$ashop) %>
+<% @city  = myashop_myashops_path %>
+<% @back2 = myashop_myamenu_myfoods_path %>
+
+
+<% $foods.each do |food| %>
+
+	<% if $food.foodimg1.present? %>
+		<% @image1 = image_tag $food.foodimg1_url %>
+	<% else %>
+		<% @image1 = image_tag "template/logo3" %>
+	<% end %>
+
+	<% if $food.foodimg2.present? %>
+		<% @image2 = image_tag $food.foodimg2_url %>
+	<% else %>
+		<% @image2 = image_tag "template/logo3" %>
+	<% end %>
+
+	<% if $food.foodimg3.present? %>
+		<% @image3 = image_tag $food.foodimg3_url %>
+	<% else %>
+		<% @image3 = image_tag "template/logo3" %>
+	<% end %>
+
+<% end %>
+
+<%= content_for(:edit) do %>
+	<div id="edit">
+    	<%= link_to '✐編集', foodimg_myashop_myamenu_myfood_path(id:$food) %>
+    </div>    
+<% end %>

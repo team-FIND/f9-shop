@@ -1,0 +1,17 @@
+
+<%= stylesheet_link_tag "selecter", :media => "all" %>
+
+<%= form_for($area, :url => {:action => "update"}, :html => {:multipart => true}) do |form| %>
+
+	<div id="main-feature">
+
+		<h1>Editing Area</h1>
+
+		<%= render 'form', area: $area %>
+
+		<%= link_to 'Show', $area %><br />
+		<%= link_to 'Back', top_areas_path %>
+
+	</div>
+
+<% end %>

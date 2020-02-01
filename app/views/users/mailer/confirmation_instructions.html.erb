@@ -1,0 +1,5 @@
+<p>F9(エフナイン)にようこそ <%= @email %>!</p>
+
+<p>下記のリンクを押すとアカウントが承認されます:</p>
+
+<p><%= link_to 'アカウント登録を承認する', confirmation_url(@resource, confirmation_token: @token) %></p>

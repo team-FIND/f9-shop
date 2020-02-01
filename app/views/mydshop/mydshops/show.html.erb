@@ -1,0 +1,80 @@
+
+
+	<p id="notice"><%= notice %></p>
+
+	<%= content_for(:head)  do %>
+	    <title><%= page_title %></title>
+	<% end %>
+
+	<%= content_for(:uheader2)  do %>
+	    <%if user_signed_in? && $dshop.user_id == current_user.id %>
+           <%= link_to @edit, target:"_blank" do%><div id="edit">✐編集する</div><% end %>
+        <% end %>
+	<% end %>
+
+	<%= content_for(:idc1)  do %>
+			<%if user_signed_in? && $dshop.user_id == current_user.id %>
+	              <div id="ltop">
+	                  <%= link_to @add1 do%>
+	                      <p>⊕カテゴリーを追加する</p>
+	                  <% end %>
+	              </div>
+	         <%end%>
+	<% end %>
+
+	<%= content_for(:idc2)  do %>
+			<%if user_signed_in? && $dshop.user_id == current_user.id %>
+	              <div id="ltop">
+	                  <%= link_to @add2 do%>
+	                      <p>⊕カテゴリーを追加する</p>
+	                  <% end %>
+	              </div>
+	         <%end%>
+	<% end %>
+
+	<%= content_for(:idc3)  do %>
+			<%if user_signed_in? && $dshop.user_id == current_user.id %>
+	              <div id="ltop">
+	                  <%= link_to @add3 do%>
+	                      <p>⊕カテゴリーを追加する</p>
+	                  <% end %>
+	              </div>
+	         <%end%>
+	<% end %>
+
+	<%= content_for(:idc4)  do %>
+			<%if user_signed_in? && $dshop.user_id == current_user.id %>
+	              <div id="ltop">
+	                  <%= link_to @add4 do%>
+	                      <p>⊕カテゴリーを追加する</p>
+	                  <% end %>
+	              </div>
+	         <%end%>
+	<% end %>
+
+
+	<% @page_title = $dshop.shopname %> 
+	<% @title = @page_title %>
+	<% @edit = img_edit_mydshop_mydshop_path  %>  
+
+	<% @back =  mydshop_mydshops_path %>
+	<% @city = @back %>
+
+	<% @image1  =  image_tag $dshop.shopimage1_url if $dshop.shopimage1.present? %> 
+	<% @image2  =  image_tag $dshop.shopimage2_url if $dshop.shopimage2.present? %> 
+	<% @image3  =  image_tag $dshop.shopimage3_url if $dshop.shopimage3.present? %>
+
+	<% @add1 = %>
+	<% @add2 = %>
+	<% @add3 = %>
+	<% @add4 = %>
+   
+    <% @navi4 = contact_mydshop_mydshop_path %>
+	<% @navi5 = access_mydshop_mydshop_path %>
+	<% @navi6 = info_mydshop_mydshop_path %>
+	<% @navi7 = contact_mydshop_mydshop_path %>
+	<% @navi8 = time_mydshop_mydshop_path %>
+    
+	<% @subnavi1 =  %>
+	<% @subnavi2 =  %>
+

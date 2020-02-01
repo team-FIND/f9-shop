@@ -1,0 +1,60 @@
+
+<%= content_for(:head)  do %>
+    <%= stylesheet_link_tag "shophome/ashop/each", :media => "all" %>
+    <%= javascript_include_tag "city" %>
+    <title><%= page_title %></title>
+
+<% end %>
+
+<% @page_title = $amenu.name %> 
+<% @title1 = $ashop.shopname %> 
+<% @title2 = $amenu.name %>
+
+<% @back1  = asearch_asshop_path(id:$ashop) %>
+<% @city  = asearch_asshops_path %>
+<% @back2 = asearch_asmenuc_asmenus_path(asmenuc_id:$amenuc) %>
+
+
+
+<%= content_for(:main)  do %>
+
+  <% $foods.each do |food| %>
+
+        <div id="food">
+          
+                <div id="top_pic"> 
+
+                    <% if food.topimg.present? %>
+                      <%= link_to image_tag(food.topimg_url, {:size =>'300x300'}), asearch_asmenu_sfood_path(id:food) %> 
+                    <% else %>
+                      <%= link_to image_tag("template/logo3", {:size =>'300x300'}), asearch_asmenu_sfood_path(id:food) %> 
+                    <% end %>
+    
+                </div>
+
+                <P id="food_name1">
+                    <% if food.foodname1.present? %>
+                        <%= food.foodname1 %>
+                    <% else %>
+                        未入力（料理名１）
+                    <% end %>
+                </P>
+
+                <P id="food_name2">
+                    <% if food.foodname2.present? %>
+                        <%= food.foodname2 %>
+                    <% else %>
+                        未入力（料理名２）
+                    <% end %>
+                </P>
+
+                <P id="price">税込：<%= food.price %>円</P>
+
+          </div>
+
+
+  <% end %>
+
+
+<% end %>
+

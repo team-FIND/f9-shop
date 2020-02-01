@@ -1,0 +1,19 @@
+
+<%= stylesheet_link_tag "selecter", :media => "all" %>
+
+<%= form_for($prefec, :url => {:action => "update"}, :html => {:multipart => true}) do |form| %>
+
+	<div id="main-feature">
+
+		<h1>市町村を編集</h1>
+
+		<%= render 'form', prefec: $prefec %>
+
+		<div id="prev">
+			<%= link_to 'Show', $prefec %><br />
+			<%= link_to '戻る', area_prefecs_path %>
+		</div>
+
+	</div>
+
+<% end %>

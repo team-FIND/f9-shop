@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ashop: one
+  name: MyString
+  time1: MyString
+  time2: MyString
+  time3: MyString
+  time4: MyString
+
+two:
+  ashop: two
+  name: MyString
+  time1: MyString
+  time2: MyString
+  time3: MyString
+  time4: MyString

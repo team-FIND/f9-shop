@@ -1,0 +1,61 @@
+
+
+	<%= content_for(:head)  do %>
+	    <%= stylesheet_link_tag "shophome/ashop/content/info", :media => "all" %>
+	    <%= javascript_include_tag "city" %>
+
+	    <title><%= page_title %></title>
+	<% end %>
+
+    
+	<% @page_title = "店舗情報" %>
+
+	<%= render 'form', ashop: $ashop %>
+
+
+<%= content_for(:main)  do %>
+
+	<%= link_to info_edit_myashop_myashop_path(id:$ashop), target:"_blank" do%><div id="edit">✐編集する</div><% end %>
+      
+    <div id="feature-wrapper">
+	      <div id="box1">	
+		    　 <li id="a1">創業</li><br>
+		      <li id="b1"><%= $ashop.history %>年</li><br>
+	      </div>
+
+	      <div id="box2">	
+		    　 <li id="a1">店長経歴</li><br>
+		      <li id="b2">・<%= $ashop.career1 %></li><br>
+		      <li id="b2">・<%= $ashop.career2 %></li><br>
+		      <li id="b2">・<%= $ashop.career3 %></li><br>
+		      <li id="b2">・<%= $ashop.career4 %></li><br>
+		      <li id="b2">・<%= $ashop.career5 %></li><br>
+	      </div>
+
+	      <div id="box2">	
+		    　 <li id="a1">おすすめ料理ランキング</li><br>
+		      <li id="b2">①<%= $ashop.recom1 %></li><br>
+		      <li id="b2">②<%= $ashop.recom2 %></li><br>
+		      <li id="b2">③<%= $ashop.recom3 %></li><br>
+		      <li id="b2">④<%= $ashop.recom4 %></li><br>
+		      <li id="b2">⑤<%= $ashop.recom5 %></li><br>
+	      </div>
+
+	      <div id="box3">	
+		    　 <li id="a1">紹介文1：<%= $ashop.iititle1 %></li><br>
+		      <li id="b3"><p><%= $ashop.info1 %></p></li>
+	      </div>
+
+	      <div id="box3">	
+		    　 <li id="a1">紹介文2：<%= $ashop.iititle2 %></li><br>
+		      <li id="b3"><p><%= $ashop.info2 %></p></li><br>
+	      </div>
+
+	      <div id="box3">	
+		    　 <li id="a1">紹介文3：<%= $ashop.iititle3 %></li><br>
+		      <li id="b3"><p><%= $ashop.info3 %></p></li><br>
+	      </div>
+
+    </div>
+
+<% end %>

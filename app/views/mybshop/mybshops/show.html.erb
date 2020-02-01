@@ -1,0 +1,103 @@
+
+
+	<p id="notice"><%= notice %></p>
+
+	<%= content_for(:head)  do %>
+	    <title><%= page_title %></title>
+	<% end %>
+
+	<%= content_for(:uheader2)  do %>
+	    <%if user_signed_in? && $bshop.user_id == current_user.id %>
+           <%= link_to @edit, target:"_blank" do%><div id="edit">✐編集する</div><% end %>
+        <% end %>
+	<% end %>
+
+	<%= content_for(:idc1)  do %>
+			<%if user_signed_in? && $bshop.user_id == current_user.id %>
+	              <div id="ltop">
+	                  <%= link_to new_mybshop_mybshop_mybmenuc_path(mybshop_id:$bshop) do%>
+	                      <p>⊕カテゴリーを追加する</p>
+	                  <% end %>
+	              </div>
+	         <%end%>
+
+	         <% $bmenucs.each do |bmenuc| %>
+                    <div class="line">
+                          <%= link_to mybshop_mybshop_mybmenuc_path(mybshop_id:$bshop, id:bmenuc) do %>
+                              <li id="mc"><%= bmenuc.name %></li><br>
+                          <%end%>
+                          <%= link_to edit_mybshop_mybshop_mybmenuc_path(mybshop_id:$bshop, id:bmenuc) do %>
+                               <p id="mcedit">✐編集する</p>
+                          <% end %>
+                    </div>
+            <% end %>
+	<% end %>
+
+	<%= content_for(:idc2)  do %>
+			<%if user_signed_in? && $bshop.user_id == current_user.id %>
+	              <div id="ltop">
+	                  <%= link_to new_mybshop_mybshop_mybsmenuc_path(mybshop_id:$bshop) do%>
+	                      <p>⊕カテゴリーを追加する</p>
+	                  <% end %>
+	              </div>
+	         <%end%>
+
+	         <% $bsmenucs.each do |bsmenuc| %>
+                    <div class="line">
+                          <%= link_to mybshop_mybshop_mybsmenuc_path(mybshop_id:$bshop, id:bsmenuc) do %>
+                              <li id="mc"><%= bsmenuc.name %></li><br>
+                          <%end%>
+                          <%= link_to edit_mybshop_mybshop_mybsmenuc_path(mybshop_id:$bshop, id:bsmenuc) do %>
+                               <p id="mcedit">✐編集する</p>
+                      	  <% end %>
+                    </div>
+            <% end %>
+	<% end %>
+
+	<%= content_for(:idc3)  do %>
+			<%if user_signed_in? && $bshop.user_id == current_user.id %>
+	              <div id="ltop">
+	                  <%= link_to @add3 do%>
+	                      <p>⊕カテゴリーを追加する</p>
+	                  <% end %>
+	              </div>
+	         <%end%>
+	<% end %>
+
+	<%= content_for(:idc4)  do %>
+			<%if user_signed_in? && $bshop.user_id == current_user.id %>
+	              <div id="ltop">
+	                  <%= link_to @add4 do%>
+	                      <p>⊕カテゴリーを追加する</p>
+	                  <% end %>
+	              </div>
+	         <%end%>
+	<% end %>
+
+
+
+	<% @page_title = $bshop.shopname %> 
+	<% @title = @page_title %>
+	<% @edit = img_edit_mybshop_mybshop_path  %>  
+
+	<% @back =  mybshop_mybshops_path %>
+	<% @city = @back %>
+
+	<% @image1  =  image_tag $bshop.shopimage1_url if $bshop.shopimage1.present? %> 
+	<% @image2  =  image_tag $bshop.shopimage2_url if $bshop.shopimage2.present? %> 
+	<% @image3  =  image_tag $bshop.shopimage3_url if $bshop.shopimage3.present? %>
+   
+	<% @add1 = %>
+	<% @add2 = %>
+	<% @add3 = %>
+	<% @add4 = %>
+
+    <% @navi4 = contact_mybshop_mybshop_path %>
+	<% @navi5 = access_mybshop_mybshop_path %>
+	<% @navi6 = info_mybshop_mybshop_path %>
+	<% @navi7 = contact_mybshop_mybshop_path %>
+	<% @navi8 = time_mybshop_mybshop_path %>
+    
+	<% @subnavi1 =  %>
+	<% @subnavi2 =  %>
+

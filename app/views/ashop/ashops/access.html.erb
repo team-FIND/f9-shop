@@ -1,0 +1,40 @@
+
+
+	<%= content_for(:head)  do %>
+	    <%= stylesheet_link_tag "shophome/ashop/content/access", :media => "all" %>
+	    <%= javascript_include_tag "city" %>
+
+	    <title><%= page_title %></title>
+	<% end %>
+
+    
+	<% @page_title = "アクセス" %>
+
+	<%= render 'form', ashop: $ashop %>
+
+
+<%= content_for(:main)  do %>
+
+    <div id="feature-wrapper">
+
+	      <div id="box1">	
+		    　 <li id="a1">住所</li><br>
+		      <li id="b1">〒:<%= $ashop.postnumb %></li><br>
+		      <li id="b1"><%= $ashop.address %></li><br>
+	      </div>
+
+	      <div id="box2">	
+		    　 <li id="a1">最寄り駅</li><br>
+		      <li id="b2">バス：<%= $ashop.bus %></li><br>
+		      <li id="b2">電車：<%= $ashop.train %></li><br>
+	      </div>
+
+	      <div id="box2">
+              <li id="a1">google map</li></a><br>
+	      </div>
+
+    </div>
+
+<% end %>
+
+

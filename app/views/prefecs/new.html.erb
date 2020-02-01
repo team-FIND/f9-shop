@@ -1,0 +1,12 @@
+
+<%= stylesheet_link_tag "selecter", :media => "all" %>
+
+<div id="main-feature">
+
+	<h1>市町村を追加</h1>
+
+	<%= render 'form', prefec: $prefec %>
+
+	<div id="prev"><%= link_to 'Back', area_prefecs_path %></div>
+
+</div>
