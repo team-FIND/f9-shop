@@ -21,14 +21,18 @@
         </ul>
         <ul>
             <li>言語設定</li>
-            <li>お問い合せ</li>
-            <li>F9とは</li>
+            <%= link_to index_path, target:"_blank" do %><li>お問い合せ</li><% end %>
+            <%= link_to aboutus_welcome_index_path, target:"_blank" do %><li>F9とは</li><% end %>
         </ul>
+        <ul>
             <li>find-manga.com</li>
             <li>find-fourum.com</li>
             <li>find-tv.com</li>
+        </ul>
         <ul>
-            
+            <%= link_to usage_welcome_index_path, target:"_blank" do %><li>ご利用上の注意</li><% end %>
+            <%= link_to code_welcome_index_path, target:"_blank" do %><li>利用規約</li><% end %>
+		    <%= link_to respon_welcome_index_path, target:"_blank" do %><li>免責事項</li><% end %>
         </ul>
     <% else %>
         <ul id="sidemenu">
@@ -37,13 +41,18 @@
         </ul>
         <ul id="sidemenu">
           <li>言語設定</li>
-          <li>お問い合せ</li>
-          <li>F9とは</li>
+          <%= link_to index_path, target:"_blank" do %><li>お問い合せ</li><% end %>
+          <%= link_to aboutus_welcome_index_path, target:"_blank" do %><li>F9とは</li><% end %>
         </ul>
         <ul id="sidemenu">
-          <li>find-manga.com</li>
-          <li>find-fourum.com</li>
-          <li>find-tv.com</li>
+            <li>find-manga.com</li>
+            <li>find-fourum.com</li>
+            <li>find-tv.com</li>
+        </ul>
+        <ul>
+            <%= link_to usage_welcome_index_path, target:"_blank" do %><li>ご利用上の注意</li><% end %>
+            <%= link_to code_welcome_index_path, target:"_blank" do %><li>利用規約</li><% end %>
+		    <%= link_to respon_welcome_index_path, target:"_blank" do %><li>免責事項</li><% end %>
         </ul>
     <% end %>
   </div>
