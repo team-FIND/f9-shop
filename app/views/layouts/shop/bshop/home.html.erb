@@ -7,13 +7,6 @@
         <%= stylesheet_link_tag "temp/sheader", :media => "all" %>
         <%= stylesheet_link_tag "temp/uheader", :media => "all" %>
         <%= stylesheet_link_tag "temp/shop/sfeature", :media => "all" %>
-        <%= stylesheet_link_tag "temp/footer", :media => "all" %>
-
-        <%= stylesheet_link_tag "slick/slick.css", :media => "screen" %>
-        <%= stylesheet_link_tag "slick/slick-theme.css", :media => "screen" %>  
-
-        <%= javascript_include_tag "shop" %>
-        <%= javascript_include_tag "slick.min" %> 
 
   <head>
     <title><%= page_title %></title>
@@ -32,6 +25,12 @@
             <%= yield(:uheader2) %>
 
             <div id="main-feature">
+              <%= stylesheet_link_tag "slick/slick.css", :media => "screen" %>
+              <%= stylesheet_link_tag "slick/slick-theme.css", :media => "screen" %>  
+
+              <%= javascript_include_tag "shop" %>
+              <%= javascript_include_tag "slick.min" %>
+                    
                 <div id="feature-wrapper">
                       <ul class="slider">
                             <% if $bshop.shopimage1.present? %>
@@ -55,7 +54,6 @@
 
             <%= render 'shared/shop/bshop/main-navi' %>
             <%= render 'shared/shop/secondf' %>
-            <%= render 'shared/footer' %>
 
       </div>
 
