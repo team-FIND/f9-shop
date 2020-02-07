@@ -7,13 +7,7 @@
         <%= stylesheet_link_tag "temp/sheader", :media => "all" %>
         <%= stylesheet_link_tag "temp/uheader", :media => "all" %>
         <%= stylesheet_link_tag "temp/shop/sfeature", :media => "all" %>
-        <%= stylesheet_link_tag "temp/footer", :media => "all" %>
-
-        <%= stylesheet_link_tag "slick/slick.css", :media => "screen" %>
-        <%= stylesheet_link_tag "slick/slick-theme.css", :media => "screen" %>  
-
-        <%= javascript_include_tag "shop" %>
-        <%= javascript_include_tag "slick.min" %> 
+        <%= stylesheet_link_tag "temp/footer", :media => "all" %> 
 
   <head>
     <title><%= page_title %></title>
@@ -32,22 +26,27 @@
             <%= yield(:uheader2) %>
 
             <div id="main-feature">
+              <%= stylesheet_link_tag "slick/slick.css", :media => "screen" %>
+              <%= stylesheet_link_tag "slick/slick-theme.css", :media => "screen" %>  
+
+              <%= javascript_include_tag "shop" %>
+              <%= javascript_include_tag "slick.min" %>
                 <div id="feature-wrapper">
                       <ul class="slider">
                             <% if $fshop.shopimage1.present? %>
-                                <li><%= @image1 %></li>
+                                <li><%= @image1 %><p>image1</p></li>
                             <% else %>
-                                <%= image_tag("template/homepics", {:size =>'300x300'}) %> 
+                                <li><%= image_tag "template/homepics" %><p>image1</p></li>
                             <% end %>
                             <% if $fshop.shopimage2.present? %>
-                                <li><%= @image2 %></li>
+                                <li><%= @image2 %><p>image2</p></li>
                            <% else %>
-                               <%= image_tag("template/homepics", {:size =>'300x300'}) %> 
+                                <li><%= image_tag "template/homepics" %><p>image2</p></li>
                            <% end %>
                            <% if $fshop.shopimage3.present? %>
-                               <li><%= @image3 %></li>
+                               <li><%= @image3 %><p>image3</p></li>
                            <% else %>
-                               <%= image_tag("template/homepics", {:size =>'300x300'}) %> 
+                               <li><%= image_tag "template/homepics" %><p>image3</p></li>
                            <% end %>
                       </ul>
                   </div>
