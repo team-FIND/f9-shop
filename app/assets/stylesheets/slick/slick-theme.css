@@ -122,10 +122,10 @@
 
     
     padding: 0;
-    margin: 0px 0px 0px 110px;
+    margin: 0px 0px 0px 10px;
 
     list-style: none;
-    width: 720px;
+    width: 900px;
 
 }
 
@@ -134,9 +134,9 @@
 
     display: inline-block;
 
-    width: 20px;
-    height: 20px;
-    margin: 0 80px;
+    width: 7px;
+    height: 7px;
+    margin: 0 10px;
     padding: 0;
 
     cursor: pointer;
@@ -148,8 +148,8 @@
 
     display: block;
 
-    width: 20px;
-    height: 20px;
+    width: 7px;
+    height: 7px;
     padding: 5px;
 
     cursor: pointer;
@@ -170,15 +170,15 @@
 
 .slick-dots li button:before {
     font-family: 'slick';
-    font-size: 50px;
+    font-size: 7px;
     line-height: 20px;
 
     position: absolute;
     top: 30px;
     left: 0;
 
-    width: 50px;
-    height: 50px;
+    width: 7px;
+    height: 7px;
 
     content: '';
     text-align: center;
