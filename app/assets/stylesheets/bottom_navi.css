@@ -11,17 +11,18 @@ label {
 	margin: 0px auto;
 	width: 960px;
 	clear: both;
-    position: fixed;
-    bottom: 0;
-    z-index:999;
-    background: white;
+	display: flex;
+    	position: fixed;
+    	bottom: 0;
+    	z-index:999;
+    	background: white;
 }
 
 #sbox1{
 	float: left;
 	color: white;
 	width: 100px;
-	height: 140px;
+	height: 150px;
 	margin: 0px auto;
 	margin: 5px 2px 0px 3px;
 	display: flex;
@@ -35,7 +36,7 @@ label {
 	float: left;
 	color: white;
 	width: 100px;
-	height: 140px;
+	height: 150px;
 	margin: 0px auto;
 	margin: 5px 2px 0px 3px;
 	display: flex;
