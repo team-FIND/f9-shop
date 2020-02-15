@@ -10,6 +10,7 @@ label {
 	justify-content: space-between;
 	margin: 0px auto;
 	width: 960px;
+	height:200px;
 	clear: both;
 	display: flex;
     	position: fixed;
