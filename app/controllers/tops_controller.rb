@@ -5,6 +5,7 @@ class TopsController < ApplicationController
 
   def index
     $tops = Top.all
+    render :layout => "app2"
   end
 
   def show

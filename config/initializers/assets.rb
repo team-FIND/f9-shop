@@ -50,6 +50,7 @@ Rails.application.config.assets.precompile += %w( paycard.css )
 Rails.application.config.assets.precompile += %w( social.css )
 Rails.application.config.assets.precompile += %w( drawer.css)
 Rails.application.config.assets.precompile += %w( drawer.min.css )
+Rails.application.config.assets.precompile += %w( bottom_navi.css )
 
 
 Rails.application.config.assets.precompile += %w( shop/shop.css )

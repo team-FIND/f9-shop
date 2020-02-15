@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_13_110040) do
+ActiveRecord::Schema.define(version: 2020_02_15_114110) do
 
   create_table "acategories", force: :cascade do |t|
     t.string "name"
@@ -1115,6 +1115,48 @@ ActiveRecord::Schema.define(version: 2020_01_13_110040) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "citytop_img"
+    t.string "citytop_name"
+    t.string "newshop_img1"
+    t.string "newshop_name1"
+    t.string "newshop_img2"
+    t.string "newshop_name2"
+    t.string "newshop_img3"
+    t.string "newshop_name3"
+    t.string "newshop_img4"
+    t.string "newshop_name4"
+    t.string "newshop_img5"
+    t.string "newshop_name5"
+    t.string "newshop_img6"
+    t.string "newshop_name6"
+    t.string "newshop_img7"
+    t.string "newshop_name7"
+    t.string "newshop_img8"
+    t.string "newshop_name8"
+    t.string "newshop_img9"
+    t.string "newshop_name9"
+    t.string "newshop_img10"
+    t.string "newshop_name10"
+    t.string "adshop_img1"
+    t.string "adshop_name1"
+    t.string "adshop_img2"
+    t.string "adshop_name2"
+    t.string "adshop_img3"
+    t.string "adshop_name3"
+    t.string "adshop_img4"
+    t.string "adshop_name4"
+    t.string "adshop_img5"
+    t.string "adshop_name5"
+    t.string "adshop_img6"
+    t.string "adshop_name6"
+    t.string "adshop_img7"
+    t.string "adshop_name7"
+    t.string "adshop_img8"
+    t.string "adshop_name8"
+    t.string "adshop_img9"
+    t.string "adshop_name9"
+    t.string "adshop_img10"
+    t.string "adshop_name10"
     t.index ["area_id"], name: "index_prefecs_on_area_id"
   end
 

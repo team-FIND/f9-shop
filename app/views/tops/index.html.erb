@@ -3,6 +3,7 @@
 
   <p id="notice"><%= notice %></p>
 
+  <%= content_for(:main)  do %>
 <div id="main-feature">
 
   <h1>エリア編集</h1>
@@ -32,3 +33,4 @@
   <%= link_to 'top', tops_path %></div>
 
 </div>
+<% end %>

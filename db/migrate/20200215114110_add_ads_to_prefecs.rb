@@ -1,0 +1,46 @@
+class AddAdsToPrefecs < ActiveRecord::Migration[5.2]
+  def change
+    add_column :prefecs, :citytop_img, :string
+    add_column :prefecs, :citytop_name, :string
+    add_column :prefecs, :newshop_img1, :string
+    add_column :prefecs, :newshop_name1, :string
+    add_column :prefecs, :newshop_img2, :string
+    add_column :prefecs, :newshop_name2, :string
+    add_column :prefecs, :newshop_img3, :string
+    add_column :prefecs, :newshop_name3, :string
+    add_column :prefecs, :newshop_img4, :string
+    add_column :prefecs, :newshop_name4, :string
+    add_column :prefecs, :newshop_img5, :string
+    add_column :prefecs, :newshop_name5, :string
+    add_column :prefecs, :newshop_img6, :string
+    add_column :prefecs, :newshop_name6, :string
+    add_column :prefecs, :newshop_img7, :string
+    add_column :prefecs, :newshop_name7, :string
+    add_column :prefecs, :newshop_img8, :string
+    add_column :prefecs, :newshop_name8, :string
+    add_column :prefecs, :newshop_img9, :string
+    add_column :prefecs, :newshop_name9, :string
+    add_column :prefecs, :newshop_img10, :string
+    add_column :prefecs, :newshop_name10, :string
+    add_column :prefecs, :adshop_img1, :string
+    add_column :prefecs, :adshop_name1, :string
+    add_column :prefecs, :adshop_img2, :string
+    add_column :prefecs, :adshop_name2, :string
+    add_column :prefecs, :adshop_img3, :string
+    add_column :prefecs, :adshop_name3, :string
+    add_column :prefecs, :adshop_img4, :string
+    add_column :prefecs, :adshop_name4, :string
+    add_column :prefecs, :adshop_img5, :string
+    add_column :prefecs, :adshop_name5, :string
+    add_column :prefecs, :adshop_img6, :string
+    add_column :prefecs, :adshop_name6, :string
+    add_column :prefecs, :adshop_img7, :string
+    add_column :prefecs, :adshop_name7, :string
+    add_column :prefecs, :adshop_img8, :string
+    add_column :prefecs, :adshop_name8, :string
+    add_column :prefecs, :adshop_img9, :string
+    add_column :prefecs, :adshop_name9, :string
+    add_column :prefecs, :adshop_img10, :string
+    add_column :prefecs, :adshop_name10, :string
+  end
+end

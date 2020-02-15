@@ -5,6 +5,7 @@ class AreasController < ApplicationController
   def index
     $top = Top.where(:name => params[:top_id]).first
     $areas = $top.areas.all
+    render :layout => "app2"
   end
 
   def show

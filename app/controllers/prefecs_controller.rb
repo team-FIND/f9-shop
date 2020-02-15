@@ -20,6 +20,10 @@ class PrefecsController < ApplicationController
 
 
   def edit
+    render :layout => "app2"
+    $prefec.citytop_img1.cache! unless $prefec.citytop_img1.blank?
+    $prefec.newshop_img1.cache! unless $prefec.newshop_img1.blank?
+    $prefec.adshop_img1.cache! unless $prefec.adshop_img1.blank?      
   end
 
 
@@ -69,6 +73,6 @@ class PrefecsController < ApplicationController
 
 
     def prefec_params
-      params.require(:prefec).permit(:area_id, :name, :ad1, :ad2, :ad3, :ad4, :ad5, :ad6, :ad7, :ad8, :ad9, :ad10, :adname1, :adname2, :adname3, :adname4, :adname5, :adname6, :adname7, :adname8, :adname9, :adname10 )
+      params.require(:prefec).permit(:area_id, :name, :citytop_img1, :citytop_name1, :newshop_img1, :newshop_name1, :newshop_img2, :newshop_name2, :newshop_img3, :newshop_name3, :newshop_img4, :newshop_name4, :newshop_img5, :newshop_name5, :newshop_img6, :newshop_name6, :newshop_img7, :newshop_name7, :newshop_img8, :newshop_name8, :newshop_img9, :newshop_name9, :newshop_img10, :newshop_name10, adshop_img1, :adshop_name1 )
     end
 end

@@ -1,6 +1,8 @@
 
 <%= stylesheet_link_tag "selecter", :media => "all" %>
 
+<%= content_for(:main)  do %>
+	
 <%= form_for($prefec, :url => {:action => "update"}, :html => {:multipart => true}) do |form| %>
 
 	<div id="main-feature">
@@ -15,5 +17,7 @@
 		</div>
 
 	</div>
+
+<% end %>
 
 <% end %>
