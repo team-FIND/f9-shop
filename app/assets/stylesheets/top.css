@@ -1,12 +1,10 @@
 #main-feature {
 	width: 965px;
-	clear: both;
-	overflow: hidden;
 	postion: relative;
 }
 
 #main-feature p{
-	color: black;
+	color: white;
 	font-size: 70px;
 	position: absolute; 
     	left: 10px; 
