@@ -2,6 +2,7 @@
 	width: 965px;
 	z-index: 1;
 	position:absolute;
+	clear: both;
 }
 
 #main-feature p{
