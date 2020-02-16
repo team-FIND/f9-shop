@@ -14,11 +14,11 @@ header {
   margin: auto;
   z-index: 10;
   border-bottom: 3px solid #ccc;
-  height: 150px;
+  height: 130px;
 }
 
 #logo img {
-  width: 320px;
+  width: 300px;
 }
 
 .header-contents {
