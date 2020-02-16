@@ -8,6 +8,7 @@ a{
 	width: 960px;
 	padding-top: 3px;
 	margin: 0px auto;
+	position:absolute;
 }
 
 #tab {
