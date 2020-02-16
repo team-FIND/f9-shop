@@ -58,19 +58,19 @@
 	justify-content: center;
 	justify-content: space-between;
 	margin: 0px auto;
-    width: 900px;
-    height: 400px;
-    margin: 0px auto; 
-    margin-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 3px solid grey;
-    color: #006837;
+	width: 900px;
+	height: 400px;
+	margin: 0px auto; 
+	margin-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 3px solid grey;
+	color: #006837;
 }
 
 #top-pic {
 	float: left;
 	width: 400px;
-	height: 400px;
+	height: 300px;
 	overflow: hidden;
 }
 
