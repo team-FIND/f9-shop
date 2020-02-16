@@ -17,6 +17,7 @@ label {
     	bottom: 0;
     	z-index:999;
     	background: white;
+	border-top: 3px solid #ccc;	
 }
 
 #sbox1{
