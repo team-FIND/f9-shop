@@ -2,10 +2,11 @@
 	width: 965px;
 	clear: both;
 	overflow: hidden;
+	postion: relative;
 }
 
 #main-feature p{
-	color: white;
+	color: #FFFFFF;
 	font-size: 70px;
 	position: absolute; 
     	left: 10px; 
