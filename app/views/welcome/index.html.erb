@@ -15,7 +15,7 @@
 
 
 	      <ul class="slider">
-			<li><%= image_tag "top/1", :alt =>'FIND　F9　f9 f9-shop.jp　日本　トップ' %><p>JAPAN</p></li>
+		<li><%= image_tag "top/1", :alt =>'FIND　F9　f9 f9-shop.jp　日本　トップ' %><p>JAPAN</p></li>
                   <% $ashops.each do |ashop| %>
 			<li><%= link_to image_tag(ashop.topimage_url, { :alt =>'グルメ　FIND　find F9　f9 f9-shop f9-shop.jp'}), asearch_asshop_path(id:ashop) %><p><%= ashop.shopname %></p></li>	
                   <% end %>		
