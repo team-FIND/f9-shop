@@ -1,6 +1,7 @@
 #main-feature {
 	width: 965px;
 	z-index: 1;
+	position:absolute;
 }
 
 #main-feature p{
@@ -10,4 +11,5 @@
 	margin-top: -120px;
 	float: left;
 	z-index: 2;
+	position:absolute;
 }
