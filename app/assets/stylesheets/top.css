@@ -1,15 +1,10 @@
 #main-feature {
 	width: 965px;
 	clear: both;
-	position: relative;
-	z-index: 1;
 }
 
 #main-feature p{
 	color: white;
-	background-color: rgba(192,192,192,0.1);}
 	font-size: 80px;
 	margin-top: -120px;
-	position: relative;
-	z-index: 2;
 }
