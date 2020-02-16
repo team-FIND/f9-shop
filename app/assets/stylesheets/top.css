@@ -1,10 +1,11 @@
 #main-feature {
 	width: 965px;
 	postion: relative;
+	clear: both;
 }
 
 #main-feature p{
-	color: white;
+	color: black;
 	font-size: 70px;
 	position: absolute; 
     	left: 10px; 
