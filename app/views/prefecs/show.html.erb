@@ -2,27 +2,22 @@
 
 <% @page_title = $prefec.name %>
 <% @title = $prefec.name %>
-<% @back = area_prefecs_path %>
-
-<%= content_for(:uheader)  do %>
-    <%= render 'shared/uheader2' %>
-<% end %>
 
 <%= content_for(:main)  do %>
 
-    <%= stylesheet_link_tag "city", :media => "all" %>
+    <%= stylesheet_link_tag "top", :media => "all" %>
     <%= stylesheet_link_tag "slick/slick.css", :media => "screen" %>
     <%= stylesheet_link_tag "slick/slick-theme.css", :media => "screen" %>
     <%= javascript_include_tag "city" %>
     <%= javascript_include_tag "slick.min" %>
 
       <div id="main-feature">
-				<ul class="slider">
-					<li><%= image_tag "top/2", :alt =>'FFIND　F9　f9 f9-shop.jp　日本　トップ'  %><p><%= @title %></p></li>
-          <% $ashops.each do |ashop| %>
-          <li>
-              <%= link_to image_tag("template/homepics", {:size =>'400x400'}), asearch_asshop_path(id:ashop) %><p><%= ashop.shopname %> </p>
-          </li>  
+	<ul class="slider">
+		<li><%= image_tag "top/2", :alt =>'FFIND　F9　f9 f9-shop.jp　日本　トップ'  %><p><%= @title %></p></li>
+          		<% $ashops.each do |ashop| %>
+          	<li>
+              		<%= link_to image_tag("template/homepics", {:size =>'400x400'}), asearch_asshop_path(id:ashop) %><p><%= ashop.shopname %> </p>
+          	</li>  
           <% end %>   
         </ul>
       </div>
