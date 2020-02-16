@@ -1,6 +1,5 @@
 #main-feature {
 	width: 965px;
-	clear: both;
 	z-index: 1;
 }
 
@@ -8,7 +7,7 @@
 	color: white;
 	background: black;
 	font-size: 80px;
-	margin-top: -100px;
+	margin-top: -120px;
 	float: left;
 	z-index: 2;
 }
