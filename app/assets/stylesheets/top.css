@@ -3,7 +3,6 @@
 	clear: both;
 	padding-top: 126px;
 	position: relative;
-	text-align: center;
 }
 
 #main-feature p{
@@ -13,5 +12,4 @@
 	background: black;
 	overflow: hidden;
 	position: absolute;
-	margin: 0px auto;
 }
