@@ -1,13 +1,10 @@
 #main-feature {
 	width: 965px;
-	postion: relative;
 	clear: both;
 }
 
 #main-feature p{
-	color: black;
+	color: white;
 	font-size: 70px;
-	position: absolute; 
-    	left: 10px; 
-    	top: 10px; 
+	margin-top: -150px;
 }
