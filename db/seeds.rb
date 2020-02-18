@@ -81,5 +81,5 @@ CSV.foreach(file_name) do |row|
     p sprintf("%s, %s", row[0], row[1])
     p sprintf("f9 category_name, %s", cate.name)
 
-    # Ashop.create!(:user_id => 1, :shopname => row[0], :top_id => 7, :area_id => 37, :prefec_id => 1483, :acategory_id => category_id)
+     Ashop.create!(:user_id => 1, :shopname => row[0], :top_id => 7, :area_id => 37, :prefec_id => 1483, :acategory_id => category_id)
 end
