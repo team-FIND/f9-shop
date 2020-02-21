@@ -63,14 +63,13 @@
 	margin: 0px auto; 
 	margin-top: 10px;
 	padding-bottom: 10px;
-	border-bottom: 3px solid #ccc;
 	color: #006837;
 }
 
 #top-pic {
 	float: left;
-	width: 400px;
-	height: 300px;
+	width: 360px;
+	height: 280px;
 	overflow: hidden;
 }
 
