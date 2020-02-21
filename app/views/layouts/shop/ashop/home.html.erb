@@ -4,8 +4,6 @@
 
         <%= stylesheet_link_tag "shophome/home", :media => "all" %>
         <%= stylesheet_link_tag "temp/header", :media => "all" %>
-        <%= stylesheet_link_tag "temp/sheader", :media => "all" %>
-        <%= stylesheet_link_tag "temp/uheader", :media => "all" %>
         <%= stylesheet_link_tag "temp/shop/sfeature", :media => "all" %>
         <%= stylesheet_link_tag "temp/footer", :media => "all" %>
 
@@ -20,10 +18,6 @@
 
             <%= render 'shared/header' %>
             <div id="fmessage"><p class="notice"><%= notice %></p><p class="alert"><%= alert %></p></div>
-            <%= render 'shared/sheader' %>
-            <div id="main"><%= yield(:uheader) %></div>
-            <%= render 'shared/shop/uheader' %>
-            <%= yield(:uheader2) %>
 
             <div id="main-feature">
               <%= stylesheet_link_tag "slick/slick.css", :media => "screen" %>
@@ -31,10 +25,11 @@
 
               <%= javascript_include_tag "shop" %>
               <%= javascript_include_tag "slick.min" %>
+              
                 <div id="feature-wrapper">
                       <ul class="slider">
                             <% if $ashop.shopimage1.present? %>
-                                <li><%= @image1 %><p>image1</p></li>
+                                <li><%= @image1 %><p><% $ashop.shopname %></p></li>
                             <% else %>
                                 <li><%= image_tag "template/homepics" %><p>image1</p></li>
                             <% end %>
@@ -49,7 +44,7 @@
                                <li><%= image_tag "template/homepics" %><p>image3</p></li>
                            <% end %>
                       </ul>
-                  </div>
+                </div>
             </div>
 
             <%= render 'shared/shop/ashop/main-navi' %>
