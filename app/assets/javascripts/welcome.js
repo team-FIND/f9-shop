@@ -2,6 +2,15 @@
 //= require rails-ujs
 //= require activestorage
 
+
+$(document).ready(function(){
+    $('.slider').slick({
+        dots:true,
+        arrows:false,
+    });
+          });
+
+
    $(function() {
 
        $('.main-navi .tabs li').on('click', function() {
