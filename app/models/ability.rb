@@ -11,5 +11,8 @@ class Ability
     can :manage, Ashop, user_id: user
   end
 
+  def admin
+  end
+
   
 end
