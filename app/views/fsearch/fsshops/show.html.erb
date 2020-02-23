@@ -7,6 +7,36 @@
 	    <title><%= page_title %></title>
 	<% end %>
 
+	<%= content_for(:main)  do %>
+		<div id="main-feature">
+			  <%= javascript_include_tag "shop" %>
+			  <%= javascript_include_tag "slick.min" %>
+  
+					<div id="feature-wrapper">
+						  <%= stylesheet_link_tag "slick/slick.css", :media => "screen" %>
+						  <%= stylesheet_link_tag "slick/slick-theme.css", :media => "screen" %>
+
+						  <ul class="slider">
+								<% if $fshop.shopimage1.present? %>
+									  <li><%= image_tag $fshop.shopimage1_url %><p><%= $fshop.shopname %></p></li>
+								<% else %>
+									  <li><%= image_tag "template/homepics" %><p><%= $fshop.shopname %></p></li>
+								<% end %>
+								<% if $fshop.shopimage2.present? %>
+									  <li><%= image_tag $fshop.shopimage2_url %><p>image2</p></li>
+								<% else %>
+									  <li><%= image_tag "template/homepics" %><p>image2</p></li>
+								<% end %>
+								<% if $fshop.shopimage3.present? %>
+									  <li><%= image_tag $fshop.shopimage3_url %><p>image3</p></li>
+								<% else %>
+									  <li><%= image_tag "template/homepics" %><p>image3</p></li>
+								<% end %>
+						  </ul>
+					</div>
+		</div>
+<% end %>
+
 	<%= content_for(:idc1)  do %>
 	<% end %>
 
@@ -21,18 +51,6 @@
 
 	<% @page_title = $fshop.shopname %> 
 	<% @title = @page_title %>
-
-	<% @back = fsearch_fsshops_path %>
-	<% @city = @back %>
-
-	<% @image1  =  image_tag $fshop.shopimage1_url %> 
-	<% @image2  =  image_tag $fshop.shopimage2_url %> 
-	<% @image3  =  image_tag $fshop.shopimage3_url %>
-
-	<% @add1 = %>
-	<% @add2 = %>
-	<% @add3 = %>
-	<% @add4 = %>
 
 	<% @navi4 = contact_fsearch_fsshop_path %>
 	<% @navi5 = access_fsearch_fsshop_path %>
