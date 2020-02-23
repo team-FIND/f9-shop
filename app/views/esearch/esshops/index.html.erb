@@ -62,21 +62,21 @@
           <%= link_to esearch_esshop_path(id:eshop) do%> 
               <div id="shopx">
 
-                    <div id="top_pic">
+                    <div id="toppic">
 
                       <% if eshop.topimage.present? %>
-                        <%= image_tag(eshop.topimage_url, {:size =>'400x400'}) %> 
+                        <%= image_tag eshop.topimage_url %> 
                       <% else %>
-                        <%= image_tag("template/logo3", {:size =>'400x400'}) %>
+                        <%= image_tag "template/logo3" %>
                       <% end %>
 
                     </div>
 
                     <div id="explains">
                          
-                            <P id="shop_name">🏠：<%= eshop.shopname %></P>
+                            <P id="shop_name"><%= eshop.shopname %></P>
 
-                            <P id="account_name">👤:<%= eshop.user.username %></P><br>
+                            <P id="account_name"><%= eshop.user.username %></P><br>
                             
                             <li id="ptag">
                               <p><%= eshop.top.name %></p>
