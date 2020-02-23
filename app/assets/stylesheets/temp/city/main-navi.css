@@ -10,7 +10,15 @@ a{
 	padding-top: 3px;
 }
 
-#tabs1 {
+#tab {
+	clear: both;
+	width: 910px;
+	margin: 0px auto;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+.tabs{
 	display: flex;
 	margin: 0px auto;
 	text-align: center;
@@ -19,42 +27,19 @@ a{
 	justify-content: space-between;
 }
 
-#tabs2 {
-	display: flex;
-	margin: 0px auto;
-	text-align: center;
-	align-items: center;
-	justify-content: center;
-	justify-content: space-between;
-}
-
-#o2{
+.tabs li{
+	color: white;
 	width: 185px;
 	height: 210px;
 	display: flex;
-	border-radius: 25px;
 	align-items: center;
+	border-radius: 25px;
 	justify-content: center;
 	border: 8px solid #006837;
-	background: #ccc;
 }
 
-#o1{
-	width: 185px;
-	height: 210px;
-	display: flex;
-	border-radius: 25px;
-	align-items: center;
-	justify-content: center;
-	border: 8px solid #006837;
-	background: white;
-}
-
-#o1 img{
+.tabs img{
 	width: 180px;
+	overflow: hidden;
 }
 
-#o2 img{
-	width: 180px;
-	background: #ccc;
-}
