@@ -12,7 +12,7 @@ before_action :configure_permitted_parameters, if: :devise_controller?
 
   def show
     $hshop = $prefec.hshops.where(:id => params[:id]).first
-    render :layout => "shop/ashop/home2"
+    render :layout => "shop_home"
   end
 
   def contact
