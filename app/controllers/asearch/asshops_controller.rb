@@ -7,7 +7,7 @@ before_action :configure_permitted_parameters, if: :devise_controller?
   def index
     $search = Ashop.search(params[:q])
     $ashops = $search.result
-    render :layout => "app2"
+    render :layout => "search"
   end
 
   def show
