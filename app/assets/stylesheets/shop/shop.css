@@ -1,28 +1,4 @@
 
-#t1 {
-	clear: both;
-	overflow: hidden;
-	text-align: center;
-	margin: 0px auto;
-	padding: 0px 0px 10px 0px;
-	height: 90px;
-}
-
-#ta{
-	color: #8CC63F;
-	height: 90px;
-	font-size: 85px;
-    margin: 0 auto;
-    display:inline-block;
-}
-
-#back{
-	float: left;
-	overflow: hidden;
-	clear: both;
-	margin: -100px 0px 0px 35px;
-}
-
 #new {
 	text-align: center;
 	font-size: 35px;
@@ -59,32 +35,38 @@
 	justify-content: space-between;
 	margin: 0px auto;
 	width: 900px;
-	height: 400px;
+	height: 315px;
 	margin: 0px auto; 
 	margin-top: 10px;
-	padding-bottom: 10px;
+	padding-bottom: 30px;
 	color: #006837;
 }
 
-#top-pic {
+#toppic {
 	float: left;
-	width: 360px;
-	height: 280px;
+	width: 420px;
+	height: 315px;
 	overflow: hidden;
+	background: transparent;
+}
+
+#toppic img{
+	width: 420px;
+	height: 315px;
 }
 
 #explains {
 	float: right;
 	width: 470px;
-	height: 400px;
+	height: 315px;
 	overflow: hidden;
 }
 
 #shop_name {
 	float: left;
-	font-size: 35px;
+	font-size: 30px;
 	text-align: center;
-	margin: 30px 0px 0px 0px;
+	margin: 5px 0px 0px 10px;
 	padding-bottom: 3px;
 	clear: both;
 }
@@ -93,30 +75,32 @@
 	color: grey;
 	float: left;
 	font-size: 30px;
-	margin: 10px 0px 0px 0px;
+	margin: 10px 0px 0px 10px;
 	clear: both;
 }
 
 #ptag{
 	float: left;
-	font-size: 20px;
+	font-size: 25px;
 	display: flex;
 	clear: both;
 }
 
 #ptag p{
-	margin: 50px 0px 0px 0px
+	color: grey;
+	margin: 10px 0px 0px 10px
 }
 
 #tag{
 	float: left;
-	font-size: 20px;
+	font-size: 25px;
 	display: flex;
 	clear: both;
 }
 
 #tag p{
-	margin: 20px 0px 0px 0px
+	color: grey;
+	margin: 5px 0px 0px 10px
 }
 
 #edittop {
