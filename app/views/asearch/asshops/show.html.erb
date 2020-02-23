@@ -12,28 +12,28 @@
                   <%= javascript_include_tag "shop" %>
                   <%= javascript_include_tag "slick.min" %>
       
-            <div id="feature-wrapper">
-                  <%= stylesheet_link_tag "slick/slick.css", :media => "screen" %>
-                  <%= stylesheet_link_tag "slick/slick-theme.css", :media => "screen" %>
+                        <div id="feature-wrapper">
+                              <%= stylesheet_link_tag "slick/slick.css", :media => "screen" %>
+                              <%= stylesheet_link_tag "slick/slick-theme.css", :media => "screen" %>
 
-                  <ul class="slider">
-                        <% if $ashop.shopimage1.present? %>
-                              <li><%= @image1 %><p><% $ashop.shopname %></p></li>
-                        <% else %>
-                              <li><%= image_tag "template/homepics" %><p><% $ashop.shopname %></p></li>
-                        <% end %>
-                        <% if $ashop.shopimage2.present? %>
-                              <li><%= @image2 %><p>image2</p></li>
-                        <% else %>
-                              <li><%= image_tag "template/homepics" %><p>image2</p></li>
-                        <% end %>
-                        <% if $ashop.shopimage3.present? %>
-                        <li><%= @image3 %><p>image3</p></li>
-                        <% else %>
-                        <li><%= image_tag "template/homepics" %><p>image3</p></li>
-                        <% end %>
-                  </ul>
-            </div>
+                              <ul class="slider">
+                                    <% if $ashop.shopimage1.present? %>
+                                          <li><%= image_tag $ashop.shopimage1_url %><p><%= $ashop.shopname %></p></li>
+                                    <% else %>
+                                          <li><%= image_tag "template/homepics" %><p><% $ashop.shopname %></p></li>
+                                    <% end %>
+                                    <% if $ashop.shopimage2.present? %>
+                                          <li><%= image_tag $ashop.shopimage2_url %><p>image2</p></li>
+                                    <% else %>
+                                          <li><%= image_tag "template/homepics" %><p>image2</p></li>
+                                    <% end %>
+                                    <% if $ashop.shopimage3.present? %>
+                                          <li><%= image_tag $ashop.shopimage3_url %><p>image3</p></li>
+                                    <% else %>
+                                          <li><%= image_tag "template/homepics" %><p>image3</p></li>
+                                    <% end %>
+                              </ul>
+                        </div>
             </div>
     <% end %>
 
@@ -79,13 +79,6 @@
 
 	<% @page_title = $ashop.shopname %> 
 	<% @title = @page_title %>
-
-	<% @back = asearch_asshops_path %>
-	<% @city = @back %>
-
-	<% @image1  =  image_tag $ashop.shopimage1_url %> 
-	<% @image2  =  image_tag $ashop.shopimage2_url %> 
-	<% @image3  =  image_tag $ashop.shopimage3_url %>
 
 	<% @navi4 = contact_asearch_asshop_path %>
 	<% @navi5 = access_asearch_asshop_path %>
