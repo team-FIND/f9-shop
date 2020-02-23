@@ -13,58 +13,15 @@
 	list-style: none;
 }
 
-#fbox1 {
-	color: #006837; 
-	float: left;
-	font-size: 50px;
-	text-align: center;
-	height: 160px;
-	width: 480px;
-	border-right: 3px solid #006837;
-	border-left: 3px solid #006837;
-	margin: 0px 0px 0px -40px;
-	justify-content: center;
-    display: flex;
-    align-items: center;
-}
-
-#fbox2 {
-	color: #006837; 
-	float: right;
-	font-size: 50px;
-	text-align: center;
-	height: 160px;
-	width: 480px;
-	border-right: solid 3px #006837;
-	margin: -160px 0px 0px 0px;
-	justify-content: center;
-    display: flex;
-    align-items: center;
-}
-
-#fbox3 {
-	color: #006837; 
-	font-size: 50px;
-	text-align: center;
-	height: 160px;
-	width: 954px;
-	border-right: solid 3px #006837;
-	border-left: solid 3px #006837;
-	margin: 0px 0px -15px -40px;
-	justify-content: center;
-    display: flex;
-    align-items: center;
-}
-
-
 #copyright {
 	clear: both;
 	color: white;
 	font-size: 60px;
 	text-align: center;
-	height: 260px;
+	height: 150px;
 	background: #006837;
 	justify-content: center;
     display: flex;
-    align-items: center;
+	align-items: center;
+	margin-bottom: 100px;
 }
