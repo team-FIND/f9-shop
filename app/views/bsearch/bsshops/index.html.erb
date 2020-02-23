@@ -62,21 +62,21 @@
           <%= link_to bsearch_bsshop_path(id:bshop) do%> 
               <div id="shopx">
 
-                    <div id="top_pic">
+                    <div id="toppic">
 
                       <% if bshop.topimage.present? %>
-                        <%= image_tag(bshop.topimage_url, {:size =>'400x400'}) %> 
+                        <%= image_tag bshop.topimage_url %> 
                       <% else %>
-                        <%= image_tag("template/logo3", {:size =>'400x400'}) %>
+                        <%= image_tag "template/logo3" %>
                       <% end %>
 
                     </div>
 
                     <div id="explains">
                          
-                            <P id="shop_name">🏠：<%= bshop.shopname %></P>
+                            <P id="shop_name"><%= bshop.shopname %></P>
 
-                            <P id="account_name">👤:<%= bshop.user.username %></P><br>
+                            <P id="account_name"><%= bshop.user.username %></P><br>
                             
                             <li id="ptag">
                               <p><%= bshop.top.name %></p>
