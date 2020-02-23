@@ -2,18 +2,24 @@
 
 <div class="main-navi">
 
-    <div id="tabs1">
-           <p id="o1"><%= link_to image_tag("category/a"), prefec_ashop_ashops_path(prefec_id:$prefec) %></p>
-           <p id="o1"><%= link_to image_tag("category/b"), prefec_bshop_bshops_path(prefec_id:$prefec) %></p>
-           <p id="o1"><%= link_to image_tag("category/c"), prefec_cshop_cshops_path(prefec_id:$prefec) %></p>
-           <p id="o1"><%= link_to image_tag("category/d"), prefec_dshop_dshops_path(prefec_id:$prefec) %></p>
+<div id="tab">
+
+    <div class="tabs">
+           <li><%= link_to image_tag("category/a"), prefec_ashop_ashops_path(prefec_id:$prefec) %></li>
+           <li><%= link_to image_tag("category/b"), prefec_bshop_bshops_path(prefec_id:$prefec) %></li>
+           <li><%= link_to image_tag("category/c"), prefec_cshop_cshops_path(prefec_id:$prefec) %></li>
+           <li><%= link_to image_tag("category/d"), prefec_dshop_dshops_path(prefec_id:$prefec) %></li>
     </div>
 
-    <div id="tabs2">
-           <p id="o1"><%= link_to image_tag("category/e"), prefec_eshop_eshops_path(prefec_id:$prefec) %></p>
-           <p id="o1"><%= link_to image_tag("category/f"), prefec_fshop_fshops_path(prefec_id:$prefec) %></p>
-           <p id="o1"><%= link_to image_tag("category/g"), prefec_gshop_gshops_path(prefec_id:$prefec) %></p>
-           <p id="o1"><%= link_to image_tag("category/h"), prefec_hshop_hshops_path(prefec_id:$prefec) %></p>
+</div>
+
+<div id="tab">
+    <div class="tabs">
+           <li><%= link_to image_tag("category/e"), prefec_eshop_eshops_path(prefec_id:$prefec) %></li>
+           <li><%= link_to image_tag("category/f"), prefec_fshop_fshops_path(prefec_id:$prefec) %></li>
+           <li><%= link_to image_tag("category/g"), prefec_gshop_gshops_path(prefec_id:$prefec) %></li>
+           <li><%= link_to image_tag("category/h"), prefec_hshop_hshops_path(prefec_id:$prefec) %></li>
     </div>
+</div>
 
 </div>
