@@ -14,7 +14,7 @@ before_action :configure_permitted_parameters, if: :devise_controller?
     $bshop = $prefec.bshops.where(:id => params[:id]).first
     $bmenucs = $bshop.bmenucs.all
     $bsmenucs = $bshop.bsmenucs.all
-    render :layout => "shop/ashop/home2"
+    render :layout => "shop_home"
   end
 
   def contact
