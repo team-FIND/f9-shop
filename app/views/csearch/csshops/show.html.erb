@@ -7,6 +7,36 @@
 	    <title><%= page_title %></title>
 	<% end %>
 
+	<%= content_for(:main)  do %>
+		<div id="main-feature">
+			  <%= javascript_include_tag "shop" %>
+			  <%= javascript_include_tag "slick.min" %>
+  
+					<div id="feature-wrapper">
+						  <%= stylesheet_link_tag "slick/slick.css", :media => "screen" %>
+						  <%= stylesheet_link_tag "slick/slick-theme.css", :media => "screen" %>
+
+						  <ul class="slider">
+								<% if $cshop.shopimage1.present? %>
+									  <li><%= image_tag $cshop.shopimage1_url %><p><%= $cshop.shopname %></p></li>
+								<% else %>
+									  <li><%= image_tag "template/homepics" %><p><%= $cshop.shopname %></p></li>
+								<% end %>
+								<% if $cshop.shopimage2.present? %>
+									  <li><%= image_tag $cshop.shopimage2_url %><p>image2</p></li>
+								<% else %>
+									  <li><%= image_tag "template/homepics" %><p>image2</p></li>
+								<% end %>
+								<% if $cshop.shopimage3.present? %>
+									  <li><%= image_tag $cshop.shopimage3_url %><p>image3</p></li>
+								<% else %>
+									  <li><%= image_tag "template/homepics" %><p>image3</p></li>
+								<% end %>
+						  </ul>
+					</div>
+		</div>
+<% end %>
+
 	<%= content_for(:idc1)  do %>
 	<% end %>
 
@@ -21,13 +51,6 @@
 
 	<% @page_title = $cshop.shopname %> 
 	<% @title = @page_title %>
-
-	<% @back = csearch_csshops_path %>
-	<% @city = @back %>
-
-	<% @image1  =  image_tag $cshop.shopimage1_url %> 
-	<% @image2  =  image_tag $cshop.shopimage2_url %> 
-	<% @image3  =  image_tag $cshop.shopimage3_url %>
 
 	<% @add1 = %>
 	<% @add2 = %>
