@@ -7,7 +7,7 @@ before_action :configure_permitted_parameters, if: :devise_controller?
   def index
     $prefec = Prefec.where(:name => params[:prefec_id]).first
     $hshops = $prefec.hshops.all
-    render :layout => "app2"
+    render :layout => "search"
   end
 
   def show
