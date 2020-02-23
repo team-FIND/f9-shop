@@ -8,17 +8,17 @@
 
 #main-feature p {
 	color: white;
-	font-size: 80px;
+	font-size: 60px;
+	height:130px;
 	background-color:rgba(0,0,0,0.5);
 	overflow: hidden;
 	position: absolute;
-	top: 647px;
+	top: 628px;
 	width:965px;
 	clear: both;
-}
-
-a {
-	text-decoration: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .main-navi {
