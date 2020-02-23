@@ -21,6 +21,11 @@
 	justify-content: center;
 }
 
+#top_af1{
+	margin: 7.5px 0px 20px 0px;
+	text-align: center;
+}
+
 .main-navi {
 	clear: both;
 	width: 910px;
