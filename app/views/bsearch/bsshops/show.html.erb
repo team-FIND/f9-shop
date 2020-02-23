@@ -18,19 +18,19 @@
 
 						  <ul class="slider">
 								<% if $bshop.shopimage1.present? %>
-									  <li><%= @image1 %><p><% $bshop.shopname %></p></li>
+									  <li><%= image_tag $bshop.shopimage1_url %><p><%= $bshop.shopname %></p></li>
 								<% else %>
-									  <li><%= image_tag "template/homepics" %><p><% $bshop.shopname %></p></li>
+									  <li><%= image_tag "template/homepics" %><p><%= $bshop.shopname %></p></li>
 								<% end %>
 								<% if $bshop.shopimage2.present? %>
-									  <li><%= @image2 %><p>image2</p></li>
+									  <li><%= image_tag $bshop.shopimage2_url %><p>image2</p></li>
 								<% else %>
 									  <li><%= image_tag "template/homepics" %><p>image2</p></li>
 								<% end %>
 								<% if $bshop.shopimage3.present? %>
-								<li><%= @image3 %><p>image3</p></li>
+									  <li><%= image_tag $bshop.shopimage3_url %><p>image3</p></li>
 								<% else %>
-								<li><%= image_tag "template/homepics" %><p>image3</p></li>
+									  <li><%= image_tag "template/homepics" %><p>image3</p></li>
 								<% end %>
 						  </ul>
 					</div>
@@ -65,13 +65,6 @@
 
 	<% @page_title = $bshop.shopname %> 
 	<% @title = @page_title %>
-
-	<% @back = bsearch_bsshops_path %>
-	<% @city = @back %>
-
-	<% @image1  =  image_tag $bshop.shopimage1_url %> 
-	<% @image2  =  image_tag $bshop.shopimage2_url %> 
-	<% @image3  =  image_tag $bshop.shopimage3_url %>
 
 	<% @navi4 = contact_bsearch_bsshop_path %>
 	<% @navi5 = access_bsearch_bsshop_path %>
