@@ -48,21 +48,21 @@
       <%= link_to prefec_dshop_dshop_path(prefec_id:$prefec, id:dshop) do%> 
          <div id="shopx">
 
-                <div id="top_pic">
+                <div id="toppic">
 
                   <% if dshop.topimage.present? %>
-                    <%= image_tag(dshop.topimage_url, {:size =>'400x400'}) %> 
+                    <%= image_tag dshop.topimage_url %> 
                   <% else %>
-                    <%= image_tag("template/logo3", {:size =>'400x400'}) %> 
+                    <%= image_tag "template/logo3" %> 
                   <% end %>
 
                 </div>
 
                 <div id="explains">
                      
-                        <P id="shop_name">🏠：<%= dshop.shopname %></P>
+                        <P id="shop_name"><%= dshop.shopname %></P>
 
-                        <P id="account_name">👤:<%= dshop.user.username %></P><br>
+                        <P id="account_name"><%= dshop.user.username %></P><br>
                         
                         <li id="ptag">
                           <p><%= dshop.top.name %></p>
