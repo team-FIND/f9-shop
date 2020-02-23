@@ -65,18 +65,18 @@
                     <div id="top_pic">
 
                       <% if gshop.topimage.present? %>
-                        <%= image_tag(gshop.topimage_url, {:size =>'400x400'}) %> 
+                        <%= image_tag gshop.topimage_url %> 
                       <% else %>
-                        <%= image_tag("template/logo3", {:size =>'400x400'}) %>
+                        <%= image_tag "template/logo3" %>
                       <% end %>
 
                     </div>
 
                     <div id="explains">
                          
-                            <P id="shop_name">🏠：<%= gshop.shopname %></P>
+                            <P id="shop_name"><%= gshop.shopname %></P>
 
-                            <P id="account_name">👤:<%= gshop.user.username %></P><br>
+                            <P id="account_name"><%= gshop.user.username %></P><br>
                             
                             <li id="ptag">
                               <p><%= gshop.top.name %></p>
