@@ -7,6 +7,36 @@
 	    <title><%= page_title %></title>
 	<% end %>
 
+	<%= content_for(:main)  do %>
+		<div id="main-feature">
+			  <%= javascript_include_tag "shop" %>
+			  <%= javascript_include_tag "slick.min" %>
+  
+					<div id="feature-wrapper">
+						  <%= stylesheet_link_tag "slick/slick.css", :media => "screen" %>
+						  <%= stylesheet_link_tag "slick/slick-theme.css", :media => "screen" %>
+
+						  <ul class="slider">
+								<% if $bshop.shopimage1.present? %>
+									  <li><%= @image1 %><p><% $bshop.shopname %></p></li>
+								<% else %>
+									  <li><%= image_tag "template/homepics" %><p><% $bshop.shopname %></p></li>
+								<% end %>
+								<% if $bshop.shopimage2.present? %>
+									  <li><%= @image2 %><p>image2</p></li>
+								<% else %>
+									  <li><%= image_tag "template/homepics" %><p>image2</p></li>
+								<% end %>
+								<% if $bshop.shopimage3.present? %>
+								<li><%= @image3 %><p>image3</p></li>
+								<% else %>
+								<li><%= image_tag "template/homepics" %><p>image3</p></li>
+								<% end %>
+						  </ul>
+					</div>
+		</div>
+<% end %>
+
 	<%= content_for(:idc1)  do %>
 		<% $bmenucs.each do |bmenuc| %>
                     <div class="line">
