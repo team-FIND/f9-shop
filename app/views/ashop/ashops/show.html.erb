@@ -19,7 +19,7 @@
                                     <% if $ashop.shopimage1.present? %>
                                           <li><%= image_tag $ashop.shopimage1_url %><p><%= $ashop.shopname %></p></li>
                                     <% else %>
-                                          <li><%= image_tag "template/homepics" %><p><% $ashop.shopname %></p></li>
+                                          <li><%= image_tag "template/homepics" %><p><%= $ashop.shopname %></p></li>
                                     <% end %>
                                     <% if $ashop.shopimage2.present? %>
                                           <li><%= image_tag $ashop.shopimage2_url %><p>image2</p></li>
