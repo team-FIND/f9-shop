@@ -30,18 +30,18 @@
                 <div id="top_pic">
 
                   <% if dshop.topimage.present? %>
-                    <%= image_tag(dshop.topimage_url, {:size =>'400x400'}) %> 
+                    <%= image_tag dshop.topimage_url %> 
                   <% else %>
-                    <%= image_tag("template/logo3", {:size =>'400x400'}) %> 
+                    <%= image_tag "template/logo3" %> 
                   <% end %>
 
                 </div>
 
                 <div id="explains">
                      
-                        <P id="shop_name">🏠：<%= dshop.shopname %></P>
+                        <P id="shop_name"><%= dshop.shopname %></P>
 
-                        <P id="account_name">👤:<%= dshop.user.username %></P><br>
+                        <P id="account_name"><%= dshop.user.username %></P><br>
                         
                         <li id="ptag">
                           <p><%= dshop.top.name %></p>
