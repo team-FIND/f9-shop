@@ -108,12 +108,12 @@
 	clear: both;
 	color:white;
 	width: 900px;
-	height: 80px;
+	height: 130px;
 	font-size: 50px;
 	text-align: center;
 	border-bottom: 3px solid;
 	margin: 0px auto;
-	margin-top: -80px;
+	margin-top: -20px;
 	background :grey;
 	align-items: center;
 	display: flex;
