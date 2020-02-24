@@ -14,11 +14,11 @@ module Blog
   	config.time_zone = 'Tokyo'
   	config.active_record.default_timezone = :local
     config.to_prepare do
-    Devise::SessionsController.layout "app2"
-    Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "application" : "app2" }
-    Devise::ConfirmationsController.layout "app2"
-    Devise::UnlocksController.layout "app2"            
-    Devise::PasswordsController.layout "app2"        
+    Devise::SessionsController.layout "log_sign"
+    Devise::RegistrationsController.layout proc{ |controller| user_signed_in? ? "application" : "log_sign" }
+    Devise::ConfirmationsController.layout "log_sign"
+    Devise::UnlocksController.layout "log_sign"            
+    Devise::PasswordsController.layout "log_sign"        
   end
   
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
