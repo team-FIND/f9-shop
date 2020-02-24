@@ -27,21 +27,21 @@
       <%= link_to myfshop_myfshop_path(id:fshop)  do%> 
          <div id="shopx">
 
-                <div id="top_pic">
+                <div id="toppic">
 
                   <% if fshop.topimage.present? %>
-                    <%= image_tag(fshop.topimage_url, {:size =>'400x400'}) %> 
+                    <%= image_tag fshop.topimage_url %> 
                   <% else %>
-                    <%= image_tag("template/logo3", {:size =>'400x400'}) %> 
+                    <%= image_tag "template/logo3" %> 
                   <% end %>
 
                 </div>
 
                 <div id="explains">
                      
-                        <P id="shop_name">🏠：<%= fshop.shopname %></P>
+                        <P id="shop_name"><%= fshop.shopname %></P>
 
-                        <P id="account_name">👤:<%= fshop.user.username %></P><br>
+                        <P id="account_name"><%= fshop.user.username %></P><br>
                         
                         <li id="ptag">
                           <p><%= fshop.top.name %></p>
