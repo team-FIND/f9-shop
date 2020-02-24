@@ -109,12 +109,12 @@
 	color:white;
 	width: 900px;
 	height: 130px;
-	font-size: 50px;
+	font-size: 60px;
 	text-align: center;
 	border-bottom: 3px solid;
 	margin: 0px auto;
 	margin-top: -20px;
-	background :grey;
+	background :#ccc;
 	align-items: center;
 	display: flex;
 	justify-content: center;
