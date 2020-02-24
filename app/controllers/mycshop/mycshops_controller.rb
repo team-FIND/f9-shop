@@ -7,12 +7,12 @@ before_action :configure_permitted_parameters, if: :devise_controller?
   def index
     @user = User.where(:id => params[:user_id]).first
     $cshops = current_user.cshops.all
-    render :layout => "app2"
+    render :layout => "search"
   end
 
   def show
     $cshop = Cshop.where(:id => params[:id]).first
-    render :layout => "shop/bshop/home"
+    render :layout => "shop_home"
   end
 
   def contact
