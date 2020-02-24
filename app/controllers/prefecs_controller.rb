@@ -6,7 +6,7 @@ class PrefecsController < ApplicationController
   def index
     $area = Area.where(:name => params[:area_id]).first
     $prefecs = $area.prefecs.all
-    render :layout => "app1"
+    render :layout => "city_list"
   end
 
 
