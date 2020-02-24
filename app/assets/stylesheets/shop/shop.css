@@ -111,7 +111,8 @@
 	font-size: 50px;
 	text-align: center;
 	border-bottom: 3px solid;
-	margin-top: -50px;
+	margin: 0px auto;
+	margin-top: -80px;
 	background-color:rgba(0,0,0,0.5);
 }
 
