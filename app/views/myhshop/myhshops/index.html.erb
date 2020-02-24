@@ -27,10 +27,10 @@
       <%= link_to myhshop_myhshop_path(id:hshop)  do%> 
          <div id="shopx">
 
-                <div id="top_pic">
+                <div id="toppic">
 
                   <% if hshop.topimage.present? %>
-                    <%= image_tag(hshop.topimage_url, {:size =>'400x400'}) %> 
+                    <%= image_tag hshop.topimage_url %> 
                   <% else %>
                     <%= image_tag("template/logo3", {:size =>'400x400'}) %> 
                   <% end %>
@@ -39,9 +39,9 @@
 
                 <div id="explains">
                      
-                        <P id="shop_name">🏠：<%= hshop.shopname %></P>
+                        <P id="shop_name"><%= hshop.shopname %></P>
 
-                        <P id="account_name">👤:<%= hshop.user.username %></P><br>
+                        <P id="account_name"><%= hshop.user.username %></P><br>
                         
                         <li id="ptag">
                           <p><%= hshop.top.name %></p>
