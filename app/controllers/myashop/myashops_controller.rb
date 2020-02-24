@@ -7,7 +7,7 @@ before_action :configure_permitted_parameters, if: :devise_controller?
   def index
     @user = User.where(:id => params[:user_id]).first
     $ashops = current_user.ashops.all
-    render :layout => "app2"
+    render :layout => "search"
   end
 
   def show
@@ -16,7 +16,7 @@ before_action :configure_permitted_parameters, if: :devise_controller?
     $asmenucs = $ashop.asmenucs.all
     $admenucs = $ashop.admenucs.all
     $atmenucs = $ashop.atmenucs.all
-    render :layout => "shop/ashop/home"
+    render :layout => "shop_home"
   end
 
   def contact
