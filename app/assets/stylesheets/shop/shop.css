@@ -13,6 +13,7 @@
 	align-items: center;
 	display: flex;
 	justify-content: center;
+	margin-top: 200px;
 }
 
 #main-feature {
@@ -109,7 +110,7 @@
 	font-size: 50px;
 	text-align: center;
 	border-bottom: 3px solid;
-	margin-top: -50px;
+	margin-top: -30px;
 }
 
 
