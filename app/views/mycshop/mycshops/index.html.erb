@@ -27,21 +27,21 @@
       <%= link_to mycshop_mycshop_path(id:cshop)  do%> 
          <div id="shopx">
 
-                <div id="top_pic">
+                <div id="toppic">
 
                   <% if cshop.topimage.present? %>
-                    <%= image_tag(cshop.topimage_url, {:size =>'400x400'}) %> 
+                    <%= image_tag cshop.topimage_url %> 
                   <% else %>
-                    <%= image_tag("template/logo3", {:size =>'400x400'}) %> 
+                    <%= image_tag "template/logo3" %> 
                   <% end %>
 
                 </div>
 
                 <div id="explains">
                      
-                        <P id="shop_name">🏠：<%= cshop.shopname %></P>
+                        <P id="shop_name"><%= cshop.shopname %></P>
 
-                        <P id="account_name">👤:<%= cshop.user.username %></P><br>
+                        <P id="account_name"><%= cshop.user.username %></P><br>
                         
                         <li id="ptag">
                           <p><%= cshop.top.name %></p>
