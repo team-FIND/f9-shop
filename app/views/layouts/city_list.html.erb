@@ -12,8 +12,7 @@
   <head>
       <title><%= page_title %></title>
       <%= display_meta_tags(default_meta_tags) %>
-      <meta name="google-site-verification" content="Tae4lGIffULapygf8Qbv4YmQvCmoMtTFbt6ld_M5Kqw" />
-      <script data-ad-client="pub-4561413520529434" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <%= analytics_init if Rails.env.production? %>
   </head>
 
 <body>
