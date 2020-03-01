@@ -7,7 +7,7 @@ class Asearch::AstakeoutsController < ApplicationController
   def index
     $atmenu = Atmenu.where(:id => params[:atsmenu_id]).first
     $atakeouts = $atmenu.atakeouts.all
-    render :layout => "shop/ashop/contents"
+    render :layout => "menu_category"
   end
 
   def show
