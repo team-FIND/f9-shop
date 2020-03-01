@@ -12,7 +12,7 @@ class Mybshop::MybmenucsController < ApplicationController
   def show
     $bshop = Bshop.where(:id => params[:mybshop_id]).first
     $bmenucs = $bshop.bmenucs.all
-    render :layout => "shop/ashop/contents"
+    render :layout => "menu_category"
   end
 
   def new

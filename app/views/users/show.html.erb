@@ -3,12 +3,8 @@
 <% @title2 = @page_title %> 
 
 <%= content_for(:main)  do %>
-    <%= stylesheet_link_tag "mypage", :media => "all" %>
-	<%= stylesheet_link_tag "footers/pp", :media => "all" %>
 
 	<div id="main-feature">
-
-		<div id="uname2"><P>ようこそ<%= current_user.username %>様！</p></div>
         
         <%= link_to profile_users_path do %>
 			<div id="mybox">

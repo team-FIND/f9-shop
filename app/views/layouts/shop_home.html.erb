@@ -18,7 +18,7 @@
 
             <%= render 'shared/header' %>
             <div id="fmessage"><p class="notice"><%= notice %></p><p class="alert"><%= alert %></p></div>
-            <div id="home_edit_btn"><%= yield(:home_edit) %></div>
+            <%= yield(:home_edit) %>
             <%= yield(:main) %>
             <%= render 'shared/shop/ashop/main-navi' %>
             <%= render 'shared/shop/secondf' %>
