@@ -7,13 +7,13 @@ class Myashop::MyasmenusController < ApplicationController
   def index
     $asmenuc = Asmenuc.where(:id => params[:myasmenuc_id]).first
     $asmenus = $asmenuc.asmenus.all
-    render :layout => "shop/ashop/contents"
+    render :layout => "menu_category"
   end
 
   def show
     $asmenuc = Asmenuc.where(:id => params[:myasmenuc_id]).first
     $asmenus = $asmenuc.asmenus.all
-    render :layout => "shop/ashop/contents"
+    render :layout => "menu_category"
   end
 
   def new
