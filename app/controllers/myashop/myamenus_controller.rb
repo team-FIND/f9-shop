@@ -7,7 +7,7 @@ class Myashop::MyamenusController < ApplicationController
   def index
     $amenuc = Amenuc.where(:id => params[:myamenuc_id]).first
     $amenus = $amenuc.amenus.all
-    render :layout => "shop/ashop/contents"
+    render :layout => "menu_category"
   end
 
   def show
