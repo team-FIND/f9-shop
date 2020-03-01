@@ -4,13 +4,48 @@
 
 	<%= content_for(:head)  do %>
 	    <title><%= page_title %></title>
-	<% end %>
-  
-  <%= content_for(:uheader2)  do %>
+    <% end %>
+    
+    <%= content_for(:home_edit)  do %>
         <%if user_signed_in? && $ashop.user_id == current_user.id %>
                     <%= link_to img_edit_myashop_myashop_path, target:"_blank" do%><div id="edit">✐編集する</div><% end %>
         <% end %>
-  <% end %>
+    <% end %>
+
+  <%= content_for(:main)  do %>
+    <div id="main-feature">
+          <%= javascript_include_tag "shop" %>
+          <%= javascript_include_tag "slick.min" %>
+
+                <div id="feature-wrapper">
+                      <%= stylesheet_link_tag "slick/slick.css", :media => "screen" %>
+                      <%= stylesheet_link_tag "slick/slick-theme.css", :media => "screen" %>
+
+                      <ul class="slider">
+                            <% if $ashop.shopimage1.present? %>
+                                  <li><%= image_tag $ashop.shopimage1_url %><p><%= $ashop.shopname %></p></li>
+                            <% else %>
+                                  <li><%= image_tag "template/homepics" %><p><%= $ashop.shopname %></p></li>
+                            <% end %>
+                            <% if $ashop.shopimage2.present? %>
+                                  <li><%= image_tag $ashop.shopimage2_url %><p>image2</p></li>
+                            <% else %>
+                                  <li><%= image_tag "template/homepics" %><p>image2</p></li>
+                            <% end %>
+                            <% if $ashop.shopimage3.present? %>
+                                  <li><%= image_tag $ashop.shopimage3_url %><p>image3</p></li>
+                            <% else %>
+                                  <li><%= image_tag "template/homepics" %><p>image3</p></li>
+                            <% end %>
+                      </ul>
+                </div>
+                <div id="top_af1">
+                      <a href="https://px.a8.net/svt/ejp?a8mat=3B7GQK+94NAPE+50+2HN8K1" rel="nofollow">
+                      <img border="0" width="728" height="90" alt="" src="https://www23.a8.net/svt/bgt?aid=200222588552&wid=001&eno=01&mid=s00000000018015057000&mc=1"></a>
+                      <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=3B7GQK+94NAPE+50+2HN8K1" alt="">
+                </div>
+    </div>
+<% end %>
 
 	<%= content_for(:idc1)  do %>
 	        <%if user_signed_in? && $ashop.user_id == current_user.id %>
