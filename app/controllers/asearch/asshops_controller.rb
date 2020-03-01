@@ -20,23 +20,23 @@ before_action :configure_permitted_parameters, if: :devise_controller?
   end
 
   def contact
-    render :layout => "shop/ashop/contents"
+    render :layout => "shop_contents"
   end
 
   def access
-    render :layout => "shop/ashop/contents"
+    render :layout => "shop_contents"
   end
 
   def time
-    render :layout => "shop/ashop/contents"
+    render :layout => "shop_contents"
   end
 
   def info
-    render :layout => "shop/ashop/contents"
+    render :layout => "shop_contents"
   end
 
   def pub
-    render :layout => "shop/ashop/contents"
+    render :layout => "shop_contents"
   end
 
   def create

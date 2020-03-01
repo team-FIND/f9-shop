@@ -7,7 +7,7 @@ class Asearch::AdsmenusController < ApplicationController
   def index
     $admenuc = Admenuc.where(:id => params[:adsmenuc_id]).first
     $admenus = $admenuc.admenus.all
-    render :layout => "shop/ashop/contents"
+    render :layout => "menu_category"
   end
 
   def show
