@@ -81,3 +81,5 @@ gem 'sitemap_generator'
 gem 'meta-tags'
 
 gem 'rails-i18n', '~> 5.1'
+
+gem 'google-analytics-rails'
