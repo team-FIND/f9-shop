@@ -5,7 +5,7 @@ protect_from_forgery except: :create
   def index
     $admenu = Admenu.where(:id => params[:admenu_id]).first
     $drinks = $admenu.drinks.all
-    render :layout => "shop/ashop/contents"
+    render :layout => "menu_category"
   end
 
   def show
