@@ -12,7 +12,7 @@ class Bsearch::BssmenucsController < ApplicationController
   def show
     $bshop = Bshop.where(:id => params[:bsshop_id]).first
     $bsmenucs = $bshop.bsmenucs.all
-    render :layout => "shop/ashop/contents"
+    render :layout => "menu_category"
   end
 
   def set_current_user
