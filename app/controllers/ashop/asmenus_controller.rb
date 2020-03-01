@@ -5,7 +5,7 @@ protect_from_forgery except: :create
   def index
     $asmenuc = Asmenuc.where(:id => params[:asmenuc_id]).first
     $asmenus = $asmenuc.asmenus.all
-    render :layout => "shop/ashop/contents"
+    render :layout => "menu_category"
   end
 
   def show
@@ -18,7 +18,7 @@ protect_from_forgery except: :create
   end
 
   def edit
-    render :layout => "shop/ashop/contents"
+    render :layout => "menu_category"
   end
 
   def create
