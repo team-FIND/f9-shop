@@ -7,7 +7,7 @@ class Myashop::MyatmenusController < ApplicationController
   def index
     $atmenuc = Atmenuc.where(:id => params[:myatmenuc_id]).first
     $atmenus = $atmenuc.atmenus.all
-    render :layout => "shop/ashop/contents"
+    render :layout => "menu_category"
   end
 
   def show
