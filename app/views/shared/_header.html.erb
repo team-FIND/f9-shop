@@ -18,6 +18,7 @@
             <%= link_to destroy_admin_user_session_path, target:"_blank" do%><li>ログアウト</li><% end %>
             <%= link_to user_path(id: current_user.id), target:"_blank" do%><li>マイページ</li><% end %>
             <%= link_to myshop_users_path, target:"_blank" do%><li>マイショップ</li><% end %>
+            <li>お気に入り</li>
         </ul>
         <ul>
             <li>言語設定</li>
@@ -48,11 +49,12 @@
             <li>find-manga.com</li>
             <li>find-fourum.com</li>
             <li>find-tv.com</li>
+            <li>ソーシャルリンク</li>
         </ul>
         <ul>
             <%= link_to usage_welcome_index_path, target:"_blank" do %><li>ご利用上の注意</li><% end %>
             <%= link_to code_welcome_index_path, target:"_blank" do %><li>利用規約</li><% end %>
-		    <%= link_to respon_welcome_index_path, target:"_blank" do %><li>免責事項</li><% end %>
+		        <%= link_to respon_welcome_index_path, target:"_blank" do %><li>免責事項</li><% end %>
         </ul>
     <% end %>
   </div>
