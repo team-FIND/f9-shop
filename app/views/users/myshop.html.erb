@@ -1,17 +1,12 @@
 
 <% @page_title = "ショップカテゴリー" %>
 <% @title = @page_title %> 
-<div id="mytext"><p>マイページ＞ショップカテゴリー</p></div>
-<% @back = user_path(id: current_user.id) %>
 
 <%= content_for(:main)  do %>
     <%= stylesheet_link_tag "myshop", :media => "all" %>
 	<%= stylesheet_link_tag "footers/pp", :media => "all" %>
 
 	<div id="main-feature">
-		<div id="guide">マイページ＞ショップカテゴリー</div>
-
-		<div id="uname2"><P><%= current_user.username %>様</p></div>
         
         <%= link_to myashop_myashops_path do %>
 			<div id="mybox">
