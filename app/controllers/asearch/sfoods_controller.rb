@@ -7,7 +7,7 @@ class Asearch::SfoodsController < ApplicationController
   def index
     $amenu = Amenu.where(:id => params[:asmenu_id]).first
     $foods = $amenu.foods.all
-    render :layout => "shop/ashop/contents"
+    render :layout => "menu_category"
   end
 
   def show
