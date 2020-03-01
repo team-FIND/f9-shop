@@ -4,10 +4,7 @@
 
 
         <%= stylesheet_link_tag "shophome/ashop/foods", :media => "all" %>
-        <%= stylesheet_link_tag "temp/ad", :media => "all" %>
         <%= stylesheet_link_tag "temp/header", :media => "all" %>
-        <%= stylesheet_link_tag "temp/sheader", :media => "all" %>
-        <%= stylesheet_link_tag "temp/uheader", :media => "all" %>
         <%= stylesheet_link_tag "temp/footer", :media => "all" %>
 
         <%= javascript_include_tag "food" %>
@@ -23,7 +20,6 @@
           
                 <%= render 'shared/header' %>
                 <div id="fmessage"><p class="notice"><%= notice %></p><p class="alert"><%= alert %></p></div>
-                <%= render 'shared/sheader' %>
                 <%= render 'shared/shop/uheader2' %>
 
                 <%= yield(:edit) %>
