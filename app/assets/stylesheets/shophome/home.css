@@ -121,10 +121,14 @@
 	margin: 0px auto;
 }
 
+#home_edit_btn{
+	padding-top: 180px;
+}
+
 #edit {
 	clear: both;
-	width: 250px;
-	height: 60px;
+	width: 300px;
+	height: 80px;
 	display: flex;
 	color: #8CC63F;
 	font-size: 35px;
