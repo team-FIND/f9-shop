@@ -5,7 +5,7 @@ protect_from_forgery except: :create
   def index
     $atmenu = Atmenu.where(:id => params[:atmenu_id]).first
     $atakeouts = $atmenu.atakeouts.all
-    render :layout => "shop/ashop/contents"
+    render :layout => "menu_category"
   end
 
   def show
