@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_15_114110) do
+ActiveRecord::Schema.define(version: 2020_03_02_211222) do
 
   create_table "acategories", force: :cascade do |t|
     t.string "name"
@@ -302,14 +302,26 @@ ActiveRecord::Schema.define(version: 2020_02_15_114110) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "bequipcs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "bshop_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bshop_id"], name: "index_bequipcs_on_bshop_id"
+    t.index ["user_id"], name: "index_bequipcs_on_user_id"
+  end
+
   create_table "bequips", force: :cascade do |t|
     t.integer "user_id"
     t.integer "bshop_id"
-    t.string "eauipimg"
+    t.integer "bequipc_id"
+    t.string "eauip_img"
     t.string "name"
     t.string "explain"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["bequipc_id"], name: "index_bequips_on_bequipc_id"
     t.index ["bshop_id"], name: "index_bequips_on_bshop_id"
     t.index ["user_id"], name: "index_bequips_on_user_id"
   end
@@ -452,13 +464,11 @@ ActiveRecord::Schema.define(version: 2020_02_15_114110) do
     t.integer "user_id"
     t.integer "bshop_id"
     t.integer "bstaffc_id"
-    t.string "staffimg"
+    t.string "staff_img"
     t.string "name"
-    t.string "explain1"
-    t.string "explain2"
-    t.string "explain3"
-    t.string "explain4"
-    t.string "explain5"
+    t.string "position1"
+    t.string "position2"
+    t.string "explain"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["bshop_id"], name: "index_bstaffs_on_bshop_id"

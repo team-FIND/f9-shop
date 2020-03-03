@@ -83,7 +83,17 @@
 	<% end %>
 
 	<% @page_title = $ashop.shopname %> 
-	<% @title = @page_title %>
+      <% @title = @page_title %>
+      
+      <% @main_navi_img1 =  image_tag("shopnavi/menu") %>
+	<% @main_navi_img2 =  image_tag("shopnavi/menu2") %>
+	<% @main_navi_img3 =  image_tag("shopnavi/drink") %>
+	<% @main_navi_img4 =  image_tag("shopnavi/takeout") %>
+	
+	<% @main_navi_title1 =  "メインメニュー" %>
+	<% @main_navi_title2 =  "サブメニュー" %>
+	<% @main_navi_title3 =  "ドリンクメニュー" %>
+	<% @main_navi_title4 =  "テイクアウトメニュー" %>
 
 	<% @navi4 = contact_asearch_asshop_path %>
 	<% @navi5 = access_asearch_asshop_path %>

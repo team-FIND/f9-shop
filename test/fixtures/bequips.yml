@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  bshop: one
+  bequipc: one
+  eauip_img: MyString
+  name: MyString
+  explain: MyString
+
+two:
+  user: two
+  bshop: two
+  bequipc: two
+  eauip_img: MyString
+  name: MyString
+  explain: MyString

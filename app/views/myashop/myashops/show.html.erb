@@ -137,15 +137,18 @@
 	<% @page_title = $ashop.shopname %> 
 	<% @title = @page_title %>
 	<% @edit = img_edit_myashop_myashop_path %>  
-
-	<% @back =  myashop_myashops_path %>
-	<% @city = @back %>
-
-	<% @image1  =  image_tag $ashop.shopimage1_url if $ashop.shopimage1.present? %> 
-	<% @image2  =  image_tag $ashop.shopimage2_url if $ashop.shopimage2.present? %> 
-	<% @image3  =  image_tag $ashop.shopimage3_url if $ashop.shopimage3.present? %>
+      
+      <% @main_navi_img1 =  image_tag("shopnavi/menu") %>
+	<% @main_navi_img2 =  image_tag("shopnavi/menu2") %>
+	<% @main_navi_img3 =  image_tag("shopnavi/drink") %>
+	<% @main_navi_img4 =  image_tag("shopnavi/takeout") %>
+	
+	<% @main_navi_title1 =  "メインメニュー" %>
+	<% @main_navi_title2 =  "サブメニュー" %>
+	<% @main_navi_title3 =  "ドリンクメニュー" %>
+	<% @main_navi_title4 =  "テイクアウトメニュー" %>
    
-    <% @navi4 = contact_myashop_myashop_path %>
+      <% @navi4 = contact_myashop_myashop_path %>
 	<% @navi5 = access_myashop_myashop_path %>
 	<% @navi6 = info_myashop_myashop_path %>
 	<% @navi7 = contact_myashop_myashop_path %>
