@@ -41,13 +41,14 @@
 								<% end %>
 						  </ul>
 					</div>
+
 					<div id="top_af1">
                       <a href="https://px.a8.net/svt/ejp?a8mat=3B7GQK+94NAPE+50+2HN8K1" rel="nofollow">
                       <img border="0" width="728" height="90" alt="" src="https://www23.a8.net/svt/bgt?aid=200222588552&wid=001&eno=01&mid=s00000000018015057000&mc=1"></a>
                       <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=3B7GQK+94NAPE+50+2HN8K1" alt="">
-                </div>
+                	</div>
 		</div>
-<% end %>
+	<% end %>
 
 	<%= content_for(:idc1)  do %>
 			<%if user_signed_in? && $bshop.user_id == current_user.id %>
@@ -111,6 +112,15 @@
 	         <%end%>
 	<% end %>
 
+	<%= content_for(:shop_affi2)  do %>
+			<div id="top_af1">
+				<a href="https://px.a8.net/svt/ejp?a8mat=3B7GQK+94NAPE+50+2HN8K1" rel="nofollow">
+				<img border="0" width="728" height="90" alt="" src="https://www23.a8.net/svt/bgt?aid=200222588552&wid=001&eno=01&mid=s00000000018015057000&mc=1"></a>
+				<img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=3B7GQK+94NAPE+50+2HN8K1" alt="">
+			</div>
+	<% end %>
+
+
 
 
 	<% @page_title = $bshop.shopname %> 
@@ -126,12 +136,6 @@
 	<% @main_navi_title2 =  "料金案内" %>
 	<% @main_navi_title3 =  "設備紹介" %>
 	<% @main_navi_title4 =  "従業員・スタッフ" %>
-
-   
-	<% @add1 = %>
-	<% @add2 = %>
-	<% @add3 = %>
-	<% @add4 = %>
 
     <% @navi4 = contact_mybshop_mybshop_path %>
 	<% @navi5 = access_mybshop_mybshop_path %>
