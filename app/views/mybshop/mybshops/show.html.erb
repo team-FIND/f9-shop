@@ -101,9 +101,9 @@
 						</div>
 				<%end%>
 
-				<% $bsmenucs.each do |bequipc| %>
+				<% $bequipcs.each do |bequipc| %>
 						<div class="line">
-								<%= link_to mybshop_mybshop_mybequipc_path(mybshop_id:$bshop, id:bsmenuc) do %>
+								<%= link_to mybshop_mybshop_mybequipc_path(mybshop_id:$bshop, id:bequipc) do %>
 									<li id="mc"><%= bequipc.name %></li><br>
 								<%end%>
 								<%= link_to edit_mybshop_mybshop_mybequipc_path(mybshop_id:$bshop, id:bequipc) do %>

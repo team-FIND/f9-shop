@@ -10,9 +10,7 @@ class Mybshop::MybequipcsController < ApplicationController
     end
   
     def show
-      $bshop = Bshop.where(:id => params[:mybshop_id]).first
-      $bequipcs = $bshop.bequipcs.all
-      render :layout => "menu_category"
+      redirect_to mybshop_mybequipc_mybequips_path(mybequipc_id:$bequipc)
     end
   
     def new
@@ -22,10 +20,6 @@ class Mybshop::MybequipcsController < ApplicationController
     end
   
     def edit
-      render :layout => "shop/ashop/menu_edit"
-    end
-  
-    def subedit
       render :layout => "shop/ashop/menu_edit"
     end
   
@@ -81,7 +75,8 @@ class Mybshop::MybequipcsController < ApplicationController
       end
       
       def bequipc_params
-        params.require(:bequipc).permit(:bshop_id, :shopname, :user_id, :name, :content)
+        params.require(:bequipc).permit(:bshop_id, :shopname, :user_id, :name)
       end
+      
   end
   
