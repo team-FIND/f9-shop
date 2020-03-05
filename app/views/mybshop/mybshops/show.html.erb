@@ -93,23 +93,45 @@
 	<% end %>
 
 	<%= content_for(:idc3)  do %>
-			<%if user_signed_in? && $bshop.user_id == current_user.id %>
-	              <div id="ltop">
-	                  <%= link_to @add3 do%>
-	                      <p>⊕カテゴリーを追加する</p>
-	                  <% end %>
-	              </div>
-	         <%end%>
+				<%if user_signed_in? && $bshop.user_id == current_user.id %>
+						<div id="ltop">
+							<%= link_to new_mybshop_mybshop_mybequipc_path(mybshop_id:$bshop) do%>
+								<p>⊕カテゴリーを追加する</p>
+							<% end %>
+						</div>
+				<%end%>
+
+				<% $bsmenucs.each do |bequipc| %>
+						<div class="line">
+								<%= link_to mybshop_mybshop_mybequipc_path(mybshop_id:$bshop, id:bsmenuc) do %>
+									<li id="mc"><%= bequipc.name %></li><br>
+								<%end%>
+								<%= link_to edit_mybshop_mybshop_mybequipc_path(mybshop_id:$bshop, id:bequipc) do %>
+									<p id="mcedit">✐編集する</p>
+								<% end %>
+						</div>
+				<% end %>
 	<% end %>
 
 	<%= content_for(:idc4)  do %>
-			<%if user_signed_in? && $bshop.user_id == current_user.id %>
-	              <div id="ltop">
-	                  <%= link_to @add4 do%>
-	                      <p>⊕カテゴリーを追加する</p>
-	                  <% end %>
-	              </div>
-	         <%end%>
+					<%if user_signed_in? && $bshop.user_id == current_user.id %>
+							<div id="ltop">
+								<%= link_to new_mybshop_mybshop_mybstaffc_path(mybshop_id:$bshop) do%>
+									<p>⊕カテゴリーを追加する</p>
+								<% end %>
+							</div>
+					<%end%>
+
+					<% $bsmenucs.each do |bstaffc| %>
+							<div class="line">
+									<%= link_to mybshop_mybshop_mybstaffc_path(mybshop_id:$bshop, id:bstaffc) do %>
+										<li id="mc"><%= bstaffc.name %></li><br>
+									<%end%>
+									<%= link_to edit_mybshop_mybshop_mybstaffc_path(mybshop_id:$bshop, id:bstaffc) do %>
+										<p id="mcedit">✐編集する</p>
+									<% end %>
+							</div>
+					<% end %>
 	<% end %>
 
 	<%= content_for(:shop_affi2)  do %>
@@ -119,8 +141,6 @@
 				<img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=3B7GQK+94NAPE+50+2HN8K1" alt="">
 			</div>
 	<% end %>
-
-
 
 
 	<% @page_title = $bshop.shopname %> 

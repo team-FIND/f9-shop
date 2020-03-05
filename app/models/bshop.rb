@@ -20,5 +20,9 @@ class Bshop < ApplicationRecord
 
 	has_many :bmenucs, dependent: :destroy
 	has_many :bsmenucs, dependent: :destroy
+	has_many :bequipcs, dependent: :destroy
+	has_many :bstaffcs, dependent: :destroy
+	has_many :bequips, dependent: :destroy
+	has_many :bstaffs, dependent: :destroy
 
 end

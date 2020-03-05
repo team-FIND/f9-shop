@@ -1,23 +1,23 @@
-class Mybshop::MybmenucsController < ApplicationController
-    before_action :set_bmenuc, only: [:show, :edit, :update, :destroy, :subedit]
+class Mybshop::MybstaffcsController < ApplicationController
+    before_action :set_bstaffc, only: [:show, :edit, :update, :destroy, :subedit]
     protect_from_forgery except: :create
     before_action :set_current_user
     before_action :configure_permitted_parameters, if: :devise_controller?
   
     def index
       $bshop = Bshop.where(:id => params[:mybshop_id]).first
-      $bmenucs = $bshop.bmenucs.all
+      $bstaffcs = $bshop.bstaffcs.all
     end
   
     def show
       $bshop = Bshop.where(:id => params[:mybshop_id]).first
-      $bmenucs = $bshop.bmenucs.all
+      $bstaffcs = $bshop.bstaffcs.all
       render :layout => "menu_category"
     end
   
     def new
       $bshop = Bshop.where(:id => params[:mybshop_id]).first
-      $bmenuc = $bshop.bmenucs.build
+      $bstaffc = $bshop.bstaffcs.build
       render :layout => "shop/ashop/menu_edit"
     end
   
@@ -31,28 +31,28 @@ class Mybshop::MybmenucsController < ApplicationController
   
     def create
       $bshop = Bshop.where(:id => params[:mybshop_id]).first
-      $bmenuc = $bshop.bmenucs.build(bmenuc_params)
-      $bmenuc.user_id = current_user.id
+      $bstaffc = $bshop.bstaffcs.build(bstaffc_params)
+      $bstaffc.user_id = current_user.id
   
       respond_to do |format|
-        if $bmenuc.save
+        if $bstaffc.save
           format.html { redirect_to mybshop_mybshop_path(id:$bshop), notice: 'Acategory was successfully created.' }
-          format.json { render :show, status: :created, location: $bmenuc }
+          format.json { render :show, status: :created, location: $bstaffc }
         else
           format.html { render :new }
-          format.json { render json: $bmenuc.errors, status: :unprocessable_entity }
+          format.json { render json: $bstaffc.errors, status: :unprocessable_entity }
         end
       end
     end
   
     def update
       respond_to do |format|
-        if $bmenuc.update(bmenuc_params)
+        if $bstaffc.update(bstaffc_params)
           format.html { redirect_to mybshop_mybshop_path(id:$bshop), notice: 'Acategory was successfully updated.' }
-          format.json { render :show, status: :ok, location: $bmenuc }
+          format.json { render :show, status: :ok, location: $bstaffc }
         else
           format.html { render :edit }
-          format.json { render json: $bmenuc.errors, status: :unprocessable_entity }
+          format.json { render json: $bstaffc.errors, status: :unprocessable_entity }
         end
       end
     end
@@ -62,7 +62,7 @@ class Mybshop::MybmenucsController < ApplicationController
     end
   
     def destroy
-      $bmenuc.destroy
+      $bstaffc.destroy
       respond_to do |format|
         format.html { redirect_to mybshop_mybshop_path(id:$bshop), notice: 'Top was successfully destroyed.' }
         format.json { head :no_content }
@@ -75,13 +75,13 @@ class Mybshop::MybmenucsController < ApplicationController
   
     private
   
-      def set_bmenuc
+      def set_bstaffc
         $bshop = Bshop.where(:id => params[:mybshop_id]).first
-        $bmenuc = $bshop.bmenucs.where(:id => params[:id]).first
+        $bstaffc = $bshop.bstaffcs.where(:id => params[:id]).first
       end
       
-      def bmenuc_params
-        params.require(:bmenuc).permit(:bshop_id, :shopname, :user_id, :name, :content)
+      def bstaffc_params
+        params.require(:bstaffc).permit(:bshop_id, :shopname, :user_id, :name, :content)
       end
   end
   

@@ -121,10 +121,17 @@ namespace :mybshop do resources :mybshops do
 end end end
 
 namespace :mybshop do resources :mybshops do
-                      resources :mybequips do
+                      resources :mybequipcs do
       member do
         get "subedit"
       end
+end end end
+
+namespace :mybshop do resources :mybequipcs do
+                      resources :mybequips do
+        member do
+          get "subedit"
+        end
 end end end
 
 namespace :mybshop do resources :mybshops do
