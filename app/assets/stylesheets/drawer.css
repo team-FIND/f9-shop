@@ -19,6 +19,7 @@ header {
 
 #logo img {
   width: 280px;
+  margin-top: -5px;
 }
 
 .header-contents {
