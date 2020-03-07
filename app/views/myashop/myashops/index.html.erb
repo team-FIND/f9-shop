@@ -29,7 +29,7 @@
 
                 <div id="toppic">
 
-                  <% if ashop.topimage.present? %>
+                  <% if ashop.topimage? %>
                     <%= image_tag ashop.topimage.to_s %> 
                   <% else %>
                     <%= image_tag "template/logo3" %> 
