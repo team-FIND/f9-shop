@@ -25,10 +25,6 @@ class Mybshop::MybstaffcsController < ApplicationController
       render :layout => "shop/ashop/menu_edit"
     end
   
-    def subedit
-      render :layout => "shop/ashop/menu_edit"
-    end
-  
     def create
       $bshop = Bshop.where(:id => params[:mybshop_id]).first
       $bstaffc = $bshop.bstaffcs.build(bstaffc_params)
@@ -81,7 +77,7 @@ class Mybshop::MybstaffcsController < ApplicationController
       end
       
       def bstaffc_params
-        params.require(:bstaffc).permit(:bshop_id, :shopname, :user_id, :name, :content)
+        params.require(:bstaffc).permit(:bshop_id, :shopname, :user_id, :name)
       end
   end
   

@@ -16,7 +16,7 @@ before_action :configure_permitted_parameters, if: :devise_controller?
       #$asmenucs = $ashop.asmenucs.all
       #$admenucs = $ashop.admenucs.all
       #$atmenucs = $ashop.atmenucs.all
-    rrender :layout => "shop_home"
+    render :layout => "shop_home"
   end
 
   def contact

@@ -1,9 +1,0 @@
-
-
-<%= content_for(:main)  do %>
-
-	<%= form_for($bmenuc, :url => {:action => "update"}, :html => {:multipart => true}) do |form| %>
-			<%= render 'form2', bmenuc: $bmenuc %>
-	<% end %>
-
-<% end %>
