@@ -1,12 +1,12 @@
 
-<%= form_for($bmenuc, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+<%= form_for($bstaffc, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
 
-  <% if bmenuc.errors.any? %>
+  <% if bstaffc.errors.any? %>
       <div id="error_explanation">
-          <h2><%= pluralize(bmenuc.errors.count, "error") %> prohibited this bmenuc from being saved:</h2>
+          <h2><%= pluralize(bstaffc.errors.count, "error") %> prohibited this bstaffc from being saved:</h2>
 
           <ul>
-              <% bsmenuc.errors.full_messages.each do |message| %>
+              <% bsstaffc.errors.full_messages.each do |message| %>
                   <li><%= message %></li>
               <% end %>
           </ul>
