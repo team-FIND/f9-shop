@@ -4,8 +4,8 @@ class PictureUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
-  # storage :fog
+  #storage :file
+  storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
@@ -35,6 +35,10 @@ class PictureUploader < CarrierWave::Uploader::Base
     time = Time.now
     name = time.strftime('%Y%m%d%H%M%S') + '.jpg'
     name.downcase
+  end
+
+  def cache_dir
+    "cache"
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
