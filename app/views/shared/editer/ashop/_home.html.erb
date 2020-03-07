@@ -71,7 +71,7 @@
 
                           <div id="thumb" onClick="$('#file').click()">
                             <% if ashop.topimage.present? %>
-                              <div id="updimg"><%= image_tag ashop.topimage.thumb.url if $ashop.topimage? %></div> 
+                              <div id="updimg"><%= image_tag ashop.topimage.to_s if $ashop.topimage? %></div> 
                             <% else %>
                               <div id="upimg"><%= image_tag("template/img") %></div>
                             <% end %>
