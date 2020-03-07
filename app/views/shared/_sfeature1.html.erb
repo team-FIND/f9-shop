@@ -133,7 +133,7 @@
                   <% $ashops.each do |ashop| %>
                         <div class="carousel-cell">
                               <% if ashop.topimage.present? %>
-                                    <%= link_to image_tag(ashop.topimage.to_s, { :alt =>'グルメ　FIND　find F9　f9 f9-shop f9-shop.jp'}), asearch_asshop_path(id:ashop) %>
+                                    <%= link_to image_tag(ashop.topimage_url, { :alt =>'グルメ　FIND　find F9　f9 f9-shop f9-shop.jp'}), asearch_asshop_path(id:ashop) %>
                                     <p><%= ashop.shopname %></p>
                               <% else %>
                                     <%= link_to image_tag("template/homepics", {:size =>'400x400'}), asearch_asshop_path(id:ashop) %>
