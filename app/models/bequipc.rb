@@ -6,5 +6,6 @@ class Bequipc < ApplicationRecord
 
   belongs_to :user
   belongs_to :bshop
-  
+
+  has_many :bequips
 end

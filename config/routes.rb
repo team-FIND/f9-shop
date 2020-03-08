@@ -130,21 +130,18 @@ end end end
 namespace :mybshop do resources :mybequipcs do
                       resources :mybequips do
         member do
-          get "subedit"
+          get "equip_img"
         end
 end end end
 
 namespace :mybshop do resources :mybshops do
                       resources :mybstaffcs do
-      member do
-        get "subedit"
-      end
 end end end
 
 namespace :mybshop do resources :mybstaffcs do
                       resources :mybstaffs do
       member do
-        get "subedit"
+        get "staff_img"
       end
 end end end
 
@@ -483,6 +480,21 @@ namespace :bsearch do resources :bsshops do
                       resources :bssmenucs
 end end
 
+namespace :bsearch do resources :bsshops do
+                      resources :bsequipcs
+end end
+
+namespace :bsearch do resources :bsequipcs do
+                      resources :bsequips
+end end
+
+namespace :bsearch do resources :bsshops do
+                      resources :bsstaffcs
+end end
+
+namespace :bsearch do resources :bsstaffcs do
+                      resources :bsstaffs
+end end
 
 namespace :csearch do resources :csshops do
 

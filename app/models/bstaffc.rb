@@ -5,4 +5,6 @@ class Bstaffc < ApplicationRecord
 
   belongs_to :user
   belongs_to :bshop
+
+  has_many :bstaffs
 end

@@ -4,7 +4,7 @@ class CreateBequips < ActiveRecord::Migration[5.2]
       t.references :user, foreign_key: true
       t.references :bshop, foreign_key: true
       t.references :bequipc, foreign_key: true
-      t.string :eauip_img
+      t.string :equip_img
       t.string :name
       t.string :explain
 

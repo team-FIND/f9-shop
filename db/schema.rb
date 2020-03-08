@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_02_211222) do
+ActiveRecord::Schema.define(version: 2020_03_08_021718) do
 
   create_table "acategories", force: :cascade do |t|
     t.string "name"
@@ -316,7 +316,7 @@ ActiveRecord::Schema.define(version: 2020_03_02_211222) do
     t.integer "user_id"
     t.integer "bshop_id"
     t.integer "bequipc_id"
-    t.string "eauip_img"
+    t.string "equip_img"
     t.string "name"
     t.string "explain"
     t.datetime "created_at", null: false
@@ -458,22 +458,6 @@ ActiveRecord::Schema.define(version: 2020_03_02_211222) do
     t.datetime "updated_at", null: false
     t.index ["bshop_id"], name: "index_bstaffcs_on_bshop_id"
     t.index ["user_id"], name: "index_bstaffcs_on_user_id"
-  end
-
-  create_table "bstaffs", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "bshop_id"
-    t.integer "bstaffc_id"
-    t.string "staff_img"
-    t.string "name"
-    t.string "position1"
-    t.string "position2"
-    t.string "explain"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["bshop_id"], name: "index_bstaffs_on_bshop_id"
-    t.index ["bstaffc_id"], name: "index_bstaffs_on_bstaffc_id"
-    t.index ["user_id"], name: "index_bstaffs_on_user_id"
   end
 
   create_table "ccategories", force: :cascade do |t|

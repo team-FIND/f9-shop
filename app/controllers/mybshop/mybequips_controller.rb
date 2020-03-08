@@ -13,7 +13,7 @@ class Mybshop::MybequipsController < ApplicationController
     def show
       $bequipc = Bequipc.where(:id => params[:mybequipc_id]).first
       $bequips = $bequipc.bequips.all
-      render :layout => "shop/ashop/bequips"
+      render :layout => "shop/ashop/foods"
     end
   
     def new
@@ -23,18 +23,12 @@ class Mybshop::MybequipsController < ApplicationController
     end
   
     def edit
-      $bequip.topimg.cache! unless $bequip.topimg.blank?
-      $bequip.bequipimg1.cache! unless $bequip.bequipimg1.blank?
-      $bequip.bequipimg2.cache! unless $bequip.bequipimg2.blank?    
-      $bequip.bequipimg3.cache! unless $bequip.bequipimg3.blank?   
+      $bequip.equip_img.cache! unless $bequip.equip_img.blank?
       render :layout => "shop/ashop/edit"
     end
   
-    def bequipimg
-      $bequip.topimg.cache! unless $bequip.topimg.blank?
-      $bequip.bequipimg1.cache! unless $bequip.bequipimg1.blank?
-      $bequip.bequipimg2.cache! unless $bequip.bequipimg2.blank?    
-      $bequip.bequipimg3.cache! unless $bequip.bequipimg3.blank?   
+    def equip_img
+      $bequip.equip_img.cache! unless $bequip.equip_img.blank? 
       render :layout => "shop/ashop/edit"
     end
   
@@ -81,15 +75,13 @@ class Mybshop::MybequipsController < ApplicationController
     end
   
     private
-      # Use callbacks to share common setup or constraints between actions.
       def set_bequip
-        $bequipc = bequipc.where(:id => params[:mybequipc_id]).first
+        $bequipc = Bequipc.where(:id => params[:mybequipc_id]).first
         $bequip = $bequipc.bequips.where(:id => params[:id]).first
       end
   
-      # Never trust parameters from the scary internet, only allow the white list through.
       def bequip_params
-        params.require(:bequip).permit(:bequipc_id, :name, :topimg, :topimg_cache, :bequipimg1, :bequipimg1_cache, :bequipimg2, :bequipimg2_cache, :bequipimg3, :bequipimg3_cache, :bequipname1, :bequipname2, :price)
+        params.require(:bequip).permit(:bequipc_id, :user_id, :equip_img, :equip_img_cache, :name, :explain)
       end
   end
   
