@@ -11,13 +11,13 @@ class Mybshop::MybstaffsController < ApplicationController
     end
   
     def show
-      $bstaffc = bstaffc.where(:id => params[:mybstaffc_id]).first
+      $bstaffc = Bstaffc.where(:id => params[:mybstaffc_id]).first
       $bstaffs = $bstaffc.bstaffs.all
-      render :layout => "shop_equip"
+      render :layout => "shop_staff"
     end
   
     def new
-      $bstaffc = bstaffc.where(:id => params[:mybstaffc_id]).first
+      $bstaffc = Bstaffc.where(:id => params[:mybstaffc_id]).first
       $bstaff = $bstaffc.bstaffs.build
       render :layout => "shop/ashop/edit"
     end
@@ -33,7 +33,7 @@ class Mybshop::MybstaffsController < ApplicationController
     end
   
     def create
-      $bstaffc = bstaffc.where(:id => params[:mybstaffc_id]).first
+      $bstaffc = Bstaffc.where(:id => params[:mybstaffc_id]).first
       $bstaff = $bstaffc.bstaffs.build(bstaff_params)
       $bstaff.user_id = current_user.id
   
@@ -79,7 +79,7 @@ class Mybshop::MybstaffsController < ApplicationController
       end
   
       def bstaff_params
-        params.require(:bstaff).permit(:bstaffc_id, :user_id, :staff_img, :staff_img_cache, :name, :explain)
+        params.require(:bstaff).permit(:bstaffc_id, :user_id, :staff_img, :staff_img_cache, :name, :posittion1, :posittion2, :explain)
       end
   end
   

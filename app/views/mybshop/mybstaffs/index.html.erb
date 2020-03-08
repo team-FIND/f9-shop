@@ -1,6 +1,6 @@
 
 <%= content_for(:head)  do %>
-    <%= stylesheet_link_tag "shophome/bshop/each_staff", :media => "all" %>
+    <%= stylesheet_link_tag "shophome/bshop/each_equip", :media => "all" %>
     <%= javascript_include_tag "city" %>
     <title><%= page_title %></title>
 
@@ -26,7 +26,7 @@
     
                 </div>
 
-                <P id="staff_name">
+                <P id="equip_name">
                     <% if bstaff.name.present? %>
                         <%= bstaff.name %>
                     <% else %>
