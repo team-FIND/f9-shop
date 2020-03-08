@@ -155,6 +155,12 @@ Rails.application.config.assets.precompile += %w( shophome/ashop/content/special
 Rails.application.config.assets.precompile += %w( shophome/ashop/content/takeout.css )
 Rails.application.config.assets.precompile += %w( shophome/ashop/content/info.css )
 
+#病院
+Rails.application.config.assets.precompile += %w( shophome/bshop/equip.css )
+Rails.application.config.assets.precompile += %w( shophome/bshop/staff.css )
+Rails.application.config.assets.precompile += %w( shophome/bshop/each_equip.css )
+Rails.application.config.assets.precompile += %w( shophome/bshop/each_staff.css )
+
 #info
 Rails.application.config.assets.precompile += %w( shophome/info/home.css )
 Rails.application.config.assets.precompile += %w( shophome/info/content/principle.css )

@@ -13,7 +13,7 @@ class Mybshop::MybequipsController < ApplicationController
     def show
       $bequipc = Bequipc.where(:id => params[:mybequipc_id]).first
       $bequips = $bequipc.bequips.all
-      render :layout => "shop/ashop/foods"
+      render :layout => "shop_equip"
     end
   
     def new
@@ -60,8 +60,6 @@ class Mybshop::MybequipsController < ApplicationController
       end
     end
   
-    # DELETE /menus/1
-    # DELETE /menus/1.json
     def destroy
       $bequip.destroy
       respond_to do |format|

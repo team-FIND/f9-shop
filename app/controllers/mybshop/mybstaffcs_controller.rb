@@ -10,9 +10,7 @@ class Mybshop::MybstaffcsController < ApplicationController
     end
   
     def show
-      $bshop = Bshop.where(:id => params[:mybshop_id]).first
-      $bstaffcs = $bshop.bstaffcs.all
-      render :layout => "menu_category"
+      redirect_to mybshop_mybstaffc_mybstaffs_path(mybstaffc_id:$bstaffc)
     end
   
     def new
