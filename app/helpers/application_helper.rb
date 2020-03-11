@@ -13,7 +13,7 @@ module ApplicationHelper
 	      site: 'F9',
 	      reverse: true,
 	      charset: 'utf-8',
-	      description: 'FIND999 ファインド999 シンプルなレイアウト 日本のお店のウィキペディア | find999 Simple Layout Japan Shop’s Wikipedia',
+	      description: 'f9-shop.jp エフナイン| find999 Simple Layout Japan Shop’s Wikipedia',
 	      keywords: 'find,find999,f9,日本',
 	      canonical: request.original_url,
 	      separator: '|',
