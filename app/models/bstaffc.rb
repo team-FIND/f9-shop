@@ -1,4 +1,5 @@
 class Bstaffc < ApplicationRecord
+
   validates :user_id, presence: true
   validates :bshop_id, presence: true
   validates :name, presence: true
@@ -7,4 +8,5 @@ class Bstaffc < ApplicationRecord
   belongs_to :bshop
 
   has_many :bstaffs
+  
 end

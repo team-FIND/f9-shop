@@ -157,6 +157,45 @@ namespace :mycshop do resources :mycshops do
 
 end end end
 
+namespace :mycshop do resources :mycshops do
+                      resources :mycmenucs do
+    member do
+      get "subedit"
+    end
+end end end
+
+namespace :mycshop do resources :mycshops do
+                      resources :mycsmenucs do
+    member do
+      get "subedit"
+    end
+end end end
+
+namespace :mycshop do resources :mycshops do
+                      resources :mycequipcs do
+    member do
+      get "subedit"
+    end
+end end end
+
+namespace :mycshop do resources :mycequipcs do
+                      resources :mycequips do
+    member do
+      get "equip_img"
+    end
+end end end
+
+namespace :mycshop do resources :mycshops do
+                      resources :mycstaffcs do
+end end end
+
+namespace :mycshop do resources :mycstaffcs do
+                      resources :mycstaffs do
+    member do
+      get "staff_img"
+    end
+end end end
+
 namespace :mydshop do resources :mydshops do
 
     member do

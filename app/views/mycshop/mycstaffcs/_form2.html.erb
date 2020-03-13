@@ -1,0 +1,32 @@
+
+<%= form_for($bstaffc, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+
+  <% if bstaffc.errors.any? %>
+      <div id="error_explanation">
+          <h2><%= pluralize(bstaffc.errors.count, "error") %> prohibited this bstaffc from being saved:</h2>
+
+          <ul>
+              <% bsstaffc.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+          </ul>
+      </div>
+  <% end %>
+
+  <div class="section" id="page">
+
+    <h1>診察内容を編集する</h1>
+      
+      <%= form.hidden_field :bshop_id %>
+
+      <div id="field"><%= form.text_area :content, placeholder: '診察内容を記載してください。' %></div>
+
+      <div id="actions"><li><%= form.submit(:決定) %></li></div>
+
+      <%= link_to mybshop_mybshop_path(id:$bshop) do %>
+            <div id="eback">編集を中止する</div>
+      <% end %>
+
+  </div>
+
+<% end %>

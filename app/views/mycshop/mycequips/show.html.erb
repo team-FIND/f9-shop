@@ -1,0 +1,25 @@
+
+<% @page_title = $cequip.name %> 
+<% @title2 = $cequip.name %> 
+
+<%= content_for(:edit) do %>
+	<div id="edit">
+    	<%= link_to '✐編集', equip_img_mycshop_mycequipc_mycequip_path(id:$cequip) %>
+    </div>    
+<% end %>
+
+<% $cequips.each do |cequip| %>
+
+	<% if $cequip.equip_img.present? %>
+		<% @image1 = image_tag $cequip.equip_img_url %>
+	<% else %>
+		<% @image1 = image_tag "template/logo3" %>
+	<% end %>
+
+	<% if $cequip.explain.present? %>
+			<p><%= $cshop.explain %></p>
+	<% else %>
+			<p>未入力</p>
+	<% end %>
+
+<% end %>

@@ -1,0 +1,78 @@
+
+
+<%= form_for($cstaff, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+
+  <% if cstaff.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(cstaff.errors.count, "error") %> prohibited this menu from being saved:</h2>
+
+      <ul>
+      <% cstaff.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="section" id="page">
+
+    <h1>料理を編集する</h1>
+
+              <%= form.hidden_field :cstaffc_id %>
+
+              <div id="field-pic">
+                  <%= form.label :staff_img do %><label for="labelx">:トップ画像</label><% end %><br>
+
+                  <label for="labely"><%= form.file_field :staff_img, id: :cstaff_staff_img , id: "file" %></label>
+
+                  <div id="thumb" onClick="$('#file').click()">
+                        <% if cstaff.staff_img.present? %>
+                          <div id="updimg"><%= image_tag cstaff.staff_img.thumb.url if $cstaff.staff_img? %></div> 
+                        <% else %>
+                          <div id="upimg"><%= image_tag("template/img") %></div>
+                        <% end %>
+                  </div>
+              </div>
+
+              <div id="field">
+                  <%= form.label :name do %><label for="labelx">:料理名</label><% end %><br>
+                  <%= form.text_field :name, placeholder: '例）' %><br>
+              </div>
+
+              <%= form.hidden_field :staff_img_cache %>
+
+              <div id="actions"><li><%= form.submit(:決定) %></li></div>
+
+  <%= link_to mybshop_mycstaffc_mycstaffs_path do %><div id="eback">編集を中止する</div><% end %>
+
+</div>
+
+<% end %>
+
+<script>
+
+$(function(){
+  $fileField = $('#file')
+ 
+  // 選択された画像を取得し表示
+  $($fileField).on('change', $fileField, function(e) {
+    file = e.target.files[0]
+    reader = new FileReader(),
+    $preview = $("#thumb");
+ 
+    reader.onload = (function(file) {
+      return function(e) {
+        $preview.empty();
+        $preview.append($('<img>').attr({
+          src: e.target.result,
+          width: "100%",
+          class: "preview",
+          title: file.name
+        }));
+      };
+    })(file);
+    reader.readAsDataURL(file);
+  });
+});
+
+</script>

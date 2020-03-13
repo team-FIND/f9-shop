@@ -18,4 +18,11 @@ class Cshop < ApplicationRecord
 	belongs_to :ccategory
 	belongs_to :user
 
+	has_many :cmenucs, dependent: :destroy
+	has_many :csmenucs, dependent: :destroy
+	has_many :cequipcs, dependent: :destroy
+	has_many :cstaffcs, dependent: :destroy
+	has_many :cequips, dependent: :destroy
+	has_many :cstaffs, dependent: :destroy
+
 end
