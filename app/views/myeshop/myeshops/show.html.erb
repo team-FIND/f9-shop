@@ -12,44 +12,124 @@
         <% end %>
 	<% end %>
 
+	<%= content_for(:main)  do %>
+		<div id="main-feature">
+			  <%= javascript_include_tag "shop" %>
+			  <%= javascript_include_tag "slick.min" %>
+  
+					<div id="feature-wrapper">
+						  <%= stylesheet_link_tag "slick/slick.css", :media => "screen" %>
+						  <%= stylesheet_link_tag "slick/slick-theme.css", :media => "screen" %>
+
+						  <ul class="slider">
+								<% if $eshop.shopimage1.present? %>
+									  <li><%= image_tag $eshop.shopimage1_url %><p><%= $eshop.shopname %></p></li>
+								<% else %>
+									  <li><%= image_tag "template/homepics" %><p><%= $eshop.shopname %></p></li>
+								<% end %>
+								<% if $eshop.shopimage2.present? %>
+									  <li><%= image_tag $eshop.shopimage2_url %><p>image2</p></li>
+								<% else %>
+									  <li><%= image_tag "template/homepics" %><p>image2</p></li>
+								<% end %>
+								<% if $eshop.shopimage3.present? %>
+									  <li><%= image_tag $eshop.shopimage3_url %><p>image3</p></li>
+								<% else %>
+									  <li><%= image_tag "template/homepics" %><p>image3</p></li>
+								<% end %>
+						  </ul>
+					</div>
+
+					<div id="top_af1">
+                      <a href="https://px.a8.net/svt/ejp?a8mat=3B7GQK+94NAPE+50+2HN8K1" rel="nofollow">
+                      <img border="0" width="728" height="90" alt="" src="https://www23.a8.net/svt/bgt?aid=200222588552&wid=001&eno=01&mid=s00000000018015057000&mc=1"></a>
+                      <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=3B7GQK+94NAPE+50+2HN8K1" alt="">
+                	</div>
+		</div>
+	<% end %>
+
 	<%= content_for(:idc1)  do %>
-			<%if user_signed_in? && $eshop.user_id == current_user.id %>
-	              <div id="ltop">
-	                  <%= link_to @add1 do%>
-	                      <p>⊕カテゴリーを追加する</p>
-	                  <% end %>
-	              </div>
-	         <%end%>
+		<%if user_signed_in? && $eshop.user_id == current_user.id %>
+			  <div id="ltop">
+				  <%= link_to new_myeshop_myeshop_myemenuc_path(myeshop_id:$eshop) do%>
+					  <p>⊕カテゴリーを追加する</p>
+				  <% end %>
+			  </div>
+		 <%end%>
+
+		 <% $emenucs.each do |emenuc| %>
+				<div class="line">
+					  <%= link_to myeshop_myeshop_myemenuc_path(myeshop_id:$eshop, id:emenuc) do %>
+						  <li id="mc"><%= emenuc.name %></li><br>
+					  <%end%>
+					  <%= link_to edit_myeshop_myeshop_myemenuc_path(myeshop_id:$eshop, id:emenuc) do %>
+						   <p id="mcedit">✐編集する</p>
+					  <% end %>
+				</div>
+		<% end %>
 	<% end %>
 
 	<%= content_for(:idc2)  do %>
-			<%if user_signed_in? && $eshop.user_id == current_user.id %>
-	              <div id="ltop">
-	                  <%= link_to @add2 do%>
-	                      <p>⊕カテゴリーを追加する</p>
-	                  <% end %>
-	              </div>
-	         <%end%>
+		<%if user_signed_in? && $eshop.user_id == current_user.id %>
+			  <div id="ltop">
+				  <%= link_to new_myeshop_myeshop_myesmenuc_path(myeshop_id:$eshop) do%>
+					  <p>⊕カテゴリーを追加する</p>
+				  <% end %>
+			  </div>
+		 <%end%>
+
+		 <% $esmenucs.each do |esmenuc| %>
+				<div class="line">
+					  <%= link_to myeshop_myeshop_myesmenuc_path(myeshop_id:$eshop, id:esmenuc) do %>
+						  <li id="mc"><%= esmenuc.name %></li><br>
+					  <%end%>
+					  <%= link_to edit_myeshop_myeshop_myesmenuc_path(myeshop_id:$eshop, id:esmenuc) do %>
+						   <p id="mcedit">✐編集する</p>
+						<% end %>
+				</div>
+		<% end %>
 	<% end %>
 
 	<%= content_for(:idc3)  do %>
 			<%if user_signed_in? && $eshop.user_id == current_user.id %>
-	              <div id="ltop">
-	                  <%= link_to @add3 do%>
-	                      <p>⊕カテゴリーを追加する</p>
-	                  <% end %>
-	              </div>
-	         <%end%>
+					<div id="ltop">
+						<%= link_to new_myeshop_myeshop_myeequipc_path(myeshop_id:$eshop) do%>
+							<p>⊕カテゴリーを追加する</p>
+						<% end %>
+					</div>
+			<%end%>
+
+			<% $eequipcs.each do |eequipc| %>
+					<div class="line">
+							<%= link_to myeshop_myeshop_myeequipc_path(myeshop_id:$eshop, id:eequipc) do %>
+								<li id="mc"><%= eequipc.name %></li><br>
+							<%end%>
+							<%= link_to edit_myeshop_myeshop_myeequipc_path(myeshop_id:$eshop, id:eequipc) do %>
+								<p id="mcedit">✐編集する</p>
+							<% end %>
+					</div>
+			<% end %>
 	<% end %>
 
 	<%= content_for(:idc4)  do %>
-			<%if user_signed_in? && $eshop.user_id == current_user.id %>
-	              <div id="ltop">
-	                  <%= link_to @add4 do%>
-	                      <p>⊕カテゴリーを追加する</p>
-	                  <% end %>
-	              </div>
-	         <%end%>
+					<%if user_signed_in? && $eshop.user_id == current_user.id %>
+							<div id="ltop">
+								<%= link_to new_myeshop_myeshop_myestaffc_path(myeshop_id:$eshop) do%>
+									<p>⊕カテゴリーを追加する</p>
+								<% end %>
+							</div>
+					<%end%>
+
+					<% $estaffcs.each do |estaffc| %>
+							<div class="line">
+									<%= link_to myeshop_myeshop_myestaffc_path(myeshop_id:$eshop, id:estaffc) do %>
+										<li id="mc"><%= estaffc.name %></li><br>
+									<%end%>
+									<%= link_to edit_myeshop_myeshop_myestaffc_path(myeshop_id:$eshop, id:estaffc) do %>
+										<p id="mcedit">✐編集する</p>
+									<% end %>
+							</div>
+					<% end %>
 	<% end %>
 
 
@@ -57,18 +137,16 @@
 	<% @title = @page_title %>
 	<% @edit = img_edit_myeshop_myeshop_path  %>  
 
-	<% @back =  myeshop_myeshops_path %>
-	<% @city = @back %>
+	<% @main_navi_img1 =  image_tag("shopnavi/fee") %>
+	<% @main_navi_img2 =  image_tag("shopnavi/fee") %>
+	<% @main_navi_img3 =  image_tag("shopnavi/equip") %>
+	<% @main_navi_img4 =  image_tag("shopnavi/staff") %>
 
-	<% @image1  =  image_tag $eshop.shopimage1_url if $eshop.shopimage1.present? %> 
-	<% @image2  =  image_tag $eshop.shopimage2_url if $eshop.shopimage2.present? %> 
-	<% @image3  =  image_tag $eshop.shopimage3_url if $eshop.shopimage3.present? %>
+	<% @main_navi_title1 =  "商品" %>
+	<% @main_navi_title2 =  "その他サービス" %>
+	<% @main_navi_title3 =  "設備紹介" %>
+	<% @main_navi_title4 =  "従業員・スタッフ" %>
 
-	<% @add1 = %>
-	<% @add2 = %>
-	<% @add3 = %>
-	<% @add4 = %>
-   
     <% @navi4 = contact_myeshop_myeshop_path %>
 	<% @navi5 = access_myeshop_myeshop_path %>
 	<% @navi6 = info_myeshop_myeshop_path %>
@@ -77,4 +155,3 @@
     
 	<% @subnavi1 =  %>
 	<% @subnavi2 =  %>
-

@@ -1,0 +1,31 @@
+
+<% @page_title = $auto.autoname1 %> 
+<% @title2 = $auto.autoname1 %> 
+
+<%= content_for(:edit) do %>
+	<div id="edit">
+    	<%= link_to '✐編集', auto_img_mydshop_mydmenu_myauto_path(id:$auto) %>
+    </div>    
+<% end %>
+
+<% $autos.each do |auto| %>
+
+	<% if $auto.autoimg1.present? %>
+		<% @image1 = image_tag $auto.autoimg1_url %>
+	<% else %>
+		<% @image1 = image_tag "template/logo3" %>
+	<% end %>
+
+	<% if $auto.autoimg2.present? %>
+		<% @image2 = image_tag $auto.autoimg2_url %>
+	<% else %>
+		<% @image2 = image_tag "template/logo3" %>
+	<% end %>
+
+	<% if $auto.autoimg3.present? %>
+		<% @image3 = image_tag $auto.autoimg3_url %>
+	<% else %>
+		<% @image3 = image_tag "template/logo3" %>
+	<% end %>
+
+<% end %>

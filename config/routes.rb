@@ -208,6 +208,53 @@ namespace :mydshop do resources :mydshops do
 
 end end end
 
+namespace :mydshop do resources :mydshops do
+                      resources :mydmenucs
+end end
+
+namespace :mydshop do resources :mydmenucs do
+                      resources :mydmenus
+end end
+
+namespace :mydshop do resources :mydmenus do
+                      resources :myautos do
+    member do
+      get "auto_img"
+    end
+end end end
+
+namespace :mydshop do resources :mydshops do
+                      resources :mydsmenucs do
+    member do
+      get "subedit"
+    end
+end end end
+
+namespace :mydshop do resources :mydshops do
+                      resources :mydequipcs do
+    member do
+      get "subedit"
+    end
+end end end
+
+namespace :mydshop do resources :mydequipcs do
+                      resources :mydequips do
+    member do
+      get "equip_img"
+    end
+end end end
+
+namespace :mydshop do resources :mydshops do
+                      resources :mydstaffcs do
+end end end
+
+namespace :mydshop do resources :mydstaffcs do
+                      resources :mydstaffs do
+    member do
+      get "staff_img"
+    end
+end end end
+
 
 namespace :myeshop do resources :myeshops do
 

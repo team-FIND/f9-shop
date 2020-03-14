@@ -18,4 +18,11 @@ class Dshop < ApplicationRecord
 	belongs_to :dcategory
 	belongs_to :user
 
+	has_many :dmenucs, dependent: :destroy
+	has_many :dsmenucs, dependent: :destroy
+	has_many :dequipcs, dependent: :destroy
+	has_many :dstaffcs, dependent: :destroy
+	has_many :dequips, dependent: :destroy
+	has_many :dstaffs, dependent: :destroy
+
 end

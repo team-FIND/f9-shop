@@ -1,9 +1,0 @@
-
-
-<%= content_for(:main)  do %>
-
-	<%= form_for($asmenuc, :url => {:action => "update"}, :html => {:multipart => true}) do |form| %>
-			<%= render 'form', asmenuc: $asmenuc %>
-	<% end %>
-
-<% end %>

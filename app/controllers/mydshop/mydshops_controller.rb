@@ -12,6 +12,10 @@ before_action :configure_permitted_parameters, if: :devise_controller?
 
   def show
     $dshop = Dshop.where(:id => params[:id]).first
+    $dmenucs = $dshop.dmenucs.all
+    $dsmenucs = $dshop.dsmenucs.all
+    $dequipcs = $dshop.dequipcs.all
+    $dstaffcs = $dshop.dstaffcs.all
     render :layout => "shop_home"
   end
 

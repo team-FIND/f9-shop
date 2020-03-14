@@ -1,0 +1,61 @@
+
+<%= content_for(:head)  do %>
+    <%= stylesheet_link_tag "shophome/ashop/each", :media => "all" %>
+    <%= javascript_include_tag "city" %>
+    <title><%= page_title %></title>
+
+<% end %>
+
+<% @page_title = $dmenu.name %> 
+<% @title1 = $dshop.shopname %> 
+<% @title2 = $dmenu.name %>
+
+
+<%= content_for(:main)  do %>
+
+  <%= link_to new_mydshop_mydmenu_myauto_path do%><div id="new">＋料理を追加する</div><% end %>
+
+  <% $autos.each do |auto| %>
+
+        <div id="autoa">
+          
+                <div id="top_pic"> 
+
+                    <% if auto.topimg.present? %>
+                      <%= link_to image_tag(auto.topimg_url, {:size =>'300x300'}), mydshop_mydmenu_myauto_path(id:auto) %> 
+                    <% else %>
+                      <%= link_to image_tag("template/logo3", {:size =>'300x300'}), mydshop_mydmenu_myauto_path(id:auto) %> 
+                    <% end %>
+    
+                </div>
+
+                <P id="auto_name1">
+                    <% if auto.autoname1.present? %>
+                        <%= auto.autoname1 %>
+                    <% else %>
+                        未入力（料理名１）
+                    <% end %>
+                </P>
+
+                <P id="auto_name2">
+                    <% if auto.autoname2.present? %>
+                        <%= auto.autoname2 %>
+                    <% else %>
+                        未入力（料理名２）
+                    <% end %>
+                </P>
+
+                <P id="price">税込：<%= auto.price %>円</P>
+
+                <p id="edit">
+                    <%= link_to '✐編集', edit_mydshop_mydmenu_myauto_path(id:auto) %>
+                </p>    
+
+         </div>
+
+
+  <% end %>
+
+
+<% end %>
+

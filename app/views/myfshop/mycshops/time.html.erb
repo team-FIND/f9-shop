@@ -1,0 +1,42 @@
+
+
+	<%= content_for(:head)  do %>
+	    <%= stylesheet_link_tag "shophome/ashop/content/time", :media => "all" %>
+	    <%= javascript_include_tag "city" %>
+
+	    <title><%= page_title %></title>
+	<% end %>
+
+
+	<% @page_title = "営業時間" %> 
+
+	<%= render 'form', cshop: $cshop %>
+
+
+<%= content_for(:main)  do %>
+
+	<%= link_to time_edit_mycshop_mycshop_path(id:$cshop), target:"_blank" do%><div id="edit">✐編集する</div><% end %>
+
+
+    <div id="feature-wrapper">
+
+	      <div id="box1">	
+		      <li id="b1">日曜日（午前）<%= $cshop.sunam1 %>:<%= $cshop.sunam2 %>~<%= $cshop.sunam3 %>:<%= $cshop.sunam4 %></li>
+		      <li id="b1">日曜日（午後）<%= $cshop.sunpm1 %>:<%= $cshop.sunpm2 %>~<%= $cshop.sunpm3 %>:<%= $cshop.sunpm4 %></li><br/>
+		      <li id="b1">月曜日（午前）<%= $cshop.monam1 %>:<%= $cshop.monam2 %>~<%= $cshop.monam3 %>:<%= $cshop.monam4 %></li>
+		      <li id="b1">月曜日（午後）<%= $cshop.monpm1 %>:<%= $cshop.monpm2 %>~<%= $cshop.monpm3 %>:<%= $cshop.monam4 %></li><br/>
+		      <li id="b1">火曜日（午前）<%= $cshop.tueam1 %>:<%= $cshop.tueam2 %>~<%= $cshop.tueam3 %>:<%= $cshop.tueam4 %></li>
+		      <li id="b1">火曜日（午後）<%= $cshop.tuepm1 %>:<%= $cshop.tuepm2 %>~<%= $cshop.tuepm3 %>:<%= $cshop.tuepm4 %></li><br/>
+		      <li id="b1">水曜日（午前）<%= $cshop.wedam1 %>:<%= $cshop.wedam2 %>~<%= $cshop.wedam3 %>:<%= $cshop.wedam4 %></li>
+		      <li id="b1">水曜日（午後）<%= $cshop.wedpm1 %>:<%= $cshop.wedpm2 %>~<%= $cshop.wedpm3 %>:<%= $cshop.wedpm4 %></li><br/>
+		      <li id="b1">木曜日（午前）<%= $cshop.thuam1 %>:<%= $cshop.thuam2 %>~<%= $cshop.thuam3 %>:<%= $cshop.thuam4 %></li>
+		      <li id="b1">木曜日（午後）<%= $cshop.thupm1 %>:<%= $cshop.thupm2 %>~<%= $cshop.thupm3 %>:<%= $cshop.thupm4 %></li><br/>
+		      <li id="b1">金曜日（午前）<%= $cshop.friam1 %>:<%= $cshop.friam2 %>~<%= $cshop.friam3 %>:<%= $cshop.friam4 %></li>
+		      <li id="b1">金曜日（午後）<%= $cshop.fripm1 %>:<%= $cshop.fripm2 %>~<%= $cshop.fripm3 %>:<%= $cshop.fripm4 %></li><br/>
+		      <li id="b1">土曜日（午前）<%= $cshop.satam1 %>:<%= $cshop.satam2 %>~<%= $cshop.satam3 %>:<%= $cshop.satam4 %></li>
+		      <li id="b1">土曜日（午後）<%= $cshop.satpm1 %>:<%= $cshop.satpm2 %>~<%= $cshop.satpm3 %>:<%= $cshop.satpm4 %></li>
+	      </div>
+
+    </div>
+
+<% end %>

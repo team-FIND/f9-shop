@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_13_152113) do
+ActiveRecord::Schema.define(version: 2020_03_14_211728) do
 
   create_table "acategories", force: :cascade do |t|
     t.string "name"
@@ -294,6 +294,26 @@ ActiveRecord::Schema.define(version: 2020_03_13_152113) do
     t.index ["ashop_id"], name: "index_atmenus_on_ashop_id"
     t.index ["atmenuc_id"], name: "index_atmenus_on_atmenuc_id"
     t.index ["user_id"], name: "index_atmenus_on_user_id"
+  end
+
+  create_table "autos", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "dshop_id"
+    t.integer "dmenuc_id"
+    t.integer "dmenu_id"
+    t.string "topimg"
+    t.string "autoname1"
+    t.string "autoname2"
+    t.string "price"
+    t.string "autoimg1"
+    t.string "autoimg2"
+    t.string "autoimg3"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dmenu_id"], name: "index_autos_on_dmenu_id"
+    t.index ["dmenuc_id"], name: "index_autos_on_dmenuc_id"
+    t.index ["dshop_id"], name: "index_autos_on_dshop_id"
+    t.index ["user_id"], name: "index_autos_on_user_id"
   end
 
   create_table "bcategories", force: :cascade do |t|
@@ -672,6 +692,38 @@ ActiveRecord::Schema.define(version: 2020_03_13_152113) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "dequipcs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "dshop_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dshop_id"], name: "index_dequipcs_on_dshop_id"
+    t.index ["user_id"], name: "index_dequipcs_on_user_id"
+  end
+
+  create_table "dmenucs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "dshop_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dshop_id"], name: "index_dmenucs_on_dshop_id"
+    t.index ["user_id"], name: "index_dmenucs_on_user_id"
+  end
+
+  create_table "dmenus", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "dshop_id"
+    t.integer "dmenuc_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dmenuc_id"], name: "index_dmenus_on_dmenuc_id"
+    t.index ["dshop_id"], name: "index_dmenus_on_dshop_id"
+    t.index ["user_id"], name: "index_dmenus_on_user_id"
+  end
+
   create_table "drinks", force: :cascade do |t|
     t.integer "user_id"
     t.integer "ashop_id"
@@ -777,11 +829,75 @@ ActiveRecord::Schema.define(version: 2020_03_13_152113) do
     t.string "satpm4"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "history"
+    t.string "career1"
+    t.string "career2"
+    t.string "career3"
+    t.string "career4"
+    t.string "career5"
+    t.string "recom1"
+    t.string "recom2"
+    t.string "recom3"
+    t.string "recom4"
+    t.string "recom5"
+    t.string "iititle1"
+    t.text "inof1"
+    t.string "iititle2"
+    t.text "inof2"
+    t.string "iititle3"
+    t.text "inof3"
     t.index ["area_id"], name: "index_dshops_on_area_id"
     t.index ["dcategory_id"], name: "index_dshops_on_dcategory_id"
     t.index ["prefec_id"], name: "index_dshops_on_prefec_id"
     t.index ["top_id"], name: "index_dshops_on_top_id"
     t.index ["user_id"], name: "index_dshops_on_user_id"
+  end
+
+  create_table "dsmenucs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "dshop_id"
+    t.string "name"
+    t.string "price"
+    t.string "detail1"
+    t.string "detail2"
+    t.string "detail3"
+    t.string "detail4"
+    t.string "detail5"
+    t.string "detail6"
+    t.string "detail7"
+    t.string "detail8"
+    t.string "detail9"
+    t.string "detail10"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dshop_id"], name: "index_dsmenucs_on_dshop_id"
+    t.index ["user_id"], name: "index_dsmenucs_on_user_id"
+  end
+
+  create_table "dstaffcs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "dshop_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dshop_id"], name: "index_dstaffcs_on_dshop_id"
+    t.index ["user_id"], name: "index_dstaffcs_on_user_id"
+  end
+
+  create_table "dstaffs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "dshop_id"
+    t.integer "dstaffc_id"
+    t.string "staff_img"
+    t.string "name"
+    t.string "position1"
+    t.string "position2"
+    t.string "explain"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dshop_id"], name: "index_dstaffs_on_dshop_id"
+    t.index ["dstaffc_id"], name: "index_dstaffs_on_dstaffc_id"
+    t.index ["user_id"], name: "index_dstaffs_on_user_id"
   end
 
   create_table "ecategories", force: :cascade do |t|

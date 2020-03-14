@@ -1,0 +1,68 @@
+
+
+  <% @page_title = "美容室・理髪店" %> 
+  <% @title = @page_title %>
+  <% @back = myshop_users_path %>
+
+
+<%= content_for(:uheader)  do %>
+<%= render 'shared/uheader2' %>
+<div id="guide">マイページ＞ショップカテゴリー><%= @page_title %></div>
+<div id="uname2"><P><%= current_user.username %>様</p></div>
+<% end %>
+
+
+<%= content_for(:main)  do %>
+    <%= stylesheet_link_tag "shop/shop", :media => "all" %>
+    <%= stylesheet_link_tag "search/asearch", :media => "all" %>
+
+   <%= link_to home_new_mycshop_mycshops_path do%>
+        <div id="new"><p>+店舗を追加する</p></div>
+    <% end %>
+
+<div id="main-feature">
+  <% $cshops.each do |cshop| %>
+
+
+      <%= link_to mycshop_mycshop_path(id:cshop)  do%> 
+         <div id="shopx">
+
+                <div id="toppic">
+
+                  <% if cshop.topimage.present? %>
+                    <%= image_tag cshop.topimage_url %> 
+                  <% else %>
+                    <%= image_tag "template/logo3" %> 
+                  <% end %>
+
+                </div>
+
+                <div id="explains">
+                     
+                        <P id="shop_name"><%= cshop.shopname %></P>
+
+                        <P id="account_name"><%= cshop.user.username %></P><br>
+                        
+                        <li id="ptag">
+                          <p><%= cshop.top.name %></p>
+                          <p>><%= cshop.area.name %></p>
+                          <p>><%= cshop.prefec.name %></p>
+                        </li><br>
+
+                        <li id="tag"><p>#<%= cshop.ccategory.name %></p></li>
+                </div>
+
+          </div>
+
+                <%= link_to home_edit_mycshop_mycshop_path(id:cshop) do%><br>
+                  <div id="edittop"><p>✐編集する</p></div>
+                <% end %>
+                
+        <% end %>
+
+  <% end %>
+  
+</div>
+
+<% end %>
+

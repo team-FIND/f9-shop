@@ -1,0 +1,10 @@
+
+<%= content_for(:main)  do %>
+
+	<%= form_for($auto, :url => {:action => "update"}, :html => {:multipart => true}) do |form| %>
+
+	<%= render 'form', auto: $auto %>
+
+	<% end %>
+
+<% end %>

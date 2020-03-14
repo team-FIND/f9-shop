@@ -8,4 +8,5 @@ class Amenu < ApplicationRecord
 	belongs_to :amenuc
 
 	has_many :foods
+	
 end
