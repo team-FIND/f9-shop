@@ -5,8 +5,8 @@ class Cstaffc < ApplicationRecord
   validates :name, presence: true
 
   belongs_to :user
-  belongs_to :bshop
+  belongs_to :cshop
 
-  has_many :bstaffs
+  has_many :cstaffs
   
 end

@@ -25,17 +25,13 @@
                 <%= yield(:edit) %>
 
                 <div id="main-feature">
-                    <div class="mainImage">
-                        <%= @image1 %>
+                    <div id="feature-wrapper">
+                      <%= yield(:main) %>
                     </div>
-                </div>
+                </div>  
 
                 <div id="second-feature">
-                    <% if $bstaff.explain.present? %>
-                            <p><%= $bshop.explain %></p>
-                    <% else %>
-                            <p>未入力</p>
-                    <% end %>
+                    <%= yield(:second_feature) %>
                 </div>
 
                 <%= render 'shared/footer' %>
