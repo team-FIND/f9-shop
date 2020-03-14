@@ -1,11 +1,11 @@
-<%= form_for($bequip, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+<%= form_for($cequip, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
 
-  <% if bequip.errors.any? %>
+  <% if cequip.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(bequip.errors.count, "error") %> prohibited this menu from being saved:</h2>
+      <h2><%= pluralize(cequip.errors.count, "error") %> prohibited this menu from being saved:</h2>
 
       <ul>
-      <% bequip.errors.full_messages.each do |message| %>
+      <% cequip.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -24,8 +24,8 @@
                       <label for="labely"><%= form.file_field :equip_img, id: :bequip_equip_img , id: "file1" %></label>
 
                       <div id="thumb1" onClick="$('#file1').click()">
-                            <% if bequip.equip_img.present? %>
-                              <div id="updimg"><%= image_tag bequip.equip_img.thumb.url if $bequip.equip_img? %></div> 
+                            <% if cequip.equip_img.present? %>
+                              <div id="updimg"><%= image_tag cequip.equip_img.thumb.url if $cequip.equip_img? %></div> 
                             <% else %>
                               <div id="upimg"><%= image_tag("template/img") %></div>
                             <% end %>
