@@ -1,69 +1,69 @@
-class Mycshop::MycequipsController < ApplicationController
-    before_action :set_cequip, only: [:show, :edit, :update, :destroy]
+class Mydshop::MydequipsController < ApplicationController
+    before_action :set_dequip, only: [:show, :edit, :update, :destroy]
     protect_from_forgery except: :create
     before_action :set_current_user
     before_action :configure_permitted_parameters, if: :devise_controller?
   
     def index
-      $cequipc = Cequipc.where(:id => params[:mycequipc_id]).first
-      $cequips = $cequipc.cequips.all
+      $dequipc = Dequipc.where(:id => params[:mydequipc_id]).first
+      $dequips = $dequipc.dequips.all
       render :layout => "menu_category"
     end
   
     def show
-      $cequipc = Cequipc.where(:id => params[:mycequipc_id]).first
-      $cequips = $cequipc.cequips.all
+      $dequipc = Dequipc.where(:id => params[:mydequipc_id]).first
+      $dequips = $dequipc.dequips.all
       render :layout => "shop_equip"
     end
   
     def new
-      $cequipc = Cequipc.where(:id => params[:mycequipc_id]).first
-      $cequip = $cequipc.cequips.build
+      $dequipc = Dequipc.where(:id => params[:mydequipc_id]).first
+      $dequip = $dequipc.dequips.build
       render :layout => "shop/ashop/edit"
     end
   
     def edit
-      $cequip.equip_img.cache! unless $cequip.equip_img.blank?
+      $dequip.equip_img.cache! unless $dequip.equip_img.blank?
       render :layout => "shop/ashop/edit"
     end
   
     def equip_img
-      $cequip.equip_img.cache! unless $cequip.equip_img.blank? 
+      $dequip.equip_img.cache! unless $dequip.equip_img.blank? 
       render :layout => "shop/ashop/edit"
     end
   
     def create
-      $cequipc = Cequipc.where(:id => params[:mycequipc_id]).first
-      $cequip = $cequipc.cequips.build(cequip_params)
-      $cequip.user_id = current_user.id
+      $dequipc = Dequipc.where(:id => params[:mydequipc_id]).first
+      $dequip = $dequipc.dequips.build(dequip_params)
+      $dequip.user_id = current_user.id
   
       respond_to do |format|
-        if $cequip.save
-          format.html { redirect_to mycshop_mycequipc_mycequip_path(mycequipc_id:$cequipc, id:$cequip), notice: 'Grand was successfully created.' }
-          format.json { render :show, status: :created, location: $cequip }
+        if $dequip.save
+          format.html { redirect_to mydshop_mydequipc_mydequip_path(mydequipc_id:$dequipc, id:$dequip), notice: 'Grand was successfully created.' }
+          format.json { render :show, status: :created, location: $dequip }
         else
           format.html { render :new }
-          format.json { render json: $cequip.errors, status: :unprocessable_entity }
+          format.json { render json: $dequip.errors, status: :unprocessable_entity }
         end
       end
     end
   
     def update
       respond_to do |format|
-        if $cequip.update(cequip_params)
-          format.html { redirect_to mycshop_mycequipc_mycequip_path(mycequipc_id:$cequipc, id:$cequip), notice: 'Menu was successfully updated.' }
-          format.json { render :show, status: :ok, location: $cequip }
+        if $dequip.update(dequip_params)
+          format.html { redirect_to mydshop_mydequipc_mydequip_path(mydequipc_id:$dequipc, id:$dequip), notice: 'Menu was successfully updated.' }
+          format.json { render :show, status: :ok, location: $dequip }
         else
           format.html { render :edit }
-          format.json { render json: $cequip.errors, status: :unprocessable_entity }
+          format.json { render json: $dequip.errors, status: :unprocessable_entity }
         end
       end
     end
   
     def destroy
-      $cequip.destroy
+      $dequip.destroy
       respond_to do |format|
-        format.html { redirect_to mycshop_mycequipc_mycequips_path(mycequipc_id:$cequipc), notice: 'Menu was successfully destroyed.' }
+        format.html { redirect_to mydshop_mydequipc_mydequips_path(mydequipc_id:$dequipc), notice: 'Menu was successfully destroyed.' }
         format.json { head :no_content }
       end
     end
@@ -73,13 +73,13 @@ class Mycshop::MycequipsController < ApplicationController
     end
   
     private
-      def set_cequip
-        $cequipc = Cequipc.where(:id => params[:mycequipc_id]).first
-        $cequip = $cequipc.cequips.where(:id => params[:id]).first
+      def set_dequip
+        $dequipc = Dequipc.where(:id => params[:mydequipc_id]).first
+        $dequip = $dequipc.dequips.where(:id => params[:id]).first
       end
   
-      def cequip_params
-        params.require(:cequip).permit(:cequipc_id, :user_id, :equip_img, :equip_img_cache, :name, :explain)
+      def dequip_params
+        params.require(:dequip).permit(:dequipc_id, :user_id, :equip_img, :equip_img_cache, :name, :explain)
       end
   end
   

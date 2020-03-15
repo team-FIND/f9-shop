@@ -8,9 +8,9 @@
 
 <%= content_for(:main)  do %>
 
-  <%= link_to new_mycshop_mycequipc_mycequip_path do%><div id="new">＋設備を追加する</div><% end %>
+  <%= link_to new_mydshop_mydequipc_mydequip_path do%><div id="new">＋設備を追加する</div><% end %>
 
-  <% $cequips.each do |cequip| %>
+  <% $dequips.each do |dequip| %>
 
     <div id="each_equip">
 
@@ -18,24 +18,24 @@
           
                 <div id="top_pic"> 
 
-                    <% if cequip.equip_img.present? %>
-                      <%= link_to image_tag(cequip.equip_img_url), mycshop_mycequipc_mycequip_path(id:cequip) %> 
+                    <% if dequip.equip_img.present? %>
+                      <%= link_to image_tag(dequip.equip_img_url), mydshop_mydequipc_mydequip_path(id:dequip) %> 
                     <% else %>
-                      <%= link_to image_tag("template/logo3"), mycshop_mycequipc_mycequip_path(id:cequip) %> 
+                      <%= link_to image_tag("template/logo3"), mydshop_mydequipc_mydequip_path(id:dequip) %> 
                     <% end %>
     
                 </div>
 
                 <P id="equip_name">
-                    <% if cequip.name.present? %>
-                        <%= cequip.name %>
+                    <% if dequip.name.present? %>
+                        <%= dequip.name %>
                     <% else %>
                         （未入力）
                     <% end %>
                 </P>
 
                 <p id="edit">
-                    <%= link_to '✐編集', edit_mycshop_mycequipc_mycequip_path(id:cequip) %>
+                    <%= link_to '✐編集', edit_mydshop_mydequipc_mydequip_path(id:dequip) %>
                 </p>    
 
          </div>

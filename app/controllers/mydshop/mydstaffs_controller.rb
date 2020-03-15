@@ -1,69 +1,69 @@
-class Mycshop::MycstaffsController < ApplicationController
-    before_action :set_cstaff, only: [:show, :edit, :update, :destroy]
+class Mydshop::MydstaffsController < ApplicationController
+    before_action :set_dstaff, only: [:show, :edit, :update, :destroy]
     protect_from_forgery except: :create
     before_action :set_current_user
     before_action :configure_permitted_parameters, if: :devise_controller?
   
     def index
-      $cstaffc = Cstaffc.where(:id => params[:mycstaffc_id]).first
-      $cstaffs = $cstaffc.cstaffs.all
+      $dstaffc = Dstaffc.where(:id => params[:mydstaffc_id]).first
+      $dstaffs = $dstaffc.dstaffs.all
       render :layout => "menu_category"
     end
   
     def show
-      $cstaffc = Cstaffc.where(:id => params[:mycstaffc_id]).first
-      $cstaffs = $cstaffc.cstaffs.all
+      $dstaffc = Dstaffc.where(:id => params[:mydstaffc_id]).first
+      $dstaffs = $dstaffc.dstaffs.all
       render :layout => "shop_staff"
     end
   
     def new
-      $cstaffc = Cstaffc.where(:id => params[:mycstaffc_id]).first
-      $cstaff = $cstaffc.cstaffs.build
+      $dstaffc = Dstaffc.where(:id => params[:mydstaffc_id]).first
+      $dstaff = $dstaffc.dstaffs.build
       render :layout => "shop/ashop/edit"
     end
   
     def edit
-      $cstaff.staff_img.cache! unless $cstaff.staff_img.blank?
+      $dstaff.staff_img.cache! unless $dstaff.staff_img.blank?
       render :layout => "shop/ashop/edit"
     end
   
     def staff_img
-      $cstaff.staff_img.cache! unless $cstaff.staff_img.blank? 
+      $dstaff.staff_img.cache! unless $dstaff.staff_img.blank? 
       render :layout => "shop/ashop/edit"
     end
   
     def create
-      $cstaffc = Cstaffc.where(:id => params[:mycstaffc_id]).first
-      $cstaff = $cstaffc.cstaffs.build(cstaff_params)
-      $cstaff.user_id = current_user.id
+      $dstaffc = Dstaffc.where(:id => params[:mydstaffc_id]).first
+      $dstaff = $dstaffc.dstaffs.build(dstaff_params)
+      $dstaff.user_id = current_user.id
   
       respond_to do |format|
-        if $cstaff.save
-          format.html { redirect_to mycshop_mycstaffc_mycstaff_path(mycstaffc_id:$cstaffc, id:$cstaff), notice: 'Grand was successfully created.' }
-          format.json { render :show, status: :created, location: $cstaff }
+        if $dstaff.save
+          format.html { redirect_to mydshop_mydstaffc_mydstaff_path(mydstaffc_id:$dstaffc, id:$dstaff), notice: 'Grand was successfully created.' }
+          format.json { render :show, status: :created, location: $dstaff }
         else
           format.html { render :new }
-          format.json { render json: $cstaff.errors, status: :unprocessable_entity }
+          format.json { render json: $dstaff.errors, status: :unprocessable_entity }
         end
       end
     end
   
     def update
       respond_to do |format|
-        if $cstaff.update(cstaff_params)
-          format.html { redirect_to mycshop_mycstaffc_mycstaff_path(mycstaffc_id:$cstaffc, id:$cstaff), notice: 'Menu was successfully updated.' }
-          format.json { render :show, status: :ok, location: $cstaff }
+        if $dstaff.update(dstaff_params)
+          format.html { redirect_to mydshop_mydstaffc_mydstaff_path(mydstaffc_id:$dstaffc, id:$dstaff), notice: 'Menu was successfully updated.' }
+          format.json { render :show, status: :ok, location: $dstaff }
         else
           format.html { render :edit }
-          format.json { render json: $cstaff.errors, status: :unprocessable_entity }
+          format.json { render json: $dstaff.errors, status: :unprocessable_entity }
         end
       end
     end
 
     def destroy
-      $cstaff.destroy
+      $dstaff.destroy
       respond_to do |format|
-        format.html { redirect_to mycshop_mycstaffc_mycstaffs_path(mycstaffc_id:$cstaffc), notice: 'Menu was successfully destroyed.' }
+        format.html { redirect_to mydshop_mydstaffc_mydstaffs_path(mydstaffc_id:$dstaffc), notice: 'Menu was successfully destroyed.' }
         format.json { head :no_content }
       end
     end
@@ -73,13 +73,13 @@ class Mycshop::MycstaffsController < ApplicationController
     end
   
     private
-      def set_cstaff
-        $cstaffc = Cstaffc.where(:id => params[:mycstaffc_id]).first
-        $cstaff = $cstaffc.cstaffs.where(:id => params[:id]).first
+      def set_dstaff
+        $dstaffc = Dstaffc.where(:id => params[:mydstaffc_id]).first
+        $dstaff = $dstaffc.dstaffs.where(:id => params[:id]).first
       end
   
-      def cstaff_params
-        params.require(:cstaff).permit(:cstaffc_id, :user_id, :staff_img, :staff_img_cache, :name, :posittion1, :posittion2, :explain)
+      def dstaff_params
+        params.require(:dstaff).permit(:dstaffc_id, :user_id, :staff_img, :staff_img_cache, :name, :posittion1, :posittion2, :explain)
       end
   end
   

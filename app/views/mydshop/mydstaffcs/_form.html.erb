@@ -1,12 +1,12 @@
 
-<%= form_for($cstaffc, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+<%= form_for($dstaffc, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
 
-  <% if cstaffc.errors.any? %>
+  <% if dstaffc.errors.any? %>
       <div id="error_explanation">
-          <h2><%= pluralize(cstaffc.errors.count, "error") %> prohibited this cstaffc from being saved:</h2>
+          <h2><%= pluralize(dstaffc.errors.count, "error") %> prohibited this dstaffc from being saved:</h2>
 
           <ul>
-              <% cstaffc.errors.full_messages.each do |message| %>
+              <% dstaffc.errors.full_messages.each do |message| %>
                   <li><%= message %></li>
               <% end %>
           </ul>
@@ -17,7 +17,7 @@
 
     <h1>メニュー項目を編集する</h1>
 
-      <%= form.hidden_field :cshop_id %>
+      <%= form.hidden_field :dshop_id %>
 
       <div id="field">
           <%= form.label :name do %><label for="labelx">:メニューカテゴリー名</label><% end %><br>
@@ -28,7 +28,7 @@
           <li><%= form.submit(:決定) %></li>
       </div>
 
-      <%= link_to mycshop_mycshop_path(id:$cshop) do %>
+      <%= link_to mydshop_mydshop_path(id:$dshop) do %>
           <div id="eback">編集を中止する</div>
       <% end %>
 

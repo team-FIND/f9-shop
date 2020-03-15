@@ -1,23 +1,23 @@
-class Mycshop::MycsmenucsController < ApplicationController
-  before_action :set_csmenuc, only: [:show, :edit, :update, :destroy, :subedit]
+class Mydshop::MydsmenucsController < ApplicationController
+  before_action :set_dsmenuc, only: [:show, :edit, :update, :destroy, :subedit]
   protect_from_forgery except: :create
   before_action :set_current_user
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def index
-    $cshop = Cshop.where(:id => params[:mycshop_id]).first
-    $csmenucs = $cshop.csmenucs.all
+    $dshop = Dshop.where(:id => params[:mydshop_id]).first
+    $dsmenucs = $dshop.dsmenucs.all
   end
 
   def show
-    $cshop = Cshop.where(:id => params[:mycshop_id]).first
-    $csmenucs = $cshop.csmenucs.all
+    $dshop = Dshop.where(:id => params[:mydshop_id]).first
+    $dsmenucs = $dshop.dsmenucs.all
     render :layout => "menu_category"
   end
 
   def new
-    $cshop = Cshop.where(:id => params[:mycshop_id]).first
-    $csmenuc = $cshop.csmenucs.build
+    $dshop = Dshop.where(:id => params[:mydshop_id]).first
+    $dsmenuc = $dshop.dsmenucs.build
     render :layout => "shop/ashop/menu_edit"
   end
 
@@ -30,29 +30,29 @@ class Mycshop::MycsmenucsController < ApplicationController
   end
 
   def create
-    $cshop = Cshop.where(:id => params[:mycshop_id]).first
-    $csmenuc = $cshop.csmenucs.build(csmenuc_params)
-    $csmenuc.user_id = current_user.id
+    $dshop = Dshop.where(:id => params[:mydshop_id]).first
+    $dsmenuc = $dshop.dsmenucs.build(dsmenuc_params)
+    $dsmenuc.user_id = current_user.id
 
     respond_to do |format|
-      if $csmenuc.save
-        format.html { redirect_to mycshop_mycshop_path(id:$cshop), notice: 'Acategory was successfully created.' }
-        format.json { render :show, status: :created, location: $csmenuc }
+      if $dsmenuc.save
+        format.html { redirect_to mydshop_mydshop_path(id:$dshop), notice: 'Acategory was successfully created.' }
+        format.json { render :show, status: :created, location: $dsmenuc }
       else
         format.html { render :new }
-        format.json { render json: $csmenuc.errors, status: :unprocessable_entity }
+        format.json { render json: $dsmenuc.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def update
     respond_to do |format|
-      if $csmenuc.update(csmenuc_params)
-        format.html { redirect_to mycshop_mycshop_path(id:$cshop), notice: 'Acategory was successfully updated.' }
-        format.json { render :show, status: :ok, location: $csmenuc }
+      if $dsmenuc.update(dsmenuc_params)
+        format.html { redirect_to mydshop_mydshop_path(id:$dshop), notice: 'Acategory was successfully updated.' }
+        format.json { render :show, status: :ok, location: $dsmenuc }
       else
         format.html { render :edit }
-        format.json { render json: $csmenuc.errors, status: :unprocessable_entity }
+        format.json { render json: $dsmenuc.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -62,9 +62,9 @@ class Mycshop::MycsmenucsController < ApplicationController
   end
 
   def destroy
-    $csmenuc.destroy
+    $dsmenuc.destroy
     respond_to do |format|
-      format.html { redirect_to mycshop_mycshop_path(id:$cshop), notice: 'Top was successfully destroyed.' }
+      format.html { redirect_to mydshop_mydshop_path(id:$dshop), notice: 'Top was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -75,12 +75,12 @@ class Mycshop::MycsmenucsController < ApplicationController
 
   private
 
-    def set_csmenuc
-      $cshop = Cshop.where(:id => params[:mycshop_id]).first
-      $csmenuc = $cshop.csmenucs.where(:id => params[:id]).first
+    def set_dsmenuc
+      $dshop = Dshop.where(:id => params[:mydshop_id]).first
+      $dsmenuc = $dshop.dsmenucs.where(:id => params[:id]).first
     end
     
-    def csmenuc_params
-      params.require(:csmenuc).permit(:cshop_id, :shopname, :user_id, :name, :price, :detail1, :detail2, :detail3, :detail4, :detail5, :detail6, :detail7, :detail8, :detail9, :detail10)
+    def dsmenuc_params
+      params.require(:dsmenuc).permit(:dshop_id, :shopname, :user_id, :name, :price, :detail1, :detail2, :detail3, :detail4, :detail5, :detail6, :detail7, :detail8, :detail9, :detail10)
     end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_14_211728) do
+ActiveRecord::Schema.define(version: 2020_03_15_000840) do
 
   create_table "acategories", force: :cascade do |t|
     t.string "name"
@@ -700,6 +700,20 @@ ActiveRecord::Schema.define(version: 2020_03_14_211728) do
     t.datetime "updated_at", null: false
     t.index ["dshop_id"], name: "index_dequipcs_on_dshop_id"
     t.index ["user_id"], name: "index_dequipcs_on_user_id"
+  end
+
+  create_table "dequips", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "dshop_id"
+    t.integer "dequipc_id"
+    t.string "equip_img"
+    t.string "name"
+    t.string "explain"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dequipc_id"], name: "index_dequips_on_dequipc_id"
+    t.index ["dshop_id"], name: "index_dequips_on_dshop_id"
+    t.index ["user_id"], name: "index_dequips_on_user_id"
   end
 
   create_table "dmenucs", force: :cascade do |t|

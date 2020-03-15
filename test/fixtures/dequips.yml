@@ -2,7 +2,7 @@
 
 one:
   user: one
-  cshop: one
+  dshop: one
   dequipc: one
   equip_img: MyString
   name: MyString
@@ -10,7 +10,7 @@ one:
 
 two:
   user: two
-  cshop: two
+  dshop: two
   dequipc: two
   equip_img: MyString
   name: MyString
