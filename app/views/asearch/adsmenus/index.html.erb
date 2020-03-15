@@ -12,13 +12,6 @@
   <% @title1 = $ashop.shopname %> 
   <% @title2 = @page_title %> 
 
-  <% @back1 = asearch_asshop_path(id:$ashop) %>
-  <% @city  = asearch_asshops_path %>
-  <% @back2 = @back1 %>
-
-  <% @phone = $ashop.phone1 %>
-
-
   <%= content_for(:main)  do %>
 
         <div id="feature-wrapper">

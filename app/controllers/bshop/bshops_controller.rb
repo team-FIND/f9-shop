@@ -37,19 +37,6 @@ before_action :configure_permitted_parameters, if: :devise_controller?
     render :layout => "shop_contents"
   end
 
-  def create
-  end
-
-  def update
-  end
-
-  def destroy
-  end
-
-  def set_current_user
-    @current_user = User.find_by(id: session[:username])
-  end
-
   private
 
     def set_bshop

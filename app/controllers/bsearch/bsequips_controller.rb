@@ -16,20 +16,6 @@ class Bsearch::BsequipsController < ApplicationController
       render :layout => "shop_equip"
     end
   
-    def edit
-      $bequip.equip_img.cache! unless $bsequip.equip_img.blank?
-      render :layout => "shop/ashop/edit"
-    end
-  
-    def equip_img
-      $bequip.equip_img.cache! unless $bsequip.equip_img.blank? 
-      render :layout => "shop/ashop/edit"
-    end
-  
-    def set_current_user
-      @current_user = User.find_by(id: session[:username])
-    end
-  
     private
       def set_bequip
         $bequipc = Bequipc.where(:id => params[:bsequipc_id]).first

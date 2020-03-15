@@ -10,12 +10,6 @@
 <% @title1 = $ashop.shopname %> 
 <% @title2 = $atmenu.name %>
 
-<% @back1  = asearch_asshop_path(id:$ashop) %>
-<% @city  = asearch_asshops_path %>
-<% @back2 = asearch_atsmenuc_atsmenus_path(atsmenuc_id:$atsmenuc) %>
-
-
-
 <%= content_for(:main)  do %>
 
   <% $atakeouts.each do |atakeout| %>

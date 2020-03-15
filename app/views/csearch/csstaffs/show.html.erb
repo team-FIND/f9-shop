@@ -1,0 +1,19 @@
+
+<% @page_title = $bstaff.name %> 
+<% @title2 = $bstaff.name %> 
+
+<% $bstaffs.each do |bstaff| %>
+
+	<% if $bstaff.staff_img.present? %>
+		<% @image1 = image_tag $bstaff.staff_img_url %>
+	<% else %>
+		<% @image1 = image_tag "template/logo3" %>
+	<% end %>
+
+	<% if $bstaff.explain.present? %>
+			<p><%= $bshop.explain %></p>
+	<% else %>
+			<p>未入力</p>
+	<% end %>
+
+<% end %>

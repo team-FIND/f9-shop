@@ -13,10 +13,6 @@ class Bsearch::BsstaffcsController < ApplicationController
       redirect_to bsearch_bsstaffc_bsstaffs_path(bsstaffc_id:$bsstaffc)
     end
   
-    def set_current_user
-      @current_user = User.find_by(id: session[:username])
-    end
-  
     private
   
       def set_bstaffc

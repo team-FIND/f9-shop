@@ -3,11 +3,6 @@
 <% @title1 = $ashop.shopname %>
 <% @title2 = $food.foodname1 %> 
 
-<% @back1 = asearch_asshop_path(id:$ashop) %>
-<% @city  = asearch_asshops_path %>
-<% @back2 = asearch_asmenu_sfoods_path %>
-
-
 <% $foods.each do |food| %>
 
 	<% if $food.foodimg1.present? %>

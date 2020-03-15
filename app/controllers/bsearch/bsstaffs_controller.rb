@@ -16,20 +16,6 @@ class Bsearch::BsstaffsController < ApplicationController
       render :layout => "shop_staff"
     end
   
-    def edit
-      $bstaff.staff_img.cache! unless $bsstaff.staff_img.blank?
-      render :layout => "shop/ashop/edit"
-    end
-  
-    def staff_img
-      $bstaff.staff_img.cache! unless $bsstaff.staff_img.blank? 
-      render :layout => "shop/ashop/edit"
-    end
-  
-    def set_current_user
-      @current_user = User.find_by(id: session[:username])
-    end
-  
     private
       def set_bstaff
         $bstaffc = Bstaffc.where(:id => params[:bsstaffc_id]).first

@@ -505,9 +505,6 @@ end end
 
 namespace :asearch do resources :asmenus do
                       resources :sfoods do
-    member do
-      get "foodimg"
-    end
 end end end
 
 namespace :asearch do resources :asshops do
@@ -590,6 +587,29 @@ namespace :csearch do resources :csshops do
 
 end end
 
+namespace :csearch do resources :csshops do
+                      resources :csmenucs
+end end
+
+namespace :csearch do resources :csshops do
+                      resources :cssmenucs
+end end
+
+namespace :csearch do resources :csshops do
+                      resources :csequipcs
+end end
+
+namespace :csearch do resources :csequipcs do
+                      resources :csequips
+end end
+
+namespace :csearch do resources :csshops do
+                      resources :csstaffcs
+end end
+
+namespace :csearch do resources :csstaffcs do
+                      resources :csstaffs
+end end
 
 namespace :dsearch do resources :dsshops do
 
@@ -599,6 +619,38 @@ namespace :dsearch do resources :dsshops do
 
 end end
 
+namespace :dsearch do resources :dsshops do
+                      resources :dsmenucs
+end end
+
+namespace :dsearch do resources :dsmenucs do
+                      resources :dsmenus
+end end
+
+namespace :dsearch do resources :dsmenus do
+                      resources :sautos do
+end end end
+
+
+namespace :dsearch do resources :dsshops do
+                      resources :dssmenucs
+end end
+
+namespace :dsearch do resources :dsshops do
+                      resources :dsequipcs
+end end
+
+namespace :dsearch do resources :dsequipcs do
+                      resources :dsequips
+end end
+
+namespace :dsearch do resources :dsshops do
+                      resources :dsstaffcs
+end end
+
+namespace :dsearch do resources :dsstaffcs do
+                      resources :dsstaffs
+end end
 
 namespace :esearch do resources :esshops do
 

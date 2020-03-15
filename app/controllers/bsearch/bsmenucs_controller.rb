@@ -15,10 +15,6 @@ class Bsearch::BsmenucsController < ApplicationController
     render :layout => "menu_category"
   end
 
-  def set_current_user
-    @current_user = User.find_by(id: session[:username])
-  end
-
   private
 
     def set_bmenuc

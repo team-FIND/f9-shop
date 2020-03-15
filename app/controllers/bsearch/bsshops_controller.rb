@@ -35,15 +35,6 @@ before_action :configure_permitted_parameters, if: :devise_controller?
     render :layout => "shop_contents"
   end
 
-  def create
-  end
-
-  def update
-  end
-
-  def destroy
-  end
-
   private
 
     def set_bshop
