@@ -2,8 +2,8 @@
 
 <%= content_for(:main)  do %>
 
-	<%= form_for($bsmenuc, :url => {:action => "update"}, :html => {:multipart => true}) do |form| %>
-			<%= render 'form', bsmenuc: $bsmenuc %>
+	<%= form_for($csmenuc, :url => {:action => "update"}, :html => {:multipart => true}) do |form| %>
+			<%= render 'form', csmenuc: $csmenuc %>
 	<% end %>
 
 <% end %>
