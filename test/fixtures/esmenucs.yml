@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  eshop: one
+  name: MyString
+  price: MyString
+  detail1: MyString
+  detail2: MyString
+  detail3: MyString
+  detail4: MyString
+  detail5: MyString
+  detail6: MyString
+  detail7: MyString
+  detail8: MyString
+  detail9: MyString
+  detail10: MyString
+
+two:
+  user: two
+  eshop: two
+  name: MyString
+  price: MyString
+  detail1: MyString
+  detail2: MyString
+  detail3: MyString
+  detail4: MyString
+  detail5: MyString
+  detail6: MyString
+  detail7: MyString
+  detail8: MyString
+  detail9: MyString
+  detail10: MyString

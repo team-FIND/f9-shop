@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  eshop: one
+  emenuc: one
+  emenu: one
+  topimg: MyString
+  outname1: MyString
+  outname2: MyString
+  price: MyString
+  outimg1: MyString
+  outimg2: MyString
+  outimg3: MyString
+
+two:
+  user: two
+  eshop: two
+  emenuc: two
+  emenu: two
+  topimg: MyString
+  outname1: MyString
+  outname2: MyString
+  price: MyString
+  outimg1: MyString
+  outimg2: MyString
+  outimg3: MyString

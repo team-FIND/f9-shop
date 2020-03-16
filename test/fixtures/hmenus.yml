@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  hshop: one
+  hmenuc: one
+  name: MyString
+
+two:
+  user: two
+  hshop: two
+  hmenuc: two
+  name: MyString

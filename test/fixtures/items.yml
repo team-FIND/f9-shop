@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  hshop: one
+  hmenuc: one
+  hmenu: one
+  topimg: MyString
+  itemname1: MyString
+  itemname2: MyString
+  price: MyString
+  itemimg1: MyString
+  itemimg2: MyString
+  itemimg3: MyString
+
+two:
+  user: two
+  hshop: two
+  hmenuc: two
+  hmenu: two
+  topimg: MyString
+  itemname1: MyString
+  itemname2: MyString
+  price: MyString
+  itemimg1: MyString
+  itemimg2: MyString
+  itemimg3: MyString

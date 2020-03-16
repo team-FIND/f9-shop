@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  eshop: one
+  eequipc: one
+  equip_img: MyString
+  name: MyString
+  explain: MyString
+
+two:
+  user: two
+  eshop: two
+  eequipc: two
+  equip_img: MyString
+  name: MyString
+  explain: MyString

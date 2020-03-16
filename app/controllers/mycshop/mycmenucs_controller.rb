@@ -57,10 +57,6 @@ class Mycshop::MycmenucsController < ApplicationController
     end
   end
 
-  def set_current_user
-    @current_user = User.find_by(id: session[:username])
-  end
-
   def destroy
     $cmenuc.destroy
     respond_to do |format|

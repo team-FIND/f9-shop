@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_15_000840) do
+ActiveRecord::Schema.define(version: 2020_03_16_220839) do
 
   create_table "acategories", force: :cascade do |t|
     t.string "name"
@@ -920,6 +920,52 @@ ActiveRecord::Schema.define(version: 2020_03_15_000840) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "eequipcs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "eshop_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["eshop_id"], name: "index_eequipcs_on_eshop_id"
+    t.index ["user_id"], name: "index_eequipcs_on_user_id"
+  end
+
+  create_table "eequips", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "eshop_id"
+    t.integer "eequipc_id"
+    t.string "equip_img"
+    t.string "name"
+    t.string "explain"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["eequipc_id"], name: "index_eequips_on_eequipc_id"
+    t.index ["eshop_id"], name: "index_eequips_on_eshop_id"
+    t.index ["user_id"], name: "index_eequips_on_user_id"
+  end
+
+  create_table "emenucs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "eshop_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["eshop_id"], name: "index_emenucs_on_eshop_id"
+    t.index ["user_id"], name: "index_emenucs_on_user_id"
+  end
+
+  create_table "emenus", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "eshop_id"
+    t.integer "emenuc_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["emenuc_id"], name: "index_emenus_on_emenuc_id"
+    t.index ["eshop_id"], name: "index_emenus_on_eshop_id"
+    t.index ["user_id"], name: "index_emenus_on_user_id"
+  end
+
   create_table "eshops", force: :cascade do |t|
     t.integer "top_id"
     t.integer "area_id"
@@ -1012,10 +1058,92 @@ ActiveRecord::Schema.define(version: 2020_03_15_000840) do
     t.index ["user_id"], name: "index_eshops_on_user_id"
   end
 
+  create_table "esmenucs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "eshop_id"
+    t.string "name"
+    t.string "price"
+    t.string "detail1"
+    t.string "detail2"
+    t.string "detail3"
+    t.string "detail4"
+    t.string "detail5"
+    t.string "detail6"
+    t.string "detail7"
+    t.string "detail8"
+    t.string "detail9"
+    t.string "detail10"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["eshop_id"], name: "index_esmenucs_on_eshop_id"
+    t.index ["user_id"], name: "index_esmenucs_on_user_id"
+  end
+
+  create_table "estaffcs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "eshop_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["eshop_id"], name: "index_estaffcs_on_eshop_id"
+    t.index ["user_id"], name: "index_estaffcs_on_user_id"
+  end
+
+  create_table "estaffs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "eshop_id"
+    t.integer "estaffc_id"
+    t.string "staff_img"
+    t.string "name"
+    t.string "position1"
+    t.string "position2"
+    t.string "explain"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["eshop_id"], name: "index_estaffs_on_eshop_id"
+    t.index ["estaffc_id"], name: "index_estaffs_on_estaffc_id"
+    t.index ["user_id"], name: "index_estaffs_on_user_id"
+  end
+
   create_table "fcategories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "fequipcs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "fshop_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fshop_id"], name: "index_fequipcs_on_fshop_id"
+    t.index ["user_id"], name: "index_fequipcs_on_user_id"
+  end
+
+  create_table "fequips", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "fshop_id"
+    t.integer "fequipc_id"
+    t.string "equip_img"
+    t.string "name"
+    t.string "explain"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fequipc_id"], name: "index_fequips_on_fequipc_id"
+    t.index ["fshop_id"], name: "index_fequips_on_fshop_id"
+    t.index ["user_id"], name: "index_fequips_on_user_id"
+  end
+
+  create_table "fmenucs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "fshop_id"
+    t.string "name"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fshop_id"], name: "index_fmenucs_on_fshop_id"
+    t.index ["user_id"], name: "index_fmenucs_on_user_id"
   end
 
   create_table "foods", force: :cascade do |t|
@@ -1130,10 +1258,92 @@ ActiveRecord::Schema.define(version: 2020_03_15_000840) do
     t.index ["user_id"], name: "index_fshops_on_user_id"
   end
 
+  create_table "fsmenucs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "fshop_id"
+    t.string "name"
+    t.string "price"
+    t.string "detail1"
+    t.string "detail2"
+    t.string "detail3"
+    t.string "detail4"
+    t.string "detail5"
+    t.string "detail6"
+    t.string "detail7"
+    t.string "detail8"
+    t.string "detail9"
+    t.string "detail10"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fshop_id"], name: "index_fsmenucs_on_fshop_id"
+    t.index ["user_id"], name: "index_fsmenucs_on_user_id"
+  end
+
+  create_table "fstaffcs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "fshop_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fshop_id"], name: "index_fstaffcs_on_fshop_id"
+    t.index ["user_id"], name: "index_fstaffcs_on_user_id"
+  end
+
+  create_table "fstaffs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "fshop_id"
+    t.integer "fstaffc_id"
+    t.string "staff_img"
+    t.string "name"
+    t.string "position1"
+    t.string "position2"
+    t.string "explain"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fshop_id"], name: "index_fstaffs_on_fshop_id"
+    t.index ["fstaffc_id"], name: "index_fstaffs_on_fstaffc_id"
+    t.index ["user_id"], name: "index_fstaffs_on_user_id"
+  end
+
   create_table "gcategories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "gequipcs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "gshop_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["gshop_id"], name: "index_gequipcs_on_gshop_id"
+    t.index ["user_id"], name: "index_gequipcs_on_user_id"
+  end
+
+  create_table "gequips", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "gshop_id"
+    t.integer "gequipc_id"
+    t.string "equip_img"
+    t.string "name"
+    t.string "explain"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["gequipc_id"], name: "index_gequips_on_gequipc_id"
+    t.index ["gshop_id"], name: "index_gequips_on_gshop_id"
+    t.index ["user_id"], name: "index_gequips_on_user_id"
+  end
+
+  create_table "gmenucs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "gshop_id"
+    t.string "name"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["gshop_id"], name: "index_gmenucs_on_gshop_id"
+    t.index ["user_id"], name: "index_gmenucs_on_user_id"
   end
 
   create_table "gshops", force: :cascade do |t|
@@ -1228,10 +1438,103 @@ ActiveRecord::Schema.define(version: 2020_03_15_000840) do
     t.index ["user_id"], name: "index_gshops_on_user_id"
   end
 
+  create_table "gsmenucs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "gshop_id"
+    t.string "name"
+    t.string "price"
+    t.string "detail1"
+    t.string "detail2"
+    t.string "detail3"
+    t.string "detail4"
+    t.string "detail5"
+    t.string "detail6"
+    t.string "detail7"
+    t.string "detail8"
+    t.string "detail9"
+    t.string "detail10"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["gshop_id"], name: "index_gsmenucs_on_gshop_id"
+    t.index ["user_id"], name: "index_gsmenucs_on_user_id"
+  end
+
+  create_table "gstaffcs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "gshop_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["gshop_id"], name: "index_gstaffcs_on_gshop_id"
+    t.index ["user_id"], name: "index_gstaffcs_on_user_id"
+  end
+
+  create_table "gstaffs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "gshop_id"
+    t.integer "gstaffc_id"
+    t.string "staff_img"
+    t.string "name"
+    t.string "position1"
+    t.string "position2"
+    t.string "explain"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["gshop_id"], name: "index_gstaffs_on_gshop_id"
+    t.index ["gstaffc_id"], name: "index_gstaffs_on_gstaffc_id"
+    t.index ["user_id"], name: "index_gstaffs_on_user_id"
+  end
+
   create_table "hcategories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "hequipcs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "hshop_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hshop_id"], name: "index_hequipcs_on_hshop_id"
+    t.index ["user_id"], name: "index_hequipcs_on_user_id"
+  end
+
+  create_table "hequips", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "hshop_id"
+    t.integer "hequipc_id"
+    t.string "equip_img"
+    t.string "name"
+    t.string "explain"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hequipc_id"], name: "index_hequips_on_hequipc_id"
+    t.index ["hshop_id"], name: "index_hequips_on_hshop_id"
+    t.index ["user_id"], name: "index_hequips_on_user_id"
+  end
+
+  create_table "hmenucs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "hshop_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hshop_id"], name: "index_hmenucs_on_hshop_id"
+    t.index ["user_id"], name: "index_hmenucs_on_user_id"
+  end
+
+  create_table "hmenus", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "hshop_id"
+    t.integer "hmenuc_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hmenuc_id"], name: "index_hmenus_on_hmenuc_id"
+    t.index ["hshop_id"], name: "index_hmenus_on_hshop_id"
+    t.index ["user_id"], name: "index_hmenus_on_user_id"
   end
 
   create_table "homes", force: :cascade do |t|
@@ -1340,6 +1643,93 @@ ActiveRecord::Schema.define(version: 2020_03_15_000840) do
     t.index ["prefec_id"], name: "index_hshops_on_prefec_id"
     t.index ["top_id"], name: "index_hshops_on_top_id"
     t.index ["user_id"], name: "index_hshops_on_user_id"
+  end
+
+  create_table "hsmenucs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "hshop_id"
+    t.string "name"
+    t.string "price"
+    t.string "detail1"
+    t.string "detail2"
+    t.string "detail3"
+    t.string "detail4"
+    t.string "detail5"
+    t.string "detail6"
+    t.string "detail7"
+    t.string "detail8"
+    t.string "detail9"
+    t.string "detail10"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hshop_id"], name: "index_hsmenucs_on_hshop_id"
+    t.index ["user_id"], name: "index_hsmenucs_on_user_id"
+  end
+
+  create_table "hstaffcs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "hshop_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hshop_id"], name: "index_hstaffcs_on_hshop_id"
+    t.index ["user_id"], name: "index_hstaffcs_on_user_id"
+  end
+
+  create_table "hstaffs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "hshop_id"
+    t.integer "hstaffc_id"
+    t.string "staff_img"
+    t.string "name"
+    t.string "position1"
+    t.string "position2"
+    t.string "explain"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hshop_id"], name: "index_hstaffs_on_hshop_id"
+    t.index ["hstaffc_id"], name: "index_hstaffs_on_hstaffc_id"
+    t.index ["user_id"], name: "index_hstaffs_on_user_id"
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "hshop_id"
+    t.integer "hmenuc_id"
+    t.integer "hmenu_id"
+    t.string "topimg"
+    t.string "itemname1"
+    t.string "itemname2"
+    t.string "price"
+    t.string "itemimg1"
+    t.string "itemimg2"
+    t.string "itemimg3"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hmenu_id"], name: "index_items_on_hmenu_id"
+    t.index ["hmenuc_id"], name: "index_items_on_hmenuc_id"
+    t.index ["hshop_id"], name: "index_items_on_hshop_id"
+    t.index ["user_id"], name: "index_items_on_user_id"
+  end
+
+  create_table "outs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "eshop_id"
+    t.integer "emenuc_id"
+    t.integer "emenu_id"
+    t.string "topimg"
+    t.string "outname1"
+    t.string "outname2"
+    t.string "price"
+    t.string "outimg1"
+    t.string "outimg2"
+    t.string "outimg3"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["emenu_id"], name: "index_outs_on_emenu_id"
+    t.index ["emenuc_id"], name: "index_outs_on_emenuc_id"
+    t.index ["eshop_id"], name: "index_outs_on_eshop_id"
+    t.index ["user_id"], name: "index_outs_on_user_id"
   end
 
   create_table "prefecs", force: :cascade do |t|

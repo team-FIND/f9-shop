@@ -51,10 +51,6 @@ class Mycshop::MycstaffcsController < ApplicationController
       end
     end
   
-    def set_current_user
-      @current_user = User.find_by(id: session[:username])
-    end
-  
     def destroy
       $cstaffc.destroy
       respond_to do |format|
