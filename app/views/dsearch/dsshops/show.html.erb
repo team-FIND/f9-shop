@@ -75,7 +75,7 @@
 		<%= content_for(:idc4)  do %>
 					<% $dstaffcs.each do |dstaffc| %>
 							<div class="line">
-									<%= link_to dsearch_dsshop_csstaffc_path(dsshop_id:$dshop, id:dstaffc) do %>
+									<%= link_to dsearch_dsshop_dsstaffc_path(dsshop_id:$dshop, id:dstaffc) do %>
 										<li id="mc"><%= dstaffc.name %></li><br>
 									<%end%>
 							</div>

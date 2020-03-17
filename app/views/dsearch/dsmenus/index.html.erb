@@ -8,7 +8,7 @@
   <% end %>
 
 
-  <% @page_title = $amenuc.name %> 
+  <% @page_title = $dmenuc.name %> 
   <% @title1 = $ashop.shopname %> 
   <% @title2 = @page_title %> 
 
@@ -16,13 +16,10 @@
 
         <div id="feature-wrapper">
 
-              <% $amenus.each do |amenu| %>
-                  <%= link_to dsearch_asmenuc_asmenu_path(asmenuc_id:$amenuc, id:amenu) do %>
-                   　<div id="box"><li id="list"><%= amenu.name %></li></div>
+              <% $dmenus.each do |dmenu| %>
+                  <%= link_to dsearch_dsmenuc_dsmenu_path(dsmenuc_id:$dmenuc, id:dmenu) do %>
+                   　<div id="box"><li id="list"><%= dmenu.name %></li></div>
                   <% end %>
-
-                  <div id="stime"><%= amenu.time1 %>:<%= amenu.time2 %>~<%= amenu.time3 %>:<%= amenu.time4 %></div>
-
               <% end %>
 
         </div>
