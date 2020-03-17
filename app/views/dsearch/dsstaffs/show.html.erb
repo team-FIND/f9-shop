@@ -1,17 +1,17 @@
 
-<% @page_title = $bstaff.name %> 
-<% @title2 = $bstaff.name %> 
+<% @page_title = $dstaff.name %> 
+<% @title2 = $dstaff.name %> 
 
-<% $bstaffs.each do |bstaff| %>
+<% $dstaffs.each do |dstaff| %>
 
-	<% if $bstaff.staff_img.present? %>
-		<% @image1 = image_tag $bstaff.staff_img_url %>
+	<% if $dstaff.staff_img.present? %>
+		<% @image1 = image_tag $dstaff.staff_img_url %>
 	<% else %>
 		<% @image1 = image_tag "template/logo3" %>
 	<% end %>
 
-	<% if $bstaff.explain.present? %>
-			<p><%= $bshop.explain %></p>
+	<% if $dstaff.explain.present? %>
+			<p><%= $dshop.explain %></p>
 	<% else %>
 			<p>未入力</p>
 	<% end %>

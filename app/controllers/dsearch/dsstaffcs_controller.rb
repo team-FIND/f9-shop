@@ -10,7 +10,7 @@ class Dsearch::DsstaffcsController < ApplicationController
     end
   
     def show
-      redirect_to csearch_dsstaffc_dsstaffs_path(dsstaffc_id:$dsstaffc)
+      redirect_to dsearch_dsstaffc_dsstaffs_path(dsstaffc_id:$dsstaffc)
     end
   
     private

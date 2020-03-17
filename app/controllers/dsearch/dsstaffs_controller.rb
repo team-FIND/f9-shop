@@ -5,20 +5,20 @@ class Dsearch::DsstaffsController < ApplicationController
     before_action :configure_permitted_parameters, if: :devise_controller?
 
     def index
-      $dstaffc = dstaffc.where(:id => params[:dsstaffc_id]).first
+      $dstaffc = Dstaffc.where(:id => params[:dsstaffc_id]).first
       $dstaffs = $dstaffc.dstaffs.all
       render :layout => "menu_category"
     end
   
     def show
-      $dstaffc = dstaffc.where(:id => params[:dsstaffc_id]).first
+      $dstaffc = Dstaffc.where(:id => params[:dsstaffc_id]).first
       $dstaffs = $dstaffc.dstaffs.all
       render :layout => "shop_staff"
     end
   
     private
       def set_dstaff
-        $dstaffc = dstaffc.where(:id => params[:dsstaffc_id]).first
+        $dstaffc = Dstaffc.where(:id => params[:dsstaffc_id]).first
         $dstaff = $dstaffc.dstaffs.where(:id => params[:id]).first
       end
   
