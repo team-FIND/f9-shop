@@ -8,66 +8,66 @@
   <% end %>
 
 
-  <% @page_title = $csmenuc.name  %> 
-  <% @title1 = $cshop.shopname %> 
+  <% @page_title = $dsmenuc.name  %> 
+  <% @title1 = $dshop.shopname %> 
   <% @title2 = @page_title %> 
 
   <%= content_for(:main)  do %>
 
-        <% $csmenucs.each do |csmenuc| %>
+        <% $dsmenucs.each do |dsmenuc| %>
 
-                <div id="menuline">税込：<%= csmenuc.price %>円</div>
+                <div id="menuline">税込：<%= dsmenuc.price %>円</div>
 
-                <% if $csmenuc.detail1.present? %>
-                    <div id="content1">♦<%= csmenuc.detail1 %></div>
+                <% if $dsmenuc.detail1.present? %>
+                    <div id="content1">♦<%= dsmenuc.detail1 %></div>
                 <% else %>
                     <div id="content0">♦</div>
                 <% end %>
 
-                <% if $csmenuc.detail2.present? %>
-                    <div id="content1">♦<%= csmenuc.detail2 %></div>
+                <% if $dsmenuc.detail2.present? %>
+                    <div id="content1">♦<%= dsmenuc.detail2 %></div>
                 <% else %>
                     <div id="content0">♦</div>
                 <% end %>
 
-                <% if $csmenuc.detail3.present? %>
-                    <div id="content1">♦<%= csmenuc.detail3 %></div>
+                <% if $dsmenuc.detail3.present? %>
+                    <div id="content1">♦<%= dsmenuc.detail3 %></div>
                 <% else %>
                     <div id="content0">♦</div>
                 <% end %>
 
-                <% if $csmenuc.detail4.present? %>
-                    <div id="content1">♦<%= csmenuc.detail4 %></div>
+                <% if $dsmenuc.detail4.present? %>
+                    <div id="content1">♦<%= dsmenuc.detail4 %></div>
                 <% else %>
                     <div id="content0">♦</div>
                 <% end %>
 
-                <% if $csmenuc.detail5.present? %>
-                    <div id="content1">♦<%= csmenuc.detail5 %></div>
+                <% if $dsmenuc.detail5.present? %>
+                    <div id="content1">♦<%= dsmenuc.detail5 %></div>
                 <% else %>
                     <div id="content0">♦</div>
                 <% end %>
 
-                <% if $csmenuc.detail6.present? %>
-                    <div id="content1">♦<%= csmenuc.detail6 %></div>
+                <% if $dsmenuc.detail6.present? %>
+                    <div id="content1">♦<%= dsmenuc.detail6 %></div>
                 <% else %>
                     <div id="content0">♦</div>
                 <% end %>
 
-                <% if $csmenuc.detail7.present? %>
-                    <div id="content1">♦<%= csmenuc.detail7 %></div>
+                <% if $dsmenuc.detail7.present? %>
+                    <div id="content1">♦<%= dsmenuc.detail7 %></div>
                 <% else %>
                     <div id="content0">♦</div>
                 <% end %>
 
-                <% if $csmenuc.detail8.present? %>
-                    <div id="content1">♦<%= csmenuc.detail8 %></div>
+                <% if $dsmenuc.detail8.present? %>
+                    <div id="content1">♦<%= dsmenuc.detail8 %></div>
                 <% else %>
                     <div id="content0">♦</div>
                 <% end %>
 
-                <% if $csmenuc.detail10.present? %>
-                    <div id="content1">♦<%= csmenuc.detail10 %></div>
+                <% if $dsmenuc.detail10.present? %>
+                    <div id="content1">♦<%= dsmenuc.detail10 %></div>
                 <% else %>
                     <div id="content0">♦</div>
                 <% end %>

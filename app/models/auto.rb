@@ -1,12 +1,12 @@
 class Auto < ApplicationRecord
 
-	mount_uploader :topimg, FoodpictureUploader
-	mount_uploader :autoimg1, FoodpictureUploader
-	mount_uploader :autoimg2, FoodpictureUploader
-	mount_uploader :autoimg3, FoodpictureUploader
+	mount_uploader :topimg, PictureUploader
+	mount_uploader :autoimg1, PictureUploader
+	mount_uploader :autoimg2, PictureUploader
+	mount_uploader :autoimg3, PictureUploader
 
 	validates :user_id, presence: true
-  validates :dmenu_id, presence: true
+  	validates :dmenu_id, presence: true
 	validates :autoname1, presence: true
 
 	belongs_to :user
