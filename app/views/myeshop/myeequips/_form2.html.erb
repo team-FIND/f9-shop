@@ -1,11 +1,11 @@
-<%= form_for($dequip, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+<%= form_for($eequip, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
 
-  <% if dequip.errors.any? %>
+  <% if eequip.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(dequip.errors.count, "error") %> prohibited this menu from being saved:</h2>
+      <h2><%= pluralize(eequip.errors.count, "error") %> prohibited this menu from being saved:</h2>
 
       <ul>
-      <% dequip.errors.full_messages.each do |message| %>
+      <% eequip.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -16,16 +16,16 @@
 
     <h1>料理を編集する</h1>
 
-              <%= form.hidden_field :dequipc_id %>
+              <%= form.hidden_field :eequipc_id %>
 
                   <div id="field-pic">
                       <%= form.label :equip_img do %><label for="labelx">写真1</label><% end %><br>
 
-                      <label for="labely"><%= form.file_field :equip_img, id: :dequip_equip_img , id: "file1" %></label>
+                      <label for="labely"><%= form.file_field :equip_img, id: :eequip_equip_img , id: "file1" %></label>
 
                       <div id="thumb1" onClick="$('#file1').click()">
-                            <% if dequip.equip_img.present? %>
-                              <div id="updimg"><%= image_tag dequip.equip_img.thumb.url if $dequip.equip_img? %></div> 
+                            <% if eequip.equip_img.present? %>
+                              <div id="updimg"><%= image_tag eequip.equip_img.thumb.url if $eequip.equip_img? %></div> 
                             <% else %>
                               <div id="upimg"><%= image_tag("template/img") %></div>
                             <% end %>
@@ -36,7 +36,7 @@
 
               <div id="actions"><li><%= form.submit(:決定) %></li></div>
 
-              <%= link_to mydshop_mydequipc_mydequips_path do %><div id="eback">編集を中止する</div><% end %>
+              <%= link_to myeshop_myeequipc_myeequips_path do %><div id="eback">編集を中止する</div><% end %>
 
 </div>
 

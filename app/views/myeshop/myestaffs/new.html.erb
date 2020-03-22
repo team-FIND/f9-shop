@@ -1,9 +1,9 @@
 
 <%= content_for(:main)  do %>
 
-	<%= form_for($dstaff, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+	<%= form_for($estaff, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
 
-	<%= render 'form', dstaff: $dstaff %>
+	<%= render 'form', estaff: $estaff %>
 
 	<% end %>
 

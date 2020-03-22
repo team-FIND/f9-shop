@@ -1,12 +1,12 @@
 
-<%= form_for($dequipc, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+<%= form_for($eequipc, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
 
-  <% if dequipc.errors.any? %>
+  <% if eequipc.errors.any? %>
       <div id="error_explanation">
-          <h2><%= pluralize(dequipc.errors.count, "error") %> prohibited this dequipc from being saved:</h2>
+          <h2><%= pluralize(eequipc.errors.count, "error") %> prohibited this eequipc from being saved:</h2>
 
           <ul>
-              <% dequipc.errors.full_messages.each do |message| %>
+              <% eequipc.errors.full_messages.each do |message| %>
                   <li><%= message %></li>
               <% end %>
           </ul>
@@ -17,7 +17,7 @@
 
     <h1>メニュー項目を編集する</h1>
 
-      <%= form.hidden_field :dshop_id %>
+      <%= form.hidden_field :eshop_id %>
 
       <div id="field">
           <%= form.label :name do %><label for="labelx">:メニューカテゴリー名</label><% end %><br>
@@ -28,7 +28,7 @@
           <li><%= form.submit(:決定) %></li>
       </div>
 
-      <%= link_to mydshop_mydshop_path(id:$dshop) do %>
+      <%= link_to myeshop_myeshop_path(id:$eshop) do %>
           <div id="eback">編集を中止する</div>ß
       <% end %>
 

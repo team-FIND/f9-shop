@@ -1,21 +1,21 @@
-class Mydshop::MydstaffcsController < ApplicationController
-    before_action :set_dstaffc, only: [:show, :edit, :update, :destroy, :subedit]
+class Myeshop::MyestaffcsController < ApplicationController
+    before_action :set_estaffc, only: [:show, :edit, :update, :destroy, :subedit]
     protect_from_forgery except: :create
     before_action :set_current_user
     before_action :configure_permitted_parameters, if: :devise_controller?
   
     def index
-      $dshop = Dshop.where(:id => params[:mydshop_id]).first
-      $dstaffcs = $dshop.dstaffcs.all
+      $eshop = Eshop.where(:id => params[:myeshop_id]).first
+      $estaffcs = $eshop.estaffcs.all
     end
   
     def show
-      redirect_to mydshop_mydstaffc_mydstaffs_path(mydstaffc_id:$dstaffc)
+      redirect_to myeshop_myestaffc_myestaffs_path(myestaffc_id:$estaffc)
     end
   
     def new
-      $dshop = Dshop.where(:id => params[:mydshop_id]).first
-      $dstaffc = $dshop.dstaffcs.build
+      $eshop = Eshop.where(:id => params[:myeshop_id]).first
+      $estaffc = $eshop.estaffcs.build
       render :layout => "shop/ashop/menu_edit"
     end
   
@@ -24,29 +24,29 @@ class Mydshop::MydstaffcsController < ApplicationController
     end
   
     def create
-      $dshop = Dshop.where(:id => params[:mydshop_id]).first
-      $dstaffc = $dshop.dstaffcs.build(dstaffc_params)
-      $dstaffc.user_id = current_user.id
+      $eshop = Eshop.where(:id => params[:myeshop_id]).first
+      $estaffc = $eshop.estaffcs.build(estaffc_params)
+      $estaffc.user_id = current_user.id
   
       respond_to do |format|
-        if $dstaffc.save
-          format.html { redirect_to mydshop_mydshop_path(id:$dshop), notice: 'Acategory was successfully created.' }
-          format.json { render :show, status: :created, location: $dstaffc }
+        if $estaffc.save
+          format.html { redirect_to myeshop_myeshop_path(id:$eshop), notice: 'Acategory was successfully created.' }
+          format.json { render :show, status: :created, location: $estaffc }
         else
           format.html { render :new }
-          format.json { render json: $dstaffc.errors, status: :unprocessable_entity }
+          format.json { render json: $estaffc.errors, status: :unprocessable_entity }
         end
       end
     end
   
     def update
       respond_to do |format|
-        if $dstaffc.update(dstaffc_params)
-          format.html { redirect_to mydshop_mydshop_path(id:$dshop), notice: 'Acategory was successfully updated.' }
-          format.json { render :show, status: :ok, location: $dstaffc }
+        if $estaffc.update(estaffc_params)
+          format.html { redirect_to myeshop_myeshop_path(id:$eshop), notice: 'Acategory was successfully updated.' }
+          format.json { render :show, status: :ok, location: $estaffc }
         else
           format.html { render :edit }
-          format.json { render json: $dstaffc.errors, status: :unprocessable_entity }
+          format.json { render json: $estaffc.errors, status: :unprocessable_entity }
         end
       end
     end
@@ -56,9 +56,9 @@ class Mydshop::MydstaffcsController < ApplicationController
     end
   
     def destroy
-      $dstaffc.destroy
+      $estaffc.destroy
       respond_to do |format|
-        format.html { redirect_to mydshop_mydshop_path(id:$dshop), notice: 'Top was successfully destroyed.' }
+        format.html { redirect_to myeshop_myeshop_path(id:$eshop), notice: 'Top was successfully destroyed.' }
         format.json { head :no_content }
       end
     end
@@ -69,13 +69,13 @@ class Mydshop::MydstaffcsController < ApplicationController
   
     private
   
-      def set_dstaffc
-        $dshop = Dshop.where(:id => params[:mydshop_id]).first
-        $dstaffc = $dshop.dstaffcs.where(:id => params[:id]).first
+      def set_estaffc
+        $eshop = Eshop.where(:id => params[:myeshop_id]).first
+        $estaffc = $eshop.estaffcs.where(:id => params[:id]).first
       end
       
-      def dstaffc_params
-        params.require(:dstaffc).permit(:dshop_id, :shopname, :user_id, :name)
+      def estaffc_params
+        params.require(:estaffc).permit(:eshop_id, :shopname, :user_id, :name)
       end
   end
   

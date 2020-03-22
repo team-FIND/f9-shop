@@ -1,11 +1,11 @@
-<%= form_for($dstaff, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+<%= form_for($estaff, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
 
-  <% if dstaff.errors.any? %>
+  <% if estaff.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(dstaff.errors.count, "error") %> prohibited this menu from being saved:</h2>
+      <h2><%= pluralize(estaff.errors.count, "error") %> prohibited this menu from being saved:</h2>
 
       <ul>
-      <% dstaff.errors.full_messages.each do |message| %>
+      <% estaff.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -16,16 +16,16 @@
 
     <h1>スタッフの写真を編集する</h1>
 
-              <%= form.hidden_field :dstaffc_id %>
+              <%= form.hidden_field :estaffc_id %>
 
                   <div id="field-pic">
                       <%= form.label :staff_img do %><label for="labelx">写真1</label><% end %><br>
 
-                      <label for="labely"><%= form.file_field :staff_img, id: :dstaff_staff_img , id: "file1" %></label>
+                      <label for="labely"><%= form.file_field :staff_img, id: :estaff_staff_img , id: "file1" %></label>
 
                       <div id="thumb1" onClick="$('#file1').click()">
-                            <% if dstaff.staff_img.present? %>
-                              <div id="updimg"><%= image_tag dstaff.staff_img.thumb.url if $dstaff.staff_img? %></div> 
+                            <% if estaff.staff_img.present? %>
+                              <div id="updimg"><%= image_tag estaff.staff_img.thumb.url if $estaff.staff_img? %></div> 
                             <% else %>
                               <div id="upimg"><%= image_tag("template/img") %></div>
                             <% end %>
@@ -36,7 +36,7 @@
 
               <div id="actions"><li><%= form.submit(:決定) %></li></div>
 
-              <%= link_to mydshop_mydstaffc_mydstaffs_path do %><div id="eback">編集を中止する</div><% end %>
+              <%= link_to myeshop_myestaffc_myestaffs_path do %><div id="eback">編集を中止する</div><% end %>
 
 </div>
 

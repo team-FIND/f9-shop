@@ -1,8 +1,8 @@
 <%= content_for(:main)  do %>
 
-	<%= form_for($dequip, :url => {:action => "update"}, :html => {:multipart => true}) do |form| %>
+	<%= form_for($eequip, :url => {:action => "update"}, :html => {:multipart => true}) do |form| %>
 
-	<%= render 'form2', dequip: $dequip %>
+	<%= render 'form2', eequip: $eequip %>
 
 	<% end %>
 

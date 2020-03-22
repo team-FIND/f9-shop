@@ -6,7 +6,7 @@
           <h2><%= pluralize(cequipc.errors.count, "error") %> prohibited this cequipc from being saved:</h2>
 
           <ul>
-              <% csequipc.errors.full_messages.each do |message| %>
+              <% cequipc.errors.full_messages.each do |message| %>
                   <li><%= message %></li>
               <% end %>
           </ul>
