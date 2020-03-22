@@ -18,4 +18,11 @@ class Eshop < ApplicationRecord
 	belongs_to :ecategory
 	belongs_to :user
 
+	has_many :emenucs, dependent: :destroy
+	has_many :esmenucs, dependent: :destroy
+	has_many :eequipcs, dependent: :destroy
+	has_many :estaffcs, dependent: :destroy
+	has_many :eequips, dependent: :destroy
+	has_many :estaffs, dependent: :destroy
+
 end

@@ -18,4 +18,11 @@ class Gshop < ApplicationRecord
 	belongs_to :gcategory
 	belongs_to :user
 
+	has_many :gmenucs, dependent: :destroy
+	has_many :gsmenucs, dependent: :destroy
+	has_many :gequipcs, dependent: :destroy
+	has_many :gstaffcs, dependent: :destroy
+	has_many :gequips, dependent: :destroy
+	has_many :gstaffs, dependent: :destroy
+
 end

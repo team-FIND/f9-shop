@@ -1,0 +1,10 @@
+
+
+<%= content_for(:main)  do %>
+
+	<%= form_for($emenu, :url => {:action => "update"}, :html => {:multipart => true}) do |form| %>
+			<%= render 'form', emenu: $emenu %>
+	<% end %>
+
+<% end %>
+

@@ -282,7 +282,7 @@ end end
 namespace :myeshop do resources :myemenus do
                       resources :myouts do
       member do
-       get "auto_img"
+       get "out_img"
       end
 end end end
 

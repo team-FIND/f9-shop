@@ -1,0 +1,34 @@
+
+
+  <%= content_for(:head)  do %>
+      <%= stylesheet_link_tag "shophome/ashop/content/menu", :media => "all" %>
+      <%= javascript_include_tag "city" %>
+
+      <title><%= page_title %></title>
+  <% end %>
+
+
+  <% @page_title = $emenuc.name %> 
+  <% @title1 = $eshop.shopname %> 
+  <% @title2 = @page_title %> 
+  
+
+  <%= content_for(:main)  do %>
+
+    <div id="new"><%= link_to '＋メニューを追加する', new_myeshop_myemenuc_myemenu_path %></div>
+        <div id="feature-wrapper">
+
+              <% $emenus.each do |emenu| %>
+                  <%= link_to myeshop_myemenuc_myemenu_path(myemenuc_id:$emenuc, id:emenu) do %>
+                   　<div id="box"><li id="list"><%= emenu.name %></li></div>
+                  <% end %>
+
+                  <div id="edit">
+                    <%= link_to '✐編集する', edit_myeshop_myemenuc_myemenu_path(myemenuc_id:$emenuc, id:emenu) %>
+                  </div>
+              <% end %>
+
+        </div>
+    <% end %>
+
+

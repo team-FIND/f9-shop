@@ -1,0 +1,34 @@
+
+<% @page_title = $dstaff.name %> 
+<% @title2 = $dstaff.name %> 
+
+<%= content_for(:edit) do %>
+
+<% end %>
+
+
+<%= content_for(:main) do %>
+	<div id="edit">
+    	<%= link_to '✐編集', staff_img_mydshop_mydstaffc_mydstaff_path(id:$dstaff) %>
+    </div>    
+
+	<% $dstaffs.each do |dstaff| %>
+
+		<% if $dstaff.staff_img.present? %>
+			<div class="mainImage"><%= image_tag $dstaff.staff_img_url %></div>
+		<% else %>
+			<div class="mainImage"><%= image_tag "template/logo3" %></div>
+		<% end %>
+
+	<% end %>
+<% end %>
+
+<%= content_for(:second_feature) do %>
+
+			<% if $dstaff.explain.present? %>
+					<p><%= $dshop.explain %></p>
+			<% else %>
+					<p>未入力</p>
+			<% end %>
+
+<% end %>

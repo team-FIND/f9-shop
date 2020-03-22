@@ -18,4 +18,11 @@ class Fshop < ApplicationRecord
 	belongs_to :fcategory
 	belongs_to :user
 
+	has_many :fmenucs, dependent: :destroy
+	has_many :fsmenucs, dependent: :destroy
+	has_many :fequipcs, dependent: :destroy
+	has_many :fstaffcs, dependent: :destroy
+	has_many :fequips, dependent: :destroy
+	has_many :fstaffs, dependent: :destroy
+
 end

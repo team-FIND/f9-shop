@@ -11,7 +11,7 @@ class Myeshop::MyeshopsController < ApplicationController
   end
 
   def show
-    $eshop = eshop.where(:id => params[:id]).first
+    $eshop = Eshop.where(:id => params[:id]).first
     $emenucs = $eshop.emenucs.all
     $esmenucs = $eshop.esmenucs.all
     $eequipcs = $eshop.eequipcs.all
@@ -151,7 +151,7 @@ class Myeshop::MyeshopsController < ApplicationController
   private
 
     def set_eshop
-      $eshop = eshop.where(:id => params[:id]).first
+      $eshop = Eshop.where(:id => params[:id]).first
     end
     
     def eshop_params

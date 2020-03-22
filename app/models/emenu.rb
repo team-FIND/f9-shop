@@ -1,5 +1,12 @@
 class Emenu < ApplicationRecord
-  belongs_to :user
-  belongs_to :eshop
-  belongs_to :emenuc
+	
+	validates :user_id, presence: true
+  	validates :emenuc_id, presence: true
+	validates :name, presence: true
+
+	belongs_to :user
+	belongs_to :emenuc
+
+	has_many :outs
+
 end

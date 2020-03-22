@@ -18,4 +18,11 @@ class Hshop < ApplicationRecord
 	belongs_to :hcategory
 	belongs_to :user
 
+	has_many :hmenucs, dependent: :destroy
+	has_many :hsmenucs, dependent: :destroy
+	has_many :hequipcs, dependent: :destroy
+	has_many :hstaffcs, dependent: :destroy
+	has_many :hequips, dependent: :destroy
+	has_many :hstaffs, dependent: :destroy
+
 end

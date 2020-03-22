@@ -1,0 +1,9 @@
+<%= content_for(:main)  do %>
+
+	<%= form_for($dequip, :url => {:action => "update"}, :html => {:multipart => true}) do |form| %>
+
+	<%= render 'form2', dequip: $dequip %>
+
+	<% end %>
+
+<% end %>

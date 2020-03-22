@@ -1,0 +1,31 @@
+
+<% @page_title = $out.outname1 %> 
+<% @title2 = $out.outname1 %> 
+
+<%= content_for(:edit) do %>
+	<div id="edit">
+    	<%= link_to '✐編集', out_img_myeshop_myemenu_myout_path(id:$out) %>
+    </div>    
+<% end %>
+
+<% $outs.each do |out| %>
+
+	<% if $out.outimg1.present? %>
+		<% @image1 = image_tag $out.outimg1_url %>
+	<% else %>
+		<% @image1 = image_tag "template/logo3" %>
+	<% end %>
+
+	<% if $out.outimg2.present? %>
+		<% @image2 = image_tag $out.outimg2_url %>
+	<% else %>
+		<% @image2 = image_tag "template/logo3" %>
+	<% end %>
+
+	<% if $out.outimg3.present? %>
+		<% @image3 = image_tag $out.outimg3_url %>
+	<% else %>
+		<% @image3 = image_tag "template/logo3" %>
+	<% end %>
+
+<% end %>
