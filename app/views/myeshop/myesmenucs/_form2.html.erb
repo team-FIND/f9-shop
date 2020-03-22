@@ -1,12 +1,12 @@
 
-<%= form_for($dsmenuc, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+<%= form_for($esmenuc, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
 
-  <% if dsmenuc.errors.any? %>
+  <% if esmenuc.errors.any? %>
       <div id="error_explanation">
-          <h2><%= pluralize(dsmenuc.errors.count, "error") %> prohibited this dsmenuc from being saved:</h2>
+          <h2><%= pluralize(esmenuc.errors.count, "error") %> prohibited this esmenuc from being saved:</h2>
 
           <ul>
-              <% dsmenuc.errors.full_messages.each do |message| %>
+              <% esmenuc.errors.full_messages.each do |message| %>
                   <li><%= message %></li>
               <% end %>
           </ul>
@@ -17,7 +17,7 @@
 
     <h1>診察内容を編集する</h1>
       
-      <%= form.hidden_field :dshop_id %>
+      <%= form.hidden_field :eshop_id %>
 
       <%= form.label :price do %><label for="labelx">料金（税込）：</label><% end %><br>
       <div id="field"><%= form.text_field :price, placeholder: "例）1,000" %></div>
@@ -43,7 +43,7 @@
 
       <div id="actions"><li><%= form.submit(:決定) %></li></div>
 
-      <%= link_to mydshop_mydshop_path(id:$dshop) do %>
+      <%= link_to myeshop_myeshop_path(id:$eshop) do %>
             <div id="eback">編集を中止する</div>
       <% end %>
 

@@ -1,23 +1,23 @@
-class Mydshop::MydsmenucsController < ApplicationController
-  before_action :set_dsmenuc, only: [:show, :edit, :update, :destroy, :subedit]
+class Myeshop::MyesmenucsController < ApplicationController
+  before_action :set_esmenuc, only: [:show, :edit, :update, :destroy, :subedit]
   protect_from_forgery except: :create
   before_action :set_current_user
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def index
-    $dshop = Dshop.where(:id => params[:mydshop_id]).first
-    $dsmenucs = $dshop.dsmenucs.all
+    $eshop = Eshop.where(:id => params[:myeshop_id]).first
+    $esmenucs = $eshop.esmenucs.all
   end
 
   def show
-    $dshop = Dshop.where(:id => params[:mydshop_id]).first
-    $dsmenucs = $dshop.dsmenucs.all
+    $eshop = Eshop.where(:id => params[:myeshop_id]).first
+    $esmenucs = $eshop.esmenucs.all
     render :layout => "menu_category"
   end
 
   def new
-    $dshop = Dshop.where(:id => params[:mydshop_id]).first
-    $dsmenuc = $dshop.dsmenucs.build
+    $eshop = Eshop.where(:id => params[:myeshop_id]).first
+    $esmenuc = $eshop.esmenucs.build
     render :layout => "shop/ashop/menu_edit"
   end
 
@@ -30,29 +30,29 @@ class Mydshop::MydsmenucsController < ApplicationController
   end
 
   def create
-    $dshop = Dshop.where(:id => params[:mydshop_id]).first
-    $dsmenuc = $dshop.dsmenucs.build(dsmenuc_params)
-    $dsmenuc.user_id = current_user.id
+    $eshop = Eshop.where(:id => params[:myeshop_id]).first
+    $esmenuc = $eshop.esmenucs.build(esmenuc_params)
+    $esmenuc.user_id = current_user.id
 
     respond_to do |format|
-      if $dsmenuc.save
-        format.html { redirect_to mydshop_mydshop_path(id:$dshop), notice: 'Acategory was successfully created.' }
-        format.json { render :show, status: :created, location: $dsmenuc }
+      if $esmenuc.save
+        format.html { redirect_to myeshop_myeshop_path(id:$eshop), notice: 'Acategory was successfully created.' }
+        format.json { render :show, status: :created, location: $esmenuc }
       else
         format.html { render :new }
-        format.json { render json: $dsmenuc.errors, status: :unprocessable_entity }
+        format.json { render json: $esmenuc.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def update
     respond_to do |format|
-      if $dsmenuc.update(dsmenuc_params)
-        format.html { redirect_to mydshop_mydshop_path(id:$dshop), notice: 'Acategory was successfully updated.' }
-        format.json { render :show, status: :ok, location: $dsmenuc }
+      if $esmenuc.update(esmenuc_params)
+        format.html { redirect_to myeshop_myeshop_path(id:$eshop), notice: 'Acategory was successfully updated.' }
+        format.json { render :show, status: :ok, location: $esmenuc }
       else
         format.html { render :edit }
-        format.json { render json: $dsmenuc.errors, status: :unprocessable_entity }
+        format.json { render json: $esmenuc.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -62,9 +62,9 @@ class Mydshop::MydsmenucsController < ApplicationController
   end
 
   def destroy
-    $dsmenuc.destroy
+    $esmenuc.destroy
     respond_to do |format|
-      format.html { redirect_to mydshop_mydshop_path(id:$dshop), notice: 'Top was successfully destroyed.' }
+      format.html { redirect_to myeshop_myeshop_path(id:$eshop), notice: 'Top was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -75,12 +75,12 @@ class Mydshop::MydsmenucsController < ApplicationController
 
   private
 
-    def set_dsmenuc
-      $dshop = Dshop.where(:id => params[:mydshop_id]).first
-      $dsmenuc = $dshop.dsmenucs.where(:id => params[:id]).first
+    def set_esmenuc
+      $eshop = Eshop.where(:id => params[:myeshop_id]).first
+      $esmenuc = $eshop.esmenucs.where(:id => params[:id]).first
     end
     
-    def dsmenuc_params
-      params.require(:dsmenuc).permit(:dshop_id, :shopname, :user_id, :name, :price, :detail1, :detail2, :detail3, :detail4, :detail5, :detail6, :detail7, :detail8, :detail9, :detail10)
+    def esmenuc_params
+      params.require(:esmenuc).permit(:eshop_id, :shopname, :user_id, :name, :price, :detail1, :detail2, :detail3, :detail4, :detail5, :detail6, :detail7, :detail8, :detail9, :detail10)
     end
 end
