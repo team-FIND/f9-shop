@@ -12,11 +12,11 @@ before_action :configure_permitted_parameters, if: :devise_controller?
 
   def show
     $eshop = Eshop.where(:id => params[:id]).first
-      #$bmenucs = $ashop.amenucs.all
-      #$asmenucs = $ashop.asmenucs.all
-      #$admenucs = $ashop.admenucs.all
-      #$atmenucs = $ashop.atmenucs.all
     render :layout => "shop_home"
+     $emenucs = $eshop.emenucs.all
+     $esmenucs = $eshop.esmenucs.all
+     $edmenucs = $eshop.edmenucs.all
+     $etmenucs = $eshop.etmenucs.all
   end
 
   def contact
@@ -33,15 +33,6 @@ before_action :configure_permitted_parameters, if: :devise_controller?
 
   def info
     render :layout => "shop_contents"
-  end
-
-  def create
-  end
-
-  def update
-  end
-
-  def destroy
   end
 
   private
