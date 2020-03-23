@@ -1,26 +1,26 @@
-class Dsearch::DsmenucsController < ApplicationController
-  before_action :set_dmenuc, only: [:show, :edit, :update, :destroy]
+class Esearch::EsmenucsController < ApplicationController
+  before_action :set_emenuc, only: [:show, :edit, :update, :destroy]
   protect_from_forgery except: :create
   before_action :set_current_user
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def index
-    $dshop = Dshop.where(:id => params[:dsshop_id]).first
-    $dmenucs = $dshop.dmenucs.all
+    $eshop = Eshop.where(:id => params[:esshop_id]).first
+    $emenucs = $eshop.emenucs.all
   end
 
   def show
-    redirect_to dsearch_dsmenuc_dsmenus_path(dsmenuc_id:$dmenuc)
+    redirect_to esearch_esmenuc_esmenus_path(esmenuc_id:$emenuc)
   end
 
   private
 
-    def set_dmenuc
-      $dshop = Dshop.where(:id => params[:dsshop_id]).first
-      $dmenuc = $dshop.dmenucs.where(:id => params[:id]).first
+    def set_emenuc
+      $eshop = Eshop.where(:id => params[:esshop_id]).first
+      $emenuc = $eshop.emenucs.where(:id => params[:id]).first
     end
     
-    def dmenuc_params
-      params.require(:dmenuc).permit(:dshop_id, :shopname, :user_id, :name)
+    def emenuc_params
+      params.require(:emenuc).permit(:eshop_id, :shopname, :user_id, :name)
     end
 end

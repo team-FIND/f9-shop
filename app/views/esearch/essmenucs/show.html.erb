@@ -1,0 +1,77 @@
+
+
+  <%= content_for(:head)  do %>
+      <%= stylesheet_link_tag "shophome/ashop/content/menu", :media => "all" %>
+      <%= javascript_include_tag "city" %>
+
+      <title><%= page_title %></title>
+  <% end %>
+
+
+  <% @page_title = $esmenuc.name  %> 
+  <% @title1 = $eshop.shopname %> 
+  <% @title2 = @page_title %> 
+
+  <%= content_for(:main)  do %>
+
+        <% $esmenucs.each do |esmenuc| %>
+
+                <div id="menuline">税込：<%= esmenuc.price %>円</div>
+
+                <% if $esmenuc.detail1.present? %>
+                    <div id="content1">♦<%= esmenuc.detail1 %></div>
+                <% else %>
+                    <div id="content0">♦</div>
+                <% end %>
+
+                <% if $esmenuc.detail2.present? %>
+                    <div id="content1">♦<%= esmenuc.detail2 %></div>
+                <% else %>
+                    <div id="content0">♦</div>
+                <% end %>
+
+                <% if $esmenuc.detail3.present? %>
+                    <div id="content1">♦<%= esmenuc.detail3 %></div>
+                <% else %>
+                    <div id="content0">♦</div>
+                <% end %>
+
+                <% if $esmenuc.detail4.present? %>
+                    <div id="content1">♦<%= esmenuc.detail4 %></div>
+                <% else %>
+                    <div id="content0">♦</div>
+                <% end %>
+
+                <% if $esmenuc.detail5.present? %>
+                    <div id="content1">♦<%= esmenuc.detail5 %></div>
+                <% else %>
+                    <div id="content0">♦</div>
+                <% end %>
+
+                <% if $esmenuc.detail6.present? %>
+                    <div id="content1">♦<%= esmenuc.detail6 %></div>
+                <% else %>
+                    <div id="content0">♦</div>
+                <% end %>
+
+                <% if $esmenuc.detail7.present? %>
+                    <div id="content1">♦<%= esmenuc.detail7 %></div>
+                <% else %>
+                    <div id="content0">♦</div>
+                <% end %>
+
+                <% if $esmenuc.detail8.present? %>
+                    <div id="content1">♦<%= esmenuc.detail8 %></div>
+                <% else %>
+                    <div id="content0">♦</div>
+                <% end %>
+
+                <% if $esmenuc.detail10.present? %>
+                    <div id="content1">♦<%= esmenuc.detail10 %></div>
+                <% else %>
+                    <div id="content0">♦</div>
+                <% end %>
+                
+        <% end %>
+
+  <% end %>

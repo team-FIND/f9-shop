@@ -1,0 +1,28 @@
+
+
+  <%= content_for(:head)  do %>
+      <%= stylesheet_link_tag "shophome/ashop/content/menu", :media => "all" %>
+      <%= javascript_include_tag "city" %>
+
+      <title><%= page_title %></title>
+  <% end %>
+
+
+  <% @page_title = $emenuc.name %> 
+  <% @title1 = $eshop.shopname %> 
+  <% @title2 = @page_title %> 
+
+  <%= content_for(:main)  do %>
+
+        <div id="feature-wrapper">
+
+              <% $emenus.each do |emenu| %>
+                  <%= link_to esearch_esmenuc_esmenu_path(esmenuc_id:$emenuc, id:emenu) do %>
+                   　<div id="box"><li id="list"><%= emenu.name %></li></div>
+                  <% end %>
+              <% end %>
+
+        </div>
+    <% end %>
+
+

@@ -13,7 +13,7 @@ class Dsearch::SautosController < ApplicationController
   def show
     $dmenu = Dmenu.where(:id => params[:dsmenu_id]).first
     $autos = $dmenu.autos.all
-    render :layout => "shop/ashop/autos"
+    render :layout => "shop/ashop/foods"
   end
 
   private

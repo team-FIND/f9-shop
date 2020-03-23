@@ -1,0 +1,55 @@
+
+<%= content_for(:head)  do %>
+    <%= stylesheet_link_tag "shophome/ashop/each", :media => "all" %>
+    <%= javascript_include_tag "city" %>
+    <title><%= page_title %></title>
+
+<% end %>
+
+<% @page_title = $emenu.name %> 
+<% @title1 = $eshop.shopname %> 
+<% @title2 = $emenu.name %>
+
+
+<%= content_for(:main)  do %>
+
+  <% $outs.each do |out| %>
+
+        <div id="out">
+          
+                <div id="top_pic"> 
+
+                    <% if out.topimg.present? %>
+                      <%= link_to image_tag(out.topimg_url, {:size =>'300x300'}), esearch_esmenu_sout_path(id:out) %> 
+                    <% else %>
+                      <%= link_to image_tag("template/logo3", {:size =>'300x300'}), esearch_esmenu_sout_path(id:out) %> 
+                    <% end %>
+    
+                </div>
+
+                <P id="out_name1">
+                    <% if out.outname1.present? %>
+                        <%= out.outname1 %>
+                    <% else %>
+                        未入力（料理名１）
+                    <% end %>
+                </P>
+
+                <P id="out_name2">
+                    <% if out.outname2.present? %>
+                        <%= out.outname2 %>
+                    <% else %>
+                        未入力（料理名２）
+                    <% end %>
+                </P>
+
+                <P id="price">税込：<%= out.price %>円</P>
+
+          </div>
+
+
+  <% end %>
+
+
+<% end %>
+

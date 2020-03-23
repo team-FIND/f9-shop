@@ -1,27 +1,27 @@
-class Dsearch::DsstaffcsController < ApplicationController
-    before_action :set_dstaffc, only: [:show, :edit, :update, :destroy, :subedit]
+class Esearch::EsstaffcsController < ApplicationController
+    before_action :set_estaffc, only: [:show, :edit, :update, :destroy, :subedit]
     protect_from_forgery except: :create
     before_action :set_current_user
     before_action :configure_permitted_parameters, if: :devise_controller?
   
     def index
-      $dsshop = Dshop.where(:id => params[:dsshop_id]).first
-      $dstaffcs = $dshop.dstaffcs.all
+      $esshop = Eshop.where(:id => params[:esshop_id]).first
+      $estaffcs = $eshop.estaffcs.all
     end
   
     def show
-      redirect_to dsearch_dsstaffc_dsstaffs_path(dsstaffc_id:$dsstaffc)
+      redirect_to esearch_esstaffc_esstaffs_path(esstaffc_id:$esstaffc)
     end
   
     private
   
-      def set_dstaffc
-        $dsshop = Dshop.where(:id => params[:dsshop_id]).first
-        $dsstaffc = $dshop.dstaffcs.where(:id => params[:id]).first
+      def set_estaffc
+        $esshop = Eshop.where(:id => params[:esshop_id]).first
+        $esstaffc = $eshop.estaffcs.where(:id => params[:id]).first
       end
       
-      def dstaffc_params
-        params.require(:dstaffc).permit(:dshop_id, :shopname, :user_id, :name)
+      def estaffc_params
+        params.require(:estaffc).permit(:eshop_id, :shopname, :user_id, :name)
       end
       
   end

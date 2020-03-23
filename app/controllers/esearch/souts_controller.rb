@@ -1,29 +1,29 @@
-class Dsearch::SautosController < ApplicationController
-  before_action :set_auto, only: [:show, :edit, :update, :destroy]
+class Esearch::SoutsController < ApplicationController
+  before_action :set_out, only: [:show, :edit, :update, :destroy]
   protect_from_forgery except: :create
   before_action :set_current_user
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def index
-    $dmenu = Dmenu.where(:id => params[:dsmenu_id]).first
-    $autos = $dmenu.autos.all
+    $emenu = Emenu.where(:id => params[:esmenu_id]).first
+    $outs = $emenu.outs.all
     render :layout => "menu_category"
   end
 
   def show
-    $dmenu = Dmenu.where(:id => params[:dsmenu_id]).first
-    $autos = $dmenu.autos.all
-    render :layout => "shop/ashop/autos"
+    $emenu = Emenu.where(:id => params[:esmenu_id]).first
+    $outs = $emenu.outs.all
+    render :layout => "shop/ashop/foods"
   end
 
   private
 
-    def set_auto
-      $dmenu = Dmenu.where(:id => params[:dsmenu_id]).first
-      $auto = $dmenu.autos.where(:id => params[:id]).first
+    def set_out
+      $emenu = Emenu.where(:id => params[:esmenu_id]).first
+      $out = $emenu.outs.where(:id => params[:id]).first
     end
 
-    def auto_params
-      params.require(:auto).permit(:dmenu_id, :name, :topimg, :topimg_cache, :autoimg1, :autoimg1_cache, :autoimg2, :autoimg2_cache, :autoimg3, :autoimg3_cache, :autoname1, :autoname2, :price)
+    def out_params
+      params.require(:out).permit(:emenu_id, :name, :topimg, :topimg_cache, :outimg1, :outimg1_cache, :outimg2, :outimg2_cache, :outimg3, :outimg3_cache, :outname1, :outname2, :price)
     end
 end
