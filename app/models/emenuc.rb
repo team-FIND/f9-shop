@@ -5,7 +5,7 @@ class Emenuc < ApplicationRecord
 	validates :name, presence: true
 
 	belongs_to :user
-	belongs_to :eshopj
+	belongs_to :eshop
 
 	has_many :emenus, dependent: :destroy
 	has_many :outs, dependent: :destroy
