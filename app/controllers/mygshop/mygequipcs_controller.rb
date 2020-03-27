@@ -1,21 +1,21 @@
-class Mybshop::MybequipcsController < ApplicationController
-    before_action :set_bequipc, only: [:show, :edit, :update, :destroy, :subedit]
+class Mygshop::MygequipcsController < ApplicationController
+    before_action :set_gequipc, only: [:show, :edit, :update, :destroy, :subedit]
     protect_from_forgery except: :create
     before_action :set_current_user
     before_action :configure_permitted_parameters, if: :devise_controller?
   
     def index
-      $bshop = Bshop.where(:id => params[:mybshop_id]).first
-      $bequipcs = $bshop.bequipcs.all
+      $gshop = Gshop.where(:id => params[:mygshop_id]).first
+      $gequipcs = $gshop.gequipcs.all
     end
   
     def show
-      redirect_to mybshop_mybequipc_mybequips_path(mybequipc_id:$bequipc)
+      redirect_to mygshop_mygequipc_mygequips_path(mygequipc_id:$gequipc)
     end
   
     def new
-      $bshop = Bshop.where(:id => params[:mybshop_id]).first
-      $bequipc = $bshop.bequipcs.build
+      $gshop = Gshop.where(:id => params[:mygshop_id]).first
+      $gequipc = $gshop.gequipcs.build
       render :layout => "shop/ashop/menu_edit"
     end
   
@@ -24,29 +24,29 @@ class Mybshop::MybequipcsController < ApplicationController
     end
   
     def create
-      $bshop = Bshop.where(:id => params[:mybshop_id]).first
-      $bequipc = $bshop.bequipcs.build(bequipc_params)
-      $bequipc.user_id = current_user.id
+      $gshop = Gshop.where(:id => params[:mygshop_id]).first
+      $gequipc = $gshop.gequipcs.build(gequipc_params)
+      $gequipc.user_id = current_user.id
   
       respond_to do |format|
-        if $bequipc.save
-          format.html { redirect_to mybshop_mybshop_path(id:$bshop), notice: 'Acategory was successfully created.' }
-          format.json { render :show, status: :created, location: $bequipc }
+        if $gequipc.save
+          format.html { redirect_to mygshop_mygshop_path(id:$gshop), notice: 'Acategory was successfully created.' }
+          format.json { render :show, status: :created, location: $gequipc }
         else
           format.html { render :new }
-          format.json { render json: $bequipc.errors, status: :unprocessable_entity }
+          format.json { render json: $gequipc.errors, status: :unprocessable_entity }
         end
       end
     end
   
     def update
       respond_to do |format|
-        if $bequipc.update(bequipc_params)
-          format.html { redirect_to mybshop_mybshop_path(id:$bshop), notice: 'Acategory was successfully updated.' }
-          format.json { render :show, status: :ok, location: $bequipc }
+        if $gequipc.update(gequipc_params)
+          format.html { redirect_to mygshop_mygshop_path(id:$gshop), notice: 'Acategory was successfully updated.' }
+          format.json { render :show, status: :ok, location: $gequipc }
         else
           format.html { render :edit }
-          format.json { render json: $bequipc.errors, status: :unprocessable_entity }
+          format.json { render json: $gequipc.errors, status: :unprocessable_entity }
         end
       end
     end
@@ -56,9 +56,9 @@ class Mybshop::MybequipcsController < ApplicationController
     end
   
     def destroy
-      $bequipc.destroy
+      $gequipc.destroy
       respond_to do |format|
-        format.html { redirect_to mybshop_mybshop_path(id:$bshop), notice: 'Top was successfully destroyed.' }
+        format.html { redirect_to mygshop_mygshop_path(id:$gshop), notice: 'Top was successfully destroyed.' }
         format.json { head :no_content }
       end
     end
@@ -69,13 +69,13 @@ class Mybshop::MybequipcsController < ApplicationController
   
     private
   
-      def set_bequipc
-        $bshop = Bshop.where(:id => params[:mybshop_id]).first
-        $bequipc = $bshop.bequipcs.where(:id => params[:id]).first
+      def set_gequipc
+        $gshop = Gshop.where(:id => params[:mygshop_id]).first
+        $gequipc = $gshop.gequipcs.where(:id => params[:id]).first
       end
       
-      def bequipc_params
-        params.require(:bequipc).permit(:bshop_id, :shopname, :user_id, :name)
+      def gequipc_params
+        params.require(:gequipc).permit(:gshop_id, :shopname, :user_id, :name)
       end
       
   end

@@ -1,12 +1,12 @@
 
-<%= form_for($bequipc, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+<%= form_for($gstaffc, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
 
-  <% if bequipc.errors.any? %>
+  <% if gstaffc.errors.any? %>
       <div id="error_explanation">
-          <h2><%= pluralize(bequipc.errors.count, "error") %> prohibited this bequipc from being saved:</h2>
+          <h2><%= pluralize(gstaffc.errors.count, "error") %> prohibited this gstaffc from being saved:</h2>
 
           <ul>
-              <% bequipc.errors.full_messages.each do |message| %>
+              <% gstaffc.errors.full_messages.each do |message| %>
                   <li><%= message %></li>
               <% end %>
           </ul>

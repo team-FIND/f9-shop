@@ -1,12 +1,12 @@
 
-<%= form_for($bequipc, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+<%= form_for($gequipc, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
 
-  <% if bequipc.errors.any? %>
+  <% if gequipc.errors.any? %>
       <div id="error_explanation">
-          <h2><%= pluralize(bequipc.errors.count, "error") %> prohibited this bequipc from being saved:</h2>
+          <h2><%= pluralize(gequipc.errors.count, "error") %> prohibited this gequipc from being saved:</h2>
 
           <ul>
-              <% bequipc.errors.full_messages.each do |message| %>
+              <% gequipc.errors.full_messages.each do |message| %>
                   <li><%= message %></li>
               <% end %>
           </ul>
@@ -17,13 +17,13 @@
 
     <h1>診察内容を編集する</h1>
       
-      <%= form.hidden_field :bshop_id %>
+      <%= form.hidden_field :gshop_id %>
 
       <div id="field"><%= form.text_area :content, placeholder: '診察内容を記載してください。' %></div>
 
       <div id="actions"><li><%= form.submit(:決定) %></li></div>
 
-      <%= link_to mybshop_mybshop_path(id:$bshop) do %>
+      <%= link_to mygshop_mygshop_path(id:$gshop) do %>
             <div id="eback">編集を中止する</div>
       <% end %>
 

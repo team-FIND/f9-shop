@@ -1,23 +1,23 @@
-class Mybshop::MybsmenucsController < ApplicationController
-  before_action :set_bsmenuc, only: [:show, :edit, :update, :destroy, :subedit]
+class Mygshop::MygsmenucsController < ApplicationController
+  before_action :set_gsmenuc, only: [:show, :edit, :update, :destroy, :subedit]
   protect_from_forgery except: :create
   before_action :set_current_user
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def index
-    $bshop = Bshop.where(:id => params[:mybshop_id]).first
-    $bsmenucs = $bshop.bsmenucs.all
+    $gshop = Gshop.where(:id => params[:mygshop_id]).first
+    $gsmenucs = $gshop.gsmenucs.all
   end
 
   def show
-    $bshop = Bshop.where(:id => params[:mybshop_id]).first
-    $bsmenucs = $bshop.bsmenucs.all
+    $gshop = Gshop.where(:id => params[:mygshop_id]).first
+    $gsmenucs = $gshop.gsmenucs.all
     render :layout => "menu_category"
   end
 
   def new
-    $bshop = Bshop.where(:id => params[:mybshop_id]).first
-    $bsmenuc = $bshop.bsmenucs.build
+    $gshop = Gshop.where(:id => params[:mygshop_id]).first
+    $gsmenuc = $gshop.gsmenucs.build
     render :layout => "shop/ashop/menu_edit"
   end
 
@@ -30,29 +30,29 @@ class Mybshop::MybsmenucsController < ApplicationController
   end
 
   def create
-    $bshop = Bshop.where(:id => params[:mybshop_id]).first
-    $bsmenuc = $bshop.bsmenucs.build(bsmenuc_params)
-    $bsmenuc.user_id = current_user.id
+    $gshop = Gshop.where(:id => params[:mygshop_id]).first
+    $gsmenuc = $gshop.gsmenucs.build(gsmenuc_params)
+    $gsmenuc.user_id = current_user.id
 
     respond_to do |format|
-      if $bsmenuc.save
-        format.html { redirect_to mybshop_mybshop_path(id:$bshop), notice: 'Acategory was successfully created.' }
-        format.json { render :show, status: :created, location: $bsmenuc }
+      if $gsmenuc.save
+        format.html { redirect_to mygshop_mygshop_path(id:$gshop), notice: 'Acategory was successfully created.' }
+        format.json { render :show, status: :created, location: $gsmenuc }
       else
         format.html { render :new }
-        format.json { render json: $bsmenuc.errors, status: :unprocessable_entity }
+        format.json { render json: $gsmenuc.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def update
     respond_to do |format|
-      if $bsmenuc.update(bsmenuc_params)
-        format.html { redirect_to mybshop_mybshop_path(id:$bshop), notice: 'Acategory was successfully updated.' }
-        format.json { render :show, status: :ok, location: $bsmenuc }
+      if $gsmenuc.update(gsmenuc_params)
+        format.html { redirect_to mygshop_mygshop_path(id:$gshop), notice: 'Acategory was successfully updated.' }
+        format.json { render :show, status: :ok, location: $gsmenuc }
       else
         format.html { render :edit }
-        format.json { render json: $bsmenuc.errors, status: :unprocessable_entity }
+        format.json { render json: $gsmenuc.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -62,9 +62,9 @@ class Mybshop::MybsmenucsController < ApplicationController
   end
 
   def destroy
-    $bsmenuc.destroy
+    $gsmenuc.destroy
     respond_to do |format|
-      format.html { redirect_to mybshop_mybshop_path(id:$bshop), notice: 'Top was successfully destroyed.' }
+      format.html { redirect_to mygshop_mygshop_path(id:$gshop), notice: 'Top was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -75,12 +75,12 @@ class Mybshop::MybsmenucsController < ApplicationController
 
   private
 
-    def set_bsmenuc
-      $bshop = Bshop.where(:id => params[:mybshop_id]).first
-      $bsmenuc = $bshop.bsmenucs.where(:id => params[:id]).first
+    def set_gsmenuc
+      $gshop = Gshop.where(:id => params[:mygshop_id]).first
+      $gsmenuc = $gshop.gsmenucs.where(:id => params[:id]).first
     end
     
-    def bsmenuc_params
-      params.require(:bsmenuc).permit(:bshop_id, :shopname, :user_id, :name, :price, :detail1, :detail2, :detail3, :detail4, :detail5, :detail6, :detail7, :detail8, :detail9, :detail10)
+    def gsmenuc_params
+      params.require(:gsmenuc).permit(:gshop_id, :shopname, :user_id, :name, :price, :detail1, :detail2, :detail3, :detail4, :detail5, :detail6, :detail7, :detail8, :detail9, :detail10)
     end
 end

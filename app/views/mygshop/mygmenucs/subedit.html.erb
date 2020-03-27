@@ -1,0 +1,9 @@
+
+
+<%= content_for(:main)  do %>
+
+	<%= form_for($gmenuc, :url => {:action => "update"}, :html => {:multipart => true}) do |form| %>
+			<%= render 'form2', gmenuc: $gmenuc %>
+	<% end %>
+
+<% end %>
