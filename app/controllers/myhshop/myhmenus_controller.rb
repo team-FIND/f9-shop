@@ -11,7 +11,7 @@ class Myhshop::MyhmenusController < ApplicationController
   end
 
   def show
-    redirect_to myhshop_myhmenu_myautos_path(myhmenu_id:$hmenu)
+    redirect_to myhshop_myhmenu_myitems_path(myhmenu_id:$hmenu)
   end
 
   def new

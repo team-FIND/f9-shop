@@ -1,23 +1,23 @@
 
-<% @page_title = $bstaff.name %> 
-<% @title2 = $bstaff.name %> 
+<% @page_title = $gstaff.name %> 
+<% @title2 = $gstaff.name %> 
 
 <%= content_for(:edit) do %>
 	<div id="edit">
-    	<%= link_to '✐編集', staff_img_mybshop_mybstaffc_mybstaff_path(id:$bstaff) %>
+    	<%= link_to '✐編集', staff_img_mygshop_mygstaffc_mygstaff_path(id:$gstaff) %>
     </div>    
 <% end %>
 
-<% $bstaffs.each do |bstaff| %>
+<% $gstaffs.each do |gstaff| %>
 
-	<% if $bstaff.staff_img.present? %>
-		<% @image1 = image_tag $bstaff.staff_img_url %>
+	<% if $gstaff.staff_img.present? %>
+		<% @image1 = image_tag $gstaff.staff_img_url %>
 	<% else %>
 		<% @image1 = image_tag "template/logo3" %>
 	<% end %>
 
-	<% if $bstaff.explain.present? %>
-			<p><%= $bshop.explain %></p>
+	<% if $gstaff.explain.present? %>
+			<p><%= $gshop.explain %></p>
 	<% else %>
 			<p>未入力</p>
 	<% end %>

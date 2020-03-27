@@ -1,13 +1,13 @@
 
 
-<%= form_for($bstaff, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+<%= form_for($gstaff, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
 
-  <% if bstaff.errors.any? %>
+  <% if gstaff.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(bstaff.errors.count, "error") %> prohibited this menu from being saved:</h2>
+      <h2><%= pluralize(gstaff.errors.count, "error") %> prohibited this menu from being saved:</h2>
 
       <ul>
-      <% bstaff.errors.full_messages.each do |message| %>
+      <% gstaff.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -18,16 +18,16 @@
 
     <h1>料理を編集する</h1>
 
-              <%= form.hidden_field :bstaffc_id %>
+              <%= form.hidden_field :gstaffc_id %>
 
               <div id="field-pic">
                   <%= form.label :staff_img do %><label for="labelx">:トップ画像</label><% end %><br>
 
-                  <label for="labely"><%= form.file_field :staff_img, id: :bstaff_staff_img , id: "file" %></label>
+                  <label for="labely"><%= form.file_field :staff_img, id: :gstaff_staff_img , id: "file" %></label>
 
                   <div id="thumb" onClick="$('#file').click()">
-                        <% if bstaff.staff_img.present? %>
-                          <div id="updimg"><%= image_tag bstaff.staff_img.thumb.url if $bstaff.staff_img? %></div> 
+                        <% if gstaff.staff_img.present? %>
+                          <div id="updimg"><%= image_tag gstaff.staff_img.thumb.url if $gstaff.staff_img? %></div> 
                         <% else %>
                           <div id="upimg"><%= image_tag("template/img") %></div>
                         <% end %>
@@ -43,7 +43,7 @@
 
               <div id="actions"><li><%= form.submit(:決定) %></li></div>
 
-  <%= link_to mybshop_mybstaffc_mybstaffs_path do %><div id="eback">編集を中止する</div><% end %>
+  <%= link_to mygshop_mygstaffc_mygstaffs_path do %><div id="eback">編集を中止する</div><% end %>
 
 </div>
 

@@ -8,9 +8,9 @@
 
 <%= content_for(:main)  do %>
 
-  <%= link_to new_mybshop_mybequipc_mybequip_path do%><div id="new">＋設備を追加する</div><% end %>
+  <%= link_to new_mygshop_mygequipc_mygequip_path do%><div id="new">＋設備を追加する</div><% end %>
 
-  <% $bequips.each do |bequip| %>
+  <% $gequips.each do |gequip| %>
 
     <div id="each_equip">
 
@@ -18,24 +18,24 @@
           
                 <div id="top_pic"> 
 
-                    <% if bequip.equip_img.present? %>
-                      <%= link_to image_tag(bequip.equip_img_url), mybshop_mybequipc_mybequip_path(id:bequip) %> 
+                    <% if gequip.equip_img.present? %>
+                      <%= link_to image_tag(gequip.equip_img_url), mygshop_mygequipc_mygequip_path(id:gequip) %> 
                     <% else %>
-                      <%= link_to image_tag("template/logo3"), mybshop_mybequipc_mybequip_path(id:bequip) %> 
+                      <%= link_to image_tag("template/logo3"), mygshop_mygequipc_mygequip_path(id:gequip) %> 
                     <% end %>
     
                 </div>
 
                 <P id="equip_name">
-                    <% if bequip.name.present? %>
-                        <%= bequip.name %>
+                    <% if gequip.name.present? %>
+                        <%= gequip.name %>
                     <% else %>
                         （未入力）
                     <% end %>
                 </P>
 
                 <p id="edit">
-                    <%= link_to '✐編集', edit_mybshop_mybequipc_mybequip_path(id:bequip) %>
+                    <%= link_to '✐編集', edit_mygshop_mygequipc_mygequip_path(id:gequip) %>
                 </p>    
 
          </div>

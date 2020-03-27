@@ -1,11 +1,11 @@
-<%= form_for($bequip, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+<%= form_for($gequip, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
 
-  <% if bequip.errors.any? %>
+  <% if gequip.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(bequip.errors.count, "error") %> prohibited this menu from being saved:</h2>
+      <h2><%= pluralize(gequip.errors.count, "error") %> prohibited this menu from being saved:</h2>
 
       <ul>
-      <% bequip.errors.full_messages.each do |message| %>
+      <% gequip.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -16,16 +16,16 @@
 
     <h1>料理を編集する</h1>
 
-              <%= form.hidden_field :bequip_id %>
+              <%= form.hidden_field :gequip_id %>
 
                   <div id="field-pic">
                       <%= form.label :equip_img do %><label for="labelx">写真1</label><% end %><br>
 
-                      <label for="labely"><%= form.file_field :equip_img, id: :bequip_equip_img , id: "file1" %></label>
+                      <label for="labely"><%= form.file_field :equip_img, id: :gequip_equip_img , id: "file1" %></label>
 
                       <div id="thumb1" onClick="$('#file1').click()">
-                            <% if bequip.equip_img.present? %>
-                              <div id="updimg"><%= image_tag bequip.equip_img.thumb.url if $bequip.equip_img? %></div> 
+                            <% if gequip.equip_img.present? %>
+                              <div id="updimg"><%= image_tag gequip.equip_img.thumb.url if $gequip.equip_img? %></div> 
                             <% else %>
                               <div id="upimg"><%= image_tag("template/img") %></div>
                             <% end %>
@@ -36,7 +36,7 @@
 
               <div id="actions"><li><%= form.submit(:決定) %></li></div>
 
-              <%= link_to mybshop_mybmenu_mybequips_path do %><div id="eback">編集を中止する</div><% end %>
+              <%= link_to mygshop_mygmenu_mygequips_path do %><div id="eback">編集を中止する</div><% end %>
 
 </div>
 

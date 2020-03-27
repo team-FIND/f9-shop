@@ -8,9 +8,9 @@
 
 <%= content_for(:main)  do %>
 
-  <%= link_to new_mybshop_mybstaffc_mybstaff_path do%><div id="new">＋設備を追加する</div><% end %>
+  <%= link_to new_mygshop_mygstaffc_mygstaff_path do%><div id="new">＋設備を追加する</div><% end %>
 
-  <% $bstaffs.each do |bstaff| %>
+  <% $gstaffs.each do |gstaff| %>
 
     <div id="each_equip">
 
@@ -18,24 +18,24 @@
           
                 <div id="top_pic"> 
 
-                    <% if bstaff.staff_img.present? %>
-                      <%= link_to image_tag(bstaff.staff_img_url), mybshop_mybstaffc_mybstaff_path(id:bstaff) %> 
+                    <% if gstaff.staff_img.present? %>
+                      <%= link_to image_tag(gstaff.staff_img_url), mygshop_mygstaffc_mygstaff_path(id:gstaff) %> 
                     <% else %>
-                      <%= link_to image_tag("template/logo3"), mybshop_mybstaffc_mybstaff_path(id:bstaff) %> 
+                      <%= link_to image_tag("template/logo3"), mygshop_mygstaffc_mygstaff_path(id:gstaff) %> 
                     <% end %>
     
                 </div>
 
                 <P id="equip_name">
-                    <% if bstaff.name.present? %>
-                        <%= bstaff.name %>
+                    <% if gstaff.name.present? %>
+                        <%= gstaff.name %>
                     <% else %>
                         （未入力）
                     <% end %>
                 </P>
 
                 <p id="edit">
-                    <%= link_to '✐編集', edit_mybshop_mybstaffc_mybstaff_path(id:bstaff) %>
+                    <%= link_to '✐編集', edit_mygshop_mygstaffc_mygstaff_path(id:gstaff) %>
                 </p>    
 
          </div>

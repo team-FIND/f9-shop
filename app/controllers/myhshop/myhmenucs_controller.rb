@@ -10,7 +10,7 @@ class Myhshop::MyhmenucsController < ApplicationController
   end
 
   def show
-    redirect_to myhshop_myhmenuc_mydmenus_path(myhmenuc_id:$hmenuc)
+    redirect_to myhshop_myhmenuc_myhmenus_path(myhmenuc_id:$hmenuc)
   end
 
   def new

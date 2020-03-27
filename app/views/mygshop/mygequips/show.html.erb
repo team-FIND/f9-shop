@@ -1,23 +1,23 @@
 
-<% @page_title = $bequip.name %> 
-<% @title2 = $bequip.name %> 
+<% @page_title = $gequip.name %> 
+<% @title2 = $gequip.name %> 
 
 <%= content_for(:edit) do %>
 	<div id="edit">
-    	<%= link_to '✐編集', equip_img_mybshop_mybequipc_mybequip_path(id:$bequip) %>
+    	<%= link_to '✐編集', equip_img_mygshop_mygequipc_mygequip_path(id:$gequip) %>
     </div>    
 <% end %>
 
-<% $bequips.each do |bequip| %>
+<% $gequips.each do |gequip| %>
 
-	<% if $bequip.equip_img.present? %>
-		<% @image1 = image_tag $bequip.equip_img_url %>
+	<% if $gequip.equip_img.present? %>
+		<% @image1 = image_tag $gequip.equip_img_url %>
 	<% else %>
 		<% @image1 = image_tag "template/logo3" %>
 	<% end %>
 
-	<% if $bequip.explain.present? %>
-			<p><%= $bshop.explain %></p>
+	<% if $gequip.explain.present? %>
+			<p><%= $gshop.explain %></p>
 	<% else %>
 			<p>未入力</p>
 	<% end %>
