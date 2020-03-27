@@ -1,21 +1,21 @@
-class Mybshop::MybstaffcsController < ApplicationController
-    before_action :set_bstaffc, only: [:show, :edit, :update, :destroy, :subedit]
+class Mygshop::MygstaffcsController < ApplicationController
+    before_action :set_gstaffc, only: [:show, :edit, :update, :destroy, :subedit]
     protect_from_forgery except: :create
     before_action :set_current_user
     before_action :configure_permitted_parameters, if: :devise_controller?
   
     def index
-      $bshop = Bshop.where(:id => params[:mybshop_id]).first
-      $bstaffcs = $bshop.bstaffcs.all
+      $gshop = Gshop.where(:id => params[:mygshop_id]).first
+      $gstaffcs = $gshop.gstaffcs.all
     end
   
     def show
-      redirect_to mybshop_mybstaffc_mybstaffs_path(mybstaffc_id:$bstaffc)
+      redirect_to mygshop_mygstaffc_mygstaffs_path(mygstaffc_id:$gstaffc)
     end
   
     def new
-      $bshop = Bshop.where(:id => params[:mybshop_id]).first
-      $bstaffc = $bshop.bstaffcs.build
+      $gshop = Gshop.where(:id => params[:mygshop_id]).first
+      $gstaffc = $gshop.gstaffcs.build
       render :layout => "shop/ashop/menu_edit"
     end
   
@@ -24,29 +24,29 @@ class Mybshop::MybstaffcsController < ApplicationController
     end
   
     def create
-      $bshop = Bshop.where(:id => params[:mybshop_id]).first
-      $bstaffc = $bshop.bstaffcs.build(bstaffc_params)
-      $bstaffc.user_id = current_user.id
+      $gshop = Gshop.where(:id => params[:mygshop_id]).first
+      $gstaffc = $gshop.gstaffcs.build(gstaffc_params)
+      $gstaffc.user_id = current_user.id
   
       respond_to do |format|
-        if $bstaffc.save
-          format.html { redirect_to mybshop_mybshop_path(id:$bshop), notice: 'Acategory was successfully created.' }
-          format.json { render :show, status: :created, location: $bstaffc }
+        if $gstaffc.save
+          format.html { redirect_to mygshop_mygshop_path(id:$gshop), notice: 'Acategory was successfully created.' }
+          format.json { render :show, status: :created, location: $gstaffc }
         else
           format.html { render :new }
-          format.json { render json: $bstaffc.errors, status: :unprocessable_entity }
+          format.json { render json: $gstaffc.errors, status: :unprocessable_entity }
         end
       end
     end
   
     def update
       respond_to do |format|
-        if $bstaffc.update(bstaffc_params)
-          format.html { redirect_to mybshop_mybshop_path(id:$bshop), notice: 'Acategory was successfully updated.' }
-          format.json { render :show, status: :ok, location: $bstaffc }
+        if $gstaffc.update(gstaffc_params)
+          format.html { redirect_to mygshop_mygshop_path(id:$gshop), notice: 'Acategory was successfully updated.' }
+          format.json { render :show, status: :ok, location: $gstaffc }
         else
           format.html { render :edit }
-          format.json { render json: $bstaffc.errors, status: :unprocessable_entity }
+          format.json { render json: $gstaffc.errors, status: :unprocessable_entity }
         end
       end
     end
@@ -56,9 +56,9 @@ class Mybshop::MybstaffcsController < ApplicationController
     end
   
     def destroy
-      $bstaffc.destroy
+      $gstaffc.destroy
       respond_to do |format|
-        format.html { redirect_to mybshop_mybshop_path(id:$bshop), notice: 'Top was successfully destroyed.' }
+        format.html { redirect_to mygshop_mygshop_path(id:$gshop), notice: 'Top was successfully destroyed.' }
         format.json { head :no_content }
       end
     end
@@ -69,13 +69,13 @@ class Mybshop::MybstaffcsController < ApplicationController
   
     private
   
-      def set_bstaffc
-        $bshop = Bshop.where(:id => params[:mybshop_id]).first
-        $bstaffc = $bshop.bstaffcs.where(:id => params[:id]).first
+      def set_gstaffc
+        $gshop = Gshop.where(:id => params[:mygshop_id]).first
+        $gstaffc = $gshop.gstaffcs.where(:id => params[:id]).first
       end
       
-      def bstaffc_params
-        params.require(:bstaffc).permit(:bshop_id, :shopname, :user_id, :name)
+      def gstaffc_params
+        params.require(:gstaffc).permit(:gshop_id, :shopname, :user_id, :name)
       end
   end
   

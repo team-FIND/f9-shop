@@ -1,69 +1,69 @@
-class Mybshop::MybstaffsController < ApplicationController
-    before_action :set_bstaff, only: [:show, :edit, :update, :destroy]
+class Mygshop::MygstaffsController < ApplicationController
+    before_action :set_gstaff, only: [:show, :edit, :update, :destroy]
     protect_from_forgery except: :create
     before_action :set_current_user
     before_action :configure_permitted_parameters, if: :devise_controller?
   
     def index
-      $bstaffc = Bstaffc.where(:id => params[:mybstaffc_id]).first
-      $bstaffs = $bstaffc.bstaffs.all
+      $gstaffc = Gstaffc.where(:id => params[:mygstaffc_id]).first
+      $gstaffs = $gstaffc.gstaffs.all
       render :layout => "menu_category"
     end
   
     def show
-      $bstaffc = Bstaffc.where(:id => params[:mybstaffc_id]).first
-      $bstaffs = $bstaffc.bstaffs.all
+      $gstaffc = Gstaffc.where(:id => params[:mygstaffc_id]).first
+      $gstaffs = $gstaffc.gstaffs.all
       render :layout => "shop_staff"
     end
   
     def new
-      $bstaffc = Bstaffc.where(:id => params[:mybstaffc_id]).first
-      $bstaff = $bstaffc.bstaffs.build
+      $gstaffc = Gstaffc.where(:id => params[:mygstaffc_id]).first
+      $gstaff = $gstaffc.gstaffs.build
       render :layout => "shop/ashop/edit"
     end
   
     def edit
-      $bstaff.staff_img.cache! unless $bstaff.staff_img.blank?
+      $gstaff.staff_img.cache! unless $gstaff.staff_img.blank?
       render :layout => "shop/ashop/edit"
     end
   
     def staff_img
-      $bstaff.staff_img.cache! unless $bstaff.staff_img.blank? 
+      $gstaff.staff_img.cache! unless $gstaff.staff_img.blank? 
       render :layout => "shop/ashop/edit"
     end
   
     def create
-      $bstaffc = Bstaffc.where(:id => params[:mybstaffc_id]).first
-      $bstaff = $bstaffc.bstaffs.build(bstaff_params)
-      $bstaff.user_id = current_user.id
+      $gstaffc = Gstaffc.where(:id => params[:mygstaffc_id]).first
+      $gstaff = $gstaffc.gstaffs.build(gstaff_params)
+      $gstaff.user_id = current_user.id
   
       respond_to do |format|
-        if $bstaff.save
-          format.html { redirect_to mybshop_mybstaffc_mybstaff_path(mybstaffc_id:$bstaffc, id:$bstaff), notice: 'Grand was successfully created.' }
-          format.json { render :show, status: :created, location: $bstaff }
+        if $gstaff.save
+          format.html { redirect_to mygshop_mygstaffc_mygstaff_path(mygstaffc_id:$gstaffc, id:$gstaff), notice: 'Grand was successfully created.' }
+          format.json { render :show, status: :created, location: $gstaff }
         else
           format.html { render :new }
-          format.json { render json: $bstaff.errors, status: :unprocessable_entity }
+          format.json { render json: $gstaff.errors, status: :unprocessable_entity }
         end
       end
     end
   
     def update
       respond_to do |format|
-        if $bstaff.update(bstaff_params)
-          format.html { redirect_to mybshop_mybstaffc_mybstaff_path(mybstaffc_id:$bstaffc, id:$bstaff), notice: 'Menu was successfully updated.' }
-          format.json { render :show, status: :ok, location: $bstaff }
+        if $gstaff.update(gstaff_params)
+          format.html { redirect_to mygshop_mygstaffc_mygstaff_path(mygstaffc_id:$gstaffc, id:$gstaff), notice: 'Menu was successfully updated.' }
+          format.json { render :show, status: :ok, location: $gstaff }
         else
           format.html { render :edit }
-          format.json { render json: $bstaff.errors, status: :unprocessable_entity }
+          format.json { render json: $gstaff.errors, status: :unprocessable_entity }
         end
       end
     end
 
     def destroy
-      $bstaff.destroy
+      $gstaff.destroy
       respond_to do |format|
-        format.html { redirect_to mybshop_mybstaffc_mybstaffs_path(mybstaffc_id:$bstaffc), notice: 'Menu was successfully destroyed.' }
+        format.html { redirect_to mygshop_mygstaffc_mygstaffs_path(mygstaffc_id:$gstaffc), notice: 'Menu was successfully destroyed.' }
         format.json { head :no_content }
       end
     end
@@ -73,13 +73,13 @@ class Mybshop::MybstaffsController < ApplicationController
     end
   
     private
-      def set_bstaff
-        $bstaffc = Bstaffc.where(:id => params[:mybstaffc_id]).first
-        $bstaff = $bstaffc.bstaffs.where(:id => params[:id]).first
+      def set_gstaff
+        $gstaffc = Gstaffc.where(:id => params[:mygstaffc_id]).first
+        $gstaff = $gstaffc.gstaffs.where(:id => params[:id]).first
       end
   
-      def bstaff_params
-        params.require(:bstaff).permit(:bstaffc_id, :user_id, :staff_img, :staff_img_cache, :name, :posittion1, :posittion2, :explain)
+      def gstaff_params
+        params.require(:gstaff).permit(:gstaffc_id, :user_id, :staff_img, :staff_img_cache, :name, :posittion1, :posittion2, :explain)
       end
   end
   

@@ -1,21 +1,21 @@
-class Mydshop::MydmenucsController < ApplicationController
-  before_action :set_dmenuc, only: [:show, :edit, :update, :destroy]
+class Myhshop::MyhmenucsController < ApplicationController
+  before_action :set_hmenuc, only: [:show, :edit, :update, :destroy]
   protect_from_forgery except: :create
   before_action :set_current_user
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def index
-    $dshop = Dshop.where(:id => params[:mydshop_id]).first
-    $dmenucs = $dshop.dmenucs.all
+    $hshop = Hshop.where(:id => params[:myhshop_id]).first
+    $hmenucs = $hshop.hmenucs.all
   end
 
   def show
-    redirect_to mydshop_mydmenuc_mydmenus_path(mydmenuc_id:$dmenuc)
+    redirect_to myhshop_myhmenuc_mydmenus_path(myhmenuc_id:$hmenuc)
   end
 
   def new
-    $dshop = Dshop.where(:id => params[:mydshop_id]).first
-    $dmenuc = $dshop.dmenucs.build
+    $hshop = Hshop.where(:id => params[:myhshop_id]).first
+    $hmenuc = $hshop.hmenucs.build
     render :layout => "shop/ashop/menu_edit"
   end
 
@@ -24,29 +24,29 @@ class Mydshop::MydmenucsController < ApplicationController
   end
 
   def create
-    $dshop = Dshop.where(:id => params[:mydshop_id]).first
-    $dmenuc = $dshop.dmenucs.build(dmenuc_params)
-    $dmenuc.user_id = current_user.id
+    $hshop = Hshop.where(:id => params[:myhshop_id]).first
+    $hmenuc = $hshop.hmenucs.build(hmenuc_params)
+    $hmenuc.user_id = current_user.id
 
     respond_to do |format|
-      if $dmenuc.save
-        format.html { redirect_to mydshop_mydshop_path(id:$dshop), notice: 'Acategory was successfully created.' }
-        format.json { render :show, status: :created, location: $dmenuc }
+      if $hmenuc.save
+        format.html { redirect_to myhshop_myhshop_path(id:$hshop), notice: 'Acategory was successfully created.' }
+        format.json { render :show, status: :created, location: $hmenuc }
       else
         format.html { render :new }
-        format.json { render json: $dmenuc.errors, status: :unprocessable_entity }
+        format.json { render json: $hmenuc.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def update
     respond_to do |format|
-      if $dmenuc.update(dmenuc_params)
-        format.html { redirect_to mydshop_mydshop_path(id:$dshop), notice: 'Acategory was successfully updated.' }
-        format.json { render :show, status: :ok, location: $dmenuc }
+      if $hmenuc.update(hmenuc_params)
+        format.html { redirect_to myhshop_myhshop_path(id:$hshop), notice: 'Acategory was successfully updated.' }
+        format.json { render :show, status: :ok, location: $hmenuc }
       else
         format.html { render :edit }
-        format.json { render json: $dmenuc.errors, status: :unprocessable_entity }
+        format.json { render json: $hmenuc.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -56,9 +56,9 @@ class Mydshop::MydmenucsController < ApplicationController
   end
 
   def destroy
-    $dmenuc.destroy
+    $hmenuc.destroy
     respond_to do |format|
-      format.html { redirect_to mydshop_mydshop_path(id:$dshop), notice: 'Top was successfully destroyed.' }
+      format.html { redirect_to myhshop_myhshop_path(id:$hshop), notice: 'Top was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,12 +69,12 @@ class Mydshop::MydmenucsController < ApplicationController
 
   private
 
-    def set_dmenuc
-      $dshop = Dshop.where(:id => params[:mydshop_id]).first
-      $dmenuc = $dshop.dmenucs.where(:id => params[:id]).first
+    def set_hmenuc
+      $hshop = Hshop.where(:id => params[:myhshop_id]).first
+      $hmenuc = $hshop.hmenucs.where(:id => params[:id]).first
     end
     
-    def dmenuc_params
-      params.require(:dmenuc).permit(:dshop_id, :shopname, :user_id, :name)
+    def hmenuc_params
+      params.require(:hmenuc).permit(:hshop_id, :shopname, :user_id, :name)
     end
 end

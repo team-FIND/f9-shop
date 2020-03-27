@@ -1,21 +1,21 @@
-class Mydshop::MydstaffcsController < ApplicationController
-    before_action :set_dstaffc, only: [:show, :edit, :update, :destroy, :subedit]
+class Myhshop::MyhstaffcsController < ApplicationController
+    before_action :set_hstaffc, only: [:show, :edit, :update, :destroy, :subedit]
     protect_from_forgery except: :create
     before_action :set_current_user
     before_action :configure_permitted_parameters, if: :devise_controller?
   
     def index
-      $dshop = Dshop.where(:id => params[:mydshop_id]).first
-      $dstaffcs = $dshop.dstaffcs.all
+      $hshop = Hshop.where(:id => params[:myhshop_id]).first
+      $hstaffcs = $hshop.hstaffcs.all
     end
   
     def show
-      redirect_to mydshop_mydstaffc_mydstaffs_path(mydstaffc_id:$dstaffc)
+      redirect_to myhshop_myhstaffc_myhstaffs_path(myhstaffc_id:$hstaffc)
     end
   
     def new
-      $dshop = Dshop.where(:id => params[:mydshop_id]).first
-      $dstaffc = $dshop.dstaffcs.build
+      $hshop = Hshop.where(:id => params[:myhshop_id]).first
+      $hstaffc = $hshop.hstaffcs.build
       render :layout => "shop/ashop/menu_edit"
     end
   
@@ -24,29 +24,29 @@ class Mydshop::MydstaffcsController < ApplicationController
     end
   
     def create
-      $dshop = Dshop.where(:id => params[:mydshop_id]).first
-      $dstaffc = $dshop.dstaffcs.build(dstaffc_params)
-      $dstaffc.user_id = current_user.id
+      $hshop = Hshop.where(:id => params[:myhshop_id]).first
+      $hstaffc = $hshop.hstaffcs.build(hstaffc_params)
+      $hstaffc.user_id = current_user.id
   
       respond_to do |format|
-        if $dstaffc.save
-          format.html { redirect_to mydshop_mydshop_path(id:$dshop), notice: 'Acategory was successfully created.' }
-          format.json { render :show, status: :created, location: $dstaffc }
+        if $hstaffc.save
+          format.html { redirect_to myhshop_myhshop_path(id:$hshop), notice: 'Acategory was successfully created.' }
+          format.json { render :show, status: :created, location: $hstaffc }
         else
           format.html { render :new }
-          format.json { render json: $dstaffc.errors, status: :unprocessable_entity }
+          format.json { render json: $hstaffc.errors, status: :unprocessable_entity }
         end
       end
     end
   
     def update
       respond_to do |format|
-        if $dstaffc.update(dstaffc_params)
-          format.html { redirect_to mydshop_mydshop_path(id:$dshop), notice: 'Acategory was successfully updated.' }
-          format.json { render :show, status: :ok, location: $dstaffc }
+        if $hstaffc.update(hstaffc_params)
+          format.html { redirect_to myhshop_myhshop_path(id:$hshop), notice: 'Acategory was successfully updated.' }
+          format.json { render :show, status: :ok, location: $hstaffc }
         else
           format.html { render :edit }
-          format.json { render json: $dstaffc.errors, status: :unprocessable_entity }
+          format.json { render json: $hstaffc.errors, status: :unprocessable_entity }
         end
       end
     end
@@ -56,9 +56,9 @@ class Mydshop::MydstaffcsController < ApplicationController
     end
   
     def destroy
-      $dstaffc.destroy
+      $hstaffc.destroy
       respond_to do |format|
-        format.html { redirect_to mydshop_mydshop_path(id:$dshop), notice: 'Top was successfully destroyed.' }
+        format.html { redirect_to myhshop_myhshop_path(id:$hshop), notice: 'Top was successfully destroyed.' }
         format.json { head :no_content }
       end
     end
@@ -69,13 +69,13 @@ class Mydshop::MydstaffcsController < ApplicationController
   
     private
   
-      def set_dstaffc
-        $dshop = Dshop.where(:id => params[:mydshop_id]).first
-        $dstaffc = $dshop.dstaffcs.where(:id => params[:id]).first
+      def set_hstaffc
+        $hshop = Hshop.where(:id => params[:myhshop_id]).first
+        $hstaffc = $hshop.hstaffcs.where(:id => params[:id]).first
       end
       
-      def dstaffc_params
-        params.require(:dstaffc).permit(:dshop_id, :shopname, :user_id, :name)
+      def hstaffc_params
+        params.require(:hstaffc).permit(:hshop_id, :shopname, :user_id, :name)
       end
   end
   

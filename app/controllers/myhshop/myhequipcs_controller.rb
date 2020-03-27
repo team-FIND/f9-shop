@@ -1,21 +1,21 @@
-class Mydshop::MydequipcsController < ApplicationController
-    before_action :set_dequipc, only: [:show, :edit, :update, :destroy, :subedit]
+class Myhshop::MyhequipcsController < ApplicationController
+    before_action :set_hequipc, only: [:show, :edit, :update, :destroy, :subedit]
     protect_from_forgery except: :create
     before_action :set_current_user
     before_action :configure_permitted_parameters, if: :devise_controller?
   
     def index
-      $dshop = Dshop.where(:id => params[:mydshop_id]).first
-      $dequipcs = $dshop.dequipcs.all
+      $hshop = Hshop.where(:id => params[:myhshop_id]).first
+      $hequipcs = $hshop.hequipcs.all
     end
   
     def show
-      redirect_to mydshop_mydequipc_mydequips_path(mydequipc_id:$dequipc)
+      redirect_to myhshop_myhequipc_myhequips_path(myhequipc_id:$hequipc)
     end
   
     def new
-      $dshop = Dshop.where(:id => params[:mydshop_id]).first
-      $dequipc = $dshop.dequipcs.build
+      $hshop = Hshop.where(:id => params[:myhshop_id]).first
+      $hequipc = $hshop.hequipcs.build
       render :layout => "shop/ashop/menu_edit"
     end
     
@@ -24,29 +24,29 @@ class Mydshop::MydequipcsController < ApplicationController
     end
   
     def create
-      $dshop = Dshop.where(:id => params[:mydshop_id]).first
-      $dequipc = $dshop.dequipcs.build(dequipc_params)
-      $dequipc.user_id = current_user.id
+      $hshop = Hshop.where(:id => params[:myhshop_id]).first
+      $hequipc = $hshop.hequipcs.build(hequipc_params)
+      $hequipc.user_id = current_user.id
   
       respond_to do |format|
-        if $dequipc.save
-          format.html { redirect_to mydshop_mydshop_path(id:$dshop), notice: 'Acategory was successfully created.' }
-          format.json { render :show, status: :created, location: $dequipc }
+        if $hequipc.save
+          format.html { redirect_to myhshop_myhshop_path(id:$hshop), notice: 'Acategory was successfully created.' }
+          format.json { render :show, status: :created, location: $hequipc }
         else
           format.html { render :new }
-          format.json { render json: $dequipc.errors, status: :unprocessable_entity }
+          format.json { render json: $hequipc.errors, status: :unprocessable_entity }
         end
       end
     end
   
     def update
       respond_to do |format|
-        if $dequipc.update(dequipc_params)
-          format.html { redirect_to mydshop_mydshop_path(id:$dshop), notice: 'Acategory was successfully updated.' }
-          format.json { render :show, status: :ok, location: $dequipc }
+        if $hequipc.update(hequipc_params)
+          format.html { redirect_to myhshop_myhshop_path(id:$hshop), notice: 'Acategory was successfully updated.' }
+          format.json { render :show, status: :ok, location: $hequipc }
         else
           format.html { render :edit }
-          format.json { render json: $dequipc.errors, status: :unprocessable_entity }
+          format.json { render json: $hequipc.errors, status: :unprocessable_entity }
         end
       end
     end
@@ -56,9 +56,9 @@ class Mydshop::MydequipcsController < ApplicationController
     end
   
     def destroy
-      $dequipc.destroy
+      $hequipc.destroy
       respond_to do |format|
-        format.html { redirect_to mydshop_mydshop_path(id:$dshop), notice: 'Top was successfully destroyed.' }
+        format.html { redirect_to myhshop_myhshop_path(id:$hshop), notice: 'Top was successfully destroyed.' }
         format.json { head :no_content }
       end
     end
@@ -69,13 +69,13 @@ class Mydshop::MydequipcsController < ApplicationController
   
     private
   
-      def set_dequipc
-        $dshop = Dshop.where(:id => params[:mydshop_id]).first
-        $dequipc = $dshop.dequipcs.where(:id => params[:id]).first
+      def set_hequipc
+        $hshop = Hshop.where(:id => params[:myhshop_id]).first
+        $hequipc = $hshop.hequipcs.where(:id => params[:id]).first
       end
       
-      def dequipc_params
-        params.require(:dequipc).permit(:dshop_id, :shopname, :user_id, :name)
+      def hequipc_params
+        params.require(:hequipc).permit(:hshop_id, :shopname, :user_id, :name)
       end
       
   end

@@ -1,69 +1,69 @@
-class Mydshop::MydequipsController < ApplicationController
-    before_action :set_dequip, only: [:show, :edit, :update, :destroy]
+class Myhshop::MyhequipsController < ApplicationController
+    before_action :set_hequip, only: [:show, :edit, :update, :destroy]
     protect_from_forgery except: :create
     before_action :set_current_user
     before_action :configure_permitted_parameters, if: :devise_controller?
   
     def index
-      $dequipc = Dequipc.where(:id => params[:mydequipc_id]).first
-      $dequips = $dequipc.dequips.all
+      $hequipc = Hequipc.where(:id => params[:myhequipc_id]).first
+      $hequips = $hequipc.hequips.all
       render :layout => "menu_category"
     end
   
     def show
-      $dequipc = Dequipc.where(:id => params[:mydequipc_id]).first
-      $dequips = $dequipc.dequips.all
+      $hequipc = Hequipc.where(:id => params[:myhequipc_id]).first
+      $hequips = $hequipc.hequips.all
       render :layout => "shop_equip"
     end
   
     def new
-      $dequipc = Dequipc.where(:id => params[:mydequipc_id]).first
-      $dequip = $dequipc.dequips.build
+      $hequipc = Hequipc.where(:id => params[:myhequipc_id]).first
+      $hequip = $hequipc.hequips.build
       render :layout => "shop/ashop/edit"
     end
   
     def edit
-      $dequip.equip_img.cache! unless $dequip.equip_img.blank?
+      $hequip.equip_img.cache! unless $hequip.equip_img.blank?
       render :layout => "shop/ashop/edit"
     end
   
     def equip_img
-      $dequip.equip_img.cache! unless $dequip.equip_img.blank? 
+      $hequip.equip_img.cache! unless $hequip.equip_img.blank? 
       render :layout => "shop/ashop/edit"
     end
   
     def create
-      $dequipc = Dequipc.where(:id => params[:mydequipc_id]).first
-      $dequip = $dequipc.dequips.build(dequip_params)
-      $dequip.user_id = current_user.id
+      $hequipc = Hequipc.where(:id => params[:myhequipc_id]).first
+      $hequip = $hequipc.hequips.build(hequip_params)
+      $hequip.user_id = current_user.id
   
       respond_to do |format|
-        if $dequip.save
-          format.html { redirect_to mydshop_mydequipc_mydequip_path(mydequipc_id:$dequipc, id:$dequip), notice: 'Grand was successfully created.' }
-          format.json { render :show, status: :created, location: $dequip }
+        if $hequip.save
+          format.html { redirect_to myhshop_myhequipc_myhequip_path(myhequipc_id:$hequipc, id:$hequip), notice: 'Grand was successfully created.' }
+          format.json { render :show, status: :created, location: $hequip }
         else
           format.html { render :new }
-          format.json { render json: $dequip.errors, status: :unprocessable_entity }
+          format.json { render json: $hequip.errors, status: :unprocessable_entity }
         end
       end
     end
   
     def update
       respond_to do |format|
-        if $dequip.update(dequip_params)
-          format.html { redirect_to mydshop_mydequipc_mydequip_path(mydequipc_id:$dequipc, id:$dequip), notice: 'Menu was successfully updated.' }
-          format.json { render :show, status: :ok, location: $dequip }
+        if $hequip.update(hequip_params)
+          format.html { redirect_to myhshop_myhequipc_myhequip_path(myhequipc_id:$hequipc, id:$hequip), notice: 'Menu was successfully updated.' }
+          format.json { render :show, status: :ok, location: $hequip }
         else
           format.html { render :edit }
-          format.json { render json: $dequip.errors, status: :unprocessable_entity }
+          format.json { render json: $hequip.errors, status: :unprocessable_entity }
         end
       end
     end
   
     def destroy
-      $dequip.destroy
+      $hequip.destroy
       respond_to do |format|
-        format.html { redirect_to mydshop_mydequipc_mydequips_path(mydequipc_id:$dequipc), notice: 'Menu was successfully destroyed.' }
+        format.html { redirect_to myhshop_myhequipc_myhequips_path(myhequipc_id:$hequipc), notice: 'Menu was successfully destroyed.' }
         format.json { head :no_content }
       end
     end
@@ -73,13 +73,13 @@ class Mydshop::MydequipsController < ApplicationController
     end
   
     private
-      def set_dequip
-        $dequipc = Dequipc.where(:id => params[:mydequipc_id]).first
-        $dequip = $dequipc.dequips.where(:id => params[:id]).first
+      def set_hequip
+        $hequipc = Hequipc.where(:id => params[:myhequipc_id]).first
+        $hequip = $hequipc.hequips.where(:id => params[:id]).first
       end
   
-      def dequip_params
-        params.require(:dequip).permit(:dequipc_id, :user_id, :equip_img, :equip_img_cache, :name, :explain)
+      def hequip_params
+        params.require(:hequip).permit(:hequipc_id, :user_id, :equip_img, :equip_img_cache, :name, :explain)
       end
   end
   

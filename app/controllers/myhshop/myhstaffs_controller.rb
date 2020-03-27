@@ -1,24 +1,24 @@
-class Mydshop::MydstaffsController < ApplicationController
+class Myhshop::MyhstaffsController < ApplicationController
     before_action :set_dstaff, only: [:show, :edit, :update, :destroy]
     protect_from_forgery except: :create
     before_action :set_current_user
     before_action :configure_permitted_parameters, if: :devise_controller?
   
     def index
-      $dstaffc = Dstaffc.where(:id => params[:mydstaffc_id]).first
-      $dstaffs = $dstaffc.dstaffs.all
+      $dstaffc = Hstaffc.where(:id => params[:mydstaffc_id]).first
+      $hstaffs = $dstaffc.hstaffs.all
       render :layout => "menu_category"
     end
   
     def show
-      $dstaffc = Dstaffc.where(:id => params[:mydstaffc_id]).first
-      $dstaffs = $dstaffc.dstaffs.all
+      $dstaffc = Hstaffc.where(:id => params[:mydstaffc_id]).first
+      $hstaffs = $dstaffc.hstaffs.all
       render :layout => "shop_staff"
     end
   
     def new
-      $dstaffc = Dstaffc.where(:id => params[:mydstaffc_id]).first
-      $dstaff = $dstaffc.dstaffs.build
+      $dstaffc = Hstaffc.where(:id => params[:mydstaffc_id]).first
+      $dstaff = $dstaffc.hstaffs.build
       render :layout => "shop/ashop/edit"
     end
   
@@ -33,8 +33,8 @@ class Mydshop::MydstaffsController < ApplicationController
     end
   
     def create
-      $dstaffc = Dstaffc.where(:id => params[:mydstaffc_id]).first
-      $dstaff = $dstaffc.dstaffs.build(dstaff_params)
+      $dstaffc = Hstaffc.where(:id => params[:mydstaffc_id]).first
+      $dstaff = $dstaffc.hstaffs.build(dstaff_params)
       $dstaff.user_id = current_user.id
   
       respond_to do |format|
@@ -63,7 +63,7 @@ class Mydshop::MydstaffsController < ApplicationController
     def destroy
       $dstaff.destroy
       respond_to do |format|
-        format.html { redirect_to mydshop_mydstaffc_mydstaffs_path(mydstaffc_id:$dstaffc), notice: 'Menu was successfully destroyed.' }
+        format.html { redirect_to mydshop_mydstaffc_myhstaffs_path(mydstaffc_id:$dstaffc), notice: 'Menu was successfully destroyed.' }
         format.json { head :no_content }
       end
     end
@@ -74,8 +74,8 @@ class Mydshop::MydstaffsController < ApplicationController
   
     private
       def set_dstaff
-        $dstaffc = Dstaffc.where(:id => params[:mydstaffc_id]).first
-        $dstaff = $dstaffc.dstaffs.where(:id => params[:id]).first
+        $dstaffc = Hstaffc.where(:id => params[:mydstaffc_id]).first
+        $dstaff = $dstaffc.hstaffs.where(:id => params[:id]).first
       end
   
       def dstaff_params
