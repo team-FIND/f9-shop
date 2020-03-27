@@ -1,0 +1,25 @@
+
+<% @page_title = $bequip.name %> 
+<% @title2 = $bequip.name %> 
+
+<%= content_for(:edit) do %>
+	<div id="edit">
+    	<%= link_to '✐編集', equip_img_mybshop_mybequipc_mybequip_path(id:$bequip) %>
+    </div>    
+<% end %>
+
+<% $bequips.each do |bequip| %>
+
+	<% if $bequip.equip_img.present? %>
+		<% @image1 = image_tag $bequip.equip_img_url %>
+	<% else %>
+		<% @image1 = image_tag "template/logo3" %>
+	<% end %>
+
+	<% if $bequip.explain.present? %>
+			<p><%= $bshop.explain %></p>
+	<% else %>
+			<p>未入力</p>
+	<% end %>
+
+<% end %>

@@ -1,0 +1,9 @@
+
+
+<%= content_for(:main)  do %>
+
+	<%= form_for($fsmenuc, :url => {:action => "update"}, :html => {:multipart => true}) do |form| %>
+			<%= render 'form', fsmenuc: $fsmenuc %>
+	<% end %>
+
+<% end %>

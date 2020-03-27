@@ -1,69 +1,69 @@
-class Mybshop::MybequipsController < ApplicationController
-    before_action :set_bequip, only: [:show, :edit, :update, :destroy]
+class Myfshop::MyfequipsController < ApplicationController
+    before_action :set_fequip, only: [:show, :edit, :update, :destroy]
     protect_from_forgery except: :create
     before_action :set_current_user
     before_action :configure_permitted_parameters, if: :devise_controller?
   
     def index
-      $bequipc = Bequipc.where(:id => params[:mybequipc_id]).first
-      $bequips = $bequipc.bequips.all
+      $fequipc = Fequipc.where(:id => params[:myfequipc_id]).first
+      $fequips = $fequipc.fequips.all
       render :layout => "menu_category"
     end
   
     def show
-      $bequipc = Bequipc.where(:id => params[:mybequipc_id]).first
-      $bequips = $bequipc.bequips.all
+      $fequipc = Fequipc.where(:id => params[:myfequipc_id]).first
+      $fequips = $fequipc.fequips.all
       render :layout => "shop_equip"
     end
   
     def new
-      $bequipc = Bequipc.where(:id => params[:mybequipc_id]).first
-      $bequip = $bequipc.bequips.build
+      $fequipc = Fequipc.where(:id => params[:myfequipc_id]).first
+      $fequip = $fequipc.fequips.build
       render :layout => "shop/ashop/edit"
     end
   
     def edit
-      $bequip.equip_img.cache! unless $bequip.equip_img.blank?
+      $fequip.equip_img.cache! unless $fequip.equip_img.blank?
       render :layout => "shop/ashop/edit"
     end
   
     def equip_img
-      $bequip.equip_img.cache! unless $bequip.equip_img.blank? 
+      $fequip.equip_img.cache! unless $fequip.equip_img.blank? 
       render :layout => "shop/ashop/edit"
     end
   
     def create
-      $bequipc = Bequipc.where(:id => params[:mybequipc_id]).first
-      $bequip = $bequipc.bequips.build(bequip_params)
-      $bequip.user_id = current_user.id
+      $fequipc = Fequipc.where(:id => params[:myfequipc_id]).first
+      $fequip = $fequipc.fequips.build(fequip_params)
+      $fequip.user_id = current_user.id
   
       respond_to do |format|
-        if $bequip.save
-          format.html { redirect_to mybshop_mybequipc_mybequip_path(mybequipc_id:$bequipc, id:$bequip), notice: 'Grand was successfully created.' }
-          format.json { render :show, status: :created, location: $bequip }
+        if $fequip.save
+          format.html { redirect_to myfshop_myfequipc_myfequip_path(myfequipc_id:$fequipc, id:$fequip), notice: 'Grand was successfully created.' }
+          format.json { render :show, status: :created, location: $fequip }
         else
           format.html { render :new }
-          format.json { render json: $bequip.errors, status: :unprocessable_entity }
+          format.json { render json: $fequip.errors, status: :unprocessable_entity }
         end
       end
     end
   
     def update
       respond_to do |format|
-        if $bequip.update(bequip_params)
-          format.html { redirect_to mybshop_mybequipc_mybequip_path(mybequipc_id:$bequipc, id:$bequip), notice: 'Menu was successfully updated.' }
-          format.json { render :show, status: :ok, location: $bequip }
+        if $fequip.update(fequip_params)
+          format.html { redirect_to myfshop_myfequipc_myfequip_path(myfequipc_id:$fequipc, id:$fequip), notice: 'Menu was successfully updated.' }
+          format.json { render :show, status: :ok, location: $fequip }
         else
           format.html { render :edit }
-          format.json { render json: $bequip.errors, status: :unprocessable_entity }
+          format.json { render json: $fequip.errors, status: :unprocessable_entity }
         end
       end
     end
   
     def destroy
-      $bequip.destroy
+      $fequip.destroy
       respond_to do |format|
-        format.html { redirect_to mybshop_mybequipc_mybequips_path(mybequipc_id:$bequipc), notice: 'Menu was successfully destroyed.' }
+        format.html { redirect_to myfshop_myfequipc_myfequips_path(myfequipc_id:$fequipc), notice: 'Menu was successfully destroyed.' }
         format.json { head :no_content }
       end
     end
@@ -73,13 +73,13 @@ class Mybshop::MybequipsController < ApplicationController
     end
   
     private
-      def set_bequip
-        $bequipc = Bequipc.where(:id => params[:mybequipc_id]).first
-        $bequip = $bequipc.bequips.where(:id => params[:id]).first
+      def set_fequip
+        $fequipc = Fequipc.where(:id => params[:myfequipc_id]).first
+        $fequip = $fequipc.fequips.where(:id => params[:id]).first
       end
   
-      def bequip_params
-        params.require(:bequip).permit(:bequipc_id, :user_id, :equip_img, :equip_img_cache, :name, :explain)
+      def fequip_params
+        params.require(:fequip).permit(:fequipc_id, :user_id, :equip_img, :equip_img_cache, :name, :explain)
       end
   end
   

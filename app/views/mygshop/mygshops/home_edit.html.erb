@@ -1,9 +1,0 @@
-
-
-<%= content_for(:main)  do %>
-
-	<%= form_for($gshop, :url => {:action => "update"}, :html => {:multipart => true}) do |form| %>
-		<%= render 'shared/editer/gshop/home', gshop: $gshop %>
-	<% end %>
-
-<% end %>

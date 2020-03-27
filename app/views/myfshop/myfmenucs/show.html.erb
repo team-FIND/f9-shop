@@ -1,0 +1,34 @@
+
+
+  <%= content_for(:head)  do %>
+      <%= stylesheet_link_tag "shophome/ashop/content/menu", :media => "all" %>
+      <%= javascript_include_tag "city" %>
+
+      <title><%= page_title %></title>
+  <% end %>
+
+
+  <% @page_title = $fmenuc.name  %> 
+  <% @title1 = $fshop.shopname %> 
+  <% @title2 = @page_title %> 
+
+  <%= content_for(:edit) do %>
+      <div id="edit2">
+          <%= link_to '✐編集', subedit_myfshop_myfshop_myfmenuc_path(myfshop_id:$fshop, id:$fmenuc) %>
+      </div>    
+  <% end %>
+
+
+  <%= content_for(:main)  do %>
+
+        <% $fmenucs.each do |fmenuc| %>
+
+                <% if $fmenuc.content.present? %>
+                    <div id="content1"><%= simple_format(fmenuc.content) %></div>
+                <% else %>
+                    <div id="content0">記載がありません</div>
+                <% end %>
+                
+        <% end %>
+
+  <% end %>

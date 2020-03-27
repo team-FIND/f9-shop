@@ -1,0 +1,168 @@
+
+
+	<p id="notice"><%= notice %></p>
+
+	<%= content_for(:head)  do %>
+	    <title><%= page_title %></title>
+	<% end %>
+
+	<%= content_for(:home_edit)  do %>
+        <div id="home_edit_btn">
+        <%if user_signed_in? && $bshop.user_id == current_user.id %>
+                    <%= link_to img_edit_mybshop_mybshop_path, target:"_blank" do%><div id="edit">✐編集する</div><% end %>
+        <% end %>
+        </div>
+    <% end %>
+
+	<%= content_for(:main)  do %>
+		<div id="main-feature">
+			  <%= javascript_include_tag "shop" %>
+			  <%= javascript_include_tag "slick.min" %>
+  
+					<div id="feature-wrapper">
+						  <%= stylesheet_link_tag "slick/slick.css", :media => "screen" %>
+						  <%= stylesheet_link_tag "slick/slick-theme.css", :media => "screen" %>
+
+						  <ul class="slider">
+								<% if $bshop.shopimage1.present? %>
+									  <li><%= image_tag $bshop.shopimage1_url %><p><%= $bshop.shopname %></p></li>
+								<% else %>
+									  <li><%= image_tag "template/homepics" %><p><%= $bshop.shopname %></p></li>
+								<% end %>
+								<% if $bshop.shopimage2.present? %>
+									  <li><%= image_tag $bshop.shopimage2_url %><p>image2</p></li>
+								<% else %>
+									  <li><%= image_tag "template/homepics" %><p>image2</p></li>
+								<% end %>
+								<% if $bshop.shopimage3.present? %>
+									  <li><%= image_tag $bshop.shopimage3_url %><p>image3</p></li>
+								<% else %>
+									  <li><%= image_tag "template/homepics" %><p>image3</p></li>
+								<% end %>
+						  </ul>
+					</div>
+
+					<div id="top_af1">
+                      <a href="https://px.a8.net/svt/ejp?a8mat=3B7GQK+94NAPE+50+2HN8K1" rel="nofollow">
+                      <img border="0" width="728" height="90" alt="" src="https://www23.a8.net/svt/bgt?aid=200222588552&wid=001&eno=01&mid=s00000000018015057000&mc=1"></a>
+                      <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=3B7GQK+94NAPE+50+2HN8K1" alt="">
+                	</div>
+		</div>
+	<% end %>
+
+	<%= content_for(:idc1)  do %>
+			<%if user_signed_in? && $bshop.user_id == current_user.id %>
+	              <div id="ltop">
+	                  <%= link_to new_mybshop_mybshop_mybmenuc_path(mybshop_id:$bshop) do%>
+	                      <p>⊕カテゴリーを追加する</p>
+	                  <% end %>
+	              </div>
+	         <%end%>
+
+	         <% $bmenucs.each do |bmenuc| %>
+                    <div class="line">
+                          <%= link_to mybshop_mybshop_mybmenuc_path(mybshop_id:$bshop, id:bmenuc) do %>
+                              <li id="mc"><%= bmenuc.name %></li><br>
+                          <%end%>
+                          <%= link_to edit_mybshop_mybshop_mybmenuc_path(mybshop_id:$bshop, id:bmenuc) do %>
+                               <p id="mcedit">✐編集する</p>
+                          <% end %>
+                    </div>
+            <% end %>
+	<% end %>
+
+	<%= content_for(:idc2)  do %>
+			<%if user_signed_in? && $bshop.user_id == current_user.id %>
+	              <div id="ltop">
+	                  <%= link_to new_mybshop_mybshop_mybsmenuc_path(mybshop_id:$bshop) do%>
+	                      <p>⊕カテゴリーを追加する</p>
+	                  <% end %>
+	              </div>
+	         <%end%>
+
+	         <% $bsmenucs.each do |bsmenuc| %>
+                    <div class="line">
+                          <%= link_to mybshop_mybshop_mybsmenuc_path(mybshop_id:$bshop, id:bsmenuc) do %>
+                              <li id="mc"><%= bsmenuc.name %></li><br>
+                          <%end%>
+                          <%= link_to edit_mybshop_mybshop_mybsmenuc_path(mybshop_id:$bshop, id:bsmenuc) do %>
+                               <p id="mcedit">✐編集する</p>
+                      	  <% end %>
+                    </div>
+            <% end %>
+	<% end %>
+
+	<%= content_for(:idc3)  do %>
+				<%if user_signed_in? && $bshop.user_id == current_user.id %>
+						<div id="ltop">
+							<%= link_to new_mybshop_mybshop_mybequipc_path(mybshop_id:$bshop) do%>
+								<p>⊕カテゴリーを追加する</p>
+							<% end %>
+						</div>
+				<%end%>
+
+				<% $bequipcs.each do |bequipc| %>
+						<div class="line">
+								<%= link_to mybshop_mybshop_mybequipc_path(mybshop_id:$bshop, id:bequipc) do %>
+									<li id="mc"><%= bequipc.name %></li><br>
+								<%end%>
+								<%= link_to edit_mybshop_mybshop_mybequipc_path(mybshop_id:$bshop, id:bequipc) do %>
+									<p id="mcedit">✐編集する</p>
+								<% end %>
+						</div>
+				<% end %>
+	<% end %>
+
+	<%= content_for(:idc4)  do %>
+					<%if user_signed_in? && $bshop.user_id == current_user.id %>
+							<div id="ltop">
+								<%= link_to new_mybshop_mybshop_mybstaffc_path(mybshop_id:$bshop) do%>
+									<p>⊕カテゴリーを追加する</p>
+								<% end %>
+							</div>
+					<%end%>
+
+					<% $bstaffcs.each do |bstaffc| %>
+							<div class="line">
+									<%= link_to mybshop_mybshop_mybstaffc_path(mybshop_id:$bshop, id:bstaffc) do %>
+										<li id="mc"><%= bstaffc.name %></li><br>
+									<%end%>
+									<%= link_to edit_mybshop_mybshop_mybstaffc_path(mybshop_id:$bshop, id:bstaffc) do %>
+										<p id="mcedit">✐編集する</p>
+									<% end %>
+							</div>
+					<% end %>
+	<% end %>
+
+	<%= content_for(:shop_affi2)  do %>
+			<div id="top_af1">
+				<a href="https://px.a8.net/svt/ejp?a8mat=3B7GQK+94NAPE+50+2HN8K1" rel="nofollow">
+				<img border="0" width="728" height="90" alt="" src="https://www23.a8.net/svt/bgt?aid=200222588552&wid=001&eno=01&mid=s00000000018015057000&mc=1"></a>
+				<img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=3B7GQK+94NAPE+50+2HN8K1" alt="">
+			</div>
+	<% end %>
+
+
+	<% @page_title = $bshop.shopname %> 
+	<% @title = @page_title %>
+	<% @edit = img_edit_mybshop_mybshop_path  %>
+
+	<% @main_navi_img1 =  image_tag("shopnavi/dmenu") %>
+	<% @main_navi_img2 =  image_tag("shopnavi/fee") %>
+	<% @main_navi_img3 =  image_tag("shopnavi/equip") %>
+	<% @main_navi_img4 =  image_tag("shopnavi/staff") %>
+	
+	<% @main_navi_title1 =  "診察内容" %>
+	<% @main_navi_title2 =  "料金案内" %>
+	<% @main_navi_title3 =  "設備紹介" %>
+	<% @main_navi_title4 =  "従業員・スタッフ" %>
+
+    <% @navi4 = contact_mybshop_mybshop_path %>
+	<% @navi5 = access_mybshop_mybshop_path %>
+	<% @navi6 = info_mybshop_mybshop_path %>
+	<% @navi7 = contact_mybshop_mybshop_path %>
+	<% @navi8 = time_mybshop_mybshop_path %>
+    
+	<% @subnavi1 =  %>
+	<% @subnavi2 =  %>
+

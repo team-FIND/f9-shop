@@ -1,0 +1,25 @@
+
+<% @page_title = $fequip.name %> 
+<% @title2 = $fequip.name %> 
+
+<%= content_for(:edit) do %>
+	<div id="edit">
+    	<%= link_to '✐編集', equip_img_myfshop_myfequipc_myfequip_path(id:$fequip) %>
+    </div>    
+<% end %>
+
+<% $fequips.each do |fequip| %>
+
+	<% if $fequip.equip_img.present? %>
+		<% @image1 = image_tag $fequip.equip_img_url %>
+	<% else %>
+		<% @image1 = image_tag "template/logo3" %>
+	<% end %>
+
+	<% if $fequip.explain.present? %>
+			<p><%= $fshop.explain %></p>
+	<% else %>
+			<p>未入力</p>
+	<% end %>
+
+<% end %>

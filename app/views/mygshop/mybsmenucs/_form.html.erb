@@ -1,0 +1,37 @@
+
+<%= form_for($bsmenuc, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+
+  <% if bsmenuc.errors.any? %>
+      <div id="error_explanation">
+          <h2><%= pluralize(bsmenuc.errors.count, "error") %> prohibited this bmenuc from being saved:</h2>
+
+          <ul>
+              <% bsmenuc.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+          </ul>
+      </div>
+  <% end %>
+
+  <div class="section" id="page">
+
+    <h1>メニュー項目を編集する</h1>
+
+      <%= form.hidden_field :bshop_id %>
+
+      <div id="field">
+          <%= form.label :name do %><label for="labelx">:メニューカテゴリー名</label><% end %><br>
+          <%= form.text_field :name, placeholder: '例）内科' %>
+      </div>
+
+      <div id="actions">
+          <li><%= form.submit(:決定) %></li>
+      </div>
+
+      <%= link_to mybshop_mybshop_path(id:$bshop) do %>
+          <div id="eback">編集を中止する</div>
+      <% end %>
+
+  </div>
+
+<% end %>

@@ -1,23 +1,23 @@
-class Mybshop::MybmenucsController < ApplicationController
-  before_action :set_bmenuc, only: [:show, :edit, :update, :destroy, :subedit]
+class Myfshop::MyfmenucsController < ApplicationController
+  before_action :set_fmenuc, only: [:show, :edit, :update, :destroy, :subedit]
   protect_from_forgery except: :create
   before_action :set_current_user
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def index
-    $bshop = Bshop.where(:id => params[:mybshop_id]).first
-    $bmenucs = $bshop.bmenucs.all
+    $fshop = Fshop.where(:id => params[:myfshop_id]).first
+    $fmenucs = $fshop.fmenucs.all
   end
 
   def show
-    $bshop = Bshop.where(:id => params[:mybshop_id]).first
-    $bmenucs = $bshop.bmenucs.all
+    $fshop = Fshop.where(:id => params[:myfshop_id]).first
+    $fmenucs = $fshop.fmenucs.all
     render :layout => "menu_category"
   end
 
   def new
-    $bshop = Bshop.where(:id => params[:mybshop_id]).first
-    $bmenuc = $bshop.bmenucs.build
+    $fshop = Fshop.where(:id => params[:myfshop_id]).first
+    $fmenuc = $fshop.fmenucs.build
     render :layout => "shop/ashop/menu_edit"
   end
 
@@ -30,29 +30,29 @@ class Mybshop::MybmenucsController < ApplicationController
   end
 
   def create
-    $bshop = Bshop.where(:id => params[:mybshop_id]).first
-    $bmenuc = $bshop.bmenucs.build(bmenuc_params)
-    $bmenuc.user_id = current_user.id
+    $fshop = Fshop.where(:id => params[:myfshop_id]).first
+    $fmenuc = $fshop.fmenucs.build(fmenuc_params)
+    $fmenuc.user_id = current_user.id
 
     respond_to do |format|
-      if $bmenuc.save
-        format.html { redirect_to mybshop_mybshop_path(id:$bshop), notice: 'Acategory was successfully created.' }
-        format.json { render :show, status: :created, location: $bmenuc }
+      if $fmenuc.save
+        format.html { redirect_to myfshop_myfshop_path(id:$fshop), notice: 'Acategory was successfully created.' }
+        format.json { render :show, status: :created, location: $fmenuc }
       else
         format.html { render :new }
-        format.json { render json: $bmenuc.errors, status: :unprocessable_entity }
+        format.json { render json: $fmenuc.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def update
     respond_to do |format|
-      if $bmenuc.update(bmenuc_params)
-        format.html { redirect_to mybshop_mybshop_path(id:$bshop), notice: 'Acategory was successfully updated.' }
-        format.json { render :show, status: :ok, location: $bmenuc }
+      if $fmenuc.update(fmenuc_params)
+        format.html { redirect_to myfshop_myfshop_path(id:$fshop), notice: 'Acategory was successfully updated.' }
+        format.json { render :show, status: :ok, location: $fmenuc }
       else
         format.html { render :edit }
-        format.json { render json: $bmenuc.errors, status: :unprocessable_entity }
+        format.json { render json: $fmenuc.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -62,9 +62,9 @@ class Mybshop::MybmenucsController < ApplicationController
   end
 
   def destroy
-    $bmenuc.destroy
+    $fmenuc.destroy
     respond_to do |format|
-      format.html { redirect_to mybshop_mybshop_path(id:$bshop), notice: 'Top was successfully destroyed.' }
+      format.html { redirect_to myfshop_myfshop_path(id:$fshop), notice: 'Top was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -75,12 +75,12 @@ class Mybshop::MybmenucsController < ApplicationController
 
   private
 
-    def set_bmenuc
-      $bshop = Bshop.where(:id => params[:mybshop_id]).first
-      $bmenuc = $bshop.bmenucs.where(:id => params[:id]).first
+    def set_fmenuc
+      $fshop = Fshop.where(:id => params[:myfshop_id]).first
+      $fmenuc = $fshop.fmenucs.where(:id => params[:id]).first
     end
     
-    def bmenuc_params
-      params.require(:bmenuc).permit(:bshop_id, :shopname, :user_id, :name, :content)
+    def fmenuc_params
+      params.require(:fmenuc).permit(:fshop_id, :shopname, :user_id, :name, :content)
     end
 end

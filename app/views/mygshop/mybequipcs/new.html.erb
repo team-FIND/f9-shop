@@ -1,0 +1,9 @@
+
+
+<%= content_for(:main)  do %>
+
+	<%= form_for($bequipc, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+			<%= render 'form', bequipc: $bequipc %>
+	<% end %>
+
+<% end %>
