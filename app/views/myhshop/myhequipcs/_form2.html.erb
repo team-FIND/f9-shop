@@ -1,0 +1,32 @@
+
+<%= form_for($hequipc, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+
+  <% if hequipc.errors.any? %>
+      <div id="error_explanation">
+          <h2><%= pluralize(hequipc.errors.count, "error") %> prohibited this hequipc from being saved:</h2>
+
+          <ul>
+              <% hequipc.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+          </ul>
+      </div>
+  <% end %>
+
+  <div class="section" id="page">
+
+    <h1>診察内容を編集する</h1>
+      
+      <%= form.hidden_field :cshop_id %>
+
+      <div id="field"><%= form.text_area :content, placeholder: '診察内容を記載してください。' %></div>
+
+      <div id="actions"><li><%= form.submit(:決定) %></li></div>
+
+      <%= link_to myhshop_myhshop_path(id:$cshop) do %>
+            <div id="eback">編集を中止する</div>
+      <% end %>
+
+  </div>
+
+<% end %>

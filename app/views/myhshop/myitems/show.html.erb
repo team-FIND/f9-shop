@@ -1,0 +1,31 @@
+
+<% @page_title = $item.itemname1 %> 
+<% @title2 = $item.itemname1 %> 
+
+<%= content_for(:edit) do %>
+	<div id="edit">
+    	<%= link_to '✐編集', item_img_myhshop_myhmenu_myitem_path(id:$item) %>
+    </div>    
+<% end %>
+
+<% $items.each do |item| %>
+
+	<% if $item.itemimg1.present? %>
+		<% @image1 = image_tag $item.itemimg1_url %>
+	<% else %>
+		<% @image1 = image_tag "template/logo3" %>
+	<% end %>
+
+	<% if $item.itemimg2.present? %>
+		<% @image2 = image_tag $item.itemimg2_url %>
+	<% else %>
+		<% @image2 = image_tag "template/logo3" %>
+	<% end %>
+
+	<% if $item.itemimg3.present? %>
+		<% @image3 = image_tag $item.itemimg3_url %>
+	<% else %>
+		<% @image3 = image_tag "template/logo3" %>
+	<% end %>
+
+<% end %>

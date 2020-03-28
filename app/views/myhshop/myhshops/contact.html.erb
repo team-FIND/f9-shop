@@ -10,23 +10,23 @@
 
 	<% @page_title = "コンタクト" %>
 
-	<%= render 'form', hshop: $hshop %>
+	<%= render 'form', dshop: $dshop %>
 
 
 <%= content_for(:main)  do %>
 
-	<%= link_to contact_edit_myhshop_myhshop_path(id:$hshop), target:"_blank" do%><div id="edit">✐編集する</div><% end %>
+	<%= link_to contact_edit_mydshop_mydshop_path(id:$dshop), target:"_blank" do%><div id="edit">✐編集する</div><% end %>
 
     <div id="feature-wrapper">
 
 	      <div id="box1">	
 		    　 <li id="a1">:TEL1</li><br>
-		      <li id="b1"><%= $hshop.phone1 %></li><br>
+		      <li id="b1"><%= $dshop.phone1 %></li><br>
 	      </div>
 
 	      <div id="box2">	
 		    　 <li id="a2">:Email</li><br>
-		      <li id="b2"><%= $hshop.email1 %></li><br>
+		      <li id="b2"><%= $dshop.email1 %></li><br>
 	      </div>
     </div>
 

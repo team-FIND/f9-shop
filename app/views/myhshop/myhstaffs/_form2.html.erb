@@ -1,0 +1,120 @@
+<%= form_for($hstaff, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+
+  <% if hstaff.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(hstaff.errors.count, "error") %> prohibited this menu from being saved:</h2>
+
+      <ul>
+      <% hstaff.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="section" id="page">
+
+    <h1>スタッフの写真を編集する</h1>
+
+              <%= form.hidden_field :hstaffc_id %>
+
+                  <div id="field-pic">
+                      <%= form.label :staff_img do %><label for="labelx">写真1</label><% end %><br>
+
+                      <label for="labely"><%= form.file_field :staff_img, id: :hstaff_staff_img , id: "file1" %></label>
+
+                      <div id="thumb1" onClick="$('#file1').click()">
+                            <% if hstaff.staff_img.present? %>
+                              <div id="updimg"><%= image_tag hstaff.staff_img.thumb.url if $hstaff.staff_img? %></div> 
+                            <% else %>
+                              <div id="upimg"><%= image_tag("template/img") %></div>
+                            <% end %>
+                      </div>
+                  </div>
+
+              <%= form.hidden_field :staff_img_cache %>
+
+              <div id="actions"><li><%= form.submit(:決定) %></li></div>
+
+              <%= link_to myhshop_myhstaffc_myhstaffs_path do %><div id="eback">編集を中止する</div><% end %>
+
+</div>
+
+<% end %>
+
+<script>
+
+$(function(){
+  $fileField = $('#file1')
+ 
+  // 選択された画像を取得し表示
+  $($fileField).on('change', $fileField, function(e) {
+    file = e.target.files[0]
+    reader = new FileReader(),
+    $preview = $("#thumb1");
+ 
+    reader.onload = (function(file) {
+      return function(e) {
+        $preview.empty();
+        $preview.append($('<img>').attr({
+          src: e.target.result,
+          width: "100%",
+          class: "preview",
+          title: file.name
+        }));
+      };
+    })(file);
+    reader.readAsDataURL(file);
+  });
+});
+
+$(function(){
+  $fileField = $('#file2')
+ 
+  // 選択された画像を取得し表示
+  $($fileField).on('change', $fileField, function(e) {
+    file = e.target.files[0]
+    reader = new FileReader(),
+    $preview = $("#thumb2");
+ 
+    reader.onload = (function(file) {
+      return function(e) {
+        $preview.empty();
+        $preview.append($('<img>').attr({
+          src: e.target.result,
+          width: "100%",
+          class: "preview",
+          title: file.name
+        }));
+      };
+    })(file);
+    reader.readAsDataURL(file);
+  });
+});
+
+$(function(){
+  $fileField = $('#file3')
+ 
+  // 選択された画像を取得し表示
+  $($fileField).on('change', $fileField, function(e) {
+    file = e.target.files[0]
+    reader = new FileReader(),
+    $preview = $("#thumb3");
+ 
+    reader.onload = (function(file) {
+      return function(e) {
+        $preview.empty();
+        $preview.append($('<img>').attr({
+          src: e.target.result,
+          width: "100%",
+          class: "preview",
+          title: file.name
+        }));
+      };
+    })(file);
+    reader.readAsDataURL(file);
+  });
+});
+
+</script>
+

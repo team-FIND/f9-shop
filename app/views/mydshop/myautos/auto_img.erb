@@ -1,8 +1,8 @@
 <%= content_for(:main)  do %>
 
-	<%= form_for($food, :url => {:action => "update"}, :html => {:multipart => true}) do |form| %>
+	<%= form_for($auto, :url => {:action => "update"}, :html => {:multipart => true}) do |form| %>
 
-	<%= render 'form2', food: $food %>
+	<%= render 'form2', auto: $auto %>
 
 	<% end %>
 

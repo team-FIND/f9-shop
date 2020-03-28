@@ -1,11 +1,11 @@
-<%= form_for($food, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+<%= form_for($auto, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
 
-  <% if food.errors.any? %>
+  <% if auto.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(food.errors.count, "error") %> prohibited this menu from being saved:</h2>
+      <h2><%= pluralize(auto.errors.count, "error") %> prohibited this menu from being saved:</h2>
 
       <ul>
-      <% food.errors.full_messages.each do |message| %>
+      <% auto.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -19,13 +19,13 @@
               <%= form.hidden_field :amenu_id %>
 
                   <div id="field-pic">
-                      <%= form.label :foodimg1 do %><label for="labelx">写真1</label><% end %><br>
+                      <%= form.label :autoimg1 do %><label for="labelx">写真1</label><% end %><br>
 
-                      <label for="labely"><%= form.file_field :foodimg1, id: :food_foodimg1 , id: "file1" %></label>
+                      <label for="labely"><%= form.file_field :autoimg1, id: :auto_autoimg1 , id: "file1" %></label>
 
                       <div id="thumb1" onClick="$('#file1').click()">
-                            <% if food.foodimg1.present? %>
-                              <div id="updimg"><%= image_tag food.foodimg1.thumb.url if $food.foodimg1? %></div> 
+                            <% if auto.autoimg1.present? %>
+                              <div id="updimg"><%= image_tag auto.autoimg1.thumb.url if $auto.autoimg1? %></div> 
                             <% else %>
                               <div id="upimg"><%= image_tag("template/img") %></div>
                             <% end %>
@@ -33,13 +33,13 @@
                   </div>
 
                   <div id="field-pic">
-                      <%= form.label :foodimg2 do %><label for="labelx">写真2</label><% end %><br>
+                      <%= form.label :autoimg2 do %><label for="labelx">写真2</label><% end %><br>
 
-                      <label for="labely"><%= form.file_field :foodimg2, id: :food_foodimg2 , id: "file2" %></label>
+                      <label for="labely"><%= form.file_field :autoimg2, id: :auto_autoimg2 , id: "file2" %></label>
 
                       <div id="thumb2" onClick="$('#file2').click()">
-                            <% if food.foodimg2.present? %>
-                              <div id="updimg"><%= image_tag food.foodimg2.thumb.url if $food.foodimg2? %></div> 
+                            <% if auto.autoimg2.present? %>
+                              <div id="updimg"><%= image_tag auto.autoimg2.thumb.url if $auto.autoimg2? %></div> 
                             <% else %>
                               <div id="upimg"><%= image_tag("template/img") %></div>
                             <% end %>
@@ -47,13 +47,13 @@
                   </div>
 
                   <div id="field-pic">
-                      <%= form.label :foodimg3 do %><label for="labelx">写真3</label><% end %><br>
+                      <%= form.label :autoimg3 do %><label for="labelx">写真3</label><% end %><br>
 
-                      <label for="labely"><%= form.file_field :foodimg3, id: :food_foodimg3 , id: "file3" %></label>
+                      <label for="labely"><%= form.file_field :autoimg3, id: :auto_autoimg3 , id: "file3" %></label>
 
                       <div id="thumb3" onClick="$('#file3').click()">
-                            <% if food.foodimg3.present? %>
-                              <div id="updimg"><%= image_tag food.foodimg3.thumb.url if $food.foodimg3? %></div> 
+                            <% if auto.autoimg3.present? %>
+                              <div id="updimg"><%= image_tag auto.autoimg3.thumb.url if $auto.autoimg3? %></div> 
                             <% else %>
                               <div id="upimg"><%= image_tag("template/img") %></div>
                             <% end %>
@@ -62,13 +62,13 @@
 
 
               <%= form.hidden_field :topimg_cache %>
-              <%= form.hidden_field :foodimg1_cache %>
-              <%= form.hidden_field :foodimg2_cache %>
-              <%= form.hidden_field :foodimg3_cache %>
+              <%= form.hidden_field :autoimg1_cache %>
+              <%= form.hidden_field :autoimg2_cache %>
+              <%= form.hidden_field :autoimg3_cache %>
 
               <div id="actions"><li><%= form.submit(:決定) %></li></div>
 
-              <%= link_to myashop_myamenu_myfoods_path do %><div id="eback">編集を中止する</div><% end %>
+              <%= link_to myashop_myamenu_myautos_path do %><div id="eback">編集を中止する</div><% end %>
 
 </div>
 

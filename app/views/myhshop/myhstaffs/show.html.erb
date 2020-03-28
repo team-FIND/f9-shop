@@ -1,0 +1,34 @@
+
+<% @page_title = $hstaff.name %> 
+<% @title2 = $hstaff.name %> 
+
+<%= content_for(:edit) do %>
+
+<% end %>
+
+
+<%= content_for(:main) do %>
+	<div id="edit">
+    	<%= link_to '✐編集', staff_img_myhshop_myhstaffc_myhstaff_path(id:$hstaff) %>
+    </div>    
+
+	<% $hstaffs.each do |hstaff| %>
+
+		<% if $hstaff.staff_img.present? %>
+			<div class="mainImage"><%= image_tag $hstaff.staff_img_url %></div>
+		<% else %>
+			<div class="mainImage"><%= image_tag "template/logo3" %></div>
+		<% end %>
+
+	<% end %>
+<% end %>
+
+<%= content_for(:second_feature) do %>
+
+			<% if $hstaff.explain.present? %>
+					<p><%= $hshop.explain %></p>
+			<% else %>
+					<p>未入力</p>
+			<% end %>
+
+<% end %>

@@ -1,0 +1,34 @@
+
+
+  <%= content_for(:head)  do %>
+      <%= stylesheet_link_tag "shophome/ashop/content/menu", :media => "all" %>
+      <%= javascript_include_tag "city" %>
+
+      <title><%= page_title %></title>
+  <% end %>
+
+
+  <% @page_title = $hmenuc.name %> 
+  <% @title1 = $hshop.shopname %> 
+  <% @title2 = @page_title %> 
+  
+
+  <%= content_for(:main)  do %>
+
+    <div id="new"><%= link_to '＋メニューを追加する', new_myhshop_myhmenuc_myhmenu_path %></div>
+        <div id="feature-wrapper">
+
+              <% $hmenus.each do |hmenu| %>
+                  <%= link_to myhshop_myhmenuc_myhmenu_path(myhmenuc_id:$hmenuc, id:hmenu) do %>
+                   　<div id="box"><li id="list"><%= hmenu.name %></li></div>
+                  <% end %>
+
+                  <div id="edit">
+                    <%= link_to '✐編集する', edit_myhshop_myhmenuc_myhmenu_path(myhmenuc_id:$hmenuc, id:hmenu) %>
+                  </div>
+              <% end %>
+
+        </div>
+    <% end %>
+
+

@@ -1,0 +1,61 @@
+
+<%= content_for(:head)  do %>
+    <%= stylesheet_link_tag "shophome/ashop/each", :media => "all" %>
+    <%= javascript_include_tag "city" %>
+    <title><%= page_title %></title>
+
+<% end %>
+
+<% @page_title = $hmenu.name %> 
+<% @title1 = $hshop.shopname %> 
+<% @title2 = $hmenu.name %>
+
+
+<%= content_for(:main)  do %>
+
+  <%= link_to new_myhshop_myhmenu_myitem_path do%><div id="new">＋料理を追加する</div><% end %>
+
+  <% $items.each do |item| %>
+
+        <div id="itema">
+          
+                <div id="top_pic"> 
+
+                    <% if item.topimg.present? %>
+                      <%= link_to image_tag(item.topimg_url, {:size =>'300x300'}), myhshop_myhmenu_myitem_path(id:item) %> 
+                    <% else %>
+                      <%= link_to image_tag("template/logo3", {:size =>'300x300'}), myhshop_myhmenu_myitem_path(id:item) %> 
+                    <% end %>
+    
+                </div>
+
+                <P id="item_name1">
+                    <% if item.itemname1.present? %>
+                        <%= item.itemname1 %>
+                    <% else %>
+                        未入力（料理名１）
+                    <% end %>
+                </P>
+
+                <P id="item_name2">
+                    <% if item.itemname2.present? %>
+                        <%= item.itemname2 %>
+                    <% else %>
+                        未入力（料理名２）
+                    <% end %>
+                </P>
+
+                <P id="price">税込：<%= item.price %>円</P>
+
+                <p id="edit">
+                    <%= link_to '✐編集', edit_myhshop_myhmenu_myitem_path(id:item) %>
+                </p>    
+
+         </div>
+
+
+  <% end %>
+
+
+<% end %>
+

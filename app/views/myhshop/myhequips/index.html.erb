@@ -1,0 +1,49 @@
+
+<%= content_for(:head)  do %>
+    <%= stylesheet_link_tag "shophome/bshop/each_equip", :media => "all" %>
+    <%= javascript_include_tag "city" %>
+    <title><%= page_title %></title>
+
+<% end %>
+
+<%= content_for(:main)  do %>
+
+  <%= link_to new_myhshop_myhequipc_myhequip_path do%><div id="new">＋設備を追加する</div><% end %>
+
+  <% $hequips.each do |hequip| %>
+
+    <div id="each_equip">
+
+        <div id="equip">
+          
+                <div id="top_pic"> 
+
+                    <% if hequip.equip_img.present? %>
+                      <%= link_to image_tag(hequip.equip_img_url), myhshop_myhequipc_myhequip_path(id:hequip) %> 
+                    <% else %>
+                      <%= link_to image_tag("template/logo3"), myhshop_myhequipc_myhequip_path(id:hequip) %> 
+                    <% end %>
+    
+                </div>
+
+                <P id="equip_name">
+                    <% if hequip.name.present? %>
+                        <%= hequip.name %>
+                    <% else %>
+                        （未入力）
+                    <% end %>
+                </P>
+
+                <p id="edit">
+                    <%= link_to '✐編集', edit_myhshop_myhequipc_myhequip_path(id:hequip) %>
+                </p>    
+
+         </div>
+    </div>
+
+
+  <% end %>
+
+
+<% end %>
+

@@ -1,0 +1,92 @@
+
+
+<%= form_for($item, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+
+  <% if item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(item.errors.count, "error") %> prohibited this menu from being saved:</h2>
+
+      <ul>
+      <% item.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="section" id="page">
+
+    <h1>料理を編集する</h1>
+
+              <%= form.hidden_field :hmenu_id %>
+
+              <div id="field">
+                  <%= form.label :itemname1 do %><label for="labelx">:商品名</label><% end %><br>
+                  <%= form.text_field :itemname1, placeholder: '例）プリウス' %><br>
+              </div>
+
+              <div id="field">
+                  <%= form.label :itemname2 do %><label for="labelx">:商品名（追加）</label><% end %><br>
+                  <%= form.text_field :itemname2, placeholder: '例）スープ付き' %><br>
+              </div>
+
+              <div id="field">
+                  <%= form.label :price do %><label for="labelx">:値段（税込）</label><% end %><br>
+                  <%= form.text_field :price, placeholder: '例）750' %>
+              </div>
+
+              <div id="field-pic">
+                  <%= form.label :topimg do %><label for="labelx">:トップ画像</label><% end %><br>
+
+                  <label for="labely"><%= form.file_field :topimg, id: :item_topimg , id: "file" %></label>
+
+                  <div id="thumb" onClick="$('#file').click()">
+                        <% if item.topimg.present? %>
+                          <div id="updimg"><%= image_tag item.topimg.thumb.url if $item.topimg? %></div> 
+                        <% else %>
+                          <div id="upimg"><%= image_tag("template/img") %></div>
+                        <% end %>
+                  </div>
+              </div>
+
+
+              <%= form.hidden_field :topimg_cache %>
+              <%= form.hidden_field :itemimg1_cache %>
+              <%= form.hidden_field :itemimg2_cache %>
+              <%= form.hidden_field :itemimg3_cache %>
+
+              <div id="actions"><li><%= form.submit(:決定) %></li></div>
+
+  <%= link_to myhshop_myhmenu_myitems_path do %><div id="eback">編集を中止する</div><% end %>
+
+</div>
+
+<% end %>
+
+<script>
+
+$(function(){
+  $fileField = $('#file')
+ 
+  // 選択された画像を取得し表示
+  $($fileField).on('change', $fileField, function(e) {
+    file = e.target.files[0]
+    reader = new FileReader(),
+    $preview = $("#thumb");
+ 
+    reader.onload = (function(file) {
+      return function(e) {
+        $preview.empty();
+        $preview.append($('<img>').attr({
+          src: e.target.result,
+          width: "100%",
+          class: "preview",
+          title: file.name
+        }));
+      };
+    })(file);
+    reader.readAsDataURL(file);
+  });
+});
+
+</script>
