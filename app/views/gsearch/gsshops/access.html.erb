@@ -10,7 +10,7 @@
     
 	<% @page_title = "アクセス" %>
 
-	<%= render 'form', ashop: $ashop %>
+	<%= render 'form', gshop: $gshop %>
 
 
 <%= content_for(:main)  do %>
@@ -19,7 +19,7 @@
 
 	      <div id="box1">	
 		    　 <li id="a1">住所</li><br>
-		      <li id="b1">〒:<%= gashop.postnumb %></li><br>
+		      <li id="b1">〒:<%= $gshop.postnumb %></li><br>
 		      <li id="b1"><%= $gshop.address %></li><br>
 	      </div>
 

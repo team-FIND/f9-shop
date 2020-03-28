@@ -1,7 +1,7 @@
 
 <%= javascript_include_tag "search" %> 
 
-  <% @page_title = "趣味・スポーツ一覧" %> 
+  <% @page_title = "趣味一覧" %> 
   <% @title = @page_title %>
 
 
@@ -16,7 +16,7 @@
 
       <%= search_form_for $search, url: gsearch_gsshops_path do |form| %>
 
-              <div id="stitle">趣味・スポーツ検索</div>
+              <div id="stitle">趣味検索</div>
                           
                 <div id="slinex">
                     <div class="sline1">
@@ -85,8 +85,6 @@
                             </li><br>
 
                             <li id="tag"><p>#<%= gshop.gcategory.name %></p></li>
-                            <li id="tag"><p>#<%= gshop.category2 %></p></li>
-                            <li id="tag"><p>#<%= gshop.category3 %></p></li>
 
                     </div>
 
@@ -126,7 +124,7 @@
   jQuery((function(_this) {
     return function() {
       var prefec;
-      prefec = $('#shop_prefec_id').html();
+      prefec = $('#gshop_prefec_id').html();
       console.log(prefec);
       return $('#gshop_area_id').change(function() {
         var options, area;

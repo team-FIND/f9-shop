@@ -8,7 +8,7 @@
 
 <%= content_for(:main)  do %>
 
-  <% $bstaffs.each do |bstaff| %>
+  <% $gstaffs.each do |gstaff| %>
 
     <div id="each_staff">
 
@@ -16,17 +16,17 @@
           
                 <div id="top_pic"> 
 
-                    <% if bstaff.staff_img.present? %>
-                      <%= link_to image_tag(bstaff.staff_img_url), bsearch_bsstaffc_bsstaff_path(id:bstaff) %> 
+                    <% if gstaff.staff_img.present? %>
+                      <%= link_to image_tag(gstaff.staff_img_url), gsearch_gsstaffc_gsstaff_path(id:gstaff) %> 
                     <% else %>
-                      <%= link_to image_tag("template/logo3"), bsearch_bsstaffc_bsstaff_path(id:bstaff) %> 
+                      <%= link_to image_tag("template/logo3"), gsearch_gsstaffc_gsstaff_path(id:gstaff) %> 
                     <% end %>
     
                 </div>
 
                 <P id="staff_name">
-                    <% if bstaff.name.present? %>
-                        <%= bstaff.name %>
+                    <% if gstaff.name.present? %>
+                        <%= gstaff.name %>
                     <% else %>
                         （未入力）
                     <% end %>

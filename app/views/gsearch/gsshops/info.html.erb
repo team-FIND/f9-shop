@@ -8,7 +8,7 @@
 	<% end %>
 
     
-	<% @page_title = "店舗情報" %>
+	<% @page_title = "医院情報" %>
 
 	<%= render 'form', gshop: $gshop %>
 
@@ -17,12 +17,12 @@
       
     <div id="feature-wrapper">
 	      <div id="box1">	
-		    　 <li id="a1">創業</li><br>
+		    　 <li id="a1">開業</li><br>
 		      <li id="b1"><%= $gshop.history %>年</li><br>
 	      </div>
 
 	      <div id="box2">	
-		    　 <li id="a1">店長経歴</li><br>
+		    　 <li id="a1">院長経歴1</li><br>
 		      <li id="b2">・<%= $gshop.career1 %></li><br>
 		      <li id="b2">・<%= $gshop.career2 %></li><br>
 		      <li id="b2">・<%= $gshop.career3 %></li><br>
@@ -31,7 +31,7 @@
 	      </div>
 
 	      <div id="box2">	
-		    　 <li id="a1">おすすめ料理ランキング</li><br>
+		    　 <li id="a1">院長経歴2</li><br>
 		      <li id="b2">①<%= $gshop.recom1 %></li><br>
 		      <li id="b2">②<%= $gshop.recom2 %></li><br>
 		      <li id="b2">③<%= $gshop.recom3 %></li><br>
