@@ -1,6 +1,6 @@
 
 
-  <% @page_title = "車・バイク・自転車" %> 
+  <% @page_title = "その他のお店" %> 
   <% @title = @page_title %>
   <% @back = myshop_users_path %>
 
@@ -16,21 +16,21 @@
     <%= stylesheet_link_tag "shop/shop", :media => "all" %>
     <%= stylesheet_link_tag "search/asearch", :media => "all" %>
 
-   <%= link_to home_new_mydshop_mydshops_path do%>
+   <%= link_to home_new_myhshop_myhshops_path do%>
         <div id="new"><p>+店舗を追加する</p></div>
     <% end %>
 
 <div id="main-feature">
-  <% $dshops.each do |dshop| %>
+  <% $hshops.each do |hshop| %>
 
 
-      <%= link_to mydshop_mydshop_path(id:dshop)  do%> 
+      <%= link_to myhshop_myhshop_path(id:hshop)  do%> 
          <div id="shopx">
 
                 <div id="toppic">
 
-                  <% if dshop.topimage.present? %>
-                    <%= image_tag dshop.topimage_url %> 
+                  <% if hshop.topimage.present? %>
+                    <%= image_tag hshop.topimage_url %> 
                   <% else %>
                     <%= image_tag "template/logo3" %> 
                   <% end %>
@@ -39,22 +39,22 @@
 
                 <div id="explains">
                      
-                        <P id="shop_name"><%= dshop.shopname %></P>
+                        <P id="shop_name"><%= hshop.shopname %></P>
 
-                        <P id="account_name"><%= dshop.user.username %></P><br>
+                        <P id="account_name"><%= hshop.user.username %></P><br>
                         
                         <li id="ptag">
-                          <p><%= dshop.top.name %></p>
-                          <p>><%= dshop.area.name %></p>
-                          <p>><%= dshop.prefec.name %></p>
+                          <p><%= hshop.top.name %></p>
+                          <p>><%= hshop.area.name %></p>
+                          <p>><%= hshop.prefec.name %></p>
                         </li><br>
 
-                        <li id="tag"><p>#<%= dshop.dcategory.name %></p></li>
+                        <li id="tag"><p>#<%= hshop.hcategory.name %></p></li>
                 </div>
 
           </div>
 
-                <%= link_to home_edit_mydshop_mydshop_path(id:dshop) do%><br>
+                <%= link_to home_edit_myhshop_myhshop_path(id:hshop) do%><br>
                   <div id="edittop"><p>✐編集する</p></div>
                 <% end %>
                 
