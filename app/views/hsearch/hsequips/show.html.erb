@@ -1,0 +1,19 @@
+
+<% @page_title = $hequip.name %> 
+<% @title2 = $hequip.name %> 
+
+<% $hequips.each do |hequip| %>
+
+	<% if $hequip.equip_img.present? %>
+		<% @image1 = image_tag $hequip.equip_img_url %>
+	<% else %>
+		<% @image1 = image_tag "template/logo3" %>
+	<% end %>
+
+	<% if $hequip.explain.present? %>
+			<p><%= $hshop.explain %></p>
+	<% else %>
+			<p>未入力</p>
+	<% end %>
+
+<% end %>

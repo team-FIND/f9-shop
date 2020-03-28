@@ -8,17 +8,17 @@
   <% end %>
 
 
-  <% @page_title = $dmenuc.name %> 
-  <% @title1 = $dshop.shopname %> 
+  <% @page_title = $hmenuc.name %> 
+  <% @title1 = $hshop.shopname %> 
   <% @title2 = @page_title %> 
 
   <%= content_for(:main)  do %>
 
         <div id="feature-wrapper">
 
-              <% $dmenus.each do |dmenu| %>
-                  <%= link_to dsearch_dsmenuc_dsmenu_path(dsmenuc_id:$dmenuc, id:dmenu) do %>
-                   　<div id="box"><li id="list"><%= dmenu.name %></li></div>
+              <% $hmenus.each do |hmenu| %>
+                  <%= link_to hsearch_hsmenuc_hsmenu_path(hsmenuc_id:$hmenuc, id:hmenu) do %>
+                   　<div id="box"><li id="list"><%= hmenu.name %></li></div>
                   <% end %>
               <% end %>
 

@@ -1,19 +1,19 @@
 class Hsearch::HssmenucsController < ApplicationController
-  before_action :set_hsmenuc, only: [:show, :edit, :update, :destroy, :subedit]
-  protect_from_forgery except: :create
-  before_action :set_current_user
-  before_action :configure_permitted_parameters, if: :devise_controller?
+    before_action :set_hsmenuc, only: [:show, :edit, :update, :destroy, :subedit]
+    protect_from_forgery except: :create
+    before_action :set_current_user
+    before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def index
-    $hshop = Hshop.where(:id => params[:hsshop_id]).first
-    $hsmenucs = $hshop.hsmenucs.all
-  end
+    def index
+      $hshop = Hshop.where(:id => params[:hsshop_id]).first
+      $hsmenucs = $hshop.hsmenucs.all
+    end
 
-  def show
-    $hshop = Hshop.where(:id => params[:hsshop_id]).first
-    $hsmenucs = $hshop.hsmenucs.all
-    render :layout => "menu_category"
-  end
+    def show
+      $hshop = Hshop.where(:id => params[:hsshop_id]).first
+      $hsmenucs = $hshop.hsmenucs.all
+      render :layout => "menu_category"
+    end
 
   private
 

@@ -1,8 +1,8 @@
 class Gsearch::GsshopsController < ApplicationController
-before_action :set_gshop, only: [:get_area, :show, :edit, :home_edit, :img_edit, :contact_edit, :access_edit, :time_edit, :info_edit, :update, :destroy, :contact, :access, :time, :info]
-protect_from_forgery except: :create
-before_action :set_current_user
-before_action :configure_permitted_parameters, if: :devise_controller?
+    before_action :set_gshop, only: [:get_area, :show, :edit, :home_edit, :img_edit, :contact_edit, :access_edit, :time_edit, :info_edit, :update, :destroy, :contact, :access, :time, :info]
+    protect_from_forgery except: :create
+    before_action :set_current_user
+    before_action :configure_permitted_parameters, if: :devise_controller?
 
   def index
     $search = Gshop.search(params[:q])

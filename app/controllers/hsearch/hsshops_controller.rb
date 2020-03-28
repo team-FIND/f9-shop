@@ -1,39 +1,39 @@
 class Hsearch::HsshopsController < ApplicationController
-before_action :set_hshop, only: [:get_area, :show, :edit, :home_edit, :img_edit, :contact_edit, :access_edit, :time_edit, :info_edit, :update, :destroy, :contact, :access, :time, :info]
-protect_from_forgery except: :create
-before_action :set_current_user
-before_action :configure_permitted_parameters, if: :devise_controller?
+    before_action :set_hshop, only: [:get_area, :show, :edit, :home_edit, :img_edit, :contact_edit, :access_edit, :time_edit, :info_edit, :update, :destroy, :contact, :access, :time, :info]
+    protect_from_forgery except: :create
+    before_action :set_current_user
+    before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def index
-    $search = Hshop.search(params[:q])
-    $hshops = $search.result
-    render :layout => "search"
-  end
+    def index
+      $search = Hshop.search(params[:q])
+      $hshops = $search.result
+      render :layout => "search"
+    end
 
-  def show
-    $hshop = Hshop.where(:id => params[:id]).first
-    $hmenucs = $hshop.hmenucs.all
-    $hsmenucs = $hshop.hsmenucs.all
-    $hequipcs = $hshop.hequipcs.all
-    $hstaffcs = $hshop.hstaffcs.all
-    render :layout => "shop_home"
-  end
+    def show
+      $hshop = Hshop.where(:id => params[:id]).first
+      $hmenucs = $hshop.hmenucs.all
+      $hsmenucs = $hshop.hsmenucs.all
+      $hequipcs = $hshop.hequipcs.all
+      $hstaffcs = $hshop.hstaffcs.all
+      render :layout => "shop_home"
+    end
 
-  def contact
-    render :layout => "shop_contents"
-  end
+    def contact
+      render :layout => "shop_contents"
+    end
 
-  def access
-    render :layout => "shop_contents"
-  end
+    def access
+      render :layout => "shop_contents"
+    end
 
-  def time
-    render :layout => "shop_contents"
-  end
+    def time
+      render :layout => "shop_contents"
+    end
 
-  def info
-    render :layout => "shop_contents"
-  end
+    def info
+      render :layout => "shop_contents"
+    end
 
   private
 

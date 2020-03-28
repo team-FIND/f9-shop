@@ -8,7 +8,7 @@
 
 <%= content_for(:main)  do %>
 
-  <% $dequips.each do |dequip| %>
+  <% $hequips.each do |hequip| %>
 
     <div id="each_equip">
 
@@ -16,17 +16,17 @@
           
                 <div id="top_pic"> 
 
-                    <% if dequip.equip_img.present? %>
-                      <%= link_to image_tag(dequip.equip_img_url), dsearch_dsequipc_dsequip_path(id:dequip) %> 
+                    <% if hequip.equip_img.present? %>
+                      <%= link_to image_tag(hequip.equip_img_url), hsearch_hsequipc_hsequip_path(id:hequip) %> 
                     <% else %>
-                      <%= link_to image_tag("template/logo3"), dsearch_dsequipc_dsequip_path(id:dequip) %> 
+                      <%= link_to image_tag("template/logo3"), hsearch_hsequipc_hsequip_path(id:hequip) %> 
                     <% end %>
     
                 </div>
 
                 <P id="equip_name">
-                    <% if dequip.name.present? %>
-                        <%= dequip.name %>
+                    <% if hequip.name.present? %>
+                        <%= hequip.name %>
                     <% else %>
                         （未入力）
                     <% end %>

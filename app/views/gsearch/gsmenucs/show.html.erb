@@ -8,20 +8,16 @@
   <% end %>
 
 
-  <% @page_title = $bmenuc.name  %> 
-  <% @title1 = $bshop.shopname %> 
+  <% @page_title = $gmenuc.name  %> 
+  <% @title1 = $gshop.shopname %> 
   <% @title2 = @page_title %> 
-
-  <% @back1  = bsearch_bsshop_path(id:$bshop) %>
-  <% @city  = bsearch_bsshops_path %>
-  <% @back2 = @back1 %>
 
   <%= content_for(:main)  do %>
 
-        <% $bmenucs.each do |bmenuc| %>
+        <% $gmenucs.each do |gmenuc| %>
 
-                <% if $bmenuc.content.present? %>
-                    <div id="content1"><%= simple_format(bmenuc.content) %></div>
+                <% if $gmenuc.content.present? %>
+                    <div id="content1"><%= simple_format(gmenuc.content) %></div>
                 <% else %>
                     <div id="content0">記載がありません</div>
                 <% end %>

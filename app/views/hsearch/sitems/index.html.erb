@@ -6,44 +6,44 @@
 
 <% end %>
 
-<% @page_title = $dmenu.name %> 
-<% @title1 = $dshop.shopname %> 
-<% @title2 = $dmenu.name %>
+<% @page_title = $hmenu.name %> 
+<% @title1 = $hshop.shopname %> 
+<% @title2 = $hmenu.name %>
 
 
 <%= content_for(:main)  do %>
 
-  <% $autos.each do |auto| %>
+  <% $items.each do |item| %>
 
         <div id="auto">
           
                 <div id="top_pic"> 
 
-                    <% if auto.topimg.present? %>
-                      <%= link_to image_tag(auto.topimg_url, {:size =>'300x300'}), dsearch_dsmenu_sauto_path(id:auto) %> 
+                    <% if item.topimg.present? %>
+                      <%= link_to image_tag(item.topimg_url, {:size =>'300x300'}), hsearch_hsmenu_sitem_path(id:item) %> 
                     <% else %>
-                      <%= link_to image_tag("template/logo3", {:size =>'300x300'}), dsearch_dsmenu_sauto_path(id:auto) %> 
+                      <%= link_to image_tag("template/logo3", {:size =>'300x300'}), hsearch_hsmenu_sitem_path(id:item) %> 
                     <% end %>
     
                 </div>
 
                 <P id="auto_name1">
-                    <% if auto.autoname1.present? %>
-                        <%= auto.autoname1 %>
+                    <% if item.itemname1.present? %>
+                        <%= item.itemname1 %>
                     <% else %>
                         未入力（料理名１）
                     <% end %>
                 </P>
 
                 <P id="auto_name2">
-                    <% if auto.autoname2.present? %>
-                        <%= auto.autoname2 %>
+                    <% if item.itemname2.present? %>
+                        <%= item.itemname2 %>
                     <% else %>
                         未入力（料理名２）
                     <% end %>
                 </P>
 
-                <P id="price">税込：<%= auto.price %>円</P>
+                <P id="price">税込：<%= item.price %>円</P>
 
           </div>
 

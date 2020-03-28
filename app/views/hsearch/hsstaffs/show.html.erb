@@ -1,0 +1,19 @@
+
+<% @page_title = $hstaff.name %> 
+<% @title2 = $hstaff.name %> 
+
+<% $hstaffs.each do |hstaff| %>
+
+	<% if $hstaff.staff_img.present? %>
+		<% @image1 = image_tag $hstaff.staff_img_url %>
+	<% else %>
+		<% @image1 = image_tag "template/logo3" %>
+	<% end %>
+
+	<% if $hstaff.explain.present? %>
+			<p><%= $hshop.explain %></p>
+	<% else %>
+			<p>未入力</p>
+	<% end %>
+
+<% end %>
