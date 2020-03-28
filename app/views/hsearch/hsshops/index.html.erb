@@ -1,7 +1,7 @@
 
 <%= javascript_include_tag "search" %> 
 
-  <% @page_title = "その他一覧" %> 
+  <% @page_title = "車・バイク・自転車一覧" %> 
   <% @title = @page_title %>
 
 
@@ -14,7 +14,7 @@
 
     <div id="search-form">
 
-      <%= search_form_for $search, url: hsearch_hsshops_path do |form| %>
+      <%= search_form_for $search, url: dsearch_dsshops_path do |form| %>
 
               <div id="stitle">その他検索</div>
                           
@@ -74,9 +74,9 @@
 
                     <div id="explains">
                          
-                            <P id="shop_name"><%= hshop.shopname %></P>
+                            <P id="shop_name">🏠：<%= hshop.shopname %></P>
 
-                            <P id="account_name"><%= hshop.user.username %></P><br>
+                            <P id="account_name">👤:<%= hshop.user.username %></P><br>
                             
                             <li id="ptag">
                               <p><%= hshop.top.name %></p>
