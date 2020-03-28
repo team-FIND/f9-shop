@@ -1,0 +1,28 @@
+
+
+  <%= content_for(:head)  do %>
+      <%= stylesheet_link_tag "shophome/ashop/content/menu", :media => "all" %>
+      <%= javascript_include_tag "city" %>
+
+      <title><%= page_title %></title>
+  <% end %>
+
+
+  <% @page_title = $dmenuc.name %> 
+  <% @title1 = $dshop.shopname %> 
+  <% @title2 = @page_title %> 
+
+  <%= content_for(:main)  do %>
+
+        <div id="feature-wrapper">
+
+              <% $dmenus.each do |dmenu| %>
+                  <%= link_to dsearch_dsmenuc_dsmenu_path(dsmenuc_id:$dmenuc, id:dmenu) do %>
+                   　<div id="box"><li id="list"><%= dmenu.name %></li></div>
+                  <% end %>
+              <% end %>
+
+        </div>
+    <% end %>
+
+

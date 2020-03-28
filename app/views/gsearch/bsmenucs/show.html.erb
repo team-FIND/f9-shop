@@ -1,0 +1,31 @@
+
+
+  <%= content_for(:head)  do %>
+      <%= stylesheet_link_tag "shophome/ashop/content/menu", :media => "all" %>
+      <%= javascript_include_tag "city" %>
+
+      <title><%= page_title %></title>
+  <% end %>
+
+
+  <% @page_title = $bmenuc.name  %> 
+  <% @title1 = $bshop.shopname %> 
+  <% @title2 = @page_title %> 
+
+  <% @back1  = bsearch_bsshop_path(id:$bshop) %>
+  <% @city  = bsearch_bsshops_path %>
+  <% @back2 = @back1 %>
+
+  <%= content_for(:main)  do %>
+
+        <% $bmenucs.each do |bmenuc| %>
+
+                <% if $bmenuc.content.present? %>
+                    <div id="content1"><%= simple_format(bmenuc.content) %></div>
+                <% else %>
+                    <div id="content0">記載がありません</div>
+                <% end %>
+                
+        <% end %>
+
+  <% end %>
