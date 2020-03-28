@@ -10,31 +10,31 @@
 
 	<% @page_title = "営業時間" %> 
 
-	<%= render 'form', cshop: $cshop %>
+	<%= render 'form', eshop: $eshop %>
 
 
 <%= content_for(:main)  do %>
 
-	<%= link_to time_edit_mycshop_mycshop_path(id:$cshop), target:"_blank" do%><div id="edit">✐編集する</div><% end %>
+	<%= link_to time_edit_myeshop_myeshop_path(id:$eshop), target:"_blank" do%><div id="edit">✐編集する</div><% end %>
 
 
     <div id="feature-wrapper">
 
 	      <div id="box1">	
-		      <li id="b1">日曜日（午前）<%= $cshop.sunam1 %>:<%= $cshop.sunam2 %>~<%= $cshop.sunam3 %>:<%= $cshop.sunam4 %></li>
-		      <li id="b1">日曜日（午後）<%= $cshop.sunpm1 %>:<%= $cshop.sunpm2 %>~<%= $cshop.sunpm3 %>:<%= $cshop.sunpm4 %></li><br/>
-		      <li id="b1">月曜日（午前）<%= $cshop.monam1 %>:<%= $cshop.monam2 %>~<%= $cshop.monam3 %>:<%= $cshop.monam4 %></li>
-		      <li id="b1">月曜日（午後）<%= $cshop.monpm1 %>:<%= $cshop.monpm2 %>~<%= $cshop.monpm3 %>:<%= $cshop.monam4 %></li><br/>
-		      <li id="b1">火曜日（午前）<%= $cshop.tueam1 %>:<%= $cshop.tueam2 %>~<%= $cshop.tueam3 %>:<%= $cshop.tueam4 %></li>
-		      <li id="b1">火曜日（午後）<%= $cshop.tuepm1 %>:<%= $cshop.tuepm2 %>~<%= $cshop.tuepm3 %>:<%= $cshop.tuepm4 %></li><br/>
-		      <li id="b1">水曜日（午前）<%= $cshop.wedam1 %>:<%= $cshop.wedam2 %>~<%= $cshop.wedam3 %>:<%= $cshop.wedam4 %></li>
-		      <li id="b1">水曜日（午後）<%= $cshop.wedpm1 %>:<%= $cshop.wedpm2 %>~<%= $cshop.wedpm3 %>:<%= $cshop.wedpm4 %></li><br/>
-		      <li id="b1">木曜日（午前）<%= $cshop.thuam1 %>:<%= $cshop.thuam2 %>~<%= $cshop.thuam3 %>:<%= $cshop.thuam4 %></li>
-		      <li id="b1">木曜日（午後）<%= $cshop.thupm1 %>:<%= $cshop.thupm2 %>~<%= $cshop.thupm3 %>:<%= $cshop.thupm4 %></li><br/>
-		      <li id="b1">金曜日（午前）<%= $cshop.friam1 %>:<%= $cshop.friam2 %>~<%= $cshop.friam3 %>:<%= $cshop.friam4 %></li>
-		      <li id="b1">金曜日（午後）<%= $cshop.fripm1 %>:<%= $cshop.fripm2 %>~<%= $cshop.fripm3 %>:<%= $cshop.fripm4 %></li><br/>
-		      <li id="b1">土曜日（午前）<%= $cshop.satam1 %>:<%= $cshop.satam2 %>~<%= $cshop.satam3 %>:<%= $cshop.satam4 %></li>
-		      <li id="b1">土曜日（午後）<%= $cshop.satpm1 %>:<%= $cshop.satpm2 %>~<%= $cshop.satpm3 %>:<%= $cshop.satpm4 %></li>
+		      <li id="b1">日曜日（午前）<%= $eshop.sunam1 %>:<%= $eshop.sunam2 %>~<%= $eshop.sunam3 %>:<%= $eshop.sunam4 %></li>
+		      <li id="b1">日曜日（午後）<%= $eshop.sunpm1 %>:<%= $eshop.sunpm2 %>~<%= $eshop.sunpm3 %>:<%= $eshop.sunpm4 %></li><br/>
+		      <li id="b1">月曜日（午前）<%= $eshop.monam1 %>:<%= $eshop.monam2 %>~<%= $eshop.monam3 %>:<%= $eshop.monam4 %></li>
+		      <li id="b1">月曜日（午後）<%= $eshop.monpm1 %>:<%= $eshop.monpm2 %>~<%= $eshop.monpm3 %>:<%= $eshop.monam4 %></li><br/>
+		      <li id="b1">火曜日（午前）<%= $eshop.tueam1 %>:<%= $eshop.tueam2 %>~<%= $eshop.tueam3 %>:<%= $eshop.tueam4 %></li>
+		      <li id="b1">火曜日（午後）<%= $eshop.tuepm1 %>:<%= $eshop.tuepm2 %>~<%= $eshop.tuepm3 %>:<%= $eshop.tuepm4 %></li><br/>
+		      <li id="b1">水曜日（午前）<%= $eshop.wedam1 %>:<%= $eshop.wedam2 %>~<%= $eshop.wedam3 %>:<%= $eshop.wedam4 %></li>
+		      <li id="b1">水曜日（午後）<%= $eshop.wedpm1 %>:<%= $eshop.wedpm2 %>~<%= $eshop.wedpm3 %>:<%= $eshop.wedpm4 %></li><br/>
+		      <li id="b1">木曜日（午前）<%= $eshop.thuam1 %>:<%= $eshop.thuam2 %>~<%= $eshop.thuam3 %>:<%= $eshop.thuam4 %></li>
+		      <li id="b1">木曜日（午後）<%= $eshop.thupm1 %>:<%= $eshop.thupm2 %>~<%= $eshop.thupm3 %>:<%= $eshop.thupm4 %></li><br/>
+		      <li id="b1">金曜日（午前）<%= $eshop.friam1 %>:<%= $eshop.friam2 %>~<%= $eshop.friam3 %>:<%= $eshop.friam4 %></li>
+		      <li id="b1">金曜日（午後）<%= $eshop.fripm1 %>:<%= $eshop.fripm2 %>~<%= $eshop.fripm3 %>:<%= $eshop.fripm4 %></li><br/>
+		      <li id="b1">土曜日（午前）<%= $eshop.satam1 %>:<%= $eshop.satam2 %>~<%= $eshop.satam3 %>:<%= $eshop.satam4 %></li>
+		      <li id="b1">土曜日（午後）<%= $eshop.satpm1 %>:<%= $eshop.satpm2 %>~<%= $eshop.satpm3 %>:<%= $eshop.satpm4 %></li>
 	      </div>
 
     </div>

@@ -2,9 +2,9 @@
 
 <%= content_for(:main)  do %>
 
-    <%= form_for($bshop, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
-        <%= render 'shared/editer/bshop/home', bshop: $bshop %>
-        <%= render 'new2', bshop: $bshop %>
+    <%= form_for($fshop, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
+        <%= render 'shared/editer/fshop/home', fshop: $fshop %>
+        <%= render 'new2', fshop: $fshop %>
     <% end %>
 
 <% end %>

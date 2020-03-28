@@ -3,7 +3,7 @@
 <%= content_for(:main)  do %>
 
 	<%= form_for($cshop, :url => {:action => "update"}, :html => {:multipart => true}) do |form| %>
-		<%= render 'shared/editer/ashop/time', cshop: $cshop %>
+		<%= render 'shared/editer/cshop/time', cshop: $cshop %>
 	<% end %>
 
 <% end %>

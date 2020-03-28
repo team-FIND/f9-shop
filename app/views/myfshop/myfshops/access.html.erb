@@ -10,25 +10,25 @@
     
 	<% @page_title = "アクセス" %>
 
-	<%= render 'form', bshop: $bshop %>
+	<%= render 'form', fshop: $fshop %>
 
 
 <%= content_for(:main)  do %>
 
-	<%= link_to access_edit_mybshop_mybshop_path(id:$bshop), target:"_blank" do%><div id="edit">✐編集する</div><% end %>
+	<%= link_to access_edit_myfshop_myfshop_path(id:$fshop), target:"_blank" do%><div id="edit">✐編集する</div><% end %>
       
     <div id="feature-wrapper">
 
 	      <div id="box1">	
 		    　 <li id="a1">住所</li><br>
-		      <li id="b1">〒:<%= $bshop.postnumb %></li><br>
-		      <li id="b1"><%= $bshop.address %></li><br>
+		      <li id="b1">〒:<%= $fshop.postnumb %></li><br>
+		      <li id="b1"><%= $fshop.address %></li><br>
 	      </div>
 
 	      <div id="box2">	
 		    　 <li id="a1">最寄り駅</li><br>
-		      <li id="b2">バス：<%= $bshop.bus %></li><br>
-		      <li id="b2">電車：<%= $bshop.train %></li><br>
+		      <li id="b2">バス：<%= $fshop.bus %></li><br>
+		      <li id="b2">電車：<%= $fshop.train %></li><br>
 	      </div>
 
 	      <div id="box2">

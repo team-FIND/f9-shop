@@ -2,8 +2,8 @@
 
 <%= content_for(:main)  do %>
 
-	<%= form_for($cshop, :url => {:action => "update"}, :html => {:multipart => true}) do |form| %>
-		<%= render 'shared/editer/cshop/access', cshop: $cshop %>
+	<%= form_for($eshop, :url => {:action => "update"}, :html => {:multipart => true}) do |form| %>
+		<%= render 'shared/editer/eshop/access', eshop: $eshop %>
 	<% end %>
 
 <% end %>
