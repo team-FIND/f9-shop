@@ -1,69 +1,69 @@
 class Myhshop::MyhstaffsController < ApplicationController
-    before_action :set_dstaff, only: [:show, :edit, :update, :destroy]
+    before_action :set_hstaff, only: [:show, :edit, :update, :destroy]
     protect_from_forgery except: :create
     before_action :set_current_user
     before_action :configure_permitted_parameters, if: :devise_controller?
   
     def index
-      $dstaffc = Hstaffc.where(:id => params[:mydstaffc_id]).first
-      $hstaffs = $dstaffc.hstaffs.all
+      $hstaffc = Hstaffc.where(:id => params[:myhstaffc_id]).first
+      $hstaffs = $hstaffc.hstaffs.all
       render :layout => "menu_category"
     end
   
     def show
-      $dstaffc = Hstaffc.where(:id => params[:mydstaffc_id]).first
-      $hstaffs = $dstaffc.hstaffs.all
+      $hstaffc = Hstaffc.where(:id => params[:myhstaffc_id]).first
+      $hstaffs = $hstaffc.hstaffs.all
       render :layout => "shop_staff"
     end
   
     def new
-      $dstaffc = Hstaffc.where(:id => params[:mydstaffc_id]).first
-      $dstaff = $dstaffc.hstaffs.build
+      $hstaffc = Hstaffc.where(:id => params[:myhstaffc_id]).first
+      $hstaff = $hstaffc.hstaffs.build
       render :layout => "shop/ashop/edit"
     end
   
     def edit
-      $dstaff.staff_img.cache! unless $dstaff.staff_img.blank?
+      $hstaff.staff_img.cache! unless $hstaff.staff_img.blank?
       render :layout => "shop/ashop/edit"
     end
   
     def staff_img
-      $dstaff.staff_img.cache! unless $dstaff.staff_img.blank? 
+      $hstaff.staff_img.cache! unless $hstaff.staff_img.blank? 
       render :layout => "shop/ashop/edit"
     end
   
     def create
-      $dstaffc = Hstaffc.where(:id => params[:mydstaffc_id]).first
-      $dstaff = $dstaffc.hstaffs.build(dstaff_params)
-      $dstaff.user_id = current_user.id
+      $hstaffc = Hstaffc.where(:id => params[:myhstaffc_id]).first
+      $hstaff = $hstaffc.hstaffs.build(hstaff_params)
+      $hstaff.user_id = current_user.id
   
       respond_to do |format|
-        if $dstaff.save
-          format.html { redirect_to mydshop_mydstaffc_mydstaff_path(mydstaffc_id:$dstaffc, id:$dstaff), notice: 'Grand was successfully created.' }
-          format.json { render :show, status: :created, location: $dstaff }
+        if $hstaff.save
+          format.html { redirect_to myhshop_myhstaffc_myhstaff_path(myhstaffc_id:$hstaffc, id:$hstaff), notice: 'Grand was successfully created.' }
+          format.json { render :show, status: :created, location: $hstaff }
         else
           format.html { render :new }
-          format.json { render json: $dstaff.errors, status: :unprocessable_entity }
+          format.json { render json: $hstaff.errors, status: :unprocessable_entity }
         end
       end
     end
   
     def update
       respond_to do |format|
-        if $dstaff.update(dstaff_params)
-          format.html { redirect_to mydshop_mydstaffc_mydstaff_path(mydstaffc_id:$dstaffc, id:$dstaff), notice: 'Menu was successfully updated.' }
-          format.json { render :show, status: :ok, location: $dstaff }
+        if $hstaff.update(hstaff_params)
+          format.html { redirect_to myhshop_myhstaffc_myhstaff_path(myhstaffc_id:$hstaffc, id:$hstaff), notice: 'Menu was successfully updated.' }
+          format.json { render :show, status: :ok, location: $hstaff }
         else
           format.html { render :edit }
-          format.json { render json: $dstaff.errors, status: :unprocessable_entity }
+          format.json { render json: $hstaff.errors, status: :unprocessable_entity }
         end
       end
     end
 
     def destroy
-      $dstaff.destroy
+      $hstaff.destroy
       respond_to do |format|
-        format.html { redirect_to mydshop_mydstaffc_myhstaffs_path(mydstaffc_id:$dstaffc), notice: 'Menu was successfully destroyed.' }
+        format.html { redirect_to myhshop_myhstaffc_myhstaffs_path(myhstaffc_id:$hstaffc), notice: 'Menu was successfully destroyed.' }
         format.json { head :no_content }
       end
     end
@@ -73,13 +73,13 @@ class Myhshop::MyhstaffsController < ApplicationController
     end
   
     private
-      def set_dstaff
-        $dstaffc = Hstaffc.where(:id => params[:mydstaffc_id]).first
-        $dstaff = $dstaffc.hstaffs.where(:id => params[:id]).first
+      def set_hstaff
+        $hstaffc = Hstaffc.where(:id => params[:myhstaffc_id]).first
+        $hstaff = $hstaffc.hstaffs.where(:id => params[:id]).first
       end
   
-      def dstaff_params
-        params.require(:dstaff).permit(:dstaffc_id, :user_id, :staff_img, :staff_img_cache, :name, :posittion1, :posittion2, :explain)
+      def hstaff_params
+        params.require(:hstaff).permit(:hstaffc_id, :user_id, :staff_img, :staff_img_cache, :name, :posittion1, :posittion2, :explain)
       end
   end
   
