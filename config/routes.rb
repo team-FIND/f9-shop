@@ -958,35 +958,35 @@ namespace :hsearch do resources :hsshops do
 end end
 
 namespace :hsearch do resources :hsshops do
-  resources :hsmenucs
+                      resources :hsmenucs
 end end
 
 namespace :hsearch do resources :hsmenucs do
-  resources :hsmenus
+                      resources :hsmenus
 end end
 
 namespace :hsearch do resources :hsmenus do
-  resources :sitems do
+                      resources :sitems do
 end end end
 
 namespace :hsearch do resources :hsshops do
-  resources :hssmenucs
+                      resources :hssmenucs
 end end
 
 namespace :hsearch do resources :hsshops do
-  resources :hsequipcs
+                      resources :hsequipcs
 end end
 
 namespace :hsearch do resources :hsequipcs do
-  resources :hsequips
+                      resources :hsequips
 end end
 
 namespace :hsearch do resources :hsshops do
-  resources :hsstaffcs
+                      resources :hsstaffcs
 end end
 
 namespace :hsearch do resources :hsstaffcs do
-  resources :hsstaffs
+                      resources :hsstaffs
 end end
 
 
