@@ -40,12 +40,12 @@ before_action :configure_permitted_parameters, if: :devise_controller?
   end
 
   def new
-    $hshop = hshop.new
+    $hshop = Hshop.new
     render :layout => "shop/ashop/edit"
   end
 
   def home_new
-    $hshop = hshop.new
+    $hshop = Hshop.new
     render :layout => "shop/ashop/edit"
     $hshop.topimage.cache! unless $hshop.topimage.blank?
     $hshop.shopimage1.cache! unless $hshop.shopimage1.blank?
@@ -110,7 +110,7 @@ before_action :configure_permitted_parameters, if: :devise_controller?
   end
 
   def create
-    $hshop = hshop.new(hshop_params)
+    $hshop = Hshop.new(hshop_params)
     $hshop.user_id = current_user.id
 
     respond_to do |format|

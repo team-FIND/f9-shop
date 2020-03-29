@@ -40,12 +40,12 @@ class Myeshop::MyeshopsController < ApplicationController
   end
 
   def new
-    $eshop = eshop.new
+    $eshop = Eshop.new
     render :layout => "shop/ashop/edit"
   end
 
   def home_new
-    $eshop = eshop.new
+    $eshop = Eshop.new
     render :layout => "shop/ashop/edit"
     $eshop.topimage.cache! unless $eshop.topimage.blank?
     $eshop.shopimage1.cache! unless $eshop.shopimage1.blank?
@@ -110,7 +110,7 @@ class Myeshop::MyeshopsController < ApplicationController
   end
 
   def create
-    $eshop = eshop.new(eshop_params)
+    $eshop = Eshop.new(eshop_params)
     $eshop.user_id = current_user.id
 
     respond_to do |format|
