@@ -1,43 +1,42 @@
 
 <%= content_for(:head)  do %>
-    <%= stylesheet_link_tag "shophome/bshop/each_staff", :media => "all" %>
-    <%= javascript_include_tag "city" %>
-    <title><%= page_title %></title>
+  <%= stylesheet_link_tag "shophome/bshop/each_equip", :media => "all" %>
+  <%= javascript_include_tag "city" %>
+  <title><%= page_title %></title>
 
 <% end %>
 
 <%= content_for(:main)  do %>
 
-  <% $estaffs.each do |estaff| %>
+<% $estaffs.each do |estaff| %>
 
-    <div id="each_staff">
+  <div id="each_equip">
 
-        <div id="staff">
-          
-                <div id="top_pic"> 
+      <div id="equip">
+        
+              <div id="top_pic"> 
 
-                    <% if estaff.staff_img.present? %>
-                      <%= link_to image_tag(estaff.staff_img_url), esearch_esstaffc_esstaff_path(id:estaff) %> 
-                    <% else %>
-                      <%= link_to image_tag("template/logo3"), esearch_esstaffc_esstaff_path(id:estaff) %> 
-                    <% end %>
-    
-                </div>
+                  <% if estaff.staff_img.present? %>
+                    <%= link_to image_tag(estaff.staff_img_url), esearch_esstaffc_esstaff_path(id:estaff) %> 
+                  <% else %>
+                    <%= link_to image_tag("template/logo3"), esearch_esstaffc_esstaff_path(id:estaff) %> 
+                  <% end %>
+  
+              </div>
 
-                <P id="staff_name">
-                    <% if estaff.name.present? %>
-                        <%= estaff.name %>
-                    <% else %>
-                        （未入力）
-                    <% end %>
-                </P>
+              <p id="equip_name">
+                  <% if estaff.name.present? %>
+                      <%= estaff.name %>
+                  <% else %>
+                      （未入力）
+                  <% end %>
+              </p>
 
-         </div>
-    </div>
-
-
-  <% end %>
+       </div>
+  </div>
 
 
 <% end %>
 
+
+<% end %>

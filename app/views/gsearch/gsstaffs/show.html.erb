@@ -2,18 +2,25 @@
 <% @page_title = $gstaff.name %> 
 <% @title2 = $gstaff.name %> 
 
-<% $gstaffs.each do |gstaff| %>
+<%= content_for(:main) do %>
 
-	<% if $gstaff.staff_img.present? %>
-		<% @image1 = image_tag $gstaff.staff_img_url %>
-	<% else %>
-		<% @image1 = image_tag "template/logo3" %>
-	<% end %>
+	<% $gstaffs.each do |gstaff| %>
 
-	<% if $gstaff.explain.present? %>
-			<p><%= $gshop.explain %></p>
-	<% else %>
-			<p>未入力</p>
+		<% if $gstaff.staff_img.present? %>
+			<div class="mainImage"><%= image_tag $gstaff.staff_img_url %></div>
+		<% else %>
+			<div class="mainImage"><%= image_tag "template/logo3" %></div>
+		<% end %>
+
 	<% end %>
+<% end %>
+
+<%= content_for(:second_feature) do %>
+
+			<% if $gstaff.explain.present? %>
+					<p><%= $gstaff.explain %></p>
+			<% else %>
+					<p>未入力</p>
+			<% end %>
 
 <% end %>
