@@ -2,18 +2,25 @@
 <% @page_title = $bstaff.name %> 
 <% @title2 = $bstaff.name %> 
 
-<% $bstaffs.each do |bstaff| %>
+<%= content_for(:main) do %>
 
-	<% if $bstaff.staff_img.present? %>
-		<% @image1 = image_tag $bstaff.staff_img_url %>
-	<% else %>
-		<% @image1 = image_tag "template/logo3" %>
-	<% end %>
+	<% $bstaffs.each do |bstaff| %>
 
-	<% if $bstaff.explain.present? %>
-			<p><%= $bshop.explain %></p>
-	<% else %>
-			<p>未入力</p>
+		<% if $bstaff.staff_img.present? %>
+			<div class="mainImage"><%= image_tag $bstaff.staff_img_url %></div>
+		<% else %>
+			<div class="mainImage"><%= image_tag "template/logo3" %></div>
+		<% end %>
+
 	<% end %>
+<% end %>
+
+<%= content_for(:second_feature) do %>
+
+			<% if $bstaff.explain.present? %>
+					<p><%= $bstaff.explain %></p>
+			<% else %>
+					<p>未入力</p>
+			<% end %>
 
 <% end %>

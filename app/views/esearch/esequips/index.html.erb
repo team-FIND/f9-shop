@@ -1,43 +1,42 @@
 
 <%= content_for(:head)  do %>
-    <%= stylesheet_link_tag "shophome/bshop/each_equip", :media => "all" %>
-    <%= javascript_include_tag "city" %>
-    <title><%= page_title %></title>
+  <%= stylesheet_link_tag "shophome/bshop/each_equip", :media => "all" %>
+  <%= javascript_include_tag "city" %>
+  <title><%= page_title %></title>
 
 <% end %>
 
 <%= content_for(:main)  do %>
 
-  <% $eequips.each do |eequip| %>
+<% $eequips.each do |eequip| %>
 
-    <div id="each_equip">
+  <div id="each_equip">
 
-        <div id="equip">
-          
-                <div id="top_pic"> 
+      <div id="equip">
+        
+              <div id="top_pic"> 
 
-                    <% if eequip.equip_img.present? %>
-                      <%= link_to image_tag(eequip.equip_img_url), esearch_esequipc_esequip_path(id:eequip) %> 
-                    <% else %>
-                      <%= link_to image_tag("template/logo3"), esearch_esequipc_esequip_path(id:eequip) %> 
-                    <% end %>
-    
-                </div>
+                  <% if eequip.equip_img.present? %>
+                    <%= link_to image_tag(eequip.equip_img_url), esearch_esequipc_esequip_path(id:eequip) %> 
+                  <% else %>
+                    <%= link_to image_tag("template/logo3"), esearch_esequipc_esequip_path(id:eequip) %> 
+                  <% end %>
+  
+              </div>
 
-                <P id="equip_name">
-                    <% if eequip.name.present? %>
-                        <%= eequip.name %>
-                    <% else %>
-                        （未入力）
-                    <% end %>
-                </P>
+              <p id="equip_name">
+                  <% if eequip.name.present? %>
+                      <%= eequip.name %>
+                  <% else %>
+                      （未入力）
+                  <% end %>
+              </p>
 
-         </div>
-    </div>
-
-
-  <% end %>
+       </div>
+  </div>
 
 
 <% end %>
 
+
+<% end %>

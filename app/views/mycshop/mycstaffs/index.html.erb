@@ -26,13 +26,13 @@
     
                 </div>
 
-                <P id="equip_name">
+                <p id="equip_name">
                     <% if cstaff.name.present? %>
                         <%= cstaff.name %>
                     <% else %>
                         （未入力）
                     <% end %>
-                </P>
+                </p>
 
                 <p id="edit">
                     <%= link_to '✐編集', edit_mycshop_mycstaffc_mycstaff_path(id:cstaff) %>

@@ -2,18 +2,25 @@
 <% @page_title = $cstaff.name %> 
 <% @title2 = $cstaff.name %> 
 
-<% $cstaffs.each do |cstaff| %>
+<%= content_for(:main) do %>
 
-	<% if $cstaff.staff_img.present? %>
-		<% @image1 = image_tag $cstaff.staff_img_url %>
-	<% else %>
-		<% @image1 = image_tag "template/logo3" %>
-	<% end %>
+	<% $cstaffs.each do |cstaff| %>
 
-	<% if $cstaff.explain.present? %>
-			<p><%= $cshop.explain %></p>
-	<% else %>
-			<p>未入力</p>
+		<% if $cstaff.staff_img.present? %>
+			<div class="mainImage"><%= image_tag $cstaff.staff_img_url %></div>
+		<% else %>
+			<div class="mainImage"><%= image_tag "template/logo3" %></div>
+		<% end %>
+
 	<% end %>
+<% end %>
+
+<%= content_for(:second_feature) do %>
+
+			<% if $cstaff.explain.present? %>
+					<p><%= $cstaff.explain %></p>
+			<% else %>
+					<p>未入力</p>
+			<% end %>
 
 <% end %>

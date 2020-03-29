@@ -6,11 +6,13 @@
 	    <title><%= page_title %></title>
 	<% end %>
 
-	<%= content_for(:uheader2)  do %>
-	    <%if user_signed_in? && $eshop.user_id == current_user.id %>
-           <%= link_to @edit, target:"_blank" do%><div id="edit">✐編集する</div><% end %>
-        <% end %>
-	<% end %>
+	<%= content_for(:home_edit)  do %>
+        <div id="home_edit_btn">
+			<%if user_signed_in? && $eshop.user_id == current_user.id %>
+						<%= link_to img_edit_myeshop_myeshop_path, target:"_blank" do%><div id="edit">✐編集する</div><% end %>
+			<% end %>
+        </div>
+    <% end %>
 
 	<%= content_for(:main)  do %>
 		<div id="main-feature">

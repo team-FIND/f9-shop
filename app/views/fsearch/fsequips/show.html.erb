@@ -2,18 +2,24 @@
 <% @page_title = $fequip.name %> 
 <% @title2 = $fequip.name %> 
 
-<% $fequips.each do |fequip| %>
+<%= content_for(:main) do %>
+	<% $fequips.each do |fequip| %>
 
-	<% if $fequip.equip_img.present? %>
-		<% @image1 = image_tag $fequip.equip_img_url %>
-	<% else %>
-		<% @image1 = image_tag "template/logo3" %>
-	<% end %>
+		<% if $fequip.equip_img.present? %>
+			<div class="mainImage"><%= image_tag $fequip.equip_img_url %></div>
+		<% else %>
+			<div class="mainImage"><%= image_tag "template/logo3" %></div>
+		<% end %>
 
-	<% if $fequip.explain.present? %>
-			<p><%= $fshop.explain %></p>
-	<% else %>
-			<p>未入力</p>
 	<% end %>
+<% end %>
+
+<%= content_for(:second_feature) do %>
+
+			<% if $fequip.explain.present? %>
+					<p><%= $fequip.explain %></p>
+			<% else %>
+					<p>未入力</p>
+			<% end %>
 
 <% end %>

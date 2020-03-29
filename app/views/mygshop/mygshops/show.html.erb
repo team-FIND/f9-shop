@@ -8,9 +8,9 @@
 
 	<%= content_for(:home_edit)  do %>
         <div id="home_edit_btn">
-        <%if user_signed_in? && $gshop.user_id == current_user.id %>
-                    <%= link_to img_edit_mygshop_mygshop_path, target:"_blank" do%><div id="edit">✐編集する</div><% end %>
-        <% end %>
+			<%if user_signed_in? && $gshop.user_id == current_user.id %>
+						<%= link_to img_edit_mygshop_mygshop_path, target:"_blank" do%><div id="edit">✐編集する</div><% end %>
+			<% end %>
         </div>
     <% end %>
 
