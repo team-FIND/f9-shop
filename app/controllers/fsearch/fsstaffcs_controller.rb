@@ -17,7 +17,7 @@ class Fsearch::FsstaffcsController < ApplicationController
   
       def set_fstaffc
         $fsshop = Fshop.where(:id => params[:fsshop_id]).first
-        $bsstaffc = $fshop.fstaffcs.where(:id => params[:id]).first
+        $fsstaffc = $fshop.fstaffcs.where(:id => params[:id]).first
       end
       
       def fstaffc_params

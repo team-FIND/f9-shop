@@ -17,7 +17,7 @@ class Fsearch::FsequipcsController < ApplicationController
   
       def set_fequipc
         $fsshop = Fshop.where(:id => params[:fsshop_id]).first
-        $bsequipc = $fshop.fequipcs.where(:id => params[:id]).first
+        $fsequipc = $fshop.fequipcs.where(:id => params[:id]).first
       end
       
       def fequipc_params

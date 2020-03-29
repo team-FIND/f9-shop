@@ -12,11 +12,11 @@ before_action :configure_permitted_parameters, if: :devise_controller?
 
   def show
     $eshop = Eshop.where(:id => params[:id]).first
-    render :layout => "shop_home"
     $emenucs = $eshop.emenucs.all
     $esmenucs = $eshop.esmenucs.all
     $eequipcs = $eshop.eequipcs.all
     $estaffcs = $eshop.estaffcs.all
+    render :layout => "shop_home"s
   end
 
   def contact
