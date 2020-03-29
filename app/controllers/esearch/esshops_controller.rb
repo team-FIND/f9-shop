@@ -16,7 +16,7 @@ before_action :configure_permitted_parameters, if: :devise_controller?
     $esmenucs = $eshop.esmenucs.all
     $eequipcs = $eshop.eequipcs.all
     $estaffcs = $eshop.estaffcs.all
-    render :layout => "shop_home"s
+    render :layout => "shop_home"
   end
 
   def contact
