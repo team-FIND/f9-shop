@@ -11,7 +11,7 @@ class Hsearch::HsstaffcsController < ApplicationController
   
     def show
       redirect_to hsearch_hsstaffc_hsstaffs_path(hsstaffc_id:$hsstaffc)
-    endß
+    end
   
     private
   
@@ -23,6 +23,5 @@ class Hsearch::HsstaffcsController < ApplicationController
       def hstaffc_params
         params.require(:hstaffc).permit(:hshop_id, :shopname, :user_id, :name)
       end
-      
+
   end
-  

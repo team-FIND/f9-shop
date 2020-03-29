@@ -17,7 +17,7 @@ class Gsearch::GsequipcsController < ApplicationController
   
       def set_gequipc
         $gsshop = Gshop.where(:id => params[:gsshop_id]).first
-        $bsequipc = $gshop.gequipcs.where(:id => params[:id]).first
+        $gsequipc = $gshop.gequipcs.where(:id => params[:id]).first
       end
       
       def gequipc_params
