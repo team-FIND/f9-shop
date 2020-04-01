@@ -1,6 +1,6 @@
 class Prefec < ApplicationRecord
 	
-	mount_uploader :citytop_img1, PictureUploader
+	mount_uploader :citytop_img, PictureUploader
 	mount_uploader :newshop_img1, PictureUploader
 	mount_uploader :newshop_img2, PictureUploader
 	mount_uploader :newshop_img3, PictureUploader

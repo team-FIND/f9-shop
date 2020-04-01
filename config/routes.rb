@@ -507,8 +507,11 @@ end
 
 
 resources :areas do
-    resources :prefecs
-end
+    resources :prefecs do
+    member do
+      get "topad", "newad", "recomad"
+    end
+end end
 
 
 

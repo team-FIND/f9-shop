@@ -1,0 +1,296 @@
+
+<%= content_for(:main)  do %>
+	
+	<%= form_for($prefec, :url => {:action => "update"}, :html => {:multipart => true}) do |form| %>
+		<%= stylesheet_link_tag "cityad", :media => "all" %>
+	
+	<div class="section" id="page">
+			<h1>ホーム画面を編集する</h1>
+	
+			<div id="field">
+				<%= form.label :shopname do %><label for="labelx">:広告１</label><% end %><br>
+				<%= form.text_field :adshop_name1 %>
+			</div>
+	
+			<div id="field-pic">
+	
+				<%= form.label :adshop_img1 do %><label for="labelx">:広告１</label><% end %><br>
+	
+				<label for="labely"><%= form.file_field :adshop_img1, id: :prefec_adshop_img1 , id: "file" %></label>
+	
+				<p id="imgdelete">*画像を削除する  <%= form.check_box :remove_adshop_img1 %></p>
+				<%= form.hidden_field :adshop_img1_cache %><br>
+	
+				<div id="thumb" onClick="$('#file').click()">
+				<% if $prefec.adshop_img1.present? %>
+					<div id="updimg"><%= image_tag prefec.adshop_img1.to_s if $prefec.adshop_img1? %></div> 
+				<% else %>
+					<div id="upimg"><%= image_tag("template/img") %></div>
+				<% end %>
+				</div>
+	
+			</div>
+	
+			<div id="field">
+				<%= form.label :shopname do %><label for="labelx">:広告2</label><% end %><br>
+				<%= form.text_field :adshop_name2 %>
+			</div>
+	
+			<div id="field-pic">
+	
+				<%= form.label :adshop_img2 do %><label for="labelx">:広告2</label><% end %><br>
+	
+				<label for="labely"><%= form.file_field :adshop_img2, id: :prefec_adshop_img2 , id: "file" %></label>
+	
+				<p id="imgdelete">*画像を削除する  <%= form.check_box :remove_adshop_img2 %></p>
+				<%= form.hidden_field :adshop_img2_cache %><br>
+	
+				<div id="thumb" onClick="$('#file').click()">
+				<% if $prefec.adshop_img2.present? %>
+					<div id="updimg"><%= image_tag prefec.adshop_img2.to_s if $prefec.adshop_img2? %></div> 
+				<% else %>
+					<div id="upimg"><%= image_tag("template/img") %></div>
+				<% end %>
+				</div>
+	
+			</div>
+	
+			<div id="field">
+				<%= form.label :shopname do %><label for="labelx">:広告3</label><% end %><br>
+				<%= form.text_field :adshop_name3 %>
+			</div>
+	
+			<div id="field-pic">
+	
+				<%= form.label :adshop_img3 do %><label for="labelx">:広告3</label><% end %><br>
+	
+				<label for="labely"><%= form.file_field :adshop_img, id: :prefec_adshop_img3 , id: "file" %></label>
+	
+				<p id="imgdelete">*画像を削除する  <%= form.check_box :remove_adshop_img3 %></p>
+				<%= form.hidden_field :adshop_img3_cache %><br>
+	
+				<div id="thumb" onClick="$('#file').click()">
+				<% if $prefec.adshop_img3.present? %>
+					<div id="updimg"><%= image_tag prefec.adshop_img3.to_s if $prefec.adshop_img2? %></div> 
+				<% else %>
+					<div id="upimg"><%= image_tag("template/img") %></div>
+				<% end %>
+				</div>
+	
+			</div>
+	
+			<div id="field">
+				<%= form.label :shopname do %><label for="labelx">:広告4</label><% end %><br>
+				<%= form.text_field :adshop_name4 %>
+			</div>
+	
+			<div id="field-pic">
+	
+				<%= form.label :adshop_img4 do %><label for="labelx">:広告4</label><% end %><br>
+	
+				<label for="labely"><%= form.file_field :adshop_img, id: :prefec_adshop_img4 , id: "file" %></label>
+	
+				<p id="imgdelete">*画像を削除する  <%= form.check_box :remove_adshop_img4 %></p>
+				<%= form.hidden_field :adshop_img4_cache %><br>
+	
+				<div id="thumb" onClick="$('#file').click()">
+				<% if $prefec.adshop_img4.present? %>
+					<div id="updimg"><%= image_tag prefec.adshop_img4.to_s if $prefec.adshop_img2? %></div> 
+				<% else %>
+					<div id="upimg"><%= image_tag("template/img") %></div>
+				<% end %>
+				</div>
+	
+			</div>
+	
+			<div id="field">
+				<%= form.label :shopname do %><label for="labelx">:広告5</label><% end %><br>
+				<%= form.text_field :adshop_name5 %>
+			</div>
+	
+			<div id="field-pic">
+	
+				<%= form.label :adshop_img5 do %><label for="labelx">:広告5</label><% end %><br>
+	
+				<label for="labely"><%= form.file_field :adshop_img, id: :prefec_adshop_img5 , id: "file" %></label>
+	
+				<p id="imgdelete">*画像を削除する  <%= form.check_box :remove_adshop_img5 %></p>
+				<%= form.hidden_field :adshop_img5_cache %><br>
+	
+				<div id="thumb" onClick="$('#file').click()">
+				<% if $prefec.adshop_img5.present? %>
+					<div id="updimg"><%= image_tag prefec.adshop_img5.to_s if $prefec.adshop_img2? %></div> 
+				<% else %>
+					<div id="upimg"><%= image_tag("template/img") %></div>
+				<% end %>
+				</div>
+	
+			</div>
+	
+			<div id="field">
+				<%= form.label :shopname do %><label for="labelx">:広告6</label><% end %><br>
+				<%= form.text_field :adshop_name6 %>
+			</div>
+	
+			<div id="field-pic">
+	
+				<%= form.label :adshop_img6 do %><label for="labelx">:広告6</label><% end %><br>
+	
+				<label for="labely"><%= form.file_field :adshop_img, id: :prefec_adshop_img6 , id: "file" %></label>
+	
+				<p id="imgdelete">*画像を削除する  <%= form.check_box :remove_adshop_img6 %></p>
+				<%= form.hidden_field :adshop_img6_cache %><br>
+	
+				<div id="thumb" onClick="$('#file').click()">
+				<% if $prefec.adshop_img6.present? %>
+					<div id="updimg"><%= image_tag prefec.adshop_img6.to_s if $prefec.adshop_img2? %></div> 
+				<% else %>
+					<div id="upimg"><%= image_tag("template/img") %></div>
+				<% end %>
+				</div>
+	
+			</div>
+	
+			<div id="field">
+				<%= form.label :shopname do %><label for="labelx">:広告7</label><% end %><br>
+				<%= form.text_field :adshop_name7 %>
+			</div>
+	
+			<div id="field-pic">
+	
+				<%= form.label :adshop_img7 do %><label for="labelx">:広告7</label><% end %><br>
+	
+				<label for="labely"><%= form.file_field :adshop_img, id: :prefec_adshop_img7 , id: "file" %></label>
+	
+				<p id="imgdelete">*画像を削除する  <%= form.check_box :remove_adshop_img7 %></p>
+				<%= form.hidden_field :adshop_img7_cache %><br>
+	
+				<div id="thumb" onClick="$('#file').click()">
+				<% if $prefec.adshop_img7.present? %>
+					<div id="updimg"><%= image_tag prefec.adshop_img7.to_s if $prefec.adshop_img2? %></div> 
+				<% else %>
+					<div id="upimg"><%= image_tag("template/img") %></div>
+				<% end %>
+				</div>
+	
+			</div>
+	
+			<div id="field">
+				<%= form.label :shopname do %><label for="labelx">:広告8</label><% end %><br>
+				<%= form.text_field :adshop_name8 %>
+			</div>
+	
+			<div id="field-pic">
+	
+				<%= form.label :adshop_img8 do %><label for="labelx">:広告8</label><% end %><br>
+	
+				<label for="labely"><%= form.file_field :adshop_img, id: :prefec_adshop_img8 , id: "file" %></label>
+	
+				<p id="imgdelete">*画像を削除する  <%= form.check_box :remove_adshop_img8 %></p>
+				<%= form.hidden_field :adshop_img8_cache %><br>
+	
+				<div id="thumb" onClick="$('#file').click()">
+				<% if $prefec.adshop_img8.present? %>
+					<div id="updimg"><%= image_tag prefec.adshop_img8.to_s if $prefec.adshop_img2? %></div> 
+				<% else %>
+					<div id="upimg"><%= image_tag("template/img") %></div>
+				<% end %>
+				</div>
+	
+			</div>
+			
+			<div id="field">
+				<%= form.label :shopname do %><label for="labelx">:広告9</label><% end %><br>
+				<%= form.text_field :adshop_name9 %>
+			</div>
+	
+			<div id="field-pic">
+	
+				<%= form.label :adshop_img9 do %><label for="labelx">:広告9</label><% end %><br>
+	
+				<label for="labely"><%= form.file_field :adshop_img, id: :prefec_adshop_img9 , id: "file" %></label>
+	
+				<p id="imgdelete">*画像を削除する  <%= form.check_box :remove_adshop_img9 %></p>
+				<%= form.hidden_field :adshop_img9_cache %><br>
+	
+				<div id="thumb" onClick="$('#file').click()">
+				<% if $prefec.adshop_img9.present? %>
+					<div id="updimg"><%= image_tag prefec.adshop_img9.to_s if $prefec.adshop_img2? %></div> 
+				<% else %>
+					<div id="upimg"><%= image_tag("template/img") %></div>
+				<% end %>
+				</div>
+	
+			</div>
+	
+			<div id="field">
+				<%= form.label :shopname do %><label for="labelx">:広告10</label><% end %><br>
+				<%= form.text_field :adshop_name10 %>
+			</div>
+	
+			<div id="field-pic">
+	
+				<%= form.label :adshop_img10 do %><label for="labelx">:広告10</label><% end %><br>
+	
+				<label for="labely"><%= form.file_field :adshop_img, id: :prefec_adshop_img10 , id: "file" %></label>
+	
+				<p id="imgdelete">*画像を削除する  <%= form.check_box :remove_adshop_img10 %></p>
+				<%= form.hidden_field :adshop_img10_cache %><br>
+	
+				<div id="thumb" onClick="$('#file').click()">
+				<% if $prefec.adshop_img10.present? %>
+					<div id="updimg"><%= image_tag prefec.adshop_img10.to_s if $prefec.adshop_img2? %></div> 
+				<% else %>
+					<div id="upimg"><%= image_tag("template/img") %></div>
+				<% end %>
+				</div>
+	
+			</div>
+	
+			<div id="actions">
+					  <%= form.submit(:決定) %>
+			</div>
+			
+	</div>
+	  
+	  
+	  <% end %>
+	
+	  <div id="prev">
+	  <%= link_to 'Show', $prefec %><br />
+	  <%= link_to '戻る', area_prefecs_path %>
+	  <%= link_to '戻る', newad_area_prefec_path(prefec_id:$prefec) %>
+	</div>
+	
+	</div>
+	
+	<% end %>
+	
+	<script>
+	
+	$(function(){
+	  $fileField = $('#file')
+	 
+	  // 選択された画像を取得し表示
+	  $($fileField).on('change', $fileField, function(e) {
+		file = e.target.files[3]
+		reader = new FileReader(),
+		$preview = $("#thumb");
+	 
+		reader.onload = (function(file) {
+		  return function(e) {
+			$preview.empty();
+			$preview.append($('<img>').attr({
+			  src: e.target.result,
+			  width: "13%",
+			  class: "preview",
+			  title: file.name
+			}));
+		  };
+		})(file);
+		reader.readAsDataURL(file);
+	  });
+	});
+	
+	</script>
+	

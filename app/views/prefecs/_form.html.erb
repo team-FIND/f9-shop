@@ -3,25 +3,25 @@
 <%= form_for($prefec, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
 
   <% if prefec.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(prefec.errors.count, "error") %> prohibited this prefec from being saved:</h2>
+      <div id="error_explanation">
+        
+          <h2><%= pluralize(prefec.errors.count, "error") %> prohibited this prefec from being saved:</h2>
 
-      <ul>
-      <% prefec.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+          <ul>
+              <% prefec.errors.full_messages.each do |message| %><li><%= message %></li><% end %>
+          </ul>
+
+      </div>
   <% end %>
 
-   <div class="field">
-      <p id="st3">
-        <%= form.label :area_id %><br>
-        <%= form.text_field :area_id %>
-      </p>
-    </div>
+        <div class="field">
+          <p id="st3">
+            <%= form.label :area_id %><br>
+            <%= form.text_field :area_id %>
+          </p>
+        </div>
 
-      <div class="field">
+        <div class="field">
           <p id="st3">
             <%= form.label :name %><br>
             <%= form.text_field :name %>
@@ -30,115 +30,22 @@
 
         <div class="field">
           <p id="st3">
-            <%= form.label :topshop_img1 %><br>
-            <%= form.text_field :topshop_img1 %>
+            <%= form.label :citytop_img %><br>
+            <%= form.text_field :citytop_img %>
           </p>
         </div>
 
         <div class="field">
           <p id="st3">
-            <%= form.label :topshop_name1 %><br>
-            <%= form.text_field :topshop_name1 %>
+            <%= form.label :citytop_name %><br>
+            <%= form.text_field :citytop_name %>
           </p>
         </div>
 
-        <div class="field">
-          <p id="st3">
-            <%= form.label :newshop_img1 %><br>
-            <%= form.text_field :newshop_img1 %>
-          </p>
+        <div class="actions">
+          <div id="new">
+            <%= form.submit %>
+          </div>
         </div>
-
-        <div class="field">
-          <p id="st3">
-            <%= form.label :newshop_name1 %><br>
-            <%= form.text_field :newshop_name1 %>
-          </p>
-        </div>
-        
-        <div class="field">
-          <p id="st3">
-            <%= form.label :newshop_img2 %><br>
-            <%= form.text_field :newshop_img2 %>
-          </p>
-        </div>
-
-        <div class="field">
-          <p id="st3">
-            <%= form.label :newshop_name3 %><br>
-            <%= form.text_field :newshop_name3 %>
-          </p>
-        </div>
-
-        <div class="field">
-          <p id="st3">
-            <%= form.label :newshop_img4 %><br>
-            <%= form.text_field :newshop_img4 %>
-          </p>
-        </div>
-
-        <div class="field">
-          <p id="st3">
-            <%= form.label :newshop_name5 %><br>
-            <%= form.text_field :newshop_name5 %>
-          </p>
-        </div>
-        
-        <div class="field">
-          <p id="st3">
-            <%= form.label :newshop_img6 %><br>
-            <%= form.text_field :newshop_img6 %>
-          </p>
-        </div>
-
-        <div class="field">
-          <p id="st3">
-            <%= form.label :newshop_name7 %><br>
-            <%= form.text_field :newshop_name7 %>
-          </p>
-        </div>
-
-        <div class="field">
-          <p id="st3">
-            <%= form.label :newshop_img8 %><br>
-            <%= form.text_field :newshop_img8 %>
-          </p>
-        </div>
-
-        <div class="field">
-          <p id="st3">
-            <%= form.label :newshop_name9 %><br>
-            <%= form.text_field :newshop_name9 %>
-          </p>
-        </div>
-
-        <div class="field">
-          <p id="st3">
-            <%= form.label :newshop_img10 %><br>
-            <%= form.text_field :newshop_img10 %>
-          </p>
-        </div>
-
-        <div class="field">
-          <p id="st3">
-            <%= form.label :adshop_name1 %><br>
-            <%= form.text_field :newshop_name1 %>
-          </p>
-        </div>
-
-        <div class="field">
-          <p id="st3">
-            <%= form.label :adshop_img1 %><br>
-            <%= form.text_field :adshop_img1 %>
-          </p>
-        </div>
-
-
-
-    <div class="actions">
-      <div id="new">
-      <%= form.submit %>
-      </div>
-    </div>
 
 <% end %>

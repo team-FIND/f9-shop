@@ -1,0 +1,261 @@
+<%# $ashops.find_each(batch_size: 18) do |ashop| %>
+<%#= search_form_for $search, url: asearch_asshops_path do |form| %>
+<%#= javascript_include_tag "slick.min" %>
+
+
+<div id="second-feature">
+
+    <%= stylesheet_link_tag "slick/flickity.css", :media => "screen" %>
+    <%= stylesheet_link_tag "slick/flickity.min.css", :media => "screen" %>
+    <%= javascript_include_tag "flickity.pkgd.min" %>
+    <%= javascript_include_tag "flickity.pkgd" %>
+
+            
+            
+            <h1>F9の使い方</h1>
+            <div class="main-carousel">
+                <div class="carousel-cell">
+                    <%= link_to image_tag("template/homepics", { :alt =>'FIND　find F9　f9 f9-shop f9-shop.jp'}) %>
+                    <p>無料会員登録</p>
+                </div>
+                <div class="carousel-cell">
+                    <%= link_to image_tag("template/homepics", { :alt =>'FIND　find F9　f9 f9-shop f9-shop.jp'}) %>
+                    <p>お店を探す</p>
+                </div>
+                <div class="carousel-cell">
+                    <%= link_to image_tag("template/homepics", { :alt =>'FIND　find F9　f9 f9-shop f9-shop.jp'}) %>
+                    <p>写真を投稿する</p>
+                </div>
+                <div class="carousel-cell">
+                    <%= link_to image_tag("template/homepics", { :alt =>'FIND　find F9　f9 f9-shop f9-shop.jp'}) %>
+                    <p>自分のお店を作成する(その１)</p>
+                </div>
+                <div class="carousel-cell">
+                    <%= link_to image_tag("template/homepics", { :alt =>'FIND　find F9　f9 f9-shop f9-shop.jp'}) %>
+                    <p>自分のお店を作成する(その２)</p>
+                </div>
+                <div class="carousel-cell">
+                    <%= link_to image_tag("template/homepics", { :alt =>'FIND　find F9　f9 f9-shop f9-shop.jp'}) %>
+                    <p>自分のお店を作成する(その３)</p>
+                </div>
+            </div>
+
+            <h1>新オープン</h1>
+            <div class="main-carousel">
+              <div class="carousel-cell">
+                    <%= link_to image_tag("top/3", { :alt =>'FIND　find F9　f9 f9-shop f9-shop.jp'}) %>
+                    <p><%= @newadname1 %></p>
+              </div>
+              <div class="carousel-cell">
+                    <%= link_to image_tag("top/3", { :alt =>'FIND　find F9　f9 f9-shop f9-shop.jp'}) %>
+                    <p><%= @newadname2 %></p>
+              </div>
+              <div class="carousel-cell">
+                    <%= link_to image_tag("top/3", { :alt =>'FIND　find F9　f9 f9-shop f9-shop.jp'}) %>
+                    <p><%= @newadname3 %></p>
+              </div>
+              <div class="carousel-cell">
+                    <%= link_to image_tag("top/3", { :alt =>'FIND　find F9　f9 f9-shop f9-shop.jp'}) %>
+                    <p><%= @newadname4 %></p>
+              </div>
+              <div class="carousel-cell">
+                    <%= link_to image_tag("top/3", { :alt =>'FIND　find F9　f9 f9-shop f9-shop.jp'}) %>
+                    <p><%= @newadname5 %></p>
+              </div>
+              <div class="carousel-cell">
+                    <%= link_to image_tag("top/3", { :alt =>'FIND　find F9　f9 f9-shop f9-shop.jp'}) %>
+                    <p><%= @newadname6 %></p>
+              </div>
+              <div class="carousel-cell">
+                    <%= link_to image_tag("top/3", { :alt =>'FIND　find F9　f9 f9-shop f9-shop.jp'}) %>
+                    <p><%= @newadname7 %></p>
+              </div>
+              <div class="carousel-cell">
+                    <%= link_to image_tag("top/3", { :alt =>'FIND　find F9　f9 f9-shop f9-shop.jp'}) %>
+                    <p><%= @newadname8 %></p>
+              </div>
+              <div class="carousel-cell">
+                    <%= link_to image_tag("top/3", { :alt =>'FIND　find F9　f9 f9-shop f9-shop.jp'}) %>
+                    <p><%= @newadname9 %></p>
+              </div>
+              <div class="carousel-cell">
+                    <%= link_to image_tag("top/3", { :alt =>'FIND　find F9　f9 f9-shop f9-shop.jp'}) %>
+                    <p><%= @newadname10 %></p>
+              </div>
+            </div>
+
+
+            <h1>おすすめお店</h1>
+            <div class="main-carousel">
+                <div class="carousel-cell">
+                    <%= link_to image_tag("top/3", { :alt =>'FIND　find F9　f9 f9-shop f9-shop.jp'}) %>
+                    <p><%= @recomadname1 %></p>
+                </div>
+                <div class="carousel-cell">
+                    <%= link_to image_tag("top/3", { :alt =>'FIND　find F9　f9 f9-shop f9-shop.jp'}) %>
+                    <p><%= @recomadname2 %></p>
+                </div>
+                <div class="carousel-cell">
+                    <%= link_to image_tag("top/3", { :alt =>'FIND　find F9　f9 f9-shop f9-shop.jp'}) %>
+                    <p><%= @recomadname3 %></p>
+                </div>
+                <div class="carousel-cell">
+                    <%= link_to image_tag("top/3", { :alt =>'FIND　find F9　f9 f9-shop f9-shop.jp'}) %>
+                    <p><%= @recomadname4 %></p>
+                </div>
+                <div class="carousel-cell">
+                    <%= link_to image_tag("top/3", { :alt =>'FIND　find F9　f9 f9-shop f9-shop.jp'}) %>
+                    <p><%= @recomadname5 %></p>
+                </div>
+                <div class="carousel-cell">
+                    <%= link_to image_tag("top/3", { :alt =>'FIND　find F9　f9 f9-shop f9-shop.jp'}) %>
+                    <p><%= @recomadname6 %></p>
+                </div>
+                <div class="carousel-cell">
+                    <%= link_to image_tag("top/3", { :alt =>'FIND　find F9　f9 f9-shop f9-shop.jp'}) %>
+                    <p><%= @recomadname7 %></p>
+                </div>
+                <div class="carousel-cell">
+                    <%= link_to image_tag("top/3", { :alt =>'FIND　find F9　f9 f9-shop f9-shop.jp'}) %>
+                    <p><%= @recomadname8 %></p>
+                </div>
+                <div class="carousel-cell">
+                    <%= link_to image_tag("top/3", { :alt =>'FIND　find F9　f9 f9-shop f9-shop.jp'}) %>
+                    <p><%= @recomadname9 %></p>
+                </div>
+                <div class="carousel-cell">
+                    <%= link_to image_tag("top/3", { :alt =>'FIND　find F9　f9 f9-shop f9-shop.jp'}) %>
+                    <p><%= @recomadname10 %></p>
+                </div>
+            </div>
+
+            <%= link_to asearch_asshops_path do %><h1>グルメ一覧>></h1><% end %>
+            <div class="main-carousel">
+                  <% $ashops.each do |ashop| %>
+                        <div class="carousel-cell">
+                              <% if ashop.topimage.present? %>
+                                    <%= link_to image_tag(ashop.topimage_url, { :alt =>'グルメ　FIND　find F9　f9 f9-shop f9-shop.jp'}), asearch_asshop_path(id:ashop) %>
+                                    <p><%= ashop.shopname %></p>
+                              <% else %>
+                                    <%= link_to image_tag("template/homepics", {:size =>'400x400'}), asearch_asshop_path(id:ashop) %>
+                                    <p><%= ashop.shopname %></p>
+                              <% end %>
+                        </div>
+                  <% end %>
+            </div>
+
+            <%= link_to bsearch_bsshops_path do %><h1>病院一覧>></h1><% end %>
+            <div class="main-carousel">
+                  <% $bshops.each do |bshop| %>
+                        <div class="carousel-cell">
+                            <% if bshop.topimage.present? %>
+                                  <%= link_to image_tag(bshop.topimage_url, { :alt =>'グルメ　FIND　find F9　f9 f9-shop f9-shop.jp'}), bsearch_bsshop_path(id:bshop) %>
+                                  <p><%= bshop.shopname %></p>
+                            <% else %>
+                                  <%= link_to image_tag("template/homepics", {:size =>'400x400'}), bsearch_bsshop_path(id:bshop) %>
+                                  <p><%= bshop.shopname %></p>
+                            <% end %>
+                        </div>
+                  <% end %>
+            </div>
+
+            <%= link_to csearch_csshops_path do %><h1>美容院・理髪店一覧>></h1><% end %>
+            <div class="main-carousel">
+                <% $cshops.each do |cshop| %>
+                <div class="carousel-cell">
+                  <% if cshop.topimage.present? %>
+                    <%= link_to image_tag(cshop.topimage_url, { :alt =>'グルメ　FIND　find F9　f9 f9-shop f9-shop.jp'}), csearch_csshop_path(id:cshop) %>
+                    <p><%= cshop.shopname %></p>
+                  <% else %>
+                    <%= link_to image_tag("template/homepics", {:size =>'400x400'}), csearch_csshop_path(id:cshop) %>
+                    <p><%= cshop.shopname %></p>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+
+            <%= link_to dsearch_dsshops_path do %><h1>車・バイク・自転車一覧>></h1><% end %>
+            <div class="main-carousel">
+                <% $dshops.each do |dshop| %>
+                <div class="carousel-cell">
+                  <% if dshop.topimage.present? %>
+                    <%= link_to image_tag(dshop.topimage_url, { :alt =>'グルメ　FIND　find F9　f9 f9-shop f9-shop.jp'}), dsearch_dsshop_path(id:dshop) %>
+                    <p><%= dshop.shopname %></p>
+                  <% else %>
+                    <%= link_to image_tag("template/homepics", {:size =>'400x400'}), dsearch_dsshop_path(id:dshop) %>
+                    <p><%= dshop.shopname %></p>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+
+            <%= link_to esearch_esshops_path do %><h1>ファッション一覧>></h1><% end %>
+            <div class="main-carousel">
+                <% $eshops.each do |eshop| %>
+                <div class="carousel-cell">
+                  <% if eshop.topimage.present? %>
+                    <%= link_to image_tag(eshop.topimage_url, { :alt =>'グルメ　FIND　find F9　f9 f9-shop f9-shop.jp'}), esearch_esshop_path(id:eshop) %>
+                    <p><%= eshop.shopname %></p>
+                  <% else %>
+                    <%= link_to image_tag("template/homepics", {:size =>'400x400'}), esearch_esshop_path(id:eshop) %>
+                    <p><%= eshop.shopname %></p>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+
+            <%= link_to fsearch_fsshops_path do %><h1>教育一覧>></h1><% end %>
+            <div class="main-carousel">
+                <% $fshops.each do |fshop| %>
+                <div class="carousel-cell">
+                  <% if fshop.topimage.present? %>
+                    <%= link_to image_tag(fshop.topimage_url, { :alt =>'グルメ　FIND　find F9　f9 f9-shop f9-shop.jp'}), fsearch_fsshop_path(id:fshop) %>
+                    <p><%= fshop.shopname %></p>
+                  <% else %>
+                    <%= link_to image_tag("template/homepics", {:size =>'400x400'}), fsearch_fsshop_path(id:fshop) %>
+                    <p><%= fshop.shopname %></p>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+
+            <%= link_to gsearch_gsshops_path do %><h1>趣味一覧>></h1><% end %>
+            <div class="main-carousel">
+                <% $gshops.each do |gshop| %>
+                <div class="carousel-cell">
+                  <% if gshop.topimage.present? %>
+                    <%= link_to image_tag(gshop.topimage_url, { :alt =>'グルメ　FIND　find F9　f9 f9-shop f9-shop.jp'}), gsearch_gsshop_path(id:gshop) %>
+                    <p><%= gshop.shopname %></p>
+                  <% else %>
+                    <%= link_to image_tag("template/homepics", {:size =>'400x400'}), gsearch_gsshop_path(id:gshop) %>
+                    <p><%= gshop.shopname %></p>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+
+            <%= link_to hsearch_hsshops_path do %><h1>その他一覧>></h1><% end %>
+            <div class="main-carousel">
+                <% $hshops.each do |hshop| %>
+                <div class="carousel-cell">
+                  <% if hshop.topimage.present? %>
+                    <%= link_to image_tag(hshop.topimage_url, { :alt =>'グルメ　FIND　find F9　f9 f9-shop f9-shop.jp'}), hsearch_hsshop_path(id:hshop) %>
+                    <p><%= hshop.shopname %></p>
+                  <% else %>
+                    <%= link_to image_tag("template/homepics", {:size =>'400x400'}), hsearch_hsshop_path(id:hshop) %>
+                    <p><%= hshop.shopname %></p>
+                  <% end %>
+                </div>
+              <% end %>
+            </div>
+
+
+<script>    
+$('.main-carousel').flickity({
+  // options
+  cellAlign: 'left',
+  contain: true
+});
+            </script>
+
+</div>
