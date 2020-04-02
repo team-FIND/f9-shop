@@ -89,24 +89,122 @@
   <%= render 'shared/city/main-navi' %>
 <% end %>
 
-<% @newadname1 = $prefec.newshop_name1 %>
-<% @newadname2 = $prefec.newshop_name2 %>
-<% @newadname3 = $prefec.newshop_name3 %>
-<% @newadname4 = $prefec.newshop_name4 %>
-<% @newadname5 = $prefec.newshop_name5 %>
-<% @newadname6 = $prefec.newshop_name6 %>
-<% @newadname7 = $prefec.newshop_name7 %>
-<% @newadname8 = $prefec.newshop_name8 %>
-<% @newadname9 = $prefec.newshop_name9 %>
-<% @newadname10 = $prefec.newshop_name10 %>
+<% if $prefec.newshop_name1.present? %>
+    <% @newadname1 = $prefec.newshop_name1 %>
+<% else %>
+    <% @newadname1 = "募集中" %>
+<% end %>
 
-<% @recomadname1 = $prefec.adshop_name1 %>
-<% @recomadname2 = $prefec.adshop_name2 %>
-<% @recomadname3 = $prefec.adshop_name3 %>
-<% @recomadname4 = $prefec.adshop_name4 %>
-<% @recomadname5 = $prefec.adshop_name5 %>
-<% @recomadname6 = $prefec.adshop_name6 %>
-<% @recomadname7 = $prefec.adshop_name7 %>
-<% @recomadname8 = $prefec.adshop_name8 %>
-<% @recomadname9 = $prefec.adshop_name9 %>
-<% @recomadname10 = $prefec.adshop_name10 %>
+<% if $prefec.newshop_name2.present? %>
+    <% @newadname2 = $prefec.newshop_name2 %>
+<% else %>
+    <% @newadname2 = "募集中" %>
+<% end %>
+
+<% if $prefec.newshop_name3.present? %>
+    <% @newadname3 = $prefec.newshop_name3 %>
+<% else %>
+    <% @newadname3 = "募集中" %>
+<% end %>
+
+<% if $prefec.newshop_name4.present? %>
+    <% @newadname4 = $prefec.newshop_name4 %>
+<% else %>
+    <% @newadname4 = "募集中" %>
+<% end %>
+
+<% if $prefec.newshop_name5.present? %>
+    <% @newadname5 = $prefec.newshop_name5 %>
+<% else %>
+    <% @newadname5 = "募集中" %>
+<% end %>
+
+<% if $prefec.newshop_name6.present? %>
+    <% @newadname6 = $prefec.newshop_name6 %>
+<% else %>
+    <% @newadname6 = "募集中" %>
+<% end %>
+
+<% if $prefec.newshop_name7.present? %>
+    <% @newadname7 = $prefec.newshop_name7 %>
+<% else %>
+    <% @newadname7 = "募集中" %>
+<% end %>
+
+<% if $prefec.newshop_name8.present? %>
+    <% @newadname8 = $prefec.newshop_name8 %>
+<% else %>
+    <% @newadname8 = "募集中" %>
+<% end %>
+
+<% if $prefec.newshop_name9.present? %>
+    <% @newadname9 = $prefec.newshop_name9 %>
+<% else %>
+    <% @newadname9 = "募集中" %>
+<% end %>
+
+<% if $prefec.newshop_name10.present? %>
+    <% @newadname10 = $prefec.newshop_name10 %>
+<% else %>
+    <% @newadname10 = "募集中" %>
+<% end %>
+
+<% if $prefec.adshop_name1.present? %>
+    <% @recomadname1 = $prefec.adshop_name1 %>
+<% else %>
+    <% @recomadname1 = "募集中" %>
+<% end %>
+
+<% if $prefec.adshop_name2.present? %>
+    <% @recomadname2 = $prefec.adshop_name2 %>
+<% else %>
+    <% @recomadname2 = "募集中" %>
+<% end %>
+
+<% if $prefec.adshop_name3.present? %>
+    <% @recomadname3 = $prefec.adshop_name3 %>
+<% else %>
+    <% @recomadname3 = "募集中" %>
+<% end %>
+
+<% if $prefec.adshop_name4.present? %>
+    <% @recomadname4 = $prefec.adshop_name4 %>
+<% else %>
+    <% @recomadname4 = "募集中" %>
+<% end %>
+
+<% if $prefec.adshop_name5.present? %>
+    <% @recomadname5 = $prefec.adshop_name5 %>
+<% else %>
+    <% @recomadname5 = "募集中" %>
+<% end %>
+
+<% if $prefec.adshop_name6.present? %>
+    <% @recomadname6 = $prefec.adshop_name6 %>
+<% else %>
+    <% @recomadname6 = "募集中" %>
+<% end %>
+
+<% if $prefec.adshop_name7.present? %>
+    <% @recomadname7 = $prefec.adshop_name7 %>
+<% else %>
+    <% @recomadname7 = "募集中" %>
+<% end %>
+
+<% if $prefec.adshop_name8.present? %>
+    <% @recomadname8 = $prefec.adshop_name8 %>
+<% else %>
+    <% @recomadname8 = "募集中" %>
+<% end %>
+
+<% if $prefec.adshop_name9.present? %>
+    <% @recomadname9 = $prefec.adshop_name9 %>
+<% else %>
+    <% @recomadname9 = "募集中" %>
+<% end %>
+
+<% if $prefec.adshop_name10.present? %>
+    <% @recomadname10 = $prefec.adshop_name10 %>
+<% else %>
+    <% @recomadname10 = "募集中" %>
+<% end %>
