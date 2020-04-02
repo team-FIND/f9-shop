@@ -23,30 +23,74 @@ class PrefecsController < ApplicationController
     render :layout => "app2"
     $prefec.citytop_img.cache! unless $prefec.citytop_img.blank?
     $prefec.newshop_img1.cache! unless $prefec.newshop_img1.blank?
-    $prefec.adshop_img1.cache! unless $prefec.adshop_img1.blank?      
+    $prefec.newshop_img2.cache! unless $prefec.newshop_img2.blank?
+    $prefec.newshop_img3.cache! unless $prefec.newshop_img3.blank?
+    $prefec.newshop_img4.cache! unless $prefec.newshop_img4.blank?
+    $prefec.newshop_img5.cache! unless $prefec.newshop_img5.blank?
+    $prefec.newshop_img6.cache! unless $prefec.newshop_img6.blank?
+    $prefec.newshop_img7.cache! unless $prefec.newshop_img7.blank?
+    $prefec.newshop_img8.cache! unless $prefec.newshop_img8.blank?
+    $prefec.newshop_img9.cache! unless $prefec.newshop_img9.blank?
+    $prefec.newshop_img10.cache! unless $prefec.newshop_img10.blank?
+    $prefec.adshop_img1.cache! unless $prefec.adshop_img1.blank?
+    $prefec.adshop_img2.cache! unless $prefec.adshop_img2.blank?
+    $prefec.adshop_img3.cache! unless $prefec.adshop_img3.blank?
+    $prefec.adshop_img4.cache! unless $prefec.adshop_img4.blank?
+    $prefec.adshop_img5.cache! unless $prefec.adshop_img5.blank?
+    $prefec.adshop_img6.cache! unless $prefec.adshop_img6.blank?
+    $prefec.adshop_img7.cache! unless $prefec.adshop_img7.blank?
+    $prefec.adshop_img8.cache! unless $prefec.adshop_img8.blank?
+    $prefec.adshop_img9.cache! unless $prefec.adshop_img9.blank?
+    $prefec.adshop_img10.cache! unless $prefec.adshop_img10.blank?    
   end
 
   def topad
     render :layout => "app2"
-    $prefec.citytop_img.cache! unless $prefec.citytop_img.blank?
     $prefec.newshop_img1.cache! unless $prefec.newshop_img1.blank?
-    $prefec.adshop_img1.cache! unless $prefec.adshop_img1.blank?      
+    $prefec.newshop_img2.cache! unless $prefec.newshop_img2.blank?
+    $prefec.newshop_img3.cache! unless $prefec.newshop_img3.blank?
+    $prefec.newshop_img4.cache! unless $prefec.newshop_img4.blank?
+    $prefec.newshop_img5.cache! unless $prefec.newshop_img5.blank?
+    $prefec.newshop_img6.cache! unless $prefec.newshop_img6.blank?
+    $prefec.newshop_img7.cache! unless $prefec.newshop_img7.blank?
+    $prefec.newshop_img8.cache! unless $prefec.newshop_img8.blank?
+    $prefec.newshop_img9.cache! unless $prefec.newshop_img9.blank?
+    $prefec.newshop_img10.cache! unless $prefec.newshop_img10.blank?
+    $prefec.adshop_img1.cache! unless $prefec.adshop_img1.blank?
+    $prefec.adshop_img2.cache! unless $prefec.adshop_img2.blank?
+    $prefec.adshop_img3.cache! unless $prefec.adshop_img3.blank?
+    $prefec.adshop_img4.cache! unless $prefec.adshop_img4.blank?
+    $prefec.adshop_img5.cache! unless $prefec.adshop_img5.blank?
+    $prefec.adshop_img6.cache! unless $prefec.adshop_img6.blank?
+    $prefec.adshop_img7.cache! unless $prefec.adshop_img7.blank?
+    $prefec.adshop_img8.cache! unless $prefec.adshop_img8.blank?
+    $prefec.adshop_img9.cache! unless $prefec.adshop_img9.blank?
+    $prefec.adshop_img10.cache! unless $prefec.adshop_img10.blank?     
   end
 
   def newad
     render :layout => "app2"
-    $prefec.citytop_img.cache! unless $prefec.citytop_img.blank?
     $prefec.newshop_img1.cache! unless $prefec.newshop_img1.blank?
-    $prefec.adshop_img1.cache! unless $prefec.adshop_img1.blank?      
+    $prefec.newshop_img2.cache! unless $prefec.newshop_img2.blank?
+    $prefec.newshop_img3.cache! unless $prefec.newshop_img3.blank?
+    $prefec.newshop_img4.cache! unless $prefec.newshop_img4.blank?
+    $prefec.newshop_img5.cache! unless $prefec.newshop_img5.blank?
+    $prefec.newshop_img6.cache! unless $prefec.newshop_img6.blank?
+    $prefec.newshop_img7.cache! unless $prefec.newshop_img7.blank?
+    $prefec.newshop_img8.cache! unless $prefec.newshop_img8.blank?
+    $prefec.newshop_img9.cache! unless $prefec.newshop_img9.blank?
+    $prefec.newshop_img10.cache! unless $prefec.newshop_img10.blank?
+    $prefec.adshop_img1.cache! unless $prefec.adshop_img1.blank?
+    $prefec.adshop_img2.cache! unless $prefec.adshop_img2.blank?
+    $prefec.adshop_img3.cache! unless $prefec.adshop_img3.blank?
+    $prefec.adshop_img4.cache! unless $prefec.adshop_img4.blank?
+    $prefec.adshop_img5.cache! unless $prefec.adshop_img5.blank?
+    $prefec.adshop_img6.cache! unless $prefec.adshop_img6.blank?
+    $prefec.adshop_img7.cache! unless $prefec.adshop_img7.blank?
+    $prefec.adshop_img8.cache! unless $prefec.adshop_img8.blank?
+    $prefec.adshop_img9.cache! unless $prefec.adshop_img9.blank?
+    $prefec.adshop_img10.cache! unless $prefec.adshop_img10.blank?      
   end
-
-  def recomad
-    render :layout => "app2"
-    $prefec.citytop_img.cache! unless $prefec.citytop_img.blank?
-    $prefec.newshop_img1.cache! unless $prefec.newshop_img1.blank?
-    $prefec.adshop_img1.cache! unless $prefec.adshop_img1.blank?      
-  end
-
 
   def create
     $area = Area.where(:name => params[:area_id]).first

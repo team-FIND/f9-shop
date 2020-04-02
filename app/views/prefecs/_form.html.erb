@@ -1,5 +1,5 @@
 
-
+<%= stylesheet_link_tag "cityad", :media => "all" %>
 <%= form_for($prefec, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
 
   <% if prefec.errors.any? %>
@@ -14,38 +14,85 @@
       </div>
   <% end %>
 
-        <div class="field">
-          <p id="st3">
-            <%= form.label :area_id %><br>
-            <%= form.text_field :area_id %>
-          </p>
+  <div class="section" id="page">
+
+        <div id="field">
+          <%= form.label :shopname do %><label for="labelx">:市町村ID</label><% end %><br>
+          <%= form.text_field :area_id %>
         </div>
 
-        <div class="field">
-          <p id="st3">
-            <%= form.label :name %><br>
-            <%= form.text_field :name %>
-          </p>
+        <div id="field">
+          <%= form.label :shopname do %><label for="labelx">:市町村名</label><% end %><br>
+          <%= form.text_field :name %>
         </div>
 
-        <div class="field">
-          <p id="st3">
-            <%= form.label :citytop_img %><br>
-            <%= form.text_field :citytop_img %>
-          </p>
-        </div>
+        <div id="field-pic">
 
-        <div class="field">
-          <p id="st3">
-            <%= form.label :citytop_name %><br>
-            <%= form.text_field :citytop_name %>
-          </p>
-        </div>
+            <%= form.label :citytop_img do %><label for="labelx">:広告2</label><% end %><br>
 
-        <div class="actions">
-          <div id="new">
-            <%= form.submit %>
+            <label for="labely"><%= form.file_field :citytop_img, id: :prefec_citytop_img , id: "file" %></label>
+
+            <p id="imgdelete">*画像を削除する  <%= form.check_box :remove_citytop_img %></p>
+            <%= form.hidden_field :citytop_img_cache %><br>
+
+            <div id="thumb" onClick="$('#file').click()">
+                <% if $prefec.citytop_img.present? %>
+                  <div id="updimg"><%= image_tag prefec.citytop_img.to_s if $prefec.citytop_img? %></div> 
+                <% else %>
+                  <div id="upimg"><%= image_tag("template/img") %></div>
+                <% end %>
+            </div>
+
           </div>
-        </div>
+                    <%= form.hidden_field :citytop_img_cache %>
+                    <%= form.hidden_field :newshop_img1_cache %>
+                    <%= form.hidden_field :newshop_img2_cache %>
+                    <%= form.hidden_field :newshop_img3_cache %>
+                    <%= form.hidden_field :newshop_img4_cache %>
+                    <%= form.hidden_field :newshop_img5_cache %>
+                    <%= form.hidden_field :newshop_img6_cache %>
+                    <%= form.hidden_field :newshop_img7_cache %>
+                    <%= form.hidden_field :newshop_img8_cache %>
+                    <%= form.hidden_field :newshop_img9_cache %>
+                    <%= form.hidden_field :newshop_img10_cache %>
+                    <%= form.hidden_field :adshop_img1_cache %>
+                    <%= form.hidden_field :adshop_img2_cache %>
+                    <%= form.hidden_field :adshop_img3_cache %>
+                    <%= form.hidden_field :adshop_img4_cache %>
+                    <%= form.hidden_field :adshop_img5_cache %>
+                    <%= form.hidden_field :adshop_img6_cache %>
+                    <%= form.hidden_field :adshop_img7_cache %>
+                    <%= form.hidden_field :adshop_img8_cache %>
+                    <%= form.hidden_field :adshop_img9_cache %>
+                    <%= form.hidden_field :adshop_img10_cache %>
+
+        <div id="actions"><%= form.submit(:決定) %></div>
 
 <% end %>
+
+<script>
+$(function(){
+  $fileField = $('#file')
+ 
+  // 選択された画像を取得し表示
+  $($fileField).on('change', $fileField, function(e) {
+    file = e.target.files[3]
+    reader = new FileReader(),
+    $preview = $("#thumb");
+ 
+    reader.onload = (function(file) {
+      return function(e) {
+        $preview.empty();
+        $preview.append($('<img>').attr({
+          src: e.target.result,
+          width: "13%",
+          class: "preview",
+          title: file.name
+        }));
+      };
+    })(file);
+    reader.readAsDataURL(file);
+  });
+});
+
+</script>

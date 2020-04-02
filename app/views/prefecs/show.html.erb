@@ -12,18 +12,73 @@
     <%= javascript_include_tag "slick.min" %>
 
       <div id="main-feature">
-	        <ul class="slider">
-		              <li><%= image_tag "top/2", :alt =>'FFIND　F9　f9 f9-shop.jp　日本　トップ'  %><p><%= @title %></p></li>
-                  <li><%= image_tag "top/3", :alt =>'FIND　F9　f9 f9-shop.jp　日本　トップ' %><p>AD1</p></li>
-                  <li><%= image_tag "top/3", :alt =>'FIND　F9　f9 f9-shop.jp　日本　トップ' %><p>AD2</p></li>
-                  <li><%= image_tag "top/3", :alt =>'FIND　F9　f9 f9-shop.jp　日本　トップ' %><p>AD3</p></li>
-                  <li><%= image_tag "top/3", :alt =>'FIND　F9　f9 f9-shop.jp　日本　トップ' %><p>AD4</p></li>
-                  <li><%= image_tag "top/3", :alt =>'FIND　F9　f9 f9-shop.jp　日本　トップ' %><p>AD5</p></li>
-                  <li><%= image_tag "top/3", :alt =>'FIND　F9　f9 f9-shop.jp　日本　トップ' %><p>AD6</p></li>
-                  <li><%= image_tag "top/3", :alt =>'FIND　F9　f9 f9-shop.jp　日本　トップ' %><p>AD7</p></li>
-                  <li><%= image_tag "top/3", :alt =>'FIND　F9　f9 f9-shop.jp　日本　トップ' %><p>AD8</p></li>
-                  <li><%= image_tag "top/3", :alt =>'FIND　F9　f9 f9-shop.jp　日本　トップ' %><p>AD9</p></li>
-                  <li><%= image_tag "top/3", :alt =>'FIND　F9　f9 f9-shop.jp　日本　トップ' %><p>AD10</p></li>
+          <ul class="slider">
+            <% if $prefec.citytop_img.present? %>
+		              <li><%= image_tag $prefec.citytop_img_url, :alt =>'FFIND　F9　f9 f9-shop.jp　日本　トップ'  %><p><%= @title %></p></li>
+            <% else %>
+                  <li><%= image_tag "top/3", :alt =>'FIND　F9　f9 f9-shop.jp　日本　トップ' %><p><%= @title %></p></li>
+            <% end %>
+
+            <% if $prefec.adshop_img1.present? %>
+		              <li><%= image_tag $prefec.adshop_img1_url, :alt =>'FFIND　F9　f9 f9-shop.jp　日本　トップ'  %><p><%= $prefec.adshop_name1 %></p></li>
+            <% else %>
+                  <li><%= image_tag "top/3", :alt =>'FIND　F9　f9 f9-shop.jp　日本　トップ' %><p><%= $prefec.adshop_name1 %></p></li>
+            <% end %>
+
+            <% if $prefec.adshop_img2.present? %>
+		              <li><%= image_tag $prefec.adshop_img2_url, :alt =>'FFIND　F9　f9 f9-shop.jp　日本　トップ'  %><p><%= $prefec.adshop_name2 %></p></li>
+            <% else %>
+                  <li><%= image_tag "top/3", :alt =>'FIND　F9　f9 f9-shop.jp　日本　トップ' %><p><%= $prefec.adshop_name2 %></p></li>
+            <% end %>
+
+            <% if $prefec.adshop_img3.present? %>
+		              <li><%= image_tag $prefec.adshop_img3_url, :alt =>'FFIND　F9　f9 f9-shop.jp　日本　トップ'  %><p><%= $prefec.adshop_name3 %></p></li>
+            <% else %>
+                  <li><%= image_tag "top/3", :alt =>'FIND　F9　f9 f9-shop.jp　日本　トップ' %><p><%= $prefec.adshop_name3 %></p></li>
+            <% end %>
+
+            <% if $prefec.adshop_img4.present? %>
+		              <li><%= image_tag $prefec.adshop_img4_url, :alt =>'FFIND　F9　f9 f9-shop.jp　日本　トップ'  %><p><%= $prefec.adshop_name4 %></p></li>
+            <% else %>
+                  <li><%= image_tag "top/3", :alt =>'FIND　F9　f9 f9-shop.jp　日本　トップ' %><p><%= $prefec.adshop_name4 %></p></li>
+            <% end %>
+
+            <% if $prefec.adshop_img5.present? %>
+		              <li><%= image_tag $prefec.adshop_img5_url, :alt =>'FFIND　F9　f9 f9-shop.jp　日本　トップ'  %><p><%= $prefec.adshop_name5 %></p></li>
+            <% else %>
+                  <li><%= image_tag "top/3", :alt =>'FIND　F9　f9 f9-shop.jp　日本　トップ' %><p><%= $prefec.adshop_name5 %></p></li>
+            <% end %>
+
+            <% if $prefec.adshop_img6.present? %>
+		              <li><%= image_tag $prefec.adshop_img6_url, :alt =>'FFIND　F9　f9 f9-shop.jp　日本　トップ'  %><p><%= $prefec.adshop_name6 %></p></li>
+            <% else %>
+                  <li><%= image_tag "top/3", :alt =>'FIND　F9　f9 f9-shop.jp　日本　トップ' %><p><%= $prefec.adshop_name6 %></p></li>
+            <% end %>
+
+            <% if $prefec.adshop_img7.present? %>
+		              <li><%= image_tag $prefec.adshop_img7_url, :alt =>'FFIND　F9　f9 f9-shop.jp　日本　トップ'  %><p><%= $prefec.adshop_name7 %></p></li>
+            <% else %>
+                  <li><%= image_tag "top/3", :alt =>'FIND　F9　f9 f9-shop.jp　日本　トップ' %><p><%= $prefec.adshop_name7 %></p></li>
+            <% end %>
+
+            <% if $prefec.adshop_img8.present? %>
+		              <li><%= image_tag $prefec.adshop_img8_url, :alt =>'FFIND　F9　f9 f9-shop.jp　日本　トップ'  %><p><%= $prefec.adshop_name8 %></p></li>
+            <% else %>
+                  <li><%= image_tag "top/3", :alt =>'FIND　F9　f9 f9-shop.jp　日本　トップ' %><p><%= $prefec.adshop_name8 %></p></li>
+            <% end %>
+
+            <% if $prefec.adshop_img9.present? %>
+		              <li><%= image_tag $prefec.adshop_img9_url, :alt =>'FFIND　F9　f9 f9-shop.jp　日本　トップ'  %><p><%= $prefec.adshop_name9 %></p></li>
+            <% else %>
+                  <li><%= image_tag "top/3", :alt =>'FIND　F9　f9 f9-shop.jp　日本　トップ' %><p><%= $prefec.adshop_name9 %></p></li>
+            <% end %>
+
+            <% if $prefec.adshop_img10.present? %>
+		              <li><%= image_tag $prefec.adshop_img10_url, :alt =>'FFIND　F9　f9 f9-shop.jp　日本　トップ'  %><p><%= $prefec.adshop_name10 %></p></li>
+            <% else %>
+                  <li><%= image_tag "top/3", :alt =>'FIND　F9　f9 f9-shop.jp　日本　トップ' %><p><%= $prefec.adshop_name10 %></p></li>
+            <% end %>
+
           </ul>
       </div>
 
@@ -33,48 +88,6 @@
   <%= stylesheet_link_tag "temp/city/main-navi", :media => "all" %>
   <%= render 'shared/city/main-navi' %>
 <% end %>
-
-
-<% @adimg1 = link_to image_tag("template/logo0", 
-                            { :alt =>'FIND　F9　find999'}),
-                              %>
-
-<% @adimg2 = link_to image_tag("template/logo0", 
-                            { :alt =>'FIND　F9　find999'}),
-                              %>
-
-<% @adimg3 = link_to image_tag("template/logo0", 
-                            { :alt =>'FIND　F9　find999　info'}),
-                              %>
-
-<% @adimg4 = link_to image_tag("template/logo0", 
-                            { :alt =>'FIND　F9　find999　info'}),
-                              %>
-
-<% @adimg5 = link_to image_tag("template/logo0", 
-                            { :alt =>'FIND　F9　find999　info'}),
-                              %>
-
-<% @adimg6 = link_to image_tag("template/logo0", 
-                            { :alt =>'FIND　F9　find999　info'}),
-                              %>
-
-<% @adimg7 = link_to image_tag("template/logo0", 
-                            { :alt =>'FIND　F9　find999　info'}),
-                              %>
-
-<% @adimg8 = link_to image_tag("template/logo0", 
-                            { :alt =>'FIND　F9　find999　info'}),
-                              %>
-
-<% @adimg9 = link_to image_tag("template/logo0", 
-                            { :alt =>'FIND　F9　find999　info'}),
-                              %>
-
-<% @adimg10 = link_to image_tag("template/logo0", 
-                            { :alt =>'FIND　F9　find999　info'}),
-                              %>
-
 
 <% @newadname1 = $prefec.newshop_name1 %>
 <% @newadname2 = $prefec.newshop_name2 %>
