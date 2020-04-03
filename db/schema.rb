@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_16_220839) do
+ActiveRecord::Schema.define(version: 2020_04_03_222352) do
 
   create_table "acategories", force: :cascade do |t|
     t.string "name"
@@ -1779,6 +1779,26 @@ ActiveRecord::Schema.define(version: 2020_03_16_220839) do
     t.string "adshop_name9"
     t.string "adshop_img10"
     t.string "adshop_name10"
+    t.string "newshop_url1"
+    t.string "newshop_url2"
+    t.string "newshop_url3"
+    t.string "newshop_url4"
+    t.string "newshop_url5"
+    t.string "newshop_url6"
+    t.string "newshop_url7"
+    t.string "newshop_url8"
+    t.string "newshop_url9"
+    t.string "newshop_url10"
+    t.string "adshop_url1"
+    t.string "adshop_url2"
+    t.string "adshop_url3"
+    t.string "adshop_url4"
+    t.string "adshop_url5"
+    t.string "adshop_url6"
+    t.string "adshop_url7"
+    t.string "adshop_url8"
+    t.string "adshop_url9"
+    t.string "adshop_url10"
     t.index ["area_id"], name: "index_prefecs_on_area_id"
   end
 
