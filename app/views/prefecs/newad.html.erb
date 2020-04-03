@@ -22,11 +22,11 @@
 			<%= form.hidden_field :newshop_img1_cache %><br>
 
 			<div id="thumb" onClick="$('#file').click()">
-			<% if $prefec.newshop_img1.present? %>
-				<div id="updimg"><%= image_tag prefec.newshop_img1.to_s if $prefec.newshop_img1? %></div> 
-			<% else %>
-				<div id="upimg"><%= image_tag("template/img") %></div>
-			<% end %>
+					<% if $prefec.newshop_img1.present? %>
+						<div id="updimg"><%= image_tag prefec.newshop_img1.to_s if $prefec.newshop_img1? %></div> 
+					<% else %>
+						<div id="upimg"><%= image_tag("template/img") %></div>
+					<% end %>
 			</div>
 
 		</div>
