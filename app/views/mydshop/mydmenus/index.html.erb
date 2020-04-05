@@ -15,7 +15,7 @@
 
   <%= content_for(:main)  do %>
 
-    <div id="new"><%= link_to '＋メニューを追加する', new_mydshop_mydmenuc_mydmenu_path %></div>
+    <div id="new"><%= link_to '＋メニューを追加する', new_mydshop_mydmenuc_mydmenu_path, target:"_blank" %></div>
         <div id="feature-wrapper">
 
               <% $dmenus.each do |dmenu| %>
@@ -24,7 +24,7 @@
                   <% end %>
 
                   <div id="edit">
-                    <%= link_to '✐編集する', edit_mydshop_mydmenuc_mydmenu_path(mydmenuc_id:$dmenuc, id:dmenu) %>
+                    <%= link_to '✐編集する', edit_mydshop_mydmenuc_mydmenu_path(mydmenuc_id:$dmenuc, id:dmenu), target:"_blank" %>
                   </div>
               <% end %>
 

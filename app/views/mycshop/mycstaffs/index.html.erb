@@ -8,7 +8,7 @@
 
 <%= content_for(:main)  do %>
 
-  <%= link_to new_mycshop_mycstaffc_mycstaff_path do%><div id="new">＋設備を追加する</div><% end %>
+  <%= link_to new_mycshop_mycstaffc_mycstaff_path, target:"_blank" do %><div id="new">＋設備を追加する</div><% end %>
 
   <% $cstaffs.each do |cstaff| %>
 
@@ -35,7 +35,7 @@
                 </p>
 
                 <p id="edit">
-                    <%= link_to '✐編集', edit_mycshop_mycstaffc_mycstaff_path(id:cstaff) %>
+                    <%= link_to '✐編集', edit_mycshop_mycstaffc_mycstaff_path(id:cstaff), target:"_blank" %>
                 </p>    
 
          </div>

@@ -11,14 +11,6 @@
   <% @page_title = $mcategory.name %> 
   <% @title1 = $ashop.shopname %> 
   <% @title2 = @page_title %> 
-  <% @edit = new_ashop_mcategory_menu_path(mcategory_id:$mcategory) %>
-
-  <% @back1  = myashop_myashop_path(id:$ashop) %>
-  <% @city  = myashop_myashops_path %>
-  <% @back2 = @back1 %>
-
-  <% @phone = $ashop.phone1 %>
-
 
   <%= content_for(:main)  do %>
 

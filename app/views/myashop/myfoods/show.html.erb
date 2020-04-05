@@ -3,13 +3,9 @@
 <% @title1 = $ashop.shopname %>
 <% @title2 = $food.foodname1 %> 
 
-<% @back1 = myashop_myashop_path(id:$ashop) %>
-<% @city  = myashop_myashops_path %>
-<% @back2 = myashop_myamenu_myfoods_path %>
-
 <%= content_for(:edit) do %>
 	<div id="edit">
-    	<%= link_to '✐編集', foodimg_myashop_myamenu_myfood_path(id:$food) %>
+    	<%= link_to '✐編集', foodimg_myashop_myamenu_myfood_path(id:$food), target:"_blank" %>
     </div>    
 <% end %>
 

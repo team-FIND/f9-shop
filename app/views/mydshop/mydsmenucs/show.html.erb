@@ -14,7 +14,7 @@
 
   <%= content_for(:main)  do %>
         <div id="edit2">
-            <%= link_to '✐編集', subedit_mydshop_mydshop_mydsmenuc_path(mydshop_id:$dshop, id:$dsmenuc) %>
+            <%= link_to '✐編集', subedit_mydshop_mydshop_mydsmenuc_path(mydshop_id:$dshop, id:$dsmenuc), target:"_blank" %>
         </div>    
 
         <% $dsmenucs.each do |dsmenuc| %>

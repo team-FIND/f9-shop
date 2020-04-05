@@ -9,7 +9,7 @@
 
 <%= content_for(:main) do %>
 	<div id="edit">
-    	<%= link_to '✐編集', staff_img_mycshop_mycstaffc_mycstaff_path(id:$cstaff) %>
+    	<%= link_to '✐編集', staff_img_mycshop_mycstaffc_mycstaff_path(id:$cstaff), target:"_blank" do %>
     </div>    
 
 	<% $cstaffs.each do |cstaff| %>

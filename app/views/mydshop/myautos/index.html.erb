@@ -13,7 +13,7 @@
 
 <%= content_for(:main)  do %>
 
-  <%= link_to new_mydshop_mydmenu_myauto_path do%><div id="new">＋料理を追加する</div><% end %>
+  <%= link_to new_mydshop_mydmenu_myauto_path, target:"_blank" do %><div id="new">＋料理を追加する</div><% end %>
 
   <% $autos.each do |auto| %>
 

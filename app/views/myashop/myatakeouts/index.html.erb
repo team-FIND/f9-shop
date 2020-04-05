@@ -10,15 +10,10 @@
 <% @title1 = $ashop.shopname %> 
 <% @title2 = $atmenu.name %>
 
-<% @back1  = myashop_myashop_path(id:$ashop) %>
-<% @city  = myashop_myashops_path %>
-<% @back2 = myashop_myatmenuc_myatmenus_path(myatmenuc_id:$atmenuc) %>
-
-
 
 <%= content_for(:main)  do %>
 
-  <%= link_to new_myashop_myatmenu_myatakeout_path do%><div id="new">＋料理を追加する</div><% end %>
+  <%= link_to new_myashop_myatmenu_myatakeout_path, target:"_blank" do%><div id="new">＋料理を追加する</div><% end %>
 
   <% $atakeouts.each do |atakeout| %>
 
@@ -53,7 +48,7 @@
                 <P id="price">税込：<%= atakeout.price %>円</P>
 
                 <p id="edit">
-                    <%= link_to '✐編集', edit_myashop_myatmenu_myatakeout_path(id:atakeout) %>
+                    <%= link_to '✐編集', edit_myashop_myatmenu_myatakeout_path(id:atakeout), target:"_blank" %>
                 </p>    
 
          </div>

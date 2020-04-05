@@ -14,7 +14,7 @@
 
   <%= content_for(:main)  do %>
         <div id="edit2">
-            <%= link_to '✐編集', subedit_mycshop_mycshop_mycsmenuc_path(mycshop_id:$cshop, id:$csmenuc) %>
+            <%= link_to '✐編集', subedit_mycshop_mycshop_mycsmenuc_path(mycshop_id:$cshop, id:$csmenuc), target:"_blank" %>
         </div>    
 
         <% $csmenucs.each do |csmenuc| %>

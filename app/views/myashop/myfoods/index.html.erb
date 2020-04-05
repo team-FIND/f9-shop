@@ -12,7 +12,7 @@
 
 <%= content_for(:main)  do %>
 
-  <%= link_to new_myashop_myamenu_myfood_path do%><div id="new">＋料理を追加する</div><% end %>
+  <%= link_to new_myashop_myamenu_myfood_path, target:"_blank" do%><div id="new">＋料理を追加する</div><% end %>
 
   <% $foods.each do |food| %>
 
@@ -47,7 +47,7 @@
                 <P id="price">税込：<%= food.price %>円</P>
 
                 <p id="edit">
-                    <%= link_to '✐編集', edit_myashop_myamenu_myfood_path(id:food) %>
+                    <%= link_to '✐編集', edit_myashop_myamenu_myfood_path(id:food), target:"_blank" %>
                 </p>    
 
          </div>

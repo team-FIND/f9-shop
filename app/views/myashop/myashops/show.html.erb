@@ -52,7 +52,7 @@
 	<%= content_for(:idc1)  do %>
 	        <%if user_signed_in? && $ashop.user_id == current_user.id %>
                   <div id="ltop">
-                      <%= link_to new_myashop_myashop_myamenuc_path(myashop_id:$ashop) do%>
+                      <%= link_to new_myashop_myashop_myamenuc_path(myashop_id:$ashop), target:"_blank" do %>
                           <p>⊕カテゴリーを追加する</p>
                       <% end %>
                   </div>
@@ -63,7 +63,7 @@
                           <%= link_to myashop_myashop_myamenuc_path(myashop_id:$ashop, id:amenuc) do %>
                               <li id="mc"><%= amenuc.name %></li><br>
                           <%end%>
-                          <%= link_to edit_myashop_myashop_myamenuc_path(myashop_id:$ashop, id:amenuc) do %>
+                          <%= link_to edit_myashop_myashop_myamenuc_path(myashop_id:$ashop, id:amenuc), target:"_blank" do %>
                                <p id="mcedit">✐編集する</p>
                           <% end %>
                     </div>
@@ -73,7 +73,7 @@
 	<%= content_for(:idc2)  do %>
 	        <%if user_signed_in? && $ashop.user_id == current_user.id %>
                   <div id="ltop">
-                      <%= link_to new_myashop_myashop_myasmenuc_path(myashop_id:$ashop) do%>
+                      <%= link_to new_myashop_myashop_myasmenuc_path(myashop_id:$ashop), target:"_blank" do %>
                           <p>⊕カテゴリーを追加する</p>
                       <% end %>
                   </div>
@@ -84,7 +84,7 @@
                           <%= link_to myashop_myashop_myasmenuc_path(myashop_id:$ashop, id:asmenuc) do %>
                               <li id="mc"><%= asmenuc.name %></li><br>
                           <%end%>
-                          <%= link_to edit_myashop_myashop_myasmenuc_path(myashop_id:$ashop, id:asmenuc) do %>
+                          <%= link_to edit_myashop_myashop_myasmenuc_path(myashop_id:$ashop, id:asmenuc), target:"_blank" do %>
                                <p id="mcedit">✐編集する</p>
                           <% end %>
                     </div>
@@ -94,7 +94,7 @@
 	<%= content_for(:idc3)  do %>
 			<%if user_signed_in? && $ashop.user_id == current_user.id %>
                   <div id="ltop">
-                      <%= link_to new_myashop_myashop_myadmenuc_path(myashop_id:$ashop) do%>
+                      <%= link_to new_myashop_myashop_myadmenuc_path(myashop_id:$ashop), target:"_blank" do %>
                           <p>⊕カテゴリーを追加する</p>
                       <% end %>
                   </div>
@@ -105,7 +105,7 @@
                           <%= link_to myashop_myashop_myadmenuc_path(myashop_id:$ashop, id:admenuc) do %>
                               <li id="mc"><%= admenuc.name %></li><br>
                           <%end%>
-                          <%= link_to edit_myashop_myashop_myadmenuc_path(myashop_id:$ashop, id:admenuc) do %>
+                          <%= link_to edit_myashop_myashop_myadmenuc_path(myashop_id:$ashop, id:admenuc), target:"_blank" do %>
                                <p id="mcedit">✐編集する</p>
                           <% end %>
                     </div>
@@ -115,7 +115,7 @@
 	<%= content_for(:idc4)  do %>
 	        <%if user_signed_in? && $ashop.user_id == current_user.id %>
                   <div id="ltop">
-                      <%= link_to new_myashop_myashop_myatmenuc_path(myashop_id:$ashop) do%>
+                      <%= link_to new_myashop_myashop_myatmenuc_path(myashop_id:$ashop), target:"_blank" do%>
                           <p>⊕カテゴリーを追加する</p>
                       <% end %>
                   </div>
@@ -126,7 +126,7 @@
                           <%= link_to myashop_myashop_myatmenuc_path(myashop_id:$ashop, id:atmenuc) do %>
                               <li id="mc"><%= atmenuc.name %></li><br>
                           <%end%>
-                          <%= link_to edit_myashop_myashop_myatmenuc_path(myashop_id:$ashop, id:atmenuc) do %>
+                          <%= link_to edit_myashop_myashop_myatmenuc_path(myashop_id:$ashop, id:atmenuc), target:"_blank" do%>
                                <p id="mcedit">✐編集する</p>
                           <% end %>
                     </div>

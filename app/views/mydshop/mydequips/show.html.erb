@@ -9,7 +9,7 @@
 
 <%= content_for(:main) do %>
 	<div id="edit">
-    	<%= link_to '✐編集', equip_img_mydshop_mydequipc_mydequip_path(id:$dequip) %>
+    	<%= link_to '✐編集', equip_img_mydshop_mydequipc_mydequip_path(id:$dequip), target:"_blank" %>
     </div>    
 
 	<% $dequips.each do |dequip| %>
