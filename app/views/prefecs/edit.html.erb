@@ -14,8 +14,8 @@
 		<div id="prev">
 			<%= link_to 'Show', $prefec %><br />
 			<%= link_to '戻る', area_prefecs_path %>/
-			<%= link_to '新オープン広告', newad_area_prefec_path(prefec_id:$prefec) %>/
-			<%= link_to 'おすすめ広告', topad_area_prefec_path(prefec_id:$prefec) %>
+			<%= link_to '新オープン広告', newad_area_prefec_path(prefec_id:$prefec), target:"_blank" %>/
+			<%= link_to 'おすすめ広告', topad_area_prefec_path(prefec_id:$prefec), target:"_blank" %>
 		</div>
 
 	</div>

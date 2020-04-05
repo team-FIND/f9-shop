@@ -53,7 +53,7 @@
 	<%= content_for(:idc1)  do %>
 			<%if user_signed_in? && $bshop.user_id == current_user.id %>
 	              <div id="ltop">
-	                  <%= link_to new_mybshop_mybshop_mybmenuc_path(mybshop_id:$bshop) do%>
+	                  <%= link_to new_mybshop_mybshop_mybmenuc_path(mybshop_id:$bshop), target:"_blank" do%>
 	                      <p>⊕カテゴリーを追加する</p>
 	                  <% end %>
 	              </div>
@@ -64,7 +64,7 @@
                           <%= link_to mybshop_mybshop_mybmenuc_path(mybshop_id:$bshop, id:bmenuc) do %>
                               <li id="mc"><%= bmenuc.name %></li><br>
                           <%end%>
-                          <%= link_to edit_mybshop_mybshop_mybmenuc_path(mybshop_id:$bshop, id:bmenuc) do %>
+                          <%= link_to edit_mybshop_mybshop_mybmenuc_path(mybshop_id:$bshop, id:bmenuc), target:"_blank" do%>
                                <p id="mcedit">✐編集する</p>
                           <% end %>
                     </div>
@@ -74,7 +74,7 @@
 	<%= content_for(:idc2)  do %>
 			<%if user_signed_in? && $bshop.user_id == current_user.id %>
 	              <div id="ltop">
-	                  <%= link_to new_mybshop_mybshop_mybsmenuc_path(mybshop_id:$bshop) do%>
+	                  <%= link_to new_mybshop_mybshop_mybsmenuc_path(mybshop_id:$bshop), target:"_blank" do%>
 	                      <p>⊕カテゴリーを追加する</p>
 	                  <% end %>
 	              </div>
@@ -85,7 +85,7 @@
                           <%= link_to mybshop_mybshop_mybsmenuc_path(mybshop_id:$bshop, id:bsmenuc) do %>
                               <li id="mc"><%= bsmenuc.name %></li><br>
                           <%end%>
-                          <%= link_to edit_mybshop_mybshop_mybsmenuc_path(mybshop_id:$bshop, id:bsmenuc) do %>
+                          <%= link_to edit_mybshop_mybshop_mybsmenuc_path(mybshop_id:$bshop, id:bsmenuc), target:"_blank" do%>
                                <p id="mcedit">✐編集する</p>
                       	  <% end %>
                     </div>
@@ -95,7 +95,7 @@
 	<%= content_for(:idc3)  do %>
 				<%if user_signed_in? && $bshop.user_id == current_user.id %>
 						<div id="ltop">
-							<%= link_to new_mybshop_mybshop_mybequipc_path(mybshop_id:$bshop) do%>
+							<%= link_to new_mybshop_mybshop_mybequipc_path(mybshop_id:$bshop), target:"_blank" do%>
 								<p>⊕カテゴリーを追加する</p>
 							<% end %>
 						</div>
@@ -106,7 +106,7 @@
 								<%= link_to mybshop_mybshop_mybequipc_path(mybshop_id:$bshop, id:bequipc) do %>
 									<li id="mc"><%= bequipc.name %></li><br>
 								<%end%>
-								<%= link_to edit_mybshop_mybshop_mybequipc_path(mybshop_id:$bshop, id:bequipc) do %>
+								<%= link_to edit_mybshop_mybshop_mybequipc_path(mybshop_id:$bshop, id:bequipc), target:"_blank" do%>
 									<p id="mcedit">✐編集する</p>
 								<% end %>
 						</div>
@@ -116,7 +116,7 @@
 	<%= content_for(:idc4)  do %>
 					<%if user_signed_in? && $bshop.user_id == current_user.id %>
 							<div id="ltop">
-								<%= link_to new_mybshop_mybshop_mybstaffc_path(mybshop_id:$bshop) do%>
+								<%= link_to new_mybshop_mybshop_mybstaffc_path(mybshop_id:$bshop), target:"_blank" do%>
 									<p>⊕カテゴリーを追加する</p>
 								<% end %>
 							</div>
@@ -127,7 +127,7 @@
 									<%= link_to mybshop_mybshop_mybstaffc_path(mybshop_id:$bshop, id:bstaffc) do %>
 										<li id="mc"><%= bstaffc.name %></li><br>
 									<%end%>
-									<%= link_to edit_mybshop_mybshop_mybstaffc_path(mybshop_id:$bshop, id:bstaffc) do %>
+									<%= link_to edit_mybshop_mybshop_mybstaffc_path(mybshop_id:$bshop, id:bstaffc), target:"_blank" do%>
 										<p id="mcedit">✐編集する</p>
 									<% end %>
 							</div>

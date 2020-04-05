@@ -12,13 +12,9 @@
   <% @title1 = $bshop.shopname %> 
   <% @title2 = @page_title %> 
 
-  <% @back1  = mybshop_mybshop_path(id:$bshop) %>
-  <% @city  = mybshop_mybshops_path %>
-  <% @back2 = @back1 %>
-
   <%= content_for(:edit) do %>
       <div id="edit2">
-          <%= link_to '✐編集', subedit_mybshop_mybshop_mybmenuc_path(mybshop_id:$bshop, id:$bmenuc) %>
+          <%= link_to '✐編集', subedit_mybshop_mybshop_mybmenuc_path(mybshop_id:$bshop, id:$bmenuc), target:"_blank" %>
       </div>    
   <% end %>
 

@@ -11,15 +11,11 @@
   <% @page_title = $amenuc.name %> 
   <% @title1 = $ashop.shopname %> 
   <% @title2 = @page_title %> 
-
-  <% @back1 = myashop_myashop_path(id:$ashop) %>
-  <% @city  = myashop_myashops_path %>
-  <% @back2 = @back1 %>
   
 
   <%= content_for(:main)  do %>
 
-    <div id="new"><%= link_to '＋メニューを追加する', new_myashop_myamenuc_myamenu_path %></div>
+    <div id="new"><%= link_to '＋メニューを追加する', new_myashop_myamenuc_myamenu_path, target:"_blank" %></div>
         <div id="feature-wrapper">
 
               <% $amenus.each do |amenu| %>
@@ -30,7 +26,7 @@
                   <div id="stime"><%= amenu.time1 %>:<%= amenu.time2 %>~<%= amenu.time3 %>:<%= amenu.time4 %></div>
 
                   <div id="edit">
-                    <%= link_to '✐編集する', edit_myashop_myamenuc_myamenu_path(myamenuc_id:$amenuc, id:amenu) %>
+                    <%= link_to '✐編集する', edit_myashop_myamenuc_myamenu_path(myamenuc_id:$amenuc, id:amenu), target:"_blank" %>
                   </div>
               <% end %>
 

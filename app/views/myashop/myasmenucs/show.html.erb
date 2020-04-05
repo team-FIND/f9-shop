@@ -22,7 +22,7 @@
 
   <%= content_for(:main)  do %>
 
-    <div id="new"><%= link_to '＋項目を編集する', myashop_mcategory_menus_path(mcategory_id:$mcategory)  %></div>
+    <div id="new"><%= link_to '＋項目を編集する', myashop_mcategory_menus_path(mcategory_id:$mcategory), target:"_blank" %></div>
         <div id="feature-wrapper">
 
               <% $menus.each do |menu| %>
@@ -34,7 +34,7 @@
                   <div id="stime"><%= menu.time1 %>~<%= menu.time1 %></div>
 
                   <div id="edit">
-                    <%= link_to '✐編集する', edit_ashop_mcategory_menu_path(mcategory_id:$mcategory, id:menu) %>
+                    <%= link_to '✐編集する', edit_ashop_mcategory_menu_path(mcategory_id:$mcategory, id:menu), target:"_blank" %>
                   </div>
 
               <% end %>

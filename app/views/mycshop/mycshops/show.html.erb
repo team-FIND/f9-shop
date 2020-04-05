@@ -53,7 +53,7 @@
 	<%= content_for(:idc1)  do %>
 		<%if user_signed_in? && $cshop.user_id == current_user.id %>
 			  <div id="ltop">
-				  <%= link_to new_mycshop_mycshop_mycmenuc_path(mycshop_id:$cshop) do%>
+				  <%= link_to new_mycshop_mycshop_mycmenuc_path(mycshop_id:$cshop), target:"_blank" do%>
 					  <p>⊕カテゴリーを追加する</p>
 				  <% end %>
 			  </div>
@@ -64,7 +64,7 @@
 					  <%= link_to mycshop_mycshop_mycmenuc_path(mycshop_id:$cshop, id:cmenuc) do %>
 						  <li id="mc"><%= cmenuc.name %></li><br>
 					  <%end%>
-					  <%= link_to edit_mycshop_mycshop_mycmenuc_path(mycshop_id:$cshop, id:cmenuc) do %>
+					  <%= link_to edit_mycshop_mycshop_mycmenuc_path(mycshop_id:$cshop, id:cmenuc), target:"_blank" do%>
 						   <p id="mcedit">✐編集する</p>
 					  <% end %>
 				</div>
@@ -74,7 +74,7 @@
 	<%= content_for(:idc2)  do %>
 		<%if user_signed_in? && $cshop.user_id == current_user.id %>
 			  <div id="ltop">
-				  <%= link_to new_mycshop_mycshop_mycsmenuc_path(mycshop_id:$cshop) do%>
+				  <%= link_to new_mycshop_mycshop_mycsmenuc_path(mycshop_id:$cshop), target:"_blank" do%>
 					  <p>⊕カテゴリーを追加する</p>
 				  <% end %>
 			  </div>
@@ -85,7 +85,7 @@
 					  <%= link_to mycshop_mycshop_mycsmenuc_path(mycshop_id:$cshop, id:csmenuc) do %>
 						  <li id="mc"><%= csmenuc.name %></li><br>
 					  <%end%>
-					  <%= link_to edit_mycshop_mycshop_mycsmenuc_path(mycshop_id:$cshop, id:csmenuc) do %>
+					  <%= link_to edit_mycshop_mycshop_mycsmenuc_path(mycshop_id:$cshop, id:csmenuc), target:"_blank" do%>
 						   <p id="mcedit">✐編集する</p>
 						<% end %>
 				</div>
@@ -95,7 +95,7 @@
 	<%= content_for(:idc3)  do %>
 			<%if user_signed_in? && $cshop.user_id == current_user.id %>
 					<div id="ltop">
-						<%= link_to new_mycshop_mycshop_mycequipc_path(mycshop_id:$cshop) do%>
+						<%= link_to new_mycshop_mycshop_mycequipc_path(mycshop_id:$cshop), target:"_blank" do%>
 							<p>⊕カテゴリーを追加する</p>
 						<% end %>
 					</div>
@@ -106,7 +106,7 @@
 							<%= link_to mycshop_mycshop_mycequipc_path(mycshop_id:$cshop, id:cequipc) do %>
 								<li id="mc"><%= cequipc.name %></li><br>
 							<%end%>
-							<%= link_to edit_mycshop_mycshop_mycequipc_path(mycshop_id:$cshop, id:cequipc) do %>
+							<%= link_to edit_mycshop_mycshop_mycequipc_path(mycshop_id:$cshop, id:cequipc), target:"_blank" do%>
 								<p id="mcedit">✐編集する</p>
 							<% end %>
 					</div>
@@ -116,7 +116,7 @@
 	<%= content_for(:idc4)  do %>
 					<%if user_signed_in? && $cshop.user_id == current_user.id %>
 							<div id="ltop">
-								<%= link_to new_mycshop_mycshop_mycstaffc_path(mycshop_id:$cshop) do%>
+								<%= link_to new_mycshop_mycshop_mycstaffc_path(mycshop_id:$cshop), target:"_blank" do%>
 									<p>⊕カテゴリーを追加する</p>
 								<% end %>
 							</div>
@@ -127,7 +127,7 @@
 									<%= link_to mycshop_mycshop_mycstaffc_path(mycshop_id:$cshop, id:cstaffc) do %>
 										<li id="mc"><%= cstaffc.name %></li><br>
 									<%end%>
-									<%= link_to edit_mycshop_mycshop_mycstaffc_path(mycshop_id:$cshop, id:cstaffc) do %>
+									<%= link_to edit_mycshop_mycshop_mycstaffc_path(mycshop_id:$cshop, id:cstaffc), target:"_blank" do%>
 										<p id="mcedit">✐編集する</p>
 									<% end %>
 							</div>

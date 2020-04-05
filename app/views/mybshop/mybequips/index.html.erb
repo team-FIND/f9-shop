@@ -8,7 +8,7 @@
 
 <%= content_for(:main)  do %>
 
-  <%= link_to new_mybshop_mybequipc_mybequip_path do%><div id="new">＋設備を追加する</div><% end %>
+  <%= link_to new_mybshop_mybequipc_mybequip_path, target:"_blank" do%><div id="new">＋設備を追加する</div><% end %>
 
   <% $bequips.each do |bequip| %>
 
@@ -35,7 +35,7 @@
                 </P>
 
                 <p id="edit">
-                    <%= link_to '✐編集', edit_mybshop_mybequipc_mybequip_path(id:bequip) %>
+                    <%= link_to '✐編集', edit_mybshop_mybequipc_mybequip_path(id:bequip), target:"_blank" %>
                 </p>    
 
          </div>
