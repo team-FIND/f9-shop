@@ -46,7 +46,7 @@ class PrefecsController < ApplicationController
 
   def topad
     $area = Area.where(:name => params[:area_id]).first
-    $prefec = $area.prefecs.where(:name => params[:id]).first
+    $prefecs = $area.prefecs.all
     render :layout => "app2"
     $prefec.newshop_img1.cache! unless $prefec.newshop_img1.blank?
     $prefec.newshop_img2.cache! unless $prefec.newshop_img2.blank?
@@ -72,7 +72,7 @@ class PrefecsController < ApplicationController
 
   def newad
     $area = Area.where(:name => params[:area_id]).first
-    $prefec = $area.prefecs.where(:name => params[:id]).first
+    $prefecs = $area.prefecs.all
     render :layout => "app2"
     $prefec.newshop_img1.cache! unless $prefec.newshop_img1.blank?
     $prefec.newshop_img2.cache! unless $prefec.newshop_img2.blank?
