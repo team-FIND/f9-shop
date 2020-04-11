@@ -11,7 +11,7 @@ class Asearch::AtsmenusController < ApplicationController
   end
 
   def show
-    redirect_to asearch_atsmenu_stakeouts_path(atsmenu_id:$atmenu)
+    redirect_to asearch_atsmenu_astakeouts_path(atsmenu_id:$atmenu)
   end
 
   private
