@@ -57,7 +57,7 @@
 	
 				<div id="thumb" onClick="$('#file').click()">
 				<% if $prefec.adshop_img2.present? %>
-					<div id="updimg"><%= image_tag prefec.adshop_img2.to_s if $prefec.adshop_img2? %></div> 
+					<div id="updimg"><%= image_tag $prefec.adshop_img2.to_s if $prefec.adshop_img2? %></div> 
 				<% else %>
 					<div id="upimg"><%= image_tag("template/img") %></div>
 				<% end %>
