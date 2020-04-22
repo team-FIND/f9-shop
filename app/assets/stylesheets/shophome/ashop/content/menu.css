@@ -42,7 +42,7 @@
 }
 
 #list{	
-	font-size: 70px;
+	font-size: 5rem;
 	color: #006837;
 	width: 750px; 
 	height: 120px;
@@ -51,7 +51,6 @@
 	display: flex;  
 	align-items: center;
 	justify-content: center;
-	word-break: break-all;
 }
 
 #stime{	
