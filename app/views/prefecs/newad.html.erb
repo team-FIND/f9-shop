@@ -341,27 +341,244 @@
 <script>
 
 $(function(){
-  $fileField = $('#file')
- 
-  // 選択された画像を取得し表示
-  $($fileField).on('change', $fileField, function(e) {
-    file = e.target.files[3]
-    reader = new FileReader(),
-    $preview = $("#thumb");
- 
-    reader.onload = (function(file) {
-      return function(e) {
-        $preview.empty();
-        $preview.append($('<img>').attr({
-          src: e.target.result,
-          width: "13%",
-          class: "preview",
-          title: file.name
-        }));
-      };
-    })(file);
-    reader.readAsDataURL(file);
+	$fileField = $('#file1')
+   
+	// 選択された画像を取得し表示
+	$($fileField).on('change', $fileField, function(e) {
+	  file = e.target.files[0]
+	  reader = new FileReader(),
+	  $preview = $("#thumb1");
+   
+	  reader.onload = (function(file) {
+		return function(e) {
+		  $preview.empty();
+		  $preview.append($('<img>').attr({
+			src: e.target.result,
+			width: "13%",
+			class: "preview",
+			title: file.name
+		  }));
+		};
+	  })(file);
+	  reader.readAsDataURL(file);
+	});
   });
-});
+
+  $(function(){
+	  $fileField = $('#file2')
+	 
+	  // 選択された画像を取得し表示
+	  $($fileField).on('change', $fileField, function(e) {
+		file = e.target.files[0]
+		reader = new FileReader(),
+		$preview = $("#thumb2");
+	 
+		reader.onload = (function(file) {
+		  return function(e) {
+			$preview.empty();
+			$preview.append($('<img>').attr({
+			  src: e.target.result,
+			  width: "13%",
+			  class: "preview",
+			  title: file.name
+			}));
+		  };
+		})(file);
+		reader.readAsDataURL(file);
+	  });
+	});
+
+	$(function(){
+	  $fileField = $('#file3')
+	 
+	  // 選択された画像を取得し表示
+	  $($fileField).on('change', $fileField, function(e) {
+		file = e.target.files[0]
+		reader = new FileReader(),
+		$preview = $("#thumb3");
+	 
+		reader.onload = (function(file) {
+		  return function(e) {
+			$preview.empty();
+			$preview.append($('<img>').attr({
+			  src: e.target.result,
+			  width: "13%",
+			  class: "preview",
+			  title: file.name
+			}));
+		  };
+		})(file);
+		reader.readAsDataURL(file);
+	  });
+	});
+
+	$(function(){
+	  $fileField = $('#file4')
+	 
+	  // 選択された画像を取得し表示
+	  $($fileField).on('change', $fileField, function(e) {
+		file = e.target.files[0]
+		reader = new FileReader(),
+		$preview = $("#thumb4");
+	 
+		reader.onload = (function(file) {
+		  return function(e) {
+			$preview.empty();
+			$preview.append($('<img>').attr({
+			  src: e.target.result,
+			  width: "13%",
+			  class: "preview",
+			  title: file.name
+			}));
+		  };
+		})(file);
+		reader.readAsDataURL(file);
+	  });
+	});
+
+	$(function(){
+	  $fileField = $('#file5')
+	 
+	  // 選択された画像を取得し表示
+	  $($fileField).on('change', $fileField, function(e) {
+		file = e.target.files[0]
+		reader = new FileReader(),
+		$preview = $("#thumb5");
+	 
+		reader.onload = (function(file) {
+		  return function(e) {
+			$preview.empty();
+			$preview.append($('<img>').attr({
+			  src: e.target.result,
+			  width: "13%",
+			  class: "preview",
+			  title: file.name
+			}));
+		  };
+		})(file);
+		reader.readAsDataURL(file);
+	  });
+	});
+  
+	$(function(){
+	  $fileField = $('#file6')
+	 
+	  // 選択された画像を取得し表示
+	  $($fileField).on('change', $fileField, function(e) {
+		file = e.target.files[0]
+		reader = new FileReader(),
+		$preview = $("#thumb6");
+	 
+		reader.onload = (function(file) {
+		  return function(e) {
+			$preview.empty();
+			$preview.append($('<img>').attr({
+			  src: e.target.result,
+			  width: "13%",
+			  class: "preview",
+			  title: file.name
+			}));
+		  };
+		})(file);
+		reader.readAsDataURL(file);
+	  });
+	});
+
+	$(function(){
+		$fileField = $('#file7')
+	   
+		// 選択された画像を取得し表示
+		$($fileField).on('change', $fileField, function(e) {
+		  file = e.target.files[0]
+		  reader = new FileReader(),
+		  $preview = $("#thumb7");
+	   
+		  reader.onload = (function(file) {
+			return function(e) {
+			  $preview.empty();
+			  $preview.append($('<img>').attr({
+				src: e.target.result,
+				width: "13%",
+				class: "preview",
+				title: file.name
+			  }));
+			};
+		  })(file);
+		  reader.readAsDataURL(file);
+		});
+	  });
+
+	  $(function(){
+		$fileField = $('#file8')
+	   
+		// 選択された画像を取得し表示
+		$($fileField).on('change', $fileField, function(e) {
+		  file = e.target.files[0]
+		  reader = new FileReader(),
+		  $preview = $("#thumb8");
+	   
+		  reader.onload = (function(file) {
+			return function(e) {
+			  $preview.empty();
+			  $preview.append($('<img>').attr({
+				src: e.target.result,
+				width: "13%",
+				class: "preview",
+				title: file.name
+			  }));
+			};
+		  })(file);
+		  reader.readAsDataURL(file);
+		});
+	  });
+
+	  $(function(){
+		$fileField = $('#file9')
+	   
+		// 選択された画像を取得し表示
+		$($fileField).on('change', $fileField, function(e) {
+		  file = e.target.files[0]
+		  reader = new FileReader(),
+		  $preview = $("#thumb9");
+	   
+		  reader.onload = (function(file) {
+			return function(e) {
+			  $preview.empty();
+			  $preview.append($('<img>').attr({
+				src: e.target.result,
+				width: "13%",
+				class: "preview",
+				title: file.name
+			  }));
+			};
+		  })(file);
+		  reader.readAsDataURL(file);
+		});
+	  });
+
+	  $(function(){
+		$fileField = $('#file10')
+	   
+		// 選択された画像を取得し表示
+		$($fileField).on('change', $fileField, function(e) {
+		  file = e.target.files[0]
+		  reader = new FileReader(),
+		  $preview = $("#thumb10");
+	   
+		  reader.onload = (function(file) {
+			return function(e) {
+			  $preview.empty();
+			  $preview.append($('<img>').attr({
+				src: e.target.result,
+				width: "13%",
+				class: "preview",
+				title: file.name
+			  }));
+			};
+		  })(file);
+		  reader.readAsDataURL(file);
+		});
+	  });
+
 
 </script>
