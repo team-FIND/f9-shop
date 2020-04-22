@@ -42,10 +42,9 @@
 }
 
 #list{	
-	font-size: 500%;
+	font-size: 70px;
 	color: #006837;
 	width: 750px; 
-	height: 120px;
 	border: 3px solid #006837;
 	border-radius: 20px;
 	display: flex;  
