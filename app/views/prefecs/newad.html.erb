@@ -21,12 +21,12 @@
 
 			<%= form.label :newshop_img1 do %><label for="labelx">:広告１</label><% end %><br>
 
-			<label for="labely"><%= form.file_field :newshop_img1, id: :prefec_newshop_img1 , id: "file" %></label>
+			<label for="labely"><%= form.file_field :newshop_img1, id: :prefec_newshop_img1 , id: "file1" %></label>
 
 			<p id="imgdelete">*画像を削除する  <%= form.check_box :remove_newshop_img1 %></p>
 			<%= form.hidden_field :newshop_img1_cache %><br>
 
-			<div id="thumb" onClick="$('#file').click()">
+			<div id="thumb" onClick="$('#file1').click()">
 					<% if $prefec.newshop_img1.present? %>
 						<div id="updimg"><%= image_tag $prefec.newshop_img1.to_s if $prefec.newshop_img1? %></div> 
 					<% else %>
@@ -50,12 +50,12 @@
 
 			<%= form.label :newshop_img2 do %><label for="labelx">:広告2</label><% end %><br>
 
-			<label for="labely"><%= form.file_field :newshop_img2, id: :prefec_newshop_img2 , id: "file" %></label>
+			<label for="labely"><%= form.file_field :newshop_img2, id: :prefec_newshop_img2 , id: "file2" %></label>
 
 			<p id="imgdelete">*画像を削除する  <%= form.check_box :remove_newshop_img2 %></p>
 			<%= form.hidden_field :newshop_img2_cache %><br>
 
-			<div id="thumb" onClick="$('#file').click()">
+			<div id="thumb" onClick="$('#file2').click()">
 					<% if $prefec.newshop_img2.present? %>
 						<div id="updimg"><%= image_tag prefec.newshop_img2.to_s if $prefec.newshop_img2? %></div> 
 					<% else %>
@@ -79,12 +79,12 @@
 
 			<%= form.label :newshop_img3 do %><label for="labelx">:広告3</label><% end %><br>
 
-			<label for="labely"><%= form.file_field :newshop_img, id: :prefec_newshop_img3 , id: "file" %></label>
+			<label for="labely"><%= form.file_field :newshop_img, id: :prefec_newshop_img3 , id: "file3" %></label>
 
 			<p id="imgdelete">*画像を削除する  <%= form.check_box :remove_newshop_img3 %></p>
 			<%= form.hidden_field :newshop_img3_cache %><br>
 
-			<div id="thumb" onClick="$('#file').click()">
+			<div id="thumb" onClick="$('#file3').click()">
 			<% if $prefec.newshop_img3.present? %>
 				<div id="updimg"><%= image_tag prefec.newshop_img3.to_s if $prefec.newshop_img2? %></div> 
 			<% else %>
@@ -108,12 +108,12 @@
 
 			<%= form.label :newshop_img4 do %><label for="labelx">:広告4</label><% end %><br>
 
-			<label for="labely"><%= form.file_field :newshop_img, id: :prefec_newshop_img4 , id: "file" %></label>
+			<label for="labely"><%= form.file_field :newshop_img, id: :prefec_newshop_img4 , id: "file4" %></label>
 
 			<p id="imgdelete">*画像を削除する  <%= form.check_box :remove_newshop_img4 %></p>
 			<%= form.hidden_field :newshop_img4_cache %><br>
 
-			<div id="thumb" onClick="$('#file').click()">
+			<div id="thumb" onClick="$('#file4').click()">
 			<% if $prefec.newshop_img4.present? %>
 				<div id="updimg"><%= image_tag prefec.newshop_img4.to_s if $prefec.newshop_img2? %></div> 
 			<% else %>
@@ -137,12 +137,12 @@
 
 			<%= form.label :newshop_img5 do %><label for="labelx">:広告5</label><% end %><br>
 
-			<label for="labely"><%= form.file_field :newshop_img, id: :prefec_newshop_img5 , id: "file" %></label>
+			<label for="labely"><%= form.file_field :newshop_img, id: :prefec_newshop_img5 , id: "file5" %></label>
 
 			<p id="imgdelete">*画像を削除する  <%= form.check_box :remove_newshop_img5 %></p>
 			<%= form.hidden_field :newshop_img5_cache %><br>
 
-			<div id="thumb" onClick="$('#file').click()">
+			<div id="thumb" onClick="$('#file5').click()">
 			<% if $prefec.newshop_img5.present? %>
 				<div id="updimg"><%= image_tag prefec.newshop_img5.to_s if $prefec.newshop_img2? %></div> 
 			<% else %>
@@ -166,12 +166,12 @@
 
 			<%= form.label :newshop_img6 do %><label for="labelx">:広告6</label><% end %><br>
 
-			<label for="labely"><%= form.file_field :newshop_img, id: :prefec_newshop_img6 , id: "file" %></label>
+			<label for="labely"><%= form.file_field :newshop_img, id: :prefec_newshop_img6 , id: "file6" %></label>
 
 			<p id="imgdelete">*画像を削除する  <%= form.check_box :remove_newshop_img6 %></p>
 			<%= form.hidden_field :newshop_img6_cache %><br>
 
-			<div id="thumb" onClick="$('#file').click()">
+			<div id="thumb" onClick="$('#file6').click()">
 			<% if $prefec.newshop_img6.present? %>
 				<div id="updimg"><%= image_tag prefec.newshop_img6.to_s if $prefec.newshop_img2? %></div> 
 			<% else %>
@@ -195,12 +195,12 @@
 
 			<%= form.label :newshop_img7 do %><label for="labelx">:広告7</label><% end %><br>
 
-			<label for="labely"><%= form.file_field :newshop_img, id: :prefec_newshop_img7 , id: "file" %></label>
+			<label for="labely"><%= form.file_field :newshop_img, id: :prefec_newshop_img7 , id: "file7" %></label>
 
 			<p id="imgdelete">*画像を削除する  <%= form.check_box :remove_newshop_img7 %></p>
 			<%= form.hidden_field :newshop_img7_cache %><br>
 
-			<div id="thumb" onClick="$('#file').click()">
+			<div id="thumb" onClick="$('#file7').click()">
 			<% if $prefec.newshop_img7.present? %>
 				<div id="updimg"><%= image_tag prefec.newshop_img7.to_s if $prefec.newshop_img2? %></div> 
 			<% else %>
@@ -224,12 +224,12 @@
 
 			<%= form.label :newshop_img8 do %><label for="labelx">:広告8</label><% end %><br>
 
-			<label for="labely"><%= form.file_field :newshop_img, id: :prefec_newshop_img8 , id: "file" %></label>
+			<label for="labely"><%= form.file_field :newshop_img, id: :prefec_newshop_img8 , id: "file8" %></label>
 
 			<p id="imgdelete">*画像を削除する  <%= form.check_box :remove_newshop_img8 %></p>
 			<%= form.hidden_field :newshop_img8_cache %><br>
 
-			<div id="thumb" onClick="$('#file').click()">
+			<div id="thumb" onClick="$('#file8').click()">
 			<% if $prefec.newshop_img8.present? %>
 				<div id="updimg"><%= image_tag prefec.newshop_img8.to_s if $prefec.newshop_img2? %></div> 
 			<% else %>
@@ -253,12 +253,12 @@
 
 			<%= form.label :newshop_img9 do %><label for="labelx">:広告9</label><% end %><br>
 
-			<label for="labely"><%= form.file_field :newshop_img, id: :prefec_newshop_img9 , id: "file" %></label>
+			<label for="labely"><%= form.file_field :newshop_img, id: :prefec_newshop_img9 , id: "file9" %></label>
 
 			<p id="imgdelete">*画像を削除する  <%= form.check_box :remove_newshop_img9 %></p>
 			<%= form.hidden_field :newshop_img9_cache %><br>
 
-			<div id="thumb" onClick="$('#file').click()">
+			<div id="thumb" onClick="$('#file9').click()">
 			<% if $prefec.newshop_img9.present? %>
 				<div id="updimg"><%= image_tag prefec.newshop_img9.to_s if $prefec.newshop_img2? %></div> 
 			<% else %>
@@ -282,12 +282,12 @@
 
 			<%= form.label :newshop_img10 do %><label for="labelx">:広告10</label><% end %><br>
 
-			<label for="labely"><%= form.file_field :newshop_img, id: :prefec_newshop_img10 , id: "file" %></label>
+			<label for="labely"><%= form.file_field :newshop_img, id: :prefec_newshop_img10 , id: "file10" %></label>
 
 			<p id="imgdelete">*画像を削除する  <%= form.check_box :remove_newshop_img10 %></p>
 			<%= form.hidden_field :newshop_img10_cache %><br>
 
-			<div id="thumb" onClick="$('#file').click()">
+			<div id="thumb" onClick="$('#file10').click()">
 			<% if $prefec.newshop_img10.present? %>
 				<div id="updimg"><%= image_tag prefec.newshop_img10.to_s if $prefec.newshop_img2? %></div> 
 			<% else %>
