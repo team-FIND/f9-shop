@@ -13,7 +13,7 @@ class Asearch::SdrinksController < ApplicationController
   def show
     $admenu = Admenu.where(:id => params[:adsmenu_id]).first
     $drinks = $admenu.drinks.all
-    render :layout => "shop/ashop/foods"
+    render :layout => "drinks"
   end
 
   private

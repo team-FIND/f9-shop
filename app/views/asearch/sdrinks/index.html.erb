@@ -7,10 +7,10 @@
 <% end %>
 
 <% @page_title = $admenu.name %> 
-<% @title1 = $ashop.shopname %> 
-<% @title2 = $admenu.name %>
 
 <%= content_for(:main)  do %>
+
+    <h2 id="menutitle"><%= $admenu.name %></h2>
 
 
   <% $drinks.each do |drink| %>

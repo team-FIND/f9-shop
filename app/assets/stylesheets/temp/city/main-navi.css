@@ -28,14 +28,14 @@ a{
 }
 
 .tabs li{
-	color: white;
 	width: 185px;
 	height: 210px;
 	display: flex;
 	align-items: center;
 	border-radius: 25px;
 	justify-content: center;
-	border: 8px solid #006837;
+	border: 5px solid #006837;
+	box-shadow: 0px 2px 10px 0px;
 }
 
 .tabs img{
