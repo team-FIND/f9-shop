@@ -8,12 +8,12 @@
 
 <% @page_title = $amenu.name %> 
 <% @title1 = $ashop.shopname %> 
-<% @title2 = $amenu.name %>
-
 
 <%= content_for(:main)  do %>
-
-  <% $foods.each do |food| %>
+    
+    <h2 id="menutitle"><%= $amenu.name %></h2>
+  
+    <% $foods.each do |food| %>
 
         <div id="food">
           

@@ -15,6 +15,7 @@
   <%= content_for(:main)  do %>
 
         <div id="feature-wrapper">
+        <h2 id="menutitle"><%= $amenuc.name %></h2>
 
               <% $amenus.each do |amenu| %>
                   <%= link_to asearch_asmenuc_asmenu_path(asmenuc_id:$amenuc, id:amenu) do %>

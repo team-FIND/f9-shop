@@ -13,11 +13,11 @@ class Asearch::SfoodsController < ApplicationController
   def show
     $amenu = Amenu.where(:id => params[:asmenu_id]).first
     $foods = $amenu.foods.all
-    render :layout => "shop/ashop/foods"
+    render :layout => "foods"
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
+  
     def set_food
       $amenu = Amenu.where(:id => params[:asmenu_id]).first
       $food = $amenu.foods.where(:id => params[:id]).first
