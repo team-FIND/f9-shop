@@ -13,12 +13,12 @@
 	width: 250px;
 	height: 60px;
 	display: flex;
-	padding-top: 200px;
 	color: #8CC63F;
 	font-size: 35px;
 	margin: 0px auto;
 	text-align: center;
 	border-radius: 20px;
+    margin-top: 200px;
 	align-items: center;
 	justify-content: center;
 	border: 3px solid #8CC63F;
@@ -27,13 +27,18 @@
 #fooddetails {
 	clear: both;
 	padding-top: 50px;
+	text-align: center;
 }
 
 #menutitle{
 	font-size: 80px;
 	color: #006837;
-	margin-bottom: 100px;
-	text-align: center;
+}
+
+#menuprice{
+	clear: both;
+	padding-top: 20px;
+	font-size: 50px;;
 }
 
 .mainImage img { 
@@ -64,12 +69,6 @@
 	height: 190px;
 	margin: 0px 5px 0px 0px;
 	padding: 0px 0px 0px 5px;
-}
-
-#menuprice{
-	clear: both;
-	padding-top: 50px;
-	font-size: 50px;;
 }
 
 #second-feature {
