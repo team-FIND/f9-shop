@@ -26,7 +26,6 @@
                 <%= yield(:edit) %>
 
                 <div id="main-feature">
-                <h2 id="menutitle"><%= $food.foodname1 %></h2>
                     <div class="mainImage">
                         <%= @image1 %>
                     </div>
@@ -36,8 +35,12 @@
                         <%= @image2 %>
                         <%= @image3 %>
                     </div>
-                    <h2 id="menuprice">税込：<%= $food.price %>円</h2>
-                    <h2 id="menuprice">＜注文する＞</h2>
+                    
+                    <li id="fooddetails">
+                        <h2 id="menutitle"><%= $food.foodname1 %></h2>
+                        <h2 id="menuprice">税込：<%= $food.price %>円</h2>
+                        <h2 id="menuprice">＜注文する＞</h2>
+                    </li>
                 </div>
 
                 <%= render 'shared/footer' %>

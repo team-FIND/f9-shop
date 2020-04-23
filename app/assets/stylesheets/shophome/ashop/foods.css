@@ -1,18 +1,11 @@
 
 #main-feature {
 	width: 960px;
-	padding-bottom: 200px;
+	padding-bottom: 0px;
     margin: auto 0px;
 	overflow: hidden;
     text-align: center;
-    margin-top: 200px
-}
-
-#menutitle{
-	font-size: 80px;
-	color: #006837;
-	margin-bottom: 100px;
-	text-align: center;
+    margin-top: 130px
 }
 
 #edit {
@@ -20,6 +13,7 @@
 	width: 250px;
 	height: 60px;
 	display: flex;
+	margin-top: 200px;
 	color: #8CC63F;
 	font-size: 35px;
 	margin: 0px auto;
@@ -30,13 +24,24 @@
 	border: 3px solid #8CC63F;
 }
 
+#fooddetails {
+	clear: both;
+	padding-top: 50px;
+}
+
+#menutitle{
+	font-size: 80px;
+	color: #006837;
+	margin-bottom: 100px;
+	text-align: center;
+}
+
 .mainImage img { 
 	text-align:center ;
-	width: 800px ;
-	height: 800px;
+	width: 960px ;
+	height: 720px;
 	margin-bottom: 30px;
 	clear: both; 
-	border: 3px solid #006837;
 }
 
 .pubmainImage img { 
@@ -63,7 +68,7 @@
 
 #menuprice{
 	clear: both;
-	padding-top: 100px;
+	padding-top: 50px;
 	font-size: 50px;;
 }
 
@@ -82,7 +87,7 @@
 
 #ingredient {
 	margin: 0 auto;
-	font-size: 50px;
+	font-size: 30px;
 	border-bottom: 3px solid #006837;
 }
 
