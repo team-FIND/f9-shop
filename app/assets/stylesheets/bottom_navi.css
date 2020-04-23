@@ -22,7 +22,6 @@ label {
 
 #sbox1{
 	float: left;
-	color: white;
 	width: 100px;
 	height: 150px;
 	margin: 0px auto;
@@ -58,6 +57,7 @@ label {
 #sheader{
 	clear: both;
 	height: 100px;
+	box-shadow: 0px 2px 10px 0px;
 }
 
 #uname{
