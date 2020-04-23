@@ -13,7 +13,7 @@ class Myashop::MyfoodsController < ApplicationController
   def show
     $amenu = Amenu.where(:id => params[:myamenu_id]).first
     $foods = $amenu.foods.all
-    render :layout => "shop/ashop/foods"
+    render :layout => "foods"
   end
 
   def new
