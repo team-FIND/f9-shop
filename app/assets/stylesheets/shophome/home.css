@@ -22,8 +22,23 @@
 }
 
 #top_af1{
-	margin: 7.5px 0px 20px 0px;
+	margin: 50px 0px 20px 0px;
+	padding-top: 50px;
+	padding-bottom: 50px;
 	text-align: center;
+	clear: both;
+}
+
+#areatags{
+	text-align: center;
+	clear: both;
+}
+
+#areatags li{
+	list-style: none;
+	float: left;
+	font-size: 25px;
+	margin-left: 20px;
 }
 
 .main-navi {
