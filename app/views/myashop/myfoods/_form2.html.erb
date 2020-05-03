@@ -23,7 +23,7 @@
 
                       <label for="labely"><%= form.file_field :foodimg1, id: :food_foodimg1 , id: "file1" %></label>
                       
-                      <p><%= form.check_box :remove_foodimg1, seize: 50 %>画像を削除する</p>
+                      <p><%= form.check_box :remove_foodimg1, seize: 30 %>画像を削除する</p>
                       <%= form.hidden_field :foodimg1_cache %>
                       
                       <div id="thumb1" onClick="$('#file1').click()">
@@ -40,7 +40,7 @@
 
                       <label for="labely"><%= form.file_field :foodimg2, id: :food_foodimg2 , id: "file2" %></label>
 
-                      <p><%= form.check_box :remove_foodimg2, seize: 50 %>画像を削除する</p>
+                      <p><%= form.check_box :remove_foodimg2, seize: 30 %>画像を削除する</p>
                       <%= form.hidden_field :foodimg2_cache %>
 
                       <div id="thumb2" onClick="$('#file2').click()">
@@ -57,7 +57,7 @@
 
                       <label for="labely"><%= form.file_field :foodimg3, id: :food_foodimg3 , id: "file3" %></label>
 
-                      <p><%= form.check_box :remove_foodimg3, seize: 50 %>画像を削除する</p>
+                      <p><%= form.check_box :remove_foodimg3, seize: 30 %>画像を削除する</p>
                       <%= form.hidden_field :foodimg3_cache %>
 
                       <div id="thumb3" onClick="$('#file3').click()">
@@ -68,6 +68,9 @@
                             <% end %>
                       </div>
                   </div>
+
+
+              <%= form.hidden_field :topimg_cache %>
 
               <div id="actions"><li><%= form.submit(:決定) %></li></div>
 

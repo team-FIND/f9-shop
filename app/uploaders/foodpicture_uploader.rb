@@ -37,6 +37,10 @@ class FoodpictureUploader < CarrierWave::Uploader::Base
     name.downcase
   end
 
+  def cache_dir
+    "cache"
+  end
+
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)
   #   # For Rails 3.1+ asset pipeline compatibility:

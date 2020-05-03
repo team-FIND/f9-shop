@@ -30,7 +30,7 @@
                           <%= form.label :shopimage1 do %><label for="labelx">お店の画像１</label><% end %><br>
                           <%= form.file_field :shopimage1, id: :ashop_shopimage1, id: "file1"  %>
 
-                          <p><%= form.check_box :remove_shopimage1, seize: 50 %>画像を削除する</p>
+                          <p><%= form.check_box :remove_shopimage1, seize: 30 %>画像を削除する</p>
                           <%= form.hidden_field :shopimage1_cache %>
                           <div id="thumb1" onClick="$('#file1').click()">
                             <% if ashop.shopimage1.present? %>
