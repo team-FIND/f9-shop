@@ -40,6 +40,9 @@
 
                   <label for="labely"><%= form.file_field :topimg, id: :food_topimg , id: "file" %></label>
 
+                  <p><%= form.check_box :remove_topimg, seize: 50 %>画像を削除する</p>
+                  <%= form.hidden_field :foodimg1_cache %>
+
                   <div id="thumb" onClick="$('#file').click()">
                         <% if food.topimg.present? %>
                           <div id="updimg"><%= image_tag food.topimg.thumb.url if $food.topimg? %></div> 
