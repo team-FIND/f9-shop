@@ -55,6 +55,10 @@ class Myashop::MyfoodsController < ApplicationController
   end
 
   def update
+    $amenu = Amenu.where(:id => params[:myamenu_id]).first
+    $food = $amenu.foods.build(food_params)
+    $food.user_id = current_user.id
+    
     respond_to do |format|
       if $food.update(food_params)
         format.html { redirect_to myashop_myamenu_myfood_path(myamenu_id:$amenu, id:$food), notice: 'Menu was successfully updated.' }
