@@ -1,7 +1,5 @@
 
-<%= javascript_include_tag "ashops" %>
 <%= stylesheet_link_tag "creater/ashop/home", :media => "all" %>
-<%= javascript_include_tag "ashops" %>
 
 <%= form_for($ashop, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
 
@@ -155,11 +153,6 @@ $(function(){
     })(file);
     reader.readAsDataURL(file);
   });
-});
-
-$(function() {
-    // jQuery Upload Thumbs 
-    $('form input:file').uploadThumbs();
 });
 
 </script>
