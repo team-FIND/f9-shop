@@ -1,6 +1,5 @@
-<%= javascript_include_tag "ashops" %>
+
 <%= form_for($food, :url => {:action => "create"}, :html => {:multipart => true}) do |form| %>
-<%= javascript_include_tag "ashops" %>
 
 <% if food.errors.any? %>
     <div id="error_explanation">
@@ -154,11 +153,6 @@ $(function(){
     })(file);
     reader.readAsDataURL(file);
   });
-});
-
-$(function() {
-    // jQuery Upload Thumbs 
-    $('form input:file').uploadThumbs();
 });
 
 </script>
