@@ -11,6 +11,7 @@ input[type="checkbox"] {
 	-ms-transform: scale(2.5, 2.5);
 	-webkit-transform: scale(2.5, 2.5);
 	  transform: scale(2.5, 2.5);
+	margin-right: 30px;
 }
 
 input[type="submit"] {
@@ -20,7 +21,14 @@ input[type="submit"] {
 	font-size: 40px;
 	color: black;
 	text-align: center;
+	align-items: center;
 	margin-top: 30px;
+}
+
+#actions {
+	clear: both;
+	width: 960px;
+    text-align: center;
 }
 
 #eback {
@@ -33,10 +41,10 @@ input[type="submit"] {
 	margin: 0px auto;
 	background: white;
 	margin-top: 100px;
+	margin-bottom: 50px;
 	text-align: center;
 	border-radius: 20px;
 	align-items: center;
-	margin-bottom: 450px;
 	justify-content: center;
 	border: 3px solid #006837;
 }
