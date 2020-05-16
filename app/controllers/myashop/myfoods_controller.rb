@@ -30,24 +30,25 @@ class Myashop::MyfoodsController < ApplicationController
     render :layout => "shop/ashop/edit"
   end
 
-  def foodimg
-    $food.topimg.cache! unless $food.topimg.blank?
-    $food.foodimg1.cache! unless $food.foodimg1.blank?
-    $food.foodimg2.cache! unless $food.foodimg2.blank?    
-    $food.foodimg3.cache! unless $food.foodimg3.blank?   
-    render :layout => "shop/ashop/edit"
-  end
-
   def foodimg1
     render :layout => "foods"
+    $food.topimg.cache! unless $food.topimg.blank?
+    $food.foodimg2.cache! unless $food.foodimg2.blank?    
+    $food.foodimg3.cache! unless $food.foodimg3.blank?  
   end
 
   def foodimg2
     render :layout => "foods"
+    $food.topimg.cache! unless $food.topimg.blank?
+    $food.foodimg1.cache! unless $food.foodimg2.blank?    
+    $food.foodimg3.cache! unless $food.foodimg3.blank?  
   end
 
   def foodimg3
-    render :layout => "foods"
+    render :layout => "foods"$food.topimg.cache! unless $food.topimg.blank?
+    $food.foodimg1.cache! unless $food.foodimg2.blank?    
+    $food.foodimg2.cache! unless $food.foodimg3.blank?  
+
   end
 
   def create
