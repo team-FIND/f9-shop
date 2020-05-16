@@ -100,9 +100,8 @@ form img.thumb {
 
 
 #thumb, #thumb1, #thumb2, #thumb3 {
-	width: 500px;
-	height: 500px;
-	border: 3px solid #006837;
+	width: 960px;
+	height: 720px;
 	clear: both;
 	margin: 0px auto;
 	margin-top: 0px;
@@ -223,8 +222,8 @@ a {
 	padding: 100px 0px 30px 0px;
 }
 
-#imgdelete{
-	float: left;
+#picdelete{
+	text-align: center;
 	clear: both;
 	margin: 0px 0px 50px 100px;
 }

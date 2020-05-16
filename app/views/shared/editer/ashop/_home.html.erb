@@ -1,7 +1,6 @@
 
 
 <%= stylesheet_link_tag "creater/ashop/home", :media => "all" %>
-<%= stylesheet_link_tag "modal", :media => "all" %>
 <%= javascript_include_tag "ashops" %>
 <%= javascript_include_tag "modal" %>
 
@@ -66,7 +65,8 @@
 
                           <label for="labely"><%= form.file_field :topimage, id: :shop_topimage , id: "file" %></label>
 
-                          <p id="imgdelete">*画像を削除する  <%= form.check_box :remove_topimage %></p>
+                          <p id="picdelete"><%= form.check_box :remove_topimage, seize: 30 %>画像を削除する</p>
+
                           <%= form.hidden_field :topimage_cache %><br>
 
                           <div id="thumb" onClick="$('#file').click()">
@@ -78,38 +78,13 @@
                           </div>
 
                 </div>
-
-                  <%= link_to myashop_myashops_path do %>
-                    <div id="eback">編集を中止する</div>
-                  <% end %>
                   
-                    <%= form.hidden_field :topimage_cache %>
                     <%= form.hidden_field :shopimage1_cache %>
                     <%= form.hidden_field :shopimage2_cache %>
                     <%= form.hidden_field :shopimage3_cache %>
                     
-                <div id="actions">
-                  <% if user_signed_in? %>
-                    <li><%= form.submit(:決定) %></li>
-                  <% else %>
-                    <a class="js-modal-open" href=""><li><%= form.submit(:決定) %></li></a>
-
-                    <div class="modal js-modal">
-                        <div class="modal__bg js-modal-close"></div>
-                        <div class="modal__content">
-
-                            <p id="c0">この作業を続けるにはログインして下さい。</p>
-
-                            <%= link_to new_user_session_path do %>
-                              <li id="c1">ログイン（無料会員登録)</li>
-                            <% end %></br>
-
-                            <a class="js-modal-close" id="c2">閉じる</a>
-                        </div><!--modal__inner-->
-                    
-                    </div><!--modal-->
-                  <% end %>
-                </div>
+                <div id="actions"><%= form.submit(:決定) %></div>
+                <%= link_to myashop_myashops_path do %><div id="eback">編集を中止する</div><% end %>
 
         </div>
 
