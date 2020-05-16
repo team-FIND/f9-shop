@@ -23,26 +23,6 @@
 
                     </div>
 
-                    <div class="thumbnails">
-						<% if $food.foodimg1.present? %>
-							<%= image_tag $food.foodimg1_url %>
-						<% else %> 
-							<%= image_tag "template/logo3" %>
-						<% end %>
-			
-						<% if $food.foodimg2.present? %>
-							<%= image_tag $food.foodimg2_url %>
-						<% else %>
-							<%= image_tag "template/logo3" %>
-						<% end %>
-			
-						<% if $food.foodimg3.present? %>
-							<%= image_tag $food.foodimg3_url %>
-						<% else %>
-							<%= image_tag "template/logo3" %>
-						<% end %>
-                    </div>
-
                     <div id="actions"><li><%= form.submit(:決定) %></li></div>
 
                     <div id="fooddetails">
