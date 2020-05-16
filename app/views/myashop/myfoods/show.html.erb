@@ -3,12 +3,6 @@
 <% @title1 = $ashop.shopname %>
 
 <%= content_for(:edit) do %>
-	<div id="edit">
-    	<%= link_to '✐編集', foodimg_myashop_myamenu_myfood_path(id:$food), target:"_blank" %>
-    </div>    
-<% end %>
-
-<%= content_for(:edit) do %>
 				<div id="main-feature">
                     <div class="mainImage">
 					<% if $food.foodimg1.present? %>
