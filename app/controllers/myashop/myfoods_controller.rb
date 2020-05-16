@@ -1,5 +1,5 @@
 class Myashop::MyfoodsController < ApplicationController
-  before_action :set_food, only: [:show, :edit, :update, :destroy, :foodimg]
+  before_action :set_food, only: [:get_amenu, :show, :edit, :update, :destroy, :foodimg]
   protect_from_forgery except: :create
   before_action :set_current_user
   before_action :configure_permitted_parameters, if: :devise_controller?
@@ -36,6 +36,15 @@ class Myashop::MyfoodsController < ApplicationController
     $food.foodimg2.cache! unless $food.foodimg2.blank?    
     $food.foodimg3.cache! unless $food.foodimg3.blank?   
     render :layout => "shop/ashop/edit"
+  end
+
+  def foodimg1
+    $amenu = Amenu.where(:id => params[:myamenu_id]).first
+    $food.topimg.cache! unless $food.topimg.blank?
+    $food.foodimg1.cache! unless $food.foodimg1.blank?
+    $food.foodimg2.cache! unless $food.foodimg2.blank?    
+    $food.foodimg3.cache! unless $food.foodimg3.blank?   
+    render :layout => "foods"
   end
 
   def create

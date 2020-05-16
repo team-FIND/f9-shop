@@ -57,7 +57,7 @@ end end
 namespace :myashop do resources :myamenus do
                       resources :myfoods do
     member do
-      get "foodimg"
+      get "foodimg", "foodimg1", "foodimg2", "foodimg3"
     end
 end end end
 

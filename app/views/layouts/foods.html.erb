@@ -22,27 +22,8 @@
                 <%= render 'shared/header' %>
                 <div id="fmessage"><p class="notice"><%= notice %></p><p class="alert"><%= alert %></p></div>
                 <%= render 'shared/shop/uheader2' %>
-
                 <%= yield(:edit) %>
-
-                <div id="main-feature">
-                    <div class="mainImage">
-                        <%= @image1 %>
-                    </div>
-
-                    <div class="thumbnails">
-                        <%= @image1 %>
-                        <%= @image2 %>
-                        <%= @image3 %>
-                    </div>
-
-                    <div id="fooddetails">
-                        <h2 id="menutitle"><%= $food.foodname1 %></h2>
-                        <p id="menuprice">税込：<%= $food.price %>円</p>
-                        <p id="menuprice">＜注文する＞</p>
-                    </div>
-                </div>
-
+                <%= yield(:main) %>
                 <%= render 'shared/footer' %>
                 <%= render 'shared/bottom_navi' %>
 
