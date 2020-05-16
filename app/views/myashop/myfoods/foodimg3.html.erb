@@ -1,0 +1,86 @@
+
+
+<% @page_title = $food.foodname1 %> 
+<% @title1 = $ashop.shopname %>
+
+<%= content_for(:main) do %>
+    <%= form_for($food, :url => {:action => "update"}, :html => {:multipart => true}) do |form| %>
+        <p id="picdelete"><%= form.check_box :remove_foodimg3, seize: 30 %>画像を削除する</p>
+                
+        <%= form.hidden_field :amenu_id %>
+
+				<div id="main-feature">
+                    <div class="mainImage">
+                        <%= form.file_field :foodimg3, id: :food_foodimg3 , id: "file3" %>
+                        <%= form.hidden_field :foodimg3_cache %>
+                        <div id="thumb3" onClick="$('#file3').click()">
+                                <% if $food.foodimg3.present? %>
+                                    <div id="updimg"><%= image_tag $food.foodimg3.thumb.url if $food.foodimg3? %></div> 
+                                <% else %>
+                                    <div id="upimg"><%= image_tag("template/img") %></div>
+                                <% end %>
+                        </div>
+
+                    </div>
+
+                    <div class="thumbnails">
+						<% if $food.foodimg3.present? %>
+							<%= image_tag $food.foodimg1_url %>
+						<% else %> 
+							<%= image_tag "template/logo3" %>
+						<% end %>
+			
+						<% if $food.foodimg3.present? %>
+							<%= image_tag $food.foodimg2_url %>
+						<% else %>
+							<%= image_tag "template/logo3" %>
+						<% end %>
+			
+						<% if $food.foodimg3.present? %>
+							<%= image_tag $food.foodimg3_url %>
+						<% else %>
+							<%= image_tag "template/logo3" %>
+						<% end %>
+                    </div>
+
+                    <div id="actions"><li><%= form.submit(:決定) %></li></div>
+
+                    <div id="fooddetails">
+                        <h2 id="menutitle"><%= $food.foodname1 %></h2>
+                        <p id="menuprice">税込：<%= $food.price %>円</p>
+                        <p id="menuprice">＜注文する＞</p>
+                    </div>
+                </div>
+
+
+                <script>
+
+				$(function(){
+				$fileField = $('#file3')
+				
+				$($fileField).on('change', $fileField, function(e) {
+					file = e.target.files[0]
+					reader = new FileReader(),
+					$preview = $("#thumb3");
+				
+					reader.onload = (function(file) {
+					return function(e) {
+						$preview.empty();
+						$preview.append($('<img>').attr({
+						src: e.target.result,
+						width: "100%",
+						class: "preview",
+						title: file.name
+						}));
+					};
+					})(file);
+					reader.readAsDataURL(file);
+				});
+				});
+				
+		</script>
+
+
+<% end %>
+
+<% end %>

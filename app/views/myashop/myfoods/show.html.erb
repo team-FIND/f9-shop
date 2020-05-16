@@ -6,29 +6,29 @@
 				<div id="main-feature">
                     <div class="mainImage">
 					<% if $food.foodimg1.present? %>
-						<%= link_to foodimg1_myashop_myamenu_myfood_path(id:$food), target:"_blank" do %><%= image_tag $food.foodimg1_url %><% end %>
+						<%= image_tag $food.foodimg1_url %>
 					<% else %> 
-						<%= link_to foodimg1_myashop_myamenu_myfood_path(id:$food), target:"_blank" do %><%= image_tag "template/logo3" %><% end %>
+						<%= image_tag "template/logo3" %>
 					<% end %>
                     </div>
 
                     <div class="thumbnails">
 						<% if $food.foodimg1.present? %>
-							<%= image_tag $food.foodimg1_url %>
+							<%= link_to foodimg1_myashop_myamenu_myfood_path(id:$food), target:"_blank" do %><%= image_tag $food.foodimg1_url %><% end %>
 						<% else %> 
-							<%= image_tag "template/logo3" %>
+							<%= link_to foodimg1_myashop_myamenu_myfood_path(id:$food), target:"_blank" do %><%= image_tag "template/logo3" %><% end %>
 						<% end %>
 			
 						<% if $food.foodimg2.present? %>
-							<%= image_tag $food.foodimg2_url %>
+							<%= link_to foodimg2_myashop_myamenu_myfood_path(id:$food), target:"_blank" do %><%= image_tag $food.foodimg2_url %><% end %>
 						<% else %>
-							<%= image_tag "template/logo3" %>
+							<%= link_to foodimg2_myashop_myamenu_myfood_path(id:$food), target:"_blank" do %><%= image_tag "template/logo3" %><% end %>
 						<% end %>
 			
 						<% if $food.foodimg3.present? %>
-							<%= image_tag $food.foodimg3_url %>
+							<%= link_to foodimg3_myashop_myamenu_myfood_path(id:$food), target:"_blank" do %><%= image_tag $food.foodimg3_url %><% end %>
 						<% else %>
-							<%= image_tag "template/logo3" %>
+							<%= link_to foodimg3_myashop_myamenu_myfood_path(id:$food), target:"_blank" do %><%= image_tag "template/logo3" %><% end %>
 						<% end %>
                     </div>
 

@@ -39,11 +39,14 @@ class Myashop::MyfoodsController < ApplicationController
   end
 
   def foodimg1
-    $amenu = Amenu.where(:id => params[:myamenu_id]).first
-    $food.topimg.cache! unless $food.topimg.blank?
-    $food.foodimg1.cache! unless $food.foodimg1.blank?
-    $food.foodimg2.cache! unless $food.foodimg2.blank?    
-    $food.foodimg3.cache! unless $food.foodimg3.blank?   
+    render :layout => "foods"
+  end
+
+  def foodimg2
+    render :layout => "foods"
+  end
+
+  def foodimg3
     render :layout => "foods"
   end
 
