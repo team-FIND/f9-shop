@@ -1,0 +1,62 @@
+	
+
+<%= content_for(:main)  do %>
+
+	<%= form_for($ashop, :url => {:action => "update"}, :html => {:multipart => true}) do |form| %>
+
+		<p id="picdelete"><%= form.check_box :remove_shopimage1, seize: 30 %>画像を削除する</p>
+
+		<div id="main-feature2">
+				<%= javascript_include_tag "shop" %>
+				<%= javascript_include_tag "slick.min" %>
+
+					<div id="feature-wrapper">
+						<div id="field-pic">
+							<%= form.file_field :shopimage1, id: :ashop_shopimage1, id: "file1"  %>
+							<%= form.hidden_field :shopimage1_cache %>
+
+							<div id="thumb1" onClick="$('#file1').click()">
+								<% if $ashop.shopimage1.present? %>
+									<div id="updimg"><%= image_tag $ashop.shopimage1.thumb.url if $ashop.shopimage1? %></div> 
+								<% else %>
+									<div id="upimg"><%= image_tag("template/img") %></div>
+								<% end %>
+							</div>
+						</div>  
+					</div>
+
+					<div id="actions"><li><%= form.submit(:決定) %></li></div>
+					<%= link_to myashop_myashop_path(id:$ashop) do %><div id="eback">編集を中止する</div><% end %>
+		</div>
+
+
+		<script>
+
+				$(function(){
+				$fileField = $('#file1')
+				
+				// 選択された画像を取得し表示
+				$($fileField).on('change', $fileField, function(e) {
+					file = e.target.files[0]
+					reader = new FileReader(),
+					$preview = $("#thumb1");
+				
+					reader.onload = (function(file) {
+					return function(e) {
+						$preview.empty();
+						$preview.append($('<img>').attr({
+						src: e.target.result,
+						width: "100%",
+						class: "preview",
+						title: file.name
+						}));
+					};
+					})(file);
+					reader.readAsDataURL(file);
+				});
+				});
+		</script>
+
+	<% end %>
+
+<% end %>

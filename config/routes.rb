@@ -38,7 +38,7 @@ namespace :myashop do resources :myashops do
 
     member do
       get "contact", "access", "time", "info"
-      get "home_edit", "img_edit", "contact_edit", "access_edit", "time_edit", "info_edit"
+      get "home_edit", "img_edit", "img1_edit", "img2_edit", "img3_edit", "contact_edit", "access_edit", "time_edit", "info_edit"
     end
 
     collection do

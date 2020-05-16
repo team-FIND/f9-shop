@@ -4,8 +4,8 @@
 
 
 	 	<%= stylesheet_link_tag "creater/foodshop", :media => "all" %>
-		<%= stylesheet_link_tag "temp/ad", :media => "all" %>
-        <%= stylesheet_link_tag "temp/header", :media => "all" %>
+		<%= stylesheet_link_tag "temp/header", :media => "all" %>
+        <%= stylesheet_link_tag "temp/shop/sfeature", :media => "all" %>
         <%= stylesheet_link_tag "temp/footer", :media => "all" %>
 
 		<%= javascript_include_tag "edit/foodshop" %> 
@@ -30,6 +30,8 @@
 			      </div>
 				</div>
 			</div>
+			<%= render 'shared/shop/main-navi2' %>
+			<%= render 'shared/shop/secondf2' %>
 
 				<%= render 'shared/footer' %>
 		</div>
