@@ -5,14 +5,6 @@
 	<%= content_for(:head)  do %>
 	    <title><%= page_title %></title>
     <% end %>
-    
-    <%= content_for(:home_edit)  do %>
-        <div id="home_edit_btn">
-        <%if user_signed_in? && $ashop.user_id == current_user.id %>
-                    <%= link_to img_edit_myashop_myashop_path, target:"_blank" do%><div id="edit">✐編集する</div><% end %>
-        <% end %>
-        </div>
-    <% end %>
 
   <%= content_for(:main)  do %>
     <div id="main-feature">
@@ -30,9 +22,9 @@
                                <%= link_to img1_edit_myashop_myashop_path, target:"_blank" do%><li><%= image_tag "template/homepics" %><p><%= $ashop.shopname %></p></li><% end %>
                             <% end %>
                             <% if $ashop.shopimage2.present? %>
-                                  <li><%= image_tag $ashop.shopimage2_url %><p>image2</p></li>
+                              <%= link_to img2_edit_myashop_myashop_path, target:"_blank" do%><li><%= image_tag $ashop.shopimage2_url %><p>image2</p></li><% end %>
                             <% else %>
-                                  <li><%= image_tag "template/homepics" %><p>image2</p></li>
+                              <%= link_to img2_edit_myashop_myashop_path, target:"_blank" do%><li><%= image_tag "template/homepics" %><p>image2</p></li><% end %>
                             <% end %>
                             <% if $ashop.shopimage3.present? %>
                                   <li><%= image_tag $ashop.shopimage3_url %><p>image3</p></li>
