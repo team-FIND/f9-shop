@@ -45,7 +45,8 @@ class Myashop::MyfoodsController < ApplicationController
   end
 
   def foodimg3
-    render :layout => "foods"$food.topimg.cache! unless $food.topimg.blank?
+    render :layout => "foods"
+    $food.topimg.cache! unless $food.topimg.blank?
     $food.foodimg1.cache! unless $food.foodimg2.blank?    
     $food.foodimg2.cache! unless $food.foodimg3.blank?  
 
