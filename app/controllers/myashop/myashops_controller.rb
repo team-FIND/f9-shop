@@ -54,7 +54,6 @@ before_action :configure_permitted_parameters, if: :devise_controller?
   end
 
   def edit
-    $ashop.topimage.cache! unless $ashop.topimage.blank?
     $ashop.shopimage1.cache! unless $ashop.shopimage1.blank?
     $ashop.shopimage2.cache! unless $ashop.shopimage2.blank?    
     $ashop.shopimage3.cache! unless $ashop.shopimage3.blank?   
@@ -70,29 +69,23 @@ before_action :configure_permitted_parameters, if: :devise_controller?
   end
 
   def img1_edit
-    $ashop = Ashop.where(:id => params[:id]).first
     $ashop.topimage.cache! unless $ashop.topimage.blank?
-    $ashop.shopimage1.cache! unless $ashop.shopimage1.blank?
     $ashop.shopimage2.cache! unless $ashop.shopimage2.blank?    
     $ashop.shopimage3.cache! unless $ashop.shopimage3.blank?        
     render :layout => "shophome_pics"
   end
 
   def img2_edit
-    $ashop = Ashop.where(:id => params[:id]).first
     $ashop.topimage.cache! unless $ashop.topimage.blank?
     $ashop.shopimage1.cache! unless $ashop.shopimage1.blank?
-    $ashop.shopimage2.cache! unless $ashop.shopimage2.blank?    
     $ashop.shopimage3.cache! unless $ashop.shopimage3.blank?        
     render :layout => "shophome_pics"
   end
 
   def img3_edit
-    $ashop = Ashop.where(:id => params[:id]).first
     $ashop.topimage.cache! unless $ashop.topimage.blank?
     $ashop.shopimage1.cache! unless $ashop.shopimage1.blank?
-    $ashop.shopimage2.cache! unless $ashop.shopimage2.blank?    
-    $ashop.shopimage3.cache! unless $ashop.shopimage3.blank?        
+    $ashop.shopimage2.cache! unless $ashop.shopimage2.blank?         
     render :layout => "shophome_pics"
   end
 
