@@ -114,23 +114,26 @@ form img.thumb {
 
 #updimg {
 	clear: both;
-	width: 500px;
-	height: 500px;
+	width: 960px;
+	height: 720px;
 	margin: 0px auto;
 	overflow: hidden;
 }
 
-#updimg img{
-	width: 500px;
-	height: 500px;
-}
-
-#upimg{ 
-	width: 100px;
-	display: flex;
+#upimg {
+	clear: both;
+	width: 960px;
+	height: 720px;
 	margin: 0px auto;
+	overflow: hidden;
 	align-items: center;
 	justify-content: center;
+	display: flex;
+}
+
+#updimg img{
+	width: 960px;
+	height: 720px;
 }
 
 #actions {
