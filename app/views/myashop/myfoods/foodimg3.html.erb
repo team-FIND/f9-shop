@@ -12,7 +12,9 @@
 				<div id="main-feature">
                     <div class="mainImage">
                         <%= form.file_field :foodimg3, id: :food_foodimg3 , id: "file3" %>
+                        
                         <%= form.hidden_field :foodimg3_cache %>
+
                         <div id="thumb3" onClick="$('#file3').click()">
                                 <% if $food.foodimg3.present? %>
                                     <div id="updimg"><%= image_tag $food.foodimg3.thumb.url if $food.foodimg3? %></div> 
