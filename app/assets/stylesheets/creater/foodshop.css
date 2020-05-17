@@ -34,10 +34,12 @@ label {
 }
 
 input[type="checkbox"] {
-	    -ms-transform: scale(2.5, 2.5);
-        -webkit-transform: scale(2.5, 2.5);
-  		transform: scale(2.5, 2.5);
-    }
+	-ms-transform: scale(5.5, 5.5);
+	-webkit-transform: scale(5.5, 5.5);
+	  transform: scale(5.5, 5.5);
+	margin-right: 50px;
+	margin-top: -20;
+}
 
 input[type="text"] {
         width: 870px;
@@ -190,7 +192,6 @@ form img.thumb {
 }
 
 
-
 #eback {
 	clear: both;
 	width: 870px;
@@ -223,7 +224,8 @@ a {
 }
 
 #picdelete{
-	text-align: center;
 	clear: both;
-	margin: 0px 0px 50px 100px;
+	margin-top: 200px;
+	font-size: 60px;
+	text-align: center;
 }
