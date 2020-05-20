@@ -1,0 +1,67 @@
+	
+
+<%= content_for(:main)  do %>
+
+	<%= form_for($ashop, :url => {:action => "update"}, :html => {:multipart => true}) do |form| %>
+
+		<p id="picdelete"><%= form.check_box :remove_shopimage3, seize: 30 %>画像を削除する</p>
+
+		<div id="main-feature2">
+				<%= javascript_include_tag "shop" %>
+				<%= javascript_include_tag "slick.min" %>
+
+					<div id="feature-wrapper">
+						<div id="field-pic">
+							<%= form.file_field :shopimage3, id: :ashop_shopimage3, id: "file3"  %>
+							<%= form.hidden_field :shopimage3_cache %>
+
+							<div id="thumb3" onClick="$('#file3').click()">
+								<% if $ashop.shopimage3.present? %>
+									<div id="updimg"><%= image_tag $ashop.shopimage3.thumb.url if $ashop.shopimage3? %></div> 
+								<% else %>
+									<div id="upimg"><%= image_tag("template/img") %></div>
+								<% end %>
+							</div>
+						</div>  
+					</div>
+
+					<div id="actions"><li><%= form.submit(:決定) %></li></div>
+					<%= link_to myashop_myashop_path(id:$ashop) do %><div id="eback">編集を中止する</div><% end %>
+        </div>
+        
+		<% @main_navi_img1 =  image_tag("shopnavi/menu") %>
+		<% @main_navi_img2 =  image_tag("shopnavi/menu2") %>
+		<% @main_navi_img3 =  image_tag("shopnavi/drink") %>
+		<% @main_navi_img4 =  image_tag("shopnavi/takeout") %>
+
+
+		<script>
+
+				$(function(){
+				$fileField = $('#file3')
+				
+				// 選択された画像を取得し表示
+				$($fileField).on('change', $fileField, function(e) {
+					file = e.target.files[0]
+					reader = new FileReader(),
+					$preview = $("#thumb3");
+				
+					reader.onload = (function(file) {
+					return function(e) {
+						$preview.empty();
+						$preview.append($('<img>').attr({
+						src: e.target.result,
+						width: "100%",
+						class: "preview",
+						title: file.name
+						}));
+					};
+					})(file);
+					reader.readAsDataURL(file);
+				});
+				});
+		</script>
+
+	<% end %>
+
+<% end %>
