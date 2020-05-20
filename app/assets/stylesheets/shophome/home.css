@@ -99,11 +99,24 @@ input[type="submit"] {
 	clear: both;
 }
 
+#myareatags{
+	text-align: center;
+	clear: both;
+}
+
 #areatags li{
 	list-style: none;
 	float: left;
 	font-size: 30px;
 	margin-left: 20px;
+}
+
+#myareatags li{
+	list-style: none;
+	float: left;
+	font-size: 30px;
+	margin-left: 20px;
+	margin-bottom: 30px;
 }
 
 .main-navi {
