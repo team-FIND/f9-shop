@@ -7,46 +7,43 @@
 
 <%= content_for(:main)  do %>
 
-    <div id="search-form">
-
       <%= search_form_for $search, url: asearch_asshops_path do |form| %>
+        <div id="search-form">
 
-              <div id="stitle">グルメ検索</div>
-                          
-                <div id="slinex">
-                    <div class="sline1">
-                      <label for="labelx">地域</label><br>
-                      <%= form.collection_select :top_id_eq, Top.order(:name), :id, :name, include_blank: true %>
-                    </div>
-                    <div class="sline1">
-                      <label for="labelx">県</label><br>
-                      <%= form.grouped_collection_select :area_id_eq, Top.order(:name), :areas, :name, :id, :name, include_blank: true %>
-                    </div>
-                    <div class="sline1">
-                      <label for="labelx">市町村</label><br>
-                      <%= form.grouped_collection_select :prefec_id_eq, Area.order(:name), :prefecs, :name, :id, :name, include_blank: true %>
-                    </div>
-                    <div class="sline1">
-                      <label for="labelx">カテゴリー</label><br>
-                      <%= form.collection_select :acategory_id_eq, Acategory.order(:name), :id, :name, include_blank: true %>
-                    </div>
-                </div>
-
-                <div id="sliney">
-                    <div class="sline2">
-                      <label for="labelx">店名</label><br>
-                      <%= form.search_field :shopname_cont %>
+                  <div id="stitle">グルメ検索</div>
+                              
+                    <div id="slinex">
+                        <div class="sline1">
+                          <label for="labelx">地域</label><br>
+                          <%= form.collection_select :top_id, Top.order(:name), :id, :name, include_blank: true, :prompt => "選択してください" %>
+                        </div>
+                        <div class="sline1">
+                          <label for="labelx">県</label><br>
+                          <%= form.grouped_collection_select :area_id, Top.order(:name), :areas, :name, :id, :name, include_blank: true, :prompt => "選択してください" %>
+                        </div>
+                        <div class="sline1">
+                          <label for="labelx">市町村</label><br>
+                          <%= form.grouped_collection_select :prefec_id, Area.order(:name), :prefecs, :name, :id, :name, include_blank: true, :prompt => "選択してください" %>
+                        </div>
+                        <div class="sline1">
+                          <label for="labelx">カテゴリー</label><br>
+                          <%= form.collection_select :acategory_id, Acategory.order(:name), :id, :name, include_blank: true, :prompt => "選択してください" %>
+                        </div>
                     </div>
 
-                    <div class="sline2">
-                      <%= form.submit %>
+                    <div id="sliney">
+                        <div class="sline2">
+                          <label for="labelx">店名</label><br>
+                          <%= form.search_field :shopname_cont %>
+                        </div>
+
+                        <div class="sline2">
+                          <%= form.submit %>
+                        </div>
                     </div>
-                </div>
-
-            <% end %>
-
-         
-    </div>
+            
+        </div>
+    <% end %>
 
     <div id="main-feature">
 
