@@ -73,6 +73,9 @@ gem 'active_admin_flat_skin'
 gem 'cancancan'
 
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-twitter'
 
 gem 'ransack'
 

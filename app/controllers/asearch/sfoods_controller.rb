@@ -23,7 +23,6 @@ class Asearch::SfoodsController < ApplicationController
       $food = $amenu.foods.where(:id => params[:id]).first
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def food_params
       params.require(:food).permit(:amenu_id, :name, :topimg, :topimg_cache, :foodimg1, :foodimg1_cache, :foodimg2, :foodimg2_cache, :foodimg3, :foodimg3_cache, :foodname1, :foodname2, :price)
     end
