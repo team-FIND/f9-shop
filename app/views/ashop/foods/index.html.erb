@@ -7,16 +7,11 @@
 <% end %>
 
 <% @page_title = $amenu.name %> 
-<% @title1 = $ashop.shopname %> 
-<% @title2 = $amenu.name %>
-
-<% @back1  = prefec_ashop_ashop_path(id:$ashop, prefec_id:$prefec) %>
-<% @city  = prefec_ashop_ashops_path(prefec_id:$prefec) %>
-<% @back2 = ashop_amenuc_amenus_path(amenuc_id:$amenuc) %>
-
 
 
 <%= content_for(:main)  do %>
+
+    h2 id="menutitle"><%= $amenu.name %></h2>
 
   <% $foods.each do |food| %>
 

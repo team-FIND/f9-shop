@@ -1,26 +1,42 @@
-
+¥
 <% @page_title = $food.foodname1 %> 
 <% @title1 = $ashop.shopname %>
 
+<%= content_for(:edit) do %>
+				<div id="main-feature">
+                    <div class="mainImage">
+					<% if $food.foodimg1.present? %>
+						<%= image_tag $food.foodimg1_url %>
+					<% else %> 
+						<%= image_tag "template/logo3" %>
+					<% end %>
+                    </div>
 
-<% $foods.each do |food| %>
+                    <div class="thumbnails">
+						<% if $food.foodimg1.present? %>
+							<%= image_tag $food.foodimg1_url %>
+						<% else %> 
+							<%= image_tag "template/logo3" %>
+						<% end %>
+			
+						<% if $food.foodimg2.present? %>
+							<%= image_tag $food.foodimg2_url %>
+						<% else %>
+							<%= image_tag "template/logo3" %>
+						<% end %>
+			
+						<% if $food.foodimg3.present? %>
+							<%= image_tag $food.foodimg3_url %>
+						<% else %>
+							<%= image_tag "template/logo3" %>
+						<% end %>
+                    </div>
 
-	<% if $food.foodimg1.present? %>
-		<% @image1 = image_tag $food.foodimg1_url %>
-	<% else %>
-		<% @image1 = image_tag "template/logo3" %>
-	<% end %>
-
-	<% if $food.foodimg2.present? %>
-		<% @image2 = image_tag $food.foodimg2_url %>
-	<% else %>
-		<% @image2 = image_tag "template/logo3" %>
-	<% end %>
-
-	<% if $food.foodimg3.present? %>
-		<% @image3 = image_tag $food.foodimg3_url %>
-	<% else %>
-		<% @image3 = image_tag "template/logo3" %>
-	<% end %>
+                    <div id="fooddetails">
+                        <h2 id="menutitle"><%= $food.foodname1 %></h2>
+                        <p id="menuprice">税込：<%= $food.price %>円</p>
+                        <p id="menuprice">＜注文する＞</p>
+                    </div>
+				</div>
 
 <% end %>
