@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 resources :pubimgs
 resources :pubmenus
+resources :likes
 
   
 get 'welcome/index'

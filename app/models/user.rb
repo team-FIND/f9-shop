@@ -27,6 +27,8 @@ class User < ApplicationRecord
    has_many :fshops, dependent: :destroy
    has_many :gshops, dependent: :destroy
    has_many :hshops, dependent: :destroy
+   has_many :likes, dependent: :destroy
+   has_many :liked_posts, through: :likes, source: :ashop
    
    validates :accepted, presence: {message: 'に同意してください'}
    validates :username, presence: true, length: {minimum:8}, format: { with: /\A[A-Za-z][A-Za-z0-9_\-.]*\z/, allow_blank: true }

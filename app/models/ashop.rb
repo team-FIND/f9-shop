@@ -26,5 +26,7 @@ class Ashop < ApplicationRecord
 	has_many :foods, dependent: :destroy
 	has_many :pubimgs, dependent: :destroy
 	has_many :pubmenus, dependent: :destroy
+	has_many :likes, dependent: :destroy
+  	has_many :liked_posts, through: :likes, source: :user
 
 end

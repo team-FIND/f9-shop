@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_28_232508) do
+ActiveRecord::Schema.define(version: 2020_05_30_125956) do
 
   create_table "acategories", force: :cascade do |t|
     t.string "name"
@@ -1710,6 +1710,31 @@ ActiveRecord::Schema.define(version: 2020_05_28_232508) do
     t.index ["hmenuc_id"], name: "index_items_on_hmenuc_id"
     t.index ["hshop_id"], name: "index_items_on_hshop_id"
     t.index ["user_id"], name: "index_items_on_user_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "ashop_id"
+    t.integer "bshop_id"
+    t.integer "cshop_id"
+    t.integer "dshop_id"
+    t.integer "eshop_id"
+    t.integer "fshop_id"
+    t.integer "gshop_id"
+    t.integer "hshop_id"
+    t.integer "food_id"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ashop_id"], name: "index_likes_on_ashop_id"
+    t.index ["bshop_id"], name: "index_likes_on_bshop_id"
+    t.index ["cshop_id"], name: "index_likes_on_cshop_id"
+    t.index ["dshop_id"], name: "index_likes_on_dshop_id"
+    t.index ["eshop_id"], name: "index_likes_on_eshop_id"
+    t.index ["food_id"], name: "index_likes_on_food_id"
+    t.index ["fshop_id"], name: "index_likes_on_fshop_id"
+    t.index ["gshop_id"], name: "index_likes_on_gshop_id"
+    t.index ["hshop_id"], name: "index_likes_on_hshop_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "outs", force: :cascade do |t|
